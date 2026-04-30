@@ -1,0 +1,24 @@
+{
+  "id": "medium037",
+  "question": "In 2022, what percentage of total operating revenue in the market do the top enterprises by R&D investment (top 3) in Sichuan Province's pharmaceutical manufacturing industry account for?",
+  "guidelines": "The answer must be an exact number with 2 decimal places. Output only the number, do not add units, commas, or any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 61.92,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all enterprise records with province=\"Sichuan Province\" and industry=\"Pharmaceutical Manufacturing\" from company_profile.csv, extract the enterprise name and bmCode fields, and find 15 pharmaceutical manufacturing enterprises in Sichuan Province.",
+    "Filter 2022 data for these enterprises from company_operation_status.csv by enterprise name and bmCode, extract the R&D investment amount and operating revenue amount fields, and find 2022 data for 15 pharmaceutical manufacturing enterprises in Sichuan Province.",
+    "Filter enterprise records with non-null R&D investment amount and operating revenue amount (15 records total), sort all enterprises by R&D investment amount in descending order, determine R&D investment rankings, and identify the top 20% enterprises as \"Huaren Taize Pharmaceutical Co., Ltd., Fuhe Chenze Biopharmaceutical Company, Yishan Shengchen Medical Technology Company\".",
+    "Extract the operating revenue amount for the 3 enterprises: 19038287881.00, 100067338.00, 3389021585.67 respectively. Calculate the sum of operating revenue for the top 20% enterprises as 22527376804.67.",
+    "Calculate the sum of operating revenue for all 15 pharmaceutical manufacturing enterprises in Sichuan Province as 36382939883.72. Calculate percentage = (sum of operating revenue of top 20% enterprises / sum of operating revenue of all enterprises) × 100%, rounded to two decimal places: 61.92%"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Sum of operating revenue of top 20% enterprises (yuan)": 22527376804.67,
+    "Sum of operating revenue of all enterprises (yuan)": 36382939883.72,
+    "Percentage": 61.92
+  }
+}

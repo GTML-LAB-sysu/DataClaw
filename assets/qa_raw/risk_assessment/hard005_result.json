@@ -1,0 +1,30 @@
+{
+  "id": "hard005",
+  "question": "At the end of 2022, semiconductor industry analysts modeled 2023 scenarios: revenue across enterprises is projected to decline by 20%, while fixed operating costs (defined as operating revenue minus operating profit) rise by 15% from their baseline. Under these assumptions, compute the change in operating profit margin for each enterprise in Jiangsu Province, Guangdong Province, and Shanghai (original operating profit margin = operating profit / operating revenue × 100%; new operating profit margin = (new operating revenue − new operating cost) / new operating revenue × 100%; decline magnitude = original operating profit margin − new operating profit margin), then take the average decline per region—limited to enterprises with complete operating revenue and operating profit data and positive operating revenue. Among the three regions, which province/municipality has the largest average decline in enterprise operating profit margin?",
+  "guidelines": "Answer format: province or city name. E.g. \"Zhejiang Province\" or \"Beijing\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From company_profile.csv, filter enterprise records with industry=\"Semiconductor industry\" and province in (\"Jiangsu\", \"Guangdong\", \"Shanghai\"), extract enterprise name, bmCode, and province fields; 104 enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by enterprise name and bmCode, extract operating revenue amount and operating profit amount; 104 enterprises successfully matched.",
+    "Filter enterprise records with non-null operating revenue and operating profit and operating revenue amount>0; 104 enterprises in total.",
+    "For each enterprise, compute original operating profit margin = (operating profit amount / operating revenue amount) × 100%, original operating cost = operating revenue amount − operating profit amount.",
+    "For each enterprise, compute new operating revenue = operating revenue amount × 0.8, new operating cost = original operating cost × 1.15.",
+    "For each enterprise, compute new operating profit = new operating revenue − new operating cost, new operating profit margin = (new operating profit / new operating revenue) × 100%, decline magnitude = original operating profit margin − new operating profit margin.",
+    "Group enterprises by province; for each province compute average decline magnitude, sort by average decline magnitude in descending order; Guangdong Province has the largest average decline."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 104 semiconductor industry enterprises from company_profile.csv.",
+    "Found 104 enterprises with complete data from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Number of enterprises with complete data": 104,
+    "Province/municipality with largest average decline": "Guangdong Province",
+    "Largest average decline (percentage points)": 42.12
+  },
+  "answer": "Guangdong",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  }
+}

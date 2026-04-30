@@ -1,0 +1,23 @@
+{
+  "id": "medium038",
+  "question": "In 2022, which enterprise has the highest operating revenue in the same region and industry as Sansan Daten Heavy Industry Company?",
+  "guidelines": "The answer must be an enterprise name. Output only the enterprise name, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Look up the record for Sansan Daten Heavy Industry Company in company_profile.csv, extract the province and industry fields, and determine its region as \"Beijing\" and industry as \"Special Purpose Equipment Manufacturing\".",
+    "Filter all enterprise records with province=\"Beijing\" and industry=\"Special Purpose Equipment Manufacturing\" from company_profile.csv, extract the enterprise name and bmCode fields, and find 38 special purpose equipment manufacturing enterprises in Beijing.",
+    "Filter 2022 data for these enterprises from company_operation_status.csv by enterprise name and bmCode, extract the operating revenue amount field, and find 2022 operating revenue data for 38 special purpose equipment manufacturing enterprises in Beijing.",
+    "Sort all enterprises by operating revenue amount in descending order to determine the operating revenue ranking. Identify the enterprise with the highest operating revenue as \"Lingong Hangteng Heavy Industry Company\" with operating revenue of 80034467972.00 yuan."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Total number of special purpose equipment manufacturing enterprises in Beijing": 38,
+    "Operating revenue of Lingong Hangteng Heavy Industry Company (yuan)": 80034467972.0,
+    "Enterprise with highest operating revenue": "Lingong Hangteng Heavy Industry Company"
+  },
+  "answer": "Lingong Hangteng Heavy Industry Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

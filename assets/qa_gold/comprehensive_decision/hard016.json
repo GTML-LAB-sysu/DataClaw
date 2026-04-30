@@ -1,0 +1,35 @@
+{
+  "id": "hard016",
+  "question": "In 2022, an institutional investor plans to build an equity portfolio among Haishan Chang Industrial Equipment Company, Zhongbai Jinmao Chain Company, and Sansan Dateng Heavy Industry Company. The total portfolio weight must equal 1, the portfolio-weighted asset-liability ratio must equal exactly 45%, and the portfolio-weighted year-on-year operating revenue change must equal exactly 0%. Based on these three companies' 2022 operating data, find their portfolio weights and compute the portfolio-weighted ROE. Note: each company's asset-liability ratio is computed as total liabilities ÷ total assets × 100%.",
+  "guidelines": "Answer format: weight of Haishan Chang Industrial Equipment Company, weight of Zhongbai Jinmao Chain Company, weight of Sansan Dateng Heavy Industry Company, weighted ROE. The first three weights to four decimal places; weighted ROE to three decimal places. Output numbers and commas only, with no explanatory text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": [
+    0.1318,
+    0.4954,
+    0.3728,
+    10.376
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From company_operation_status.csv, filter by bmCode for Haishan Chang Industrial Equipment Company (100071), Zhongbai Jinmao Chain Company (100120), and Sansan Dateng Heavy Industry Company (100260) to obtain their 2022 records; 3 valid rows found. Extract total assets, total liabilities, year-on-year change in operating revenue, and net profit amount.",
+    "Compute each firm's asset-liability ratio from total assets and total liabilities using total liabilities / total assets × 100%. Results: Haishan Chang Industrial Equipment Company 86.3880%, Zhongbai Jinmao Chain Company 57.6074%, Sansan Dateng Heavy Industry Company 13.6112%.",
+    "Derive shareholder equity from total assets minus total liabilities; then compute ROE = net profit amount / shareholder equity × 100%. ROE for the three firms is 15.2002%, 11.5040%, and 7.1713%, respectively.",
+    "Let the three firms' weights be w1, w2, and w3. Set up the simultaneous equations w1+w2+w3=1, 86.3880w1+57.6074w2+13.6112w3=45, and −19.28w1+12.21w2−9.41w3=0.",
+    "Solve the system of three linear equations to obtain w1=0.13180488, w2=0.49541694, w3=0.37277818.",
+    "Compute portfolio-weighted ROE=15.2002%×0.13180488+11.5040%×0.49541694+7.1713%×0.37277818; the result is 10.376%."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Firm count": 3,
+    "Haishan Chang Industrial Equipment Company asset-liability ratio": 86.388,
+    "Zhongbai Jinmao Chain Company asset-liability ratio": 57.6074,
+    "Sansan Dateng Heavy Industry Company asset-liability ratio": 13.6112,
+    "Haishan Chang Industrial Equipment Company weight": 0.1318,
+    "Zhongbai Jinmao Chain Company weight": 0.4954,
+    "Sansan Dateng Heavy Industry Company weight": 0.3728,
+    "Portfolio-weighted ROE": 10.376
+  }
+}

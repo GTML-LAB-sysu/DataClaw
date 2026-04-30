@@ -1,0 +1,34 @@
+{
+  "id": "easy051",
+  "question": "In 2022, is the enterprise type of Meineng Xuanyue Electric Co., Ltd. the same as that of Baotie Yuanchang Metal Products Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Meineng Xuanyue Electric Co., Ltd. (2022 dataset value): enterprise type = Shanghai and Shenzhen",
+    "Baotie Yuanchang Metal Products Co., Ltd. (2022 dataset value): enterprise type = Hong Kong Stocks"
+  ],
+  "milestone": {
+    "Enterprise type of Meineng Xuanyue Electric Co., Ltd.": "Shanghai and Shenzhen",
+    "Enterprise type of Baotie Yuanchang Metal Products Co., Ltd.": "Hong Kong Stocks",
+    "Comparison result (whether the enterprise types are the same)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: enterprise type of Meineng Xuanyue Electric Co., Ltd. = Shanghai and Shenzhen",
+    "Extracted from company_profile.csv: enterprise type of Baotie Yuanchang Metal Products Co., Ltd. = Hong Kong Stocks",
+    "Compared the two enterprise type texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_profile": "5ae7c38c-e9f3-47d0-972d-d7d00e7cd04b"
+    },
+    {
+      "company_profile": "8b773f98-e603-4b07-b235-fc1e71e2ea0d"
+    }
+  ]
+}

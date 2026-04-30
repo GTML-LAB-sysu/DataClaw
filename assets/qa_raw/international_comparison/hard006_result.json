@@ -1,0 +1,39 @@
+{
+  "id": "hard006",
+  "question": "A global technology thematic portfolio uses a \"technological moat + policy diffusion\" framework for its semiconductor sub-portfolio. For candidate companies, first calculate: 1. Technological moat gap = company advanced process revenue ratio - median R&D investment ratio of A-share semiconductor industry top 10% by revenue in 2022, where advanced process revenue ratio = (5nm + 7nm revenue) ÷ wafer revenue; 2. Policy diffusion ratio = count of China semiconductor industry policies ÷ number of provincial-level administrative regions covered by non-national policies; 3. Theme conviction score = 0.6 × technological moat gap + 0.4 × policy diffusion ratio. If technological moat gap > 40 and policy diffusion ratio > 2.5, list as core overweight with active weight = min(3.00%, theme conviction score ÷ 10); otherwise do not include in core overweight list. Using TSMC's 2022 annual report and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: technological moat gap (percentage points), policy diffusion ratio, theme conviction score, active weight, most appropriate conclusion (conclusion must specify position action and active weight). Retain 2 decimal places and return as an array. If relevant data cannot be found, please answer \"No relevant data found\".",
+  "steps": [
+    "Web search TSMC 2022 annual report; from the process revenue disclosure section extract 2022 5nm revenue = 508,689.9, 7nm revenue = 535,153.8, wafer revenue = 1,991,855.9, all in NT$ million.",
+    "Calculate advanced process revenue ratio = (508,689.9 + 535,153.8) ÷ 1,991,855.9 × 100% = 52.4056%, rounded to 2 decimals = 52.41%.",
+    "Filter from company_profile.csv A-share companies with industry=\"semiconductor industry\", 172 total; then from company_operation_status.csv extract 2022 operating revenue amount and R&D investment ratio for these companies, retaining 169 companies with both fields valid.",
+    "Sort the 169 companies by operating revenue descending, take top 10% = 17 companies, calculate median R&D investment ratio = 5.81%.",
+    "Calculate technological moat gap per question definition = 52.41% - 5.81% = 46.60 percentage points.",
+    "Filter semiconductor industry policies from policy_release_status.csv, 44 records; after excluding province=\"national\", 15 provincial-level administrative regions covered.",
+    "Calculate policy diffusion ratio = 44 ÷ 15 = 2.9333, rounded to 2.93; then theme conviction score = 0.6 × 46.60 + 0.4 × 2.93 = 29.1320, rounded to 29.13. Since technological moat gap > 40 and policy diffusion ratio > 2.5, core overweight condition is met; active weight = min(3.00%, 29.13 ÷ 10) = 2.91%."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Web search obtained raw data: 5nm, 7nm, wafer revenue = 508,689.9, 535,153.8, 1,991,855.9 respectively.",
+    "company_profile.csv and company_operation_status.csv provided 172 A-share semiconductor industry companies and 169 with valid 2022 R&D investment ratio data.",
+    "policy_release_status.csv provided 44 semiconductor-related policies and 15 non-national provincial-level administrative region coverage information."
+  ],
+  "milestone": {
+    "TSMC advanced process revenue ratio (%)": 52.41,
+    "A-share semiconductor industry top 10% by revenue median R&D investment ratio (%)": 5.81,
+    "Technological moat gap (percentage points)": 46.6,
+    "Policy diffusion ratio": 2.93,
+    "Theme conviction score": 29.13,
+    "Active weight (%)": 2.91
+  },
+  "answer": [
+    46.6,
+    2.93,
+    29.13,
+    "Core overweight, active weight 2.91%"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

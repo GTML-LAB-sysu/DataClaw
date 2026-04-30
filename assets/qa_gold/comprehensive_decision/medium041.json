@@ -1,0 +1,24 @@
+{
+  "id": "medium041",
+  "question": "In 2022, nationwide, is the province with the highest mean market capitalization also the province with the highest total net profit?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Extract province information for all enterprises from the province field in company_profile.csv, totaling 6895 enterprise records.",
+    "Extract company market capitalization and net profit amount fields for all enterprises from company_operation_status.csv, totaling 6895 enterprise records. Join company_profile.csv and company_operation_status.csv by enterprise name and bmCode fields to merge the two data sources, resulting in 6895 records.",
+    "Filter enterprise records where company market capitalization is not null and greater than 0, totaling 6885 records. Group by province and calculate the mean market capitalization for each province. Sort by mean market capitalization in descending order. The province with the highest mean market capitalization is Taiwan Province, with a mean market cap of 358.689 billion CNY and 12 enterprises.",
+    "Filter enterprise records where net profit amount is not null, totaling 6895 records. Group by province and calculate the total net profit and mean net profit for each province. Sort by total net profit in descending order. The province with the highest total net profit is Beijing, with a total net profit of 4998709315999.03 CNY and 774 enterprises.",
+    "Compare the province with the highest mean market capitalization (Taiwan Province) and the province with the highest total net profit (Beijing). They are not the same, so the conclusion is: No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province with highest mean market capitalization": "Taiwan Province",
+    "Province with highest total net profit": "Beijing",
+    "Comparison result": "No"
+  }
+}

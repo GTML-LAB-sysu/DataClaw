@@ -1,0 +1,24 @@
+{
+  "id": "medium111",
+  "question": "Which is larger: the number of SZSE-listed enterprises in the province where Xingkuwen Arts and Crafts Company is located, or the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry?",
+  "guidelines": "The answer must be either \"the number of SZSE-listed enterprises in the province where Xingkuwen Arts and Crafts Company is located\" or \"the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry\". Output only one of these, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Determine from company_profile.csv that Xingkuwen Arts and Crafts Company is located in Zhejiang Province.",
+    "Extract from regional_industry_status.csv that the number of SZSE-listed enterprises in Zhejiang Province, Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing is 3.",
+    "Extract from national_industry_status.csv that the number of SSE-listed private enterprises in the Chemical Fiber Manufacturing industry is 7.",
+    "Compare 3 and 7; 7 is larger, so output \"the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry\"."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Xingkuwen Arts and Crafts Company": "Zhejiang Province",
+    "Number of SZSE-listed enterprises in Zhejiang Province, Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing": 3,
+    "Number of SSE-listed private enterprises in Chemical Fiber Manufacturing": 7,
+    "Comparison result (larger one)": "the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry"
+  }
+}

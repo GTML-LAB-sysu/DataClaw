@@ -1,0 +1,40 @@
+{
+  "id": "medium039",
+  "question": "Between the number of local policies issued by the Hefei Municipality Office of the People's Government in the local policies for the industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd. and the number of local policies issued by the Shandong Province People's Government in the local policies for the Scientific Research and Technical Services industry, which is greater?",
+  "guidelines": "The answer must be \"Number of local policies for the industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd. issued by the Hefei Municipality Office of the People's Government\" or \"Number of local policies for the Scientific Research and Technical Services industry issued by the Shandong Province People's Government\". Output only the policy title, without any explanation, analysis, or descriptive wording. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies - Hefei Municipality Office of the People's Government - policy count = 2",
+    "Scientific Research and Technical Services local policies - Shandong Province People's Government - policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies_Hefei Municipality Office of the People's Government policy count": 2,
+    "Scientific Research and Technical Services local policies_Shandong Province People's Government policy count": 1,
+    "Comparison result": "2 is greater; according to the question statement, output Scientific Research and Technical Services"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhong Ke Ke Shu Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services, the policy count issued by the Hefei Municipality Office of the People's Government is 2",
+    "Extract from policy_release_status.csv that in the local policies for Scientific Research and Technical Services, the policy count issued by the Shandong Province People's Government is 1",
+    "Compare 2 and 1; although 2 is greater, follow the question's requirement and output \"Scientific Research and Technical Services\""
+  ],
+  "steps_num": 4,
+  "answer": "Scientific Research and Technical Services",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "5bec0ffb-41d8-4699-ad95-003164a2e21f"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "policy_release_status": "2760c4e4-c3b3-4e72-8ff7-cea178ce1503"
+    }
+  ]
+}

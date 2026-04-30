@@ -1,0 +1,31 @@
+{
+  "id": "medium006",
+  "question": "In 2022, there was a view that government subsidies and revenue are clearly correlated among large-asset-scale enterprises in the food and beverage industry. Therefore, researchers sampled the top one-third of large enterprises ranked (rounded down) by total assets as the research subject. What is the Pearson correlation coefficient between government subsidy amount and year-over-year revenue growth rate?",
+  "guidelines": "Answer format: numerical value (retain 4 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter companies with industry=\"food and beverage\" from company_profile.csv, extract company name and bmCode fields, and found 247 food and beverage companies.",
+    "From company_operation_status.csv, associate 2022 data for these companies based on bmCode, extract total assets, government incentive funds, subsidies, and year-over-year revenue growth rate fields, and associate data for 247 companies.",
+    "Filter out companies with empty total assets, leaving 247 companies, sorted in descending order by total assets.",
+    "Calculate total number of companies 247, take the top 82 companies (rounded down) as the large enterprise group.",
+    "In the large enterprise group, filter out companies with empty government incentive funds, subsidies, or year-over-year revenue growth rate, leaving 80 valid enterprises.",
+    "Calculate the Pearson correlation coefficient between government incentive funds and subsidies and year-over-year revenue growth rate = -0.1237."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "Found 247 food and beverage companies from company_profile.csv, including company name and bmCode fields.",
+    "Associated 2022 data on total assets, government incentive funds, subsidies, and year-over-year revenue growth rate for 247 food and beverage companies from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Total number of food and beverage enterprises": 247,
+    "Number of large enterprise group": 82,
+    "Number of valid large enterprises": 80,
+    "Average government subsidy": 137397163.62,
+    "Average revenue growth rate": 14.8526
+  },
+  "answer": -0.1237,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

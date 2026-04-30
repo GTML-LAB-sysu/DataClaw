@@ -1,0 +1,35 @@
+{
+  "id": "medium034",
+  "question": "Among the provinces that performed best in cultivating high-tech enterprises in 2022 (measured by the number of high-tech enterprises), which high-tech enterprise has the highest year-over-year growth in average operating revenue?",
+  "guidelines": "The answer must be an enterprise name. Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Langji Ruanchuang Information Technology Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Identify high-tech enterprises from company_profile.csv: enterprises whose firstClassification and secondClassification fields contain keywords such as \"technology\", \"innovation\", \"R&D\", or whose industry field contains keywords such as \"technology\", \"information\", \"software\", \"electronics\", \"communication\".",
+    "Build a mapping from enterprise name to province from company_profile.csv. Count high-tech enterprises by province and identify the top 3 provinces with the most high-tech enterprises: Guangdong Province (89), Beijing (49), Jiangsu Province (48).",
+    "Filter all records with year=2022 from company_operation_status.csv, and extract the enterprise name and year-over-year change in operating revenue fields.",
+    "Filter enterprise records that are high-tech enterprises and have non-null (notna) year-over-year change in operating revenue. For each province, identify the high-tech enterprise with the highest year-over-year growth in operating revenue: Guangdong Province — \"Kuaike Chuangjin Equipment Company\" (47.76%), Beijing — \"Baoxin Ruanlian Software Company\" (51.65%), Jiangsu Province — \"Langji Ruanchuang Information Technology Company\" (93.78%).",
+    "Compare the enterprises with the highest year-over-year growth in operating revenue across these three provinces, and find the highest as \"Langji Ruanchuang Information Technology Company\" (located in Jiangsu Province, 93.78%)."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Top 3 provinces with the most high-tech enterprises": [
+      "Guangdong Province",
+      "Beijing",
+      "Jiangsu Province"
+    ],
+    "Number of high-tech enterprises in Guangdong Province": 89,
+    "Number of high-tech enterprises in Beijing": 49,
+    "Number of high-tech enterprises in Jiangsu Province": 48,
+    "High-tech enterprise with highest year-over-year growth in operating revenue in Guangdong Province": "Kuaike Chuangjin Equipment Company",
+    "High-tech enterprise with highest year-over-year growth in operating revenue in Beijing": "Baoxin Ruanlian Software Company",
+    "High-tech enterprise with highest year-over-year growth in operating revenue in Jiangsu Province": "Langji Ruanchuang Information Technology Company",
+    "Enterprise with highest year-over-year growth in operating revenue": "Langji Ruanchuang Information Technology Company",
+    "Province where this enterprise is located": "Jiangsu Province",
+    "Year-over-year growth in operating revenue (%)": 93.78
+  }
+}

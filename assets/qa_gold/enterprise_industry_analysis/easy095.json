@@ -1,0 +1,22 @@
+{
+  "id": "easy095",
+  "question": "Are Da Zu Jin Jing She Bei Co., Ltd. and Xi Fen Ye Jin Jin Shu Co., Ltd. competitors?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Da Zu Jin Jing She Bei Co., Ltd.'s industry is Other Manufacturing",
+    "From company_profile.csv, extract that Xi Fen Ye Jin Jin Shu Co., Ltd.'s industry is Metal Smelting and Rolling Processing",
+    "The two companies are in different industries; they are not competitors; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Da Zu Jin Jing She Bei Co., Ltd. industry": "Other Manufacturing",
+    "Xi Fen Ye Jin Jin Shu Co., Ltd. industry": "Metal Smelting and Rolling Processing",
+    "Whether competitors": "No"
+  }
+}

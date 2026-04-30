@@ -1,0 +1,27 @@
+{
+  "id": "hard009",
+  "question": "In 2022, build a comprehensive industry-level risk resilience scoring system covering all manufacturing industries with total enterprises not less than 25 (excluding Finance, Real Estate, and Conglomerate industries). The scoring framework has three dimensions with different weights: Asset Return Efficiency (weight 40%), measured as the industry's average operating profit per enterprise divided by average total assets per enterprise; R&D Investment Intensity (weight 30%), measured as the industry's average R&D investment per enterprise divided by average operating revenue per enterprise; and Financial Desensitization to Policy Subsidies (weight 30%), measured as the industry's total operating profit divided by (total government subsidies + 1)—adding 1 to the denominator avoids division by zero when subsidies are zero. Each of the three raw indicators is min-max normalized across industries, scaled to a 0–100 score, then weighted by the above weights to yield the final score. Under this system, what is the comprehensive score of the top-ranked industry?",
+  "guidelines": "Answer format: numeric value (2 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 65.11,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From national_industry_status.csv, extract total enterprises for all industries; filter manufacturing industries with total enterprises>=25, excluding non-manufacturing industries such as \"Finance\", \"Real Estate\", and \"Conglomerate\"; 38 qualifying industries found.",
+    "For each qualifying industry, from national_industry_status.csv extract mean operating profit amount, mean total assets, mean R&D investment amount, mean operating revenue amount, total operating profit amount, and total government reward and subsidy funds fields.",
+    "Filter industry records where all required fields are non-null; 38 industries in total.",
+    "For each industry, compute raw financial robustness = mean operating profit amount / mean total assets, raw innovation capacity = mean R&D investment amount / mean operating revenue amount, raw policy independence = total operating profit amount / (total government reward and subsidy funds + 1).",
+    "Perform min-max normalization to 0–100 for the three dimensions (financial robustness, innovation capacity, policy independence); normalization formula = (value − min) / (max − min) × 100.",
+    "For each industry, compute comprehensive risk resilience index = financial robustness score × 0.4 + innovation capacity score × 0.3 + policy independence score × 0.3.",
+    "Sort by comprehensive risk resilience index in descending order; the top-ranked industry is Mining, with a score of 65.11."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of qualifying industries": 38,
+    "Number of industries with complete required fields": 38,
+    "Top-ranked industry": "Mining",
+    "Highest score": 65.11
+  }
+}

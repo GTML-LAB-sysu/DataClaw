@@ -1,0 +1,40 @@
+{
+  "id": "medium090",
+  "question": "Compared with the same indicator in the Scientific Research and Technical Services industry, what is the difference in the mean cumulative number of PCT invention patent applications for the industry where Huaxin Yuanshi New Materials Company operates?",
+  "guidelines": "The answer must be an exact number, preserving all meaningful decimal places. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Huaxin Yuanshi New Materials Company: Non-metallic Mineral Products",
+    "Non-metallic Mineral Products: mean cumulative number of PCT invention patent applications = 12.063829787234",
+    "Scientific Research and Technical Services: mean cumulative number of PCT invention patent applications = 34.0425531914894"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Huaxin Yuanshi New Materials Company belongs to the Non-metallic Mineral Products industry.",
+    "Extract from national_industry_status.csv that the mean cumulative number of PCT invention patent applications in the Non-metallic Mineral Products industry is 12.063829787234.",
+    "Extract from national_industry_status.csv that the mean cumulative number of PCT invention patent applications in the Scientific Research and Technical Services industry is 34.0425531914894.",
+    "Calculate the difference: 12.063829787234 - 34.0425531914894 = -21.9787234042554."
+  ],
+  "steps_num": 4,
+  "answer": -21.9787234042554,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Huaxin Yuanshi New Materials Company": "Non-metallic Mineral Products",
+    "Mean cumulative number of PCT invention patent applications in the Non-metallic Mineral Products industry": 12.063829787234,
+    "Mean cumulative number of PCT invention patent applications in the Scientific Research and Technical Services industry": 34.0425531914894,
+    "Difference": -21.9787234042554
+  },
+  "reference": [
+    {
+      "national_industry_status": "be3c0164-12b0-4453-8c7a-e198721d914b"
+    },
+    {
+      "company_profile": "f150e113-74af-4929-b33d-7b30a892e86d"
+    },
+    {
+      "national_industry_status": "83fd9785-8bdc-4a18-ad0a-83f92b9aef7c"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "medium013",
+  "question": "In 2022, a scientific research and technical services enterprise wishes to identify the province with the fastest net profit growth in the industry to guide market expansion. What is the indicator value for the province with the highest median year-on-year net profit growth rate in the national scientific research and technical services industry? What is the nationwide rank of the enterprise with the highest such indicator in that province among all enterprises in this industry?",
+  "guidelines": "Two answers required: first is a numeric value (2 decimal places, unit %), i.e. the indicator value for the province with the highest \"median year-on-year net profit growth rate\" in this industry nationwide; second is a rank number (integer, e.g. \"23\" means 23rd place), i.e. the nationwide rank of the enterprise with the highest \"year-on-year net profit growth rate\" in that province among all enterprises in this industry. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": [
+    13.81,
+    23
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter all records with industry=\"Scientific Research and Technical Services\", extract province and median year-on-year net profit growth rate; 34 province records found.",
+    "Filter province records with non-null median year-on-year net profit growth rate; 16 valid provinces.",
+    "Sort by median year-on-year net profit growth rate descending; first place: Anhui Province, median year-on-year net profit growth rate 13.81%. From company_profile.csv, filter enterprises with province=\"Anhui Province\" and industry=\"Scientific Research and Technical Services\", obtain enterprise bmCode set.",
+    "From company_operation_status.csv, filter year=2022 and bmCode in that set, extract \"year-on-year net profit growth rate\", sort by this indicator descending. Highest enterprise in that province: Zhongqi Shengyuan Technology Research Institute, year-on-year net profit growth rate 32.58%.",
+    "From company_profile.csv, filter nationwide enterprises with industry=\"Scientific Research and Technical Services\"; from company_operation_status.csv, filter year=2022 with valid year-on-year net profit growth rate. Sort by year-on-year net profit growth rate descending; Zhongqi Shengyuan Technology Research Institute ranks 23rd nationwide."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Valid province count for scientific research and technical services (non-null median YoY net profit growth)": 16,
+    "Anhui Province median year-on-year net profit growth rate (%)": 13.81,
+    "Enterprise with highest indicator in Anhui Province": "Zhongqi Shengyuan Technology Research Institute",
+    "Enterprise year-on-year net profit growth rate (%)": 32.58,
+    "Enterprise nationwide rank": 23
+  }
+}

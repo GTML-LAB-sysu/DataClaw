@@ -1,0 +1,26 @@
+{
+  "id": "medium022",
+  "question": "Comparing the number of SZSE-listed central state-owned enterprises in the industry of Zhaoye Huachang Real Estate Development Co., Ltd. with the number of SZSE-listed enterprises in the industry of Tongtong Zehong Securities Co., Ltd., which is larger?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Tongtong Zehong Securities Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Zhaoye Huachang Real Estate Development Co., Ltd. is Real Estate.",
+    "Extracted from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in Real Estate is 7.",
+    "Extracted from company_profile.csv that the industry of Tongtong Zehong Securities Co., Ltd. is Financial Industry.",
+    "Extracted from national_industry_status.csv that the number of SZSE-listed enterprises in Financial Industry is 38.",
+    "Compared 7 and 38; 38 is larger, so output \"Tongtong Zehong Securities Co., Ltd.\"."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhaoye Huachang Real Estate Development Co., Ltd.": "Real Estate",
+    "Number of SZSE-listed central state-owned enterprises in Real Estate": 7,
+    "Industry of Tongtong Zehong Securities Co., Ltd.": "Financial Industry",
+    "Number of SZSE-listed enterprises in Financial Industry": 38,
+    "Conclusion (larger value)": "Tongtong Zehong Securities Co., Ltd."
+  }
+}

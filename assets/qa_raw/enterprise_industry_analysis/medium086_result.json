@@ -1,0 +1,40 @@
+{
+  "id": "medium086",
+  "question": "Which is larger: the number of SSE-listed central state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates, or the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"the number of SSE-listed central state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates\" or \"the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhongke Zhiyun Data Services Company: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services: number of SSE-listed central state-owned enterprises = 12",
+    "Transportation, Storage and Postal Services: number of SSE-listed enterprises = 75"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Zhongke Zhiyun Data Services Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in Information Transmission, Software and IT Services is 12.",
+    "Extract from national_industry_status.csv that the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry is 75.",
+    "Compare the counts: 75 > 12, so the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Zhongke Zhiyun Data Services Company": "Information Transmission, Software and IT Services",
+    "Number of SSE-listed central state-owned enterprises in Information Transmission, Software and IT Services": 12,
+    "Number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry": 75,
+    "Comparison result (larger one)": "the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry"
+  },
+  "reference": [
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "d6ab2642-2691-4f63-a197-6a4c29026c0d"
+    },
+    {
+      "national_industry_status": "c5e98e13-e208-406f-aa43-9e029e2c4de6"
+    }
+  ]
+}

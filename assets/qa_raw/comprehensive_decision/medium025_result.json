@@ -1,0 +1,29 @@
+{
+  "id": "medium025",
+  "question": "In 2022, is the industry with the highest R&D investment growth rate also the industry with the largest R&D investment?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Only output the answer, do not add any explanation. If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter all records with district=\"National\" from national_industry_status.csv, extract the fields: industry, year-over-year change in R&D investment (average), and total R&D investment amount.",
+    "Filter industry records where both the year-over-year change in R&D investment (average) and total R&D investment amount are not empty (notna). Note: The total R&D investment amount in the file is in yuan (CNY), no conversion is needed.",
+    "Sort all industries by the year-over-year change in R&D investment (average) field in descending order. The industry with the highest R&D investment growth rate is \"Information transmission, software and information technology services\", with an R&D investment growth rate of 179.78%.",
+    "Sort all industries by the total R&D investment amount field in descending order. The industry with the largest total R&D investment amount is \"Information transmission, software and information technology services\", with a total R&D investment amount of 616535246522.23 yuan.",
+    "Compare the industry with the highest R&D investment growth rate (Information transmission, software and information technology services) with the industry with the largest total R&D investment amount (Information transmission, software and information technology services). Conclude that they are the same, so the answer is: Yes."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found year-over-year change in R&D investment (average) and total R&D investment amount (in yuan) for national data of each industry from national_industry_status.csv."
+  ],
+  "milestone": {
+    "Industry with the highest R&D investment growth rate": "Information transmission, software and information technology services",
+    "Maximum R&D investment growth rate (%)": 179.78,
+    "Industry with the largest total R&D investment amount": "Information transmission, software and information technology services",
+    "Maximum total R&D investment amount (yuan)": 616535246522.23,
+    "Comparison result": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

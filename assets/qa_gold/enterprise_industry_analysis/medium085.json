@@ -1,0 +1,24 @@
+{
+  "id": "medium085",
+  "question": "Which is larger: the number of HKEX-listed local state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates, or the number of BSE-listed enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"Zhongke Zhiyun Data Services Company\" or \"the number of BSE-listed enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Zhongke Zhiyun Data Services Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhongke Zhiyun Data Services Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed local state-owned enterprises in Information Transmission, Software and IT Services is 9.",
+    "Extract from national_industry_status.csv that the number of BSE-listed enterprises in the Transportation, Storage and Postal Services industry is 2.",
+    "Compare the counts: 9 > 2, so the number of HKEX-listed local state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhongke Zhiyun Data Services Company": "Information Transmission, Software and IT Services",
+    "Number of HKEX-listed local state-owned enterprises in Information Transmission, Software and IT Services": 9,
+    "Number of BSE-listed enterprises in the Transportation, Storage and Postal Services industry": 2,
+    "Comparison result (larger one)": "Zhongke Zhiyun Data Services Company"
+  }
+}

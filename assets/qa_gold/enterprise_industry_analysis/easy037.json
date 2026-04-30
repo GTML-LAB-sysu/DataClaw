@@ -1,0 +1,22 @@
+{
+  "id": "easy037",
+  "question": "In 2022, are the industries of Ma Gang Tai Jin Cai Liao Co., Ltd. and Ma Gang Gang Sheng Bu Xiu Gang Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Ma Gang Tai Jin Cai Liao Co., Ltd. = Metal Products",
+    "Extracted from company_profile.csv: industry of Ma Gang Gang Sheng Bu Xiu Gang Co., Ltd. = Metal Products",
+    "Compared the industry text of both companies; they are the same, so the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Ma Gang Tai Jin Cai Liao Co., Ltd.": "Metal Products",
+    "Industry of Ma Gang Gang Sheng Bu Xiu Gang Co., Ltd.": "Metal Products",
+    "Comparison result (whether the industries are the same)": "Yes"
+  }
+}

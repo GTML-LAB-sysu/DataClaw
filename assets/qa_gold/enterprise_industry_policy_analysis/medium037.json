@@ -1,0 +1,24 @@
+{
+  "id": "medium037",
+  "question": "Between the number of local policies issued by the Secretariat of the Office of Nansha Development Zone Administrative Committee, Guangzhou in the local policies for the industry of Bao Xin Hui Hui Wang Luo Co., Ltd. and the number of local policies issued by the Shanghai Municipality Finance Bureau in the local policies for the General Equipment Manufacturing industry, which is greater?",
+  "guidelines": "The answer must be \"Number of local policies for the industry of Bao Xin Hui Hui Wang Luo Co., Ltd. issued by the Secretariat of the Office of Nansha Development Zone Administrative Committee, Guangzhou\" or \"Number of local policies for the General Equipment Manufacturing industry issued by the Shanghai Municipality Finance Bureau\". Output only the policy title, without any explanation, analysis, or descriptive wording. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "General Equipment Manufacturing",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Bao Xin Hui Hui Wang Luo Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services, the policy count issued by the Secretariat of the Office of Nansha Development Zone Administrative Committee, Guangzhou is 1",
+    "Extract from policy_release_status.csv that in the local policies for General Equipment Manufacturing, the policy count issued by the Shanghai Municipality Finance Bureau is 1",
+    "Compare 1 and 1; since they are equal, output \"General Equipment Manufacturing\" according to the question requirement"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Bao Xin Hui Hui Wang Luo Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies_Secretariat of the Office of Nansha Development Zone Administrative Committee, Guangzhou policy count": 1,
+    "General Equipment Manufacturing local policies_Shanghai Municipality Finance Bureau policy count": 1,
+    "Comparison result": "Equal; according to the question requirement, output General Equipment Manufacturing"
+  }
+}

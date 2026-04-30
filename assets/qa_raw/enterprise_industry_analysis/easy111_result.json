@@ -1,0 +1,31 @@
+{
+  "id": "easy111",
+  "question": "Is Hua Xin Ze Chang Xin Cai Liao Co., Ltd. registered in Hebei Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Xin Ze Chang Xin Cai Liao Co., Ltd. (data in this dataset) registration province: Guangdong Province",
+    "The province named in the question is Hebei Province"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hua Xin Ze Chang Xin Cai Liao Co., Ltd.'s registration province is Guangdong Province",
+    "Compare Guangdong Province with the province named in the question, \"Hebei Province\"; the two are not the same",
+    "Therefore the company is not registered in Hebei Province; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Hua Xin Ze Chang Xin Cai Liao Co., Ltd. registration province": "Guangdong Province",
+    "Comparison province": "Hebei Province",
+    "Whether registered in Hebei Province": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "7fc42f28-4a93-4620-8dd5-97f6435325f2"
+    }
+  ]
+}

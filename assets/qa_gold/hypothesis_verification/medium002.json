@@ -1,0 +1,28 @@
+{
+  "id": "medium002",
+  "question": "In 2022, in the pharmaceutical manufacturing industry, what is the difference in Pearson correlation coefficient between private enterprises and state-owned enterprises(State-owned enterprises include central SOEs, local SOEs, SOEs under research institutes, and other SOEs.) with respect to R&D investment amount and cumulative number of granted Chinese invention patents?",
+  "guidelines": "Answer format: the difference value (four decimal places). Difference = private enterprise correlation − state-owned enterprise correlation. A positive value means private enterprises have stronger correlation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": -0.1452,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  },
+  "steps": [
+    "From company_profile.csv, filter firms whose industry is pharmaceutical manufacturing, extract company name, bmCode, and ownership; 449 pharmaceutical manufacturing firms found.",
+    "Split firms by ownership into state-owned group (central SOEs, local SOEs, SOEs under research institutes, other SOEs), 67 firms, and private enterprise group, 346 firms.",
+    "From company_operation_status.csv, join 2022 data by bmCode for these firms, extract R&D investment amount and cumulative number of granted Chinese invention patents. State-owned group: 67 firms matched; private group: 346 firms matched.",
+    "State-owned group: exclude firms with null R&D amount or null cumulative invention patents; 67 valid firms remain. Pearson correlation between R&D amount and cumulative invention patents: r = 0.7170.",
+    "Private group: exclude firms with null R&D amount or null cumulative invention patents; 309 valid firms remain. Pearson correlation between R&D amount and cumulative invention patents: r = 0.5719.",
+    "Difference = private group correlation − state-owned group correlation = 0.5719 − 0.7170 = −0.1452.",
+    "Output the difference: −0.1452."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "State-owned valid count": 67,
+    "Private valid count": 309,
+    "State-owned Pearson correlation": 0.717,
+    "Private Pearson correlation": 0.5719,
+    "Difference": -0.1452
+  }
+}

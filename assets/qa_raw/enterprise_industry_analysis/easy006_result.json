@@ -1,0 +1,40 @@
+{
+  "id": "easy006",
+  "question": "In 2022, is the annual number of authorized Chinese invention patents of Huan Xing Jin Ya Shi Shang Co., Ltd. lower than that of Li Ding Sheng Shang Fang Zhi Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Huan Xing Jin Ya Shi Shang Co., Ltd. (2022 dataset value): annual number of authorized Chinese invention patents = 8",
+    "Li Ding Sheng Shang Fang Zhi Co., Ltd. (2022 dataset value): annual number of authorized Chinese invention patents = 16"
+  ],
+  "milestone": {
+    "Annual number of authorized Chinese invention patents of Huan Xing Jin Ya Shi Shang Co., Ltd. in 2022": 8,
+    "Annual number of authorized Chinese invention patents of Li Ding Sheng Shang Fang Zhi Co., Ltd. in 2022": 16,
+    "Comparison result (whether Huan Xing Jin Ya Shi Shang Co., Ltd. is lower than Li Ding Sheng Shang Fang Zhi Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: annual number of authorized Chinese invention patents of Huan Xing Jin Ya Shi Shang Co., Ltd. in 2022 = 8",
+    "Extracted from company_operation_status.csv: annual number of authorized Chinese invention patents of Li Ding Sheng Shang Fang Zhi Co., Ltd. in 2022 = 16",
+    "Compared 8 and 16; since 8 < 16, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "5d67105a-bf43-417d-90ac-3ede097bafe4"
+    },
+    {
+      "company_operation_status": "6f68c180-c6ce-442f-8974-6544dde16d10"
+    },
+    {
+      "company_profile": "2ce0db8a-6bb6-4faf-964c-e078851990cf"
+    },
+    {
+      "company_profile": "73ee79bd-b25a-42e8-87be-42324114c643"
+    }
+  ]
+}

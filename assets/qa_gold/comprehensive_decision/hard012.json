@@ -1,0 +1,29 @@
+{
+  "id": "hard012",
+  "question": "In 2022, an antitrust research team analyzed the provincial market structure of the metal smelting and rolling processing industry. To ensure statistical reliability, only provinces with operating revenue amount records and at least 5 enterprises in the industry within the jurisdiction were included. Among qualifying provinces, the Herfindahl-Hirschman Index (HHI) was used to measure market concentration in each province: calculate each enterprise's operating revenue as a share of total operating revenue of all valid enterprises in the province, sum the squares of these shares and multiply by 100% to obtain the province's HHI value. Higher HHI indicates more concentrated markets and greater monopoly risk. After identifying the province with the highest HHI, extract the province's total operating profit amount and total operating revenue amount from provincial industry summary data, and calculate the corresponding operating profit margin. What is the operating profit margin of the province with the highest HHI?",
+  "guidelines": "The answer should be a percentage value with 2 decimal places. Output only the number, without the % symbol or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 4.14,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter enterprise records with industry=\"Metal Smelting and Rolling Processing\" from company_profile.csv, extract company name, bmCode, and province fields; 145 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract operating revenue amount field; 145 records after merge.",
+    "Filter 111 enterprises with non-null operating revenue amount; group by province to count enterprises per province; retain 13 provinces with enterprise count >= 5: ['Shanghai', 'Yunnan', 'Beijing', 'Sichuan', 'Anhui', 'Shandong', 'Guangdong', 'Jiangsu', 'Jiangxi', 'Henan', 'Zhejiang', 'Liaoning', 'Hong Kong'].",
+    "Within each valid province, calculate each enterprise's market share = enterprise operating revenue amount / sum of operating revenue amounts of all enterprises in the province.",
+    "Calculate Herfindahl-Hirschman Index (HHI) for each province = sum of squares of enterprise market shares × 100%; sort by HHI in descending order.",
+    "Among qualifying provinces, using the same valid enterprise sample as for HHI calculation (non-null operating revenue and province enterprise count ≥ 5), aggregate total operating profit amount and total operating revenue amount per province; calculate operating profit margin per province = sum of operating profit amounts / sum of operating revenue amounts × 100%.",
+    "The province with the highest HHI is Shanghai, HHI = 88.47. Total operating profit of valid enterprises in this province is 16,186,839,594.21 yuan, total operating revenue is 391,233,407,230.44 yuan; operating profit margin = 4.14%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of metal smelting and rolling processing enterprises": 145,
+    "Enterprises with non-null operating revenue": 111,
+    "Number of valid provinces (enterprises >= 5)": 13,
+    "Province with highest HHI": "Shanghai",
+    "HHI value": 88.47,
+    "Shanghai operating profit margin (%)": 4.14
+  }
+}

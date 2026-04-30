@@ -1,0 +1,40 @@
+{
+  "id": "medium057",
+  "question": "Hua Ying Tai Sheng Wealth Management Co., Ltd.industry's Number of policies (indicator) and China Sichuan ProvinceNumber of policies (indicator)what is the gap?",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Hua Ying Tai Sheng Wealth Management Co., Ltd.industry = Financial Industry",
+    "Financial Industryministerial policies_Number of policies (indicator)=3",
+    "ChinaTransportation、Postal Serviceslocal policies_Sichuan ProvinceNumber of policies (indicator)=1"
+  ],
+  "milestone": {
+    "Hua Ying Tai Sheng Wealth Management Co., Ltd.industry": "Financial Industry",
+    "Financial Industryministerial policies_Number of policies (indicator)": 3,
+    "ChinaTransportation、Postal Serviceslocal policies_Sichuan ProvinceNumber of policies (indicator)": 1,
+    "Difference(Number of policies (indicator)-Sichuan ProvinceNumber of policies (indicator))": 2.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Hua Ying Tai Sheng Wealth Management Co., Ltd.industry = Financial Industry",
+    "Extracted from policy_release_status.csv: Financial Industryministerial policies in Number of policies (indicator)=3",
+    "Extracted from policy_release_status.csv: ChinaTransportation、Postal Serviceslocal policies in Sichuan ProvinceNumber of policies (indicator)=1",
+    "Calculate difference: 3 - 1 = 2.0"
+  ],
+  "steps_num": 4,
+  "answer": 2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "a2734b19-8347-4c63-b17b-61453aab869e"
+    },
+    {
+      "company_profile": "b3ffe2d5-c5b8-4499-b7e7-c6955e84e897"
+    },
+    {
+      "policy_release_status": "687a938e-3531-48c2-be70-77d2cce459e8"
+    }
+  ]
+}

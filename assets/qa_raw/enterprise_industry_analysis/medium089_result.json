@@ -1,0 +1,40 @@
+{
+  "id": "medium089",
+  "question": "What is the difference between the minimum cumulative citation count of core patents in the industry where Huaxin Yuanshi New Materials Company operates and the same metric in the Scientific Research and Technical Services industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Huaxin Yuanshi New Materials Company: Non-metallic Mineral Products",
+    "Non-metallic Mineral Products: minimum cumulative citation count of core patents = 0",
+    "Scientific Research and Technical Services: minimum cumulative citation count of core patents = 0"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Huaxin Yuanshi New Materials Company belongs to the Non-metallic Mineral Products industry.",
+    "Extract from national_industry_status.csv that the minimum cumulative citation count of core patents in the Non-metallic Mineral Products industry is 0.",
+    "Extract from national_industry_status.csv that the minimum cumulative citation count of core patents in the Scientific Research and Technical Services industry is 0.",
+    "Calculate the difference: 0 - 0 = 0.0."
+  ],
+  "steps_num": 4,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Huaxin Yuanshi New Materials Company": "Non-metallic Mineral Products",
+    "Minimum cumulative citation count of core patents in the Non-metallic Mineral Products industry": 0,
+    "Minimum cumulative citation count of core patents in the Scientific Research and Technical Services industry": 0,
+    "Difference": 0.0
+  },
+  "reference": [
+    {
+      "national_industry_status": "be3c0164-12b0-4453-8c7a-e198721d914b"
+    },
+    {
+      "company_profile": "f150e113-74af-4929-b33d-7b30a892e86d"
+    },
+    {
+      "national_industry_status": "83fd9785-8bdc-4a18-ad0a-83f92b9aef7c"
+    }
+  ]
+}

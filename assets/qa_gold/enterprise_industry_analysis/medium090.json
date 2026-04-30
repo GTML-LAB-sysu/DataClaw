@@ -1,0 +1,24 @@
+{
+  "id": "medium090",
+  "question": "Compared with the same indicator in the Scientific Research and Technical Services industry, what is the difference in the mean cumulative number of PCT invention patent applications for the industry where Huaxin Yuanshi New Materials Company operates?",
+  "guidelines": "The answer must be an exact number, preserving all meaningful decimal places. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": -21.9787234042554,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Huaxin Yuanshi New Materials Company belongs to the Non-metallic Mineral Products industry.",
+    "Extract from national_industry_status.csv that the mean cumulative number of PCT invention patent applications in the Non-metallic Mineral Products industry is 12.063829787234.",
+    "Extract from national_industry_status.csv that the mean cumulative number of PCT invention patent applications in the Scientific Research and Technical Services industry is 34.0425531914894.",
+    "Calculate the difference: 12.063829787234 - 34.0425531914894 = -21.9787234042554."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Huaxin Yuanshi New Materials Company": "Non-metallic Mineral Products",
+    "Mean cumulative number of PCT invention patent applications in the Non-metallic Mineral Products industry": 12.063829787234,
+    "Mean cumulative number of PCT invention patent applications in the Scientific Research and Technical Services industry": 34.0425531914894,
+    "Difference": -21.9787234042554
+  }
+}

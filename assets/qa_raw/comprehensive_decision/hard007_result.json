@@ -1,0 +1,44 @@
+{
+  "id": "hard007",
+  "question": "In 2022, when a research institution was reviewing the implementation effectiveness of provincial industrial policies in the food and beverage industry, it found that although some provinces had issued many support policies, the profitability of enterprises within their jurisdictions was not ideal. To identify such \"policy-heavy, low-return\" provinces, the institution planned to analyze separately those provinces with a relatively large number of policies (including national-level policies, totaling 3 or more): sum the operating profit amounts of all food and beverage industry enterprises in these provinces and divide by the sum of operating revenue amounts to obtain the comprehensive operating profit margin for each province, then identify the province with the lowest profit margin. What is the profit margin value (as a percentage, rounded to two decimal places) for the province with the lowest comprehensive operating profit margin?",
+  "guidelines": "The answer should be a percentage value with 2 decimal places. Output only the number, without the % symbol or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter policy records with industry field containing \"Food and Beverage Industry\" from policy_release_status.csv, 16 records in total. Group by province field to count policy numbers per province; 4 national-level policies need to be added to each province. After adding national-level policy count to each province's count, filter provinces with policy count >= 3, totaling 9 provinces: ['Yunnan', 'Sichuan', 'Ningxia', 'Hebei', 'Henan', 'Hainan', 'Hunan', 'Gansu', 'Guizhou'].",
+    "Filter all enterprise records with industry=\"Food and Beverage Industry\" from company_profile.csv, extract company name, bmCode, and province fields; 247 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract operating profit amount and operating revenue amount fields.",
+    "Filter valid enterprises with non-null operating revenue amount; 247 enterprises in total.",
+    "Group by province field, aggregate the sum of operating profit amounts and sum of operating revenue amounts for each province.",
+    "Calculate comprehensive operating profit margin for each province = sum of operating profit amounts / sum of operating revenue amounts × 100%.",
+    "Among the 9 provinces with >=3 policies, sort by operating profit margin in ascending order; the province with the lowest operating profit margin is Hainan, with total operating profit of 78,834,917.61 yuan, total operating revenue of 13,274,274,000.99 yuan, and operating profit margin = 0.59%."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "16 food and beverage industry related policies were found in policy_release_status.csv.",
+    "247 food and beverage industry enterprises were found in company_profile.csv.",
+    "2022 operating profit and operating revenue data for 247 enterprises were obtained from company_operation_status.csv; 247 valid enterprises."
+  ],
+  "milestone": {
+    "Total food and beverage industry policies": 16,
+    "Provinces with >=3 policies": [
+      "Yunnan",
+      "Sichuan",
+      "Ningxia",
+      "Hebei",
+      "Henan",
+      "Hainan",
+      "Hunan",
+      "Gansu",
+      "Guizhou"
+    ],
+    "Number of valid enterprises": 247,
+    "Hainan total operating profit": 78834917.61,
+    "Hainan total operating revenue": 13274274000.99,
+    "Hainan operating profit margin (%)": 0.59
+  },
+  "answer": 0.59,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  }
+}

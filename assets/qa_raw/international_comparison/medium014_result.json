@@ -1,0 +1,37 @@
+{
+  "id": "medium014",
+  "question": "Weibo (WB / Weibo Corporation) is a leading social media platform in China. Based on Weibo 2022 annual report, compute its net profit margin (net profit attributable to Weibo shareholders ÷ operating revenue, in percentage), and conduct peer analysis against listed companies in China's information transmission, software and IT services industry. Rank by operating revenue; top 10% are defined as industry leaders. Answer in order: Weibo's net profit margin, and the difference (in percentage points) between Weibo's net profit margin and the median net profit margin of industry leaders.",
+  "guidelines": "Answer in order: Weibo 2022 net profit margin (%), and the difference between Weibo and industry leaders (top 10% by revenue) median net profit margin (percentage points). Values rounded to 2 decimal places, e.g. [4.66, 1.21]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Weibo (WB) 2022 annual report (20-F) consolidated income statement: 2022 Net income attributable to Weibo's shareholders = 85,555 thousand USD, Total net revenues = 1,836,332 thousand USD.",
+    "Calculate Weibo net profit margin: 85,555 / 1,836,332 × 100% = 4.66%.",
+    "Filter company_profile.csv for industry=\"information transmission, software and information technology services\" (information transmission, software and IT services), 644 companies. Join with company_operation_status.csv for 2022 net profit and operating revenue; after excluding invalid data (zero or missing revenue), 644 valid. Compute net profit margin for each.",
+    "Rank by operating revenue descending; top 10% (65 companies) as industry leaders, remaining 579 as non-leaders. Leaders median net profit margin = 3.45%, non-leaders median = 2.25%.",
+    "Calculate difference: 4.66% - 3.45% = 1.21 percentage points. Weibo net profit margin is 1.21 percentage points above domestic IT industry leaders median."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Weibo (WB) 2022 20-F annual report, including consolidated income statement: net profit attributable to Weibo shareholders 85,555 thousand USD, operating revenue 1,836,332 thousand USD.",
+    "company_profile.csv: 644 companies in information transmission, software and IT services industry.",
+    "company_operation_status.csv: 2022 net profit and operating revenue for 644 companies; net profit margin computed; leaders and non-leaders median by revenue ranking."
+  ],
+  "milestone": {
+    "Weibo 2022 net profit attributable to shareholders(thousand USD)": 85555,
+    "Weibo 2022 operating revenue(thousand USD)": 1836332,
+    "Weibo net profit margin(%)": 4.66,
+    "IT industry valid company count": 644,
+    "Industry leaders count": 65,
+    "Industry leaders median net profit margin(%)": 3.45,
+    "Non-leaders median net profit margin(%)": 2.25,
+    "Weibo vs leaders median difference(percentage points)": 1.21
+  },
+  "answer": [
+    4.66,
+    1.21
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

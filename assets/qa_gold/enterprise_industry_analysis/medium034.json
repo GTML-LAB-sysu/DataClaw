@@ -1,0 +1,26 @@
+{
+  "id": "medium034",
+  "question": "Is the minimum market capitalization in the industry of Jianfan Ningze Elderly Care Services Co., Ltd. lower than the minimum market capitalization in the industry of Zhongche Yuanze Shipbuilding Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Jianfan Ningze Elderly Care Services Co., Ltd. is Health and Social Work.",
+    "Extracted from national_industry_status.csv that the minimum market capitalization in Health and Social Work is 2.04 hundred million yuan.",
+    "Extracted from company_profile.csv that the industry of Zhongche Yuanze Shipbuilding Co., Ltd. is Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing.",
+    "Extracted from national_industry_status.csv that the minimum market capitalization in this industry is 6.2 hundred million yuan.",
+    "Judged whether 2.04 is lower than 6.2; the conclusion is \"Yes\"."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Jianfan Ningze Elderly Care Services Co., Ltd.": "Health and Social Work",
+    "Minimum market capitalization in Health and Social Work (hundred million yuan)": 2.04,
+    "Industry of Zhongche Yuanze Shipbuilding Co., Ltd.": "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Minimum market capitalization in Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing (hundred million yuan)": 6.2,
+    "Whether lower": "Yes"
+  }
+}

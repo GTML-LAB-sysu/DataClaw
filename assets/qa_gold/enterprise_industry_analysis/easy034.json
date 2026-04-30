@@ -1,0 +1,22 @@
+{
+  "id": "easy034",
+  "question": "In 2022, between the year-over-year net profit growth rate of Ping Ru Gang Tong Yun Wu Liu Co., Ltd. and the net profit amount of Wei Xing Run Jin Ke Ji Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Wei Xing Run Jin Ke Ji Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: year-over-year net profit growth rate of Ping Ru Gang Tong Yun Wu Liu Co., Ltd. in 2022 = -9.38 %",
+    "Extracted from company_operation_status.csv: net profit amount of Wei Xing Run Jin Ke Ji Co., Ltd. in 2022 = 388147978.44 CNY",
+    "Compared -9.38 and 388147978.44 as numeric values; since 388147978.44 > -9.38, the larger one is \"Wei Xing Run Jin Ke Ji Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Year-over-year net profit growth rate of Ping Ru Gang Tong Yun Wu Liu Co., Ltd. in 2022": "-9.38 %",
+    "Net profit amount of Wei Xing Run Jin Ke Ji Co., Ltd. in 2022 (CNY)": 388147978.44,
+    "Comparison result (which value is larger)": "Wei Xing Run Jin Ke Ji Co., Ltd."
+  }
+}

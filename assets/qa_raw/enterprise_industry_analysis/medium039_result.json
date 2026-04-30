@@ -1,0 +1,46 @@
+{
+  "id": "medium039",
+  "question": "Is there any difference between the minimum State Technological Invention Award value in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. and the corresponding industry metric in Shanghai where Lang Ji Hui Ruan Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be \"No difference\" or the other entity mentioned in the question. Output only the entity text without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.: Real Estate",
+    "Minimum State Technological Invention Award value in Real Estate: 0",
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.: Shanghai Municipality",
+    "Minimum State Technological Invention Award value in Shanghai Information Transmission, Software and IT Services: 0"
+  ],
+  "answer": "No difference",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "Minimum State Technological Invention Award value in Real Estate": 0,
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Minimum State Technological Invention Award value in Shanghai Information Transmission, Software and IT Services": 0,
+    "Whether different": "No difference"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: minimum State Technological Invention Award value in Real Estate = 0",
+    "Extracted from company_profile.csv: province of Lang Ji Hui Ruan Technology Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: minimum State Technological Invention Award value in Shanghai Information Transmission, Software and IT Services = 0",
+    "Both values are 0, so output \"No difference\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "a0b01b7e-ed2c-4c4a-b7d7-15062fab3ef4"
+    },
+    {
+      "regional_industry_status": "be71aa1d-8666-44e9-8f26-ffd92dc87001"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    }
+  ]
+}

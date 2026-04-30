@@ -1,0 +1,24 @@
+{
+  "id": "medium045",
+  "question": "Is the number of central ministry/agency policies issued by the Ministry of Housing and Urban-Rural Development in the ministerial policies for the industry of Zhao Ye Ze Jin Real Estate Holdings Co., Ltd. greater than the total number of policies for the Metal Smelting and Rolling Processing industry in Gansu Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhao Ye Ze Jin Real Estate Holdings Co., Ltd.'s industry is Real Estate",
+    "Extract from policy_release_status.csv that in the ministerial policies for Real Estate, the policy count issued by the Ministry of Housing and Urban-Rural Development is 1",
+    "Extract from policy_release_status.csv that in Gansu Province, the policy count for the Metal Smelting and Rolling Processing industry is 1",
+    "Determine whether 1 is greater than 1; since it is not, output \"No\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhao Ye Ze Jin Real Estate Holdings Co., Ltd.": "Real Estate",
+    "Real Estate ministerial policies_Ministry of Housing and Urban-Rural Development policy count": 1,
+    "Gansu Province Metal Smelting and Rolling Processing industry policy count": 1,
+    "Whether greater (Ministry of Housing and Urban-Rural Development policy count > industry policy count)": "No"
+  }
+}

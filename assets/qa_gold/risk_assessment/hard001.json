@@ -1,0 +1,35 @@
+{
+  "id": "hard001",
+  "question": "In 2022, in the automobile manufacturing industry, focusing on provinces with a total of 8 or more relevant enterprises, what proportion of the qualifying provinces simultaneously meet both the 'high policy dependence' risk (government subsidies as a proportion of operating profit >30%) and the 'high market concentration' risk (operating revenue CR4>60%)?",
+  "guidelines": "Answer format: percentage value (2 decimal places). E.g. 25.67. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 20.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"Automobile Manufacturing\" and total enterprises>=8, extract province, total operating profit amount, total government reward and subsidy funds, and total operating revenue amount fields, finding 5 provinces.",
+    "Filter provinces with total operating profit amount>0 and all required fields non-null as provinces meeting the statistical criteria, totaling 5 provinces.",
+    "For each province meeting the statistical criteria, calculate government subsidies as a proportion of operating profit = (total government reward and subsidy funds / total operating profit amount) × 100%, and filter provinces with high policy dependence (>30%).",
+    "From company_profile.csv, filter enterprises with industry=\"Automobile Manufacturing\"; from company_operation_status.csv, obtain 2022 operating revenue amount, and group by province.",
+    "For each province meeting the statistical criteria, filter enterprises with non-null operating revenue amount, sort by operating revenue amount in descending order, calculate CR4 = (sum of top 4 enterprises' operating revenue / total operating revenue of all enterprises in that province) × 100%, and filter provinces with high market concentration (>60%).",
+    "Take the intersection of high policy dependence provinces and high market concentration provinces, and count the number of dual-risk provinces as 1.",
+    "Calculate the proportion = (number of dual-risk provinces / total number of provinces meeting statistical criteria) × 100% = (1 / 5) × 100% = 20.00%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Total number of provinces meeting statistical criteria": 5,
+    "High policy dependence provinces": [
+      "Shanghai"
+    ],
+    "High market concentration provinces": [
+      "Guangdong",
+      "Shanghai",
+      "Zhejiang",
+      "Shandong"
+    ],
+    "Number of dual-risk provinces": 1,
+    "Proportion (%)": 20.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy043",
+  "question": "Comparing the incorporation dates of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd. and Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd., which one was established earlier?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: incorporation date of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd. = 1994-04-20",
+    "Extracted from company_profile.csv: incorporation date of Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd. = 2004-10-09",
+    "Compared dates 1994-04-20 and 2004-10-09; since 1994-04-20 is earlier, the judgment is \"Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Incorporation date of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd.": "1994-04-20",
+    "Incorporation date of Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd.": "2004-10-09",
+    "Comparison result (which one is earlier)": "Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd."
+  }
+}

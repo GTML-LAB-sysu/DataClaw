@@ -1,0 +1,34 @@
+{
+  "id": "easy085",
+  "question": "In 2022, which is higher: the median number of National Technological Invention Awards in China's accommodation and catering industry, or in the real estate industry?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or company name without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Nationwide (2022 dataset value): median number of National Technological Invention Awards in accommodation and catering industry = 0",
+    "Nationwide (2022 dataset value): median number of National Technological Invention Awards in real estate industry = 0"
+  ],
+  "milestone": {
+    "Median National Technological Invention Awards in nationwide accommodation and catering industry": 0,
+    "Median National Technological Invention Awards in nationwide real estate industry": 0,
+    "Comparison result": "Equal"
+  },
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from national_industry_status.csv: median National Technological Invention Awards in accommodation and catering industry = 0",
+    "Extracted from national_industry_status.csv: median National Technological Invention Awards in real estate industry = 0",
+    "Compared 0 and 0, and judged \"Equal\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "national_industry_status": "9f31ba81-0925-47ba-93e1-fdd88dd6c638"
+    },
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    }
+  ]
+}

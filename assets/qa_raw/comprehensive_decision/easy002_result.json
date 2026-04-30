@@ -1,0 +1,36 @@
+{
+  "id": "easy002",
+  "question": "In 2022, nationwide, how is the chemical raw materials and chemical products manufacturing industry ranked by asset scale? Please list the top five provinces.",
+  "guidelines": "Answer format: [Province A, Province B, ...]. Output only province names, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter all records with industry=\"Chemical Raw Materials and Chemical Products Manufacturing\" from regional_industry_status.csv, and extract the province and total assets fields.",
+    "Sort all provincial data by total assets in descending order to determine the asset scale ranking of each province. Extract the top five provinces and their total assets: Shandong Province (544109686731.85), Zhejiang Province (401644798867.80), Jiangsu Province (250743006622.33), Shanghai (230472528900.23), Guangdong Province (176926240169.03)."
+  ],
+  "steps_num": 2,
+  "milestone": {
+    "Total assets in Shandong Province (yuan)": 544109686731.85,
+    "Total assets in Zhejiang Province (yuan)": 401644798867.8,
+    "Total assets in Jiangsu Province (yuan)": 250743006622.33,
+    "Total assets in Shanghai (yuan)": 230472528900.23,
+    "Total assets in Guangdong Province (yuan)": 176926240169.03,
+    "Top five provinces": [
+      "Shandong Province",
+      "Zhejiang Province",
+      "Jiangsu Province",
+      "Shanghai",
+      "Guangdong Province"
+    ]
+  },
+  "answer": [
+    "Shandong Province",
+    "Zhejiang Province",
+    "Jiangsu Province",
+    "Shanghai",
+    "Guangdong Province"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  }
+}

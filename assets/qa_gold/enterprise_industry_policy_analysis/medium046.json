@@ -1,0 +1,24 @@
+{
+  "id": "medium046",
+  "question": "Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.industry's Ministry of Housing and Urban-Rural DevelopmentNumber of policies (indicator) and Gansu Province Development and Reform CommissionNumber of policies (indicator)what is the gap?",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.industry = Real Estate",
+    "Extracted from policy_release_status.csv: Real Estateministerial policies in Ministry of Housing and Urban-Rural DevelopmentNumber of policies (indicator)=1",
+    "policy_release_status.csv in by province=Gansu Province、industry=extractlocal policies in Gansu ProvinceDevelopment and Reform CommissionNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.industry": "Real Estate",
+    "Real Estateministerial policies_Ministry of Housing and Urban-Rural DevelopmentNumber of policies (indicator)": 1,
+    "Gansu Provincelocal policies_Gansu ProvinceDevelopment and Reform CommissionNumber of policies (indicator)": 1,
+    "Difference(Ministry of Housing and Urban-Rural DevelopmentNumber of policies (indicator)-Gansu ProvinceDevelopment and Reform CommissionNumber of policies (indicator))": 0.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy038",
+  "question": "In 2022, is the enterprise type of Magang Taijin Materials Co., Ltd. the same as that of Magang Gangsheng Stainless Steel Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: enterprise type of Magang Taijin Materials Co., Ltd. = Shanghai and Shenzhen",
+    "Extracted from company_profile.csv: enterprise type of Magang Gangsheng Stainless Steel Co., Ltd. = Shanghai and Shenzhen",
+    "Compared the two enterprise type texts and judged \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Enterprise type of Magang Taijin Materials Co., Ltd.": "Shanghai and Shenzhen",
+    "Enterprise type of Magang Gangsheng Stainless Steel Co., Ltd.": "Shanghai and Shenzhen",
+    "Comparison result (whether the enterprise types are the same)": "Yes"
+  }
+}

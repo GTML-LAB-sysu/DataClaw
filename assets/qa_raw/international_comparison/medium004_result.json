@@ -1,0 +1,34 @@
+{
+  "id": "medium004",
+  "question": "What is the net profit margin (net profit ÷ operating revenue × 100%) of Vipshop according to its 2022 annual report? How many percentage points higher is it compared with the median net profit margin of listed companies in China's wholesale and retail industry?",
+  "guidelines": "Answer in order: Vipshop net profit margin (%, 2 decimal places) and the difference from domestic industry median (percentage points, 2 decimal places; positive value means Vipshop is higher), e.g. [6.12, 4.57]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Vipshop 2022 20-F annual report PDF, Consolidated Statements of Income: 2022 Total net revenues = RMB 103,152,489 thousand, Net income = RMB 6,311,835 thousand. Net profit margin = 6,311,835 / 103,152,489 × 100% = 6.12%.",
+    "Filter company_profile.csv for companies with industry=='wholesale and retail', 273 companies.",
+    "Obtain operating revenue and net profit for the 273 companies from company_operation_status.csv; compute net profit margin (net profit ÷ revenue × 100%) for each; all 273 have valid data. Median net profit margin = 1.55%.",
+    "Calculate difference between Vipshop and domestic wholesale and retail industry median: 6.12% - 1.55% = 4.57 percentage points; Vipshop is significantly above domestic industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "Vipshop 2022 20-F annual report (SEC Filing), including 2022 Total net revenues RMB 103,152,489 thousand, Net income RMB 6,311,835 thousand.",
+    "company_profile.csv: 273 companies in wholesale and retail industry.",
+    "company_operation_status.csv: operating revenue and net profit for 273 wholesale and retail companies; net profit margin computed."
+  ],
+  "milestone": {
+    "Vipshop 2022 total net revenue(RMB thousand)": 103152489,
+    "Vipshop 2022 net profit(RMB thousand)": 6311835,
+    "Vipshop net profit margin(%)": 6.12,
+    "Domestic wholesale and retail industry company count": 273,
+    "Domestic wholesale and retail industry median net profit margin(%)": 1.55,
+    "Net profit margin difference(percentage points)": 4.57
+  },
+  "answer": [
+    6.12,
+    4.57
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

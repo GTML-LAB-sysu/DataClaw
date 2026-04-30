@@ -1,0 +1,34 @@
+{
+  "id": "easy062",
+  "question": "In 2022, what is the difference between the number of SSE-listed enterprises in the education industry in Beijing and the number of SSE-listed central state-owned enterprises in the national consumer electronics and electrical industry?",
+  "guidelines": "The answer must be a number with one decimal place. Output only the number without units, commas, or any explanatory text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Beijing (2022 dataset value): number of SSE-listed enterprises in the education industry = 2",
+    "Nationwide (2022 dataset value): number of SSE-listed central state-owned enterprises in the consumer electronics and electrical industry = 4"
+  ],
+  "milestone": {
+    "Number of SSE-listed enterprises in Beijing's education industry": 2,
+    "Number of SSE-listed central state-owned enterprises in the national consumer electronics and electrical industry": 4,
+    "Difference (Beijing education SSE-listed count - national consumer electronics central SOE SSE-listed count)": -2.0
+  },
+  "answer": -2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the number of SSE-listed enterprises for Beijing in the education industry is 2.",
+    "Extracted from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in the consumer electronics and electrical industry is 4.",
+    "Calculated the difference: 2 - 4 = -2.0."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "regional_industry_status": "c6b206c0-40ee-4ae8-ab1d-37903bfb3cd1"
+    },
+    {
+      "national_industry_status": "51401b53-3d2a-4dc5-bda7-8a5fc02dd831"
+    }
+  ]
+}

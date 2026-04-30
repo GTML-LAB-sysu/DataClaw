@@ -1,0 +1,30 @@
+{
+  "id": "medium011",
+  "question": "Atour Lifestyle Group (ATAT) is a representative mid-to-high-end chain hotel brand in China. Based on Atour 2022 annual report, answer in order: (1) Asset-liability ratio (total liabilities ÷ total assets, %); (2) Median asset-liability ratio of listed companies in China's accommodation and catering industry (%); (3) How many percentage points higher is Atour's asset-liability ratio than that median?",
+  "guidelines": "Answer the three sub-questions in order; values rounded to 2 decimal places, e.g. [75.07, 63.83, 11.24]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "answer": [
+    75.07,
+    63.83,
+    11.24
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Extract from Atour Lifestyle Group (ATAT) 2022 annual report PDF consolidated balance sheet: 2022 year-end Total liabilities = RMB 3,574,620 thousand, Total assets = RMB 4,762,026 thousand.",
+    "Calculate Atour asset-liability ratio: 3,574,620 / 4,762,026 × 100% = 75.07%.",
+    "Filter company_profile.csv for industry=\"accommodation and catering\", 35 companies. Obtain 2022 asset-liability ratio for these 35 from company_operation_status.csv; after excluding missing values, 35 valid; median = 63.83%.",
+    "Calculate difference: 75.07% - 63.83% = 11.24 percentage points. Atour's asset-liability ratio is 11.24 percentage points above the domestic accommodation and catering industry median, mainly affected by operating lease liabilities (IFRS 16/ASC 842) recognition."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Atour 2022 total liabilities(RMB thousand)": 3574620,
+    "Atour 2022 total assets(RMB thousand)": 4762026,
+    "Atour asset-liability ratio(%)": 75.07,
+    "Accommodation and catering industry valid company count": 35,
+    "Industry median asset-liability ratio(%)": 63.83,
+    "Atour above industry median(percentage points)": 11.24
+  }
+}

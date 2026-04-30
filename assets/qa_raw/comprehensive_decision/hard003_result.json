@@ -1,0 +1,41 @@
+{
+  "id": "hard003",
+  "question": "In 2022, an automotive manufacturing enterprise commissioned a third-party institution to score and rate the industrial supporting capacity of each province before selecting a site for a new plant. The scoring rules are as follows: first, rank provinces in descending order by the number of government policies related to automotive manufacturing, and take the top five provinces by policy count as the candidate pool; then, within the candidate provinces, calculate the industrial supporting composite index, which is a weighted combination of three components—upstream and downstream supply chain density (weight 0.4), local labor reserve (weight 0.3), and government subsidy intensity per enterprise (weight 0.3). Supply chain density is defined as the ratio of total automotive manufacturing enterprises in the province to the national total in the industry; labor reserve is defined as the ratio of total industry employees in the province to the national total in the industry; subsidy intensity is defined as total government rewards and subsidies for automotive manufacturing in the province divided by the number of enterprises in the province (subsidy intensity must be normalized across all provinces before being used in the formula). Among the top five provinces by policy ranking, what is the composite index value of the province with the highest industrial supporting composite index?",
+  "guidelines": "Answer format: numerical value (4 decimal places). Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter policy records from policy_release_status.csv where industry field contains \"Automotive Manufacturing\"; 69 records found. Group by province to count policy numbers per province (excluding \"National\" level), sort by policy count descending; top 5 provinces by policy support are ['Guangdong Province', 'Shanghai', 'Hunan Province', 'Sichuan Province', 'Chongqing'].",
+    "Filter records with industry=\"Automotive Manufacturing\" from regional_industry_status.csv, extract province, total enterprises, total employees, and total government rewards and subsidies; 34 records found.",
+    "Filter records with industry=\"Automotive Manufacturing\" from national_industry_status.csv to obtain national total of 230 automotive manufacturing enterprises and 3,254,510 total employees.",
+    "Calculate three original indicators for each province: upstream-downstream enterprise density = total enterprises/230, talent reserve = total employees/3,254,510, subsidy intensity = total government rewards and subsidies/total enterprises.",
+    "Apply min-max normalization to subsidy intensity: normalized value = (subsidy intensity - 5468453.88)/(476294284.71 - 5468453.88).",
+    "Calculate industrial supporting composite index = upstream-downstream enterprise density × 0.4 + talent reserve × 0.3 + normalized subsidy intensity × 0.3.",
+    "Filter among top 5 policy provinces ['Guangdong Province', 'Shanghai', 'Hunan Province', 'Sichuan Province', 'Chongqing'] (Chongqing excluded due to missing data for composite index calculation). Guangdong Province has the highest composite index: upstream-downstream enterprise density 0.1174, talent reserve 0.4499, normalized subsidy intensity 0.4558, composite index = 0.3187."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "69 automotive manufacturing-related policies were found in policy_release_status.csv.",
+    "34 automotive manufacturing provincial records were found in regional_industry_status.csv.",
+    "National total of 230 automotive manufacturing enterprises and 3,254,510 employees were obtained from national_industry_status.csv."
+  ],
+  "milestone": {
+    "National total automotive manufacturing enterprises": 230.0,
+    "National total automotive manufacturing employees": 3254510.0,
+    "Top 5 provinces by policy": [
+      "Guangdong Province",
+      "Shanghai",
+      "Hunan Province",
+      "Sichuan Province",
+      "Chongqing"
+    ],
+    "Guangdong Province upstream-downstream enterprise density": 0.1174,
+    "Guangdong Province talent reserve": 0.4499,
+    "Guangdong Province normalized subsidy intensity": 0.4558,
+    "Guangdong Province composite index": 0.3187
+  },
+  "answer": 0.3187,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  }
+}

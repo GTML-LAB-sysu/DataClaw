@@ -1,0 +1,29 @@
+{
+  "id": "medium019",
+  "question": "In 2022, amid policy support for digital economy and e-commerce development in China, what was PDD Holdings' net profit margin (net profit ÷ operating revenue × 100%) in its annual report? How many percentage points higher is it compared with the median net profit margin of listed companies in China's wholesale and retail industry?",
+  "guidelines": "Answer in order: PDD Holdings net profit margin (%), and the number of percentage points above domestic median. Values rounded to 2 decimal places, e.g. [24.16, 22.60]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "answer": [
+    24.16,
+    22.6
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Extract from PDD Holdings 2022 20-F annual report PDF: 2022 Total Revenues = RMB 130,557,589 thousand (approx. 130.558 billion), Net Income = RMB 31,538,100 thousand (approx. 31.538 billion). Net profit margin = 31,538,100 / 130,557,589 × 100% = 24.16%.",
+    "Filter company_profile.csv for industry=='wholesale and retail', 273 companies.",
+    "Obtain net profit and operating revenue for the 273 wholesale and retail companies from company_operation_status.csv; compute net profit margin = net profit / operating revenue × 100% for each; all 273 have valid data. Industry median net profit margin = 1.55%.",
+    "Calculate difference between PDD and domestic wholesale and retail industry median: 24.16% - 1.55% = 22.60 percentage points; PDD is significantly above industry median."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "PDD 2022 total revenue(RMB thousand)": 130557589,
+    "PDD 2022 net profit(RMB thousand)": 31538100,
+    "PDD net profit margin(%)": 24.16,
+    "Wholesale and retail industry company count": 273,
+    "Wholesale and retail industry median net profit margin(%)": 1.55,
+    "Net profit margin difference(percentage points)": 22.6
+  }
+}

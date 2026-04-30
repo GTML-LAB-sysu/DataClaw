@@ -1,0 +1,46 @@
+{
+  "id": "medium055",
+  "question": "Between the median annual number of PCT invention patent applications for the corresponding industry in the province where Jinzhi Hongsheng Asset Management Company is located and that in the province where Zhonghai Gongchangjin Architectural Design Company is located, which is higher?",
+  "guidelines": "The answer must be either a company name or the word \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Jinzhi Hongsheng Asset Management Company: Shanghai",
+    "Median annual number of PCT invention patent applications in Shanghai for the financial industry: 2",
+    "Province of Zhonghai Gongchangjin Architectural Design Company: Guangdong Province",
+    "Median annual number of PCT invention patent applications in Guangdong Province for the construction industry: 0"
+  ],
+  "answer": "Jinzhi Hongsheng Asset Management Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Jinzhi Hongsheng Asset Management Company": "Shanghai",
+    "Median annual number of PCT invention patent applications in Shanghai for the financial industry": 2,
+    "Province of Zhonghai Gongchangjin Architectural Design Company": "Guangdong Province",
+    "Median annual number of PCT invention patent applications in Guangdong Province for the construction industry": 0,
+    "Comparison result (higher one)": "Jinzhi Hongsheng Asset Management Company"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Jinzhi Hongsheng Asset Management Company is located in Shanghai.",
+    "Extract from regional_industry_status.csv that the median annual number of PCT invention patent applications in Shanghai for the financial industry is 2.",
+    "Extract from company_profile.csv that Zhonghai Gongchangjin Architectural Design Company is located in Guangdong Province.",
+    "Extract from regional_industry_status.csv that the median annual number of PCT invention patent applications in Guangdong Province for the construction industry is 0.",
+    "Compare 2 and 0; 2 is higher, so output \"Jinzhi Hongsheng Asset Management Company\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "regional_industry_status": "3b977bc5-a654-409d-a92b-b463231c766a"
+    },
+    {
+      "company_profile": "f3608099-34f7-49a3-b2f5-0781705eeafc"
+    }
+  ]
+}

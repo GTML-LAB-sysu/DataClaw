@@ -1,0 +1,26 @@
+{
+  "id": "medium020",
+  "question": "Which is greater: the number of SZSE-listed central state-owned enterprises in the industry of Bi Yuan Zhi Ze Urban Development Co., Ltd., or the number of SSE-listed local state-owned enterprises in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Zhi Ze Urban Development Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: SZSE-listed central state-owned enterprise count in Real Estate = 7",
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: SSE-listed local state-owned enterprise count in Real Estate = 38",
+    "Compared 7 and 38; since 38 is greater, output \"Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Bi Yuan Zhi Ze Urban Development Co., Ltd.": "Real Estate",
+    "SZSE-listed central state-owned enterprise count in Real Estate": 7,
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "SSE-listed local state-owned enterprise count in Real Estate": 38,
+    "Comparison result (which is greater)": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd."
+  }
+}

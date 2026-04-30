@@ -1,0 +1,22 @@
+{
+  "id": "easy097",
+  "question": "Are Lv Shan Zhi Jin Real Estate Development Co., Ltd. and Huan Qiu Tai Jin Zhi Neng Dian Qi Co., Ltd. in the same industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Huan Qiu Tai Jin Zhi Neng Dian Qi Co., Ltd.'s industry is Commercial Electrical Machinery and Equipment Manufacturing",
+    "From company_profile.csv, extract that Lv Shan Zhi Jin Real Estate Development Co., Ltd.'s industry is Real Estate",
+    "The two companies are in different industries; they are not peers; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Huan Qiu Tai Jin Zhi Neng Dian Qi Co., Ltd. industry": "Commercial Electrical Machinery and Equipment Manufacturing",
+    "Lv Shan Zhi Jin Real Estate Development Co., Ltd. industry": "Real Estate",
+    "Whether same industry": "No"
+  }
+}

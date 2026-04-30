@@ -1,0 +1,41 @@
+{
+  "id": "hard004",
+  "question": "In 2022, against the backdrop of intensively issued policies promoting biopharmaceutical industry cluster development and encouraging innovative drug R&D across regions, what is Zai Lab's price-to-sales ratio (market cap ÷ annual operating revenue) in multiples? How many times is its price-to-sales ratio relative to the median price-to-sales ratio of domestic pharmaceutical manufacturing industry leading enterprises (top 10% by revenue)?",
+  "guidelines": "Answer in order: (1) Zai Lab 2022 price-to-sales ratio (multiples); (2) Zai Lab's price-to-sales ratio as a multiple of the domestic pharmaceutical manufacturing industry top 10% by revenue leading enterprises' median price-to-sales ratio. Retain 2 decimal places for all values and return as an array. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Extract from Zai Lab (ZLAB) 2022 Annual Report (10-K): Consolidated Statements of Operations - Total revenues = $215,040 thousand, including Product revenue, net $212,672 thousand and Collaboration revenue $2,368 thousand.",
+    "Extract from annual report Consolidated Balance Sheets: As of December 31, 2022, issued and outstanding common shares = 960,219,570. Each ADS represents 10 common shares, hence ADS equivalent = 96,021,957. ZLAB ADS closing price on December 30, 2022 (last trading day of year) = $33.97. Calculate market cap = 96,021,957 × $33.97 = $3,261,865,879.",
+    "Calculate Zai Lab price-to-sales ratio = market cap / operating revenue = $3,261,865,879 / $215,040,000 = 15.17x.",
+    "Filter from company_profile.csv enterprises with industry=\"pharmaceutical manufacturing industry\", 449 enterprises total. Merge with company_operation_status.csv; after excluding records with zero operating revenue or missing/zero company market cap, 436 valid samples.",
+    "Calculate each enterprise's price-to-sales ratio = company market cap (hundred million yuan) × 10^8 / operating revenue amount (yuan). Rank by operating revenue, take top 10% (revenue ≥ 9.266 billion yuan) as leading enterprises, 44 enterprises. Leading enterprise median price-to-sales ratio = 1.96x.",
+    "Calculate Zai Lab's price-to-sales ratio as a multiple of domestic pharmaceutical manufacturing industry top 10% leading enterprise median: 15.17 / 1.96 = 7.73x."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "Zai Lab (ZLAB) 2022 Annual Report (10-K), Total revenues $215,040 thousand, outstanding common shares 960,219,570, each ADS represents 10 shares, year-end ADS closing price $33.97.",
+    "Filtered 449 pharmaceutical manufacturing industry enterprises from company_profile.csv.",
+    "Obtained revenue and market cap data for 436 valid samples from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Zai Lab annual revenue (thousand USD)": 215040,
+    "Zai Lab outstanding common shares": 960219570,
+    "ADS year-end closing price (USD)": 33.97,
+    "Zai Lab market cap (USD)": 3261865879,
+    "Zai Lab price-to-sales ratio (x)": 15.17,
+    "Valid pharmaceutical manufacturing samples": 436,
+    "Leading enterprise revenue threshold (yuan)": 9266378824,
+    "Leading enterprise count": 44,
+    "Leading enterprise median price-to-sales ratio (x)": 1.96,
+    "Industry-wide median price-to-sales ratio (x)": 4.21,
+    "Zai Lab to leading median ratio (x)": 7.73
+  },
+  "answer": [
+    15.17,
+    7.73
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

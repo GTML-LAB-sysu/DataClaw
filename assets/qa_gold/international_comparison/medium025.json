@@ -1,0 +1,29 @@
+{
+  "id": "medium025",
+  "question": "Against the backdrop of intensive policy rollouts for the new energy vehicle industry, what was ZEEKR's asset turnover ratio (revenue divided by total assets) in 2022? How did it compare to the median asset turnover ratio of China's automobile manufacturing industry as a whole?",
+  "guidelines": "Answer in order: ZEEKR's asset turnover ratio (2 decimal places), and the difference from the industry median (2 decimal places; positive means ZEEKR is higher). Return as an array. If the relevant data cannot be found, answer \"Relevant data not found\".",
+  "answer": [
+    1.64,
+    1.05
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "From ZEEKR (ZK) F-1 prospectus PDF, extract 2022 financial data: Net revenues RMB 31,899,448 thousand, Total assets RMB 19,477,316 thousand. Calculate asset turnover ratio = 31,899,448 / 19,477,316 = 1.64.",
+    "From company_profile.csv, filter enterprises with industry == \"Automobile manufacturing\", 230 enterprises.",
+    "From company_operation_status.csv, obtain 'operating revenue' and 'total assets' for the above 230 automobile manufacturing enterprises; all 230 have valid data. Calculate asset turnover ratio for each = operating revenue / total assets; industry median = 0.59.",
+    "Calculate the difference between ZEEKR and industry median: 1.64 - 0.59 = 1.05; ZEEKR is significantly higher than the industry median, reflecting its asset-light operation and rapid scaling as a new EV brand."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "ZEEKR 2022 net revenue (RMB thousand)": 31899448,
+    "ZEEKR 2022 total assets (RMB thousand)": 19477316,
+    "ZEEKR asset turnover ratio": 1.64,
+    "Automobile manufacturing enterprises count": 230,
+    "Industry asset turnover ratio median": 0.59,
+    "ZEEKR difference from industry median": 1.05
+  }
+}

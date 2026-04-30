@@ -1,0 +1,46 @@
+{
+  "id": "medium013",
+  "question": "In the 2022 automotive manufacturing industry, take the top 10 provinces by profitability (measured by net profit) as the candidate set, and construct a three-dimensional comprehensive scoring model to identify the province with the best industrial development quality: Dimension one \"industrial chain completeness\" (weight 0.3) comprehensively assesses the number of enterprise ownership types (ownership diversity) and the interquartile range of total assets of enterprises within the province (scale diversity); dimension two \"technological capability\" (weight 0.4) comprehensively assesses mean R&D investment ratio (R&D intensity) and total annual Chinese invention patent grants divided by total number of enterprises (patent density); dimension three \"market performance\" (weight 0.3) comprehensively assesses total operating revenue (revenue scale) and total operating profit divided by total operating revenue (profit margin). Each dimension's score is represented by the average ranking of its sub-indicators among the candidate provinces (comprehensive score = weighted average of each dimension's mean ranking). Which province has the highest comprehensive score (i.e., the best overall performance)?",
+  "guidelines": "Answer format: Province name. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"automotive manufacturing industry\"; for each province, after excluding empty values in the total net profit field, sort in descending order by that field and take the top 10 provinces industry-wide as the candidate set.",
+    "From company_profile.csv, filter enterprises with industry=\"automotive manufacturing industry\", extract bmCode and province; join company_operation_status.csv on bmCode with year=2022 and extract total assets; for each province, after excluding empty total assets, compute the interquartile range Q3-Q1 as scale diversity.",
+    "For candidate provinces, on the corresponding rows in regional_industry_status.csv compute ownership diversity: among the eight enterprise-count fields for Sino-foreign joint ventures, central state-owned, state-owned (other), state-owned (research institutes), local state-owned, foreign-funded, private, and collective, count how many types have a value greater than zero.",
+    "From regional_industry_status.csv candidate rows, extract mean R&D investment ratio (R&D intensity), total annual Chinese invention patent grants, total number of enterprises, total operating revenue, and total operating profit; patent density = total annual Chinese invention patent grants / total number of enterprises, profit margin = total operating profit / total operating revenue.",
+    "For the six sub-indicators (ownership diversity, total-assets IQR, R&D intensity, patent density, total operating revenue, profit margin), rank candidate provinces separately for each indicator using only provinces with valid values for that indicator, in descending order by value; tied values share the same rank and the next rank is skipped; larger values rank higher (better).",
+    "Industrial chain completeness dimension score = (ownership diversity rank + scale diversity rank) / 2, technological capability dimension score = (R&D intensity rank + patent density rank) / 2, market performance dimension score = (revenue scale rank + profit margin rank) / 2 (if only one sub-indicator is valid in a dimension, use only that rank in the average).",
+    "Comprehensive score = industrial chain completeness dimension score × 0.3 + technological capability dimension score × 0.4 + market performance dimension score × 0.3; this is a weighted average of mean ranks, so a smaller value indicates better overall performance.",
+    "Guangdong Province: industrial chain completeness dimension score 2.5, technological capability 2.0, market performance 4.0; comprehensive score = 0.3 × 2.5 + 0.4 × 2 + 0.3 × 4 = 2.75, the smallest among the 10 candidate provinces, hence the best overall performance (rank 1)."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "From regional_industry_status.csv, 34 province-level rows for the automotive manufacturing industry; sorted by valid total net profit descending, the top 10 provinces form the candidate set.",
+    "From company_profile.csv, 230 enterprises filtered as automotive manufacturing industry, for joining with 2022 operating data.",
+    "From company_operation_status.csv, 230 records with year=2022 and bmCode among the above automotive manufacturing enterprises, used to compute each province's total-assets interquartile range."
+  ],
+  "milestone": {
+    "Number of candidate provinces": 10,
+    "Candidate province list": [
+      "Guangdong",
+      "Hebei",
+      "Shandong",
+      "Zhejiang",
+      "Beijing",
+      "Jiangsu",
+      "Shanghai",
+      "Jilin",
+      "Henan",
+      "Sichuan"
+    ],
+    "Guangdong industrial chain completeness ranking": 2.5,
+    "Guangdong technological capability ranking": 2.0,
+    "Guangdong market performance ranking": 4.0,
+    "Guangdong comprehensive score": 2.75
+  },
+  "answer": "Guangdong Province",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

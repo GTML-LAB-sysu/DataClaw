@@ -1,0 +1,38 @@
+{
+  "id": "medium035",
+  "question": "In 2022, which provinces ranked in the top three in terms of market share among enterprises in the cloud computing services sector?",
+  "guidelines": "The answer must be province names. Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    "Beijing",
+    "Shanghai",
+    "Guangdong Province"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Identify cloud computing services enterprises from company_profile.csv: enterprises with secondClassification=\"Internet and cloud computing, big data services\" or containing keywords such as \"cloud computing\", \"cloud services\", \"cloud platform\".",
+    "Build a mapping from enterprise name to province from company_profile.csv. Filter all records with year=2022 from company_operation_status.csv, and extract the enterprise name and operating revenue amount fields.",
+    "Filter enterprise records in the cloud computing services sector with non-null operating revenue amount, and calculate total operating revenue by province.",
+    "Calculate total operating revenue as 81,064,346,518.77 yuan for computing market share percentages. Sort by total operating revenue by province and identify the top 3 provinces by market share: Beijing (93.92%, 3 enterprises), Shanghai (2.43%, 1 enterprise), Guangdong Province (2.13%, 2 enterprises).",
+    "Determine the provinces with leading market share positions as the top 3: Beijing, Shanghai, and Guangdong Province."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Number of enterprises in cloud computing services sector": 9,
+    "Total operating revenue (yuan)": 81064346518.77,
+    "Top 3 provinces by market share": [
+      "Beijing",
+      "Shanghai",
+      "Guangdong Province"
+    ],
+    "Beijing market share (%)": 93.92,
+    "Number of enterprises in Beijing": 3,
+    "Shanghai market share (%)": 2.43,
+    "Number of enterprises in Shanghai": 1,
+    "Guangdong Province market share (%)": 2.13,
+    "Number of enterprises in Guangdong Province": 2
+  }
+}

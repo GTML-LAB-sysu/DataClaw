@@ -1,0 +1,40 @@
+{
+  "id": "easy055",
+  "question": "In 2022, compared with Chuang Xin Yao Rui Integrated Circuit Co., Ltd., did the core competitiveness of Ya Wei Ze Zhi Technology Co., Ltd. also emphasize technological innovation and high-quality customer resources?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Ya Wei Ze Zhi Technology Co., Ltd. (based on publicly disclosed 2022 annual report) emphasizes \"technological innovation capability\" and \"high-quality customer resources\" in its core competitiveness description",
+    "Chuang Xin Yao Rui Integrated Circuit Co., Ltd. (based on publicly disclosed 2022 annual report) includes \"R&D innovation advantages\" and \"high-quality customer and brand advantages (customer resources)\" in its core competitiveness description"
+  ],
+  "milestone": {
+    "Core competitiveness keywords of Ya Wei Ze Zhi Technology Co., Ltd.": "Technological innovation capability, high-quality customer resources",
+    "Core competitiveness keywords of Chuang Xin Yao Rui Integrated Circuit Co., Ltd.": "R&D innovation advantages, high-quality customer and brand advantages",
+    "Comparison result (whether both emphasize technological innovation and high-quality customer resources)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted the core competitiveness description of Ya Wei Ze Zhi Technology Co., Ltd. from company_core.csv and identified statements about \"technological innovation capability\" and \"high-quality customer resources\"",
+    "Extracted the core competitiveness description of Chuang Xin Yao Rui Integrated Circuit Co., Ltd. from company_core.csv and identified statements about \"R&D innovation advantages\" and \"high-quality customer and brand advantages (customer resources)\"",
+    "Determined that both companies emphasize technological innovation and high-quality customer resources, and judged \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_Core": "4bbcac1c-822c-4e8c-af0e-857826f415ac"
+    },
+    {
+      "company_Core": "7a675a13-5765-4b8c-a98b-da01b53f0de8"
+    },
+    {
+      "company_profile": "26f0fbb2-8470-43a7-8bb7-ff0a4e3893f8"
+    },
+    {
+      "company_profile": "347385e0-b8db-4cb4-834e-deec934c5390"
+    }
+  ]
+}

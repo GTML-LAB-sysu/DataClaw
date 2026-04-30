@@ -1,0 +1,36 @@
+{
+  "id": "medium006",
+  "question": "For MINISO (MNSO) FY2022 (ended June 30, 2022), answer in order: (1) What is the total asset turnover ratio? (2) What is the median total asset turnover ratio of listed companies in China's wholesale and retail industry in 2022? (3) What is the difference between the two (positive value means industry median is higher)?",
+  "guidelines": "Answer the three sub-questions in order; values rounded to 2 decimal places, e.g. [0.89, 1.02, 0.13]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from MINISO (MNSO) FY2022 annual report (20-F): Revenue = RMB 10,085,649 thousand, Total assets = RMB 11,281,788 thousand. Total asset turnover = 10,085,649 / 11,281,788 = 0.89.",
+    "Filter company_profile.csv for industry=\"wholesale and retail\", 273 companies.",
+    "Obtain 2022 operating revenue and total assets for the 273 companies from company_operation_status.csv; after excluding invalid data, compute total asset turnover = operating revenue / total assets for each company.",
+    "Median total asset turnover of domestic wholesale and retail industry = 1.02.",
+    "Calculate difference: 1.02 - 0.89 = 0.13; domestic wholesale and retail industry median is 0.13 higher than MINISO."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "MINISO (MNSO) FY2022 20-F annual report (SEC Filing), including revenue RMB 10,085,649 thousand, total assets RMB 11,281,788 thousand.",
+    "company_profile.csv: 273 companies in wholesale and retail industry.",
+    "company_operation_status.csv: operating revenue and total assets for 273 wholesale and retail companies; median total asset turnover computed."
+  ],
+  "milestone": {
+    "MINISO operating revenue(RMB thousand)": 10085649,
+    "MINISO total assets(RMB thousand)": 11281788,
+    "MINISO total asset turnover": 0.89,
+    "Wholesale and retail industry company count": 273,
+    "Wholesale and retail industry median total asset turnover": 1.02,
+    "Difference": 0.13
+  },
+  "answer": [
+    0.89,
+    1.02,
+    0.13
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

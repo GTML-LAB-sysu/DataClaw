@@ -1,0 +1,40 @@
+{
+  "id": "medium111",
+  "question": "Which is larger: the number of SZSE-listed enterprises in the province where Xingkuwen Arts and Crafts Company is located, or the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry?",
+  "guidelines": "The answer must be either \"the number of SZSE-listed enterprises in the province where Xingkuwen Arts and Crafts Company is located\" or \"the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry\". Output only one of these, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Xingkuwen Arts and Crafts Company (data in this dataset) is located in Zhejiang Province",
+    "Zhejiang Province (data in this dataset), Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing: number of SZSE-listed enterprises = 3",
+    "National (data in this dataset), Chemical Fiber Manufacturing: number of SSE-listed private enterprises = 7"
+  ],
+  "answer": "the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Determine from company_profile.csv that Xingkuwen Arts and Crafts Company is located in Zhejiang Province.",
+    "Extract from regional_industry_status.csv that the number of SZSE-listed enterprises in Zhejiang Province, Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing is 3.",
+    "Extract from national_industry_status.csv that the number of SSE-listed private enterprises in the Chemical Fiber Manufacturing industry is 7.",
+    "Compare 3 and 7; 7 is larger, so output \"the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry\"."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Xingkuwen Arts and Crafts Company": "Zhejiang Province",
+    "Number of SZSE-listed enterprises in Zhejiang Province, Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing": 3,
+    "Number of SSE-listed private enterprises in Chemical Fiber Manufacturing": 7,
+    "Comparison result (larger one)": "the number of SSE-listed private enterprises in China's Chemical Fiber Manufacturing industry"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "d91beb15-f36a-4783-8c2a-ab1e21b2bcda"
+    },
+    {
+      "company_profile": "8ac66182-6508-416b-b0a3-b7b5f71175eb"
+    },
+    {
+      "national_industry_status": "e53c0704-dbd1-451f-82b2-2a0df9488daf"
+    }
+  ]
+}

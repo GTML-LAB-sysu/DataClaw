@@ -1,0 +1,40 @@
+{
+  "id": "medium083",
+  "question": "What is the difference between the number of SZSE-listed enterprises in the industry where Yihai Changjin Business Company operates and the number of SZSE-listed central state-owned enterprises in the Communication Transmission Equipment industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yihai Changjin Business Company: Leasing and Business Services",
+    "Leasing and Business Services: number of SZSE-listed enterprises = 44",
+    "Communication Transmission Equipment industry: number of SZSE-listed central state-owned enterprises = 3"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Yihai Changjin Business Company belongs to the Leasing and Business Services industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed enterprises in the Leasing and Business Services industry is 44.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in the Communication Transmission Equipment industry is 3.",
+    "Calculate the difference: 44 - 3 = 41.0."
+  ],
+  "steps_num": 4,
+  "answer": 41.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Yihai Changjin Business Company": "Leasing and Business Services",
+    "Number of SZSE-listed enterprises in the Leasing and Business Services industry": 44,
+    "Number of SZSE-listed central state-owned enterprises in the Communication Transmission Equipment industry": 3,
+    "Difference": 41.0
+  },
+  "reference": [
+    {
+      "national_industry_status": "e4578b09-ad56-4edf-adc8-9cd6b54149b7"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "national_industry_status": "22fbfe9c-7c9b-4c5c-82a5-46baa3b08f2e"
+    }
+  ]
+}

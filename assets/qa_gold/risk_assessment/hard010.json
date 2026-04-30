@@ -1,0 +1,41 @@
+{
+  "id": "hard010",
+  "question": "In 2022, to measure the resilience reserve of each province's pharmaceutical manufacturing industry under extreme external shocks, a research team established the following three-dimensional evaluation framework (including only provinces with total enterprises not less than 10): Dimension 1 \"Policy Shield Thickness\" (weight 35%): for each province, the number of local policies involving the Chinese terms for pharmaceuticals or bio-industry divided by the national total of such policies yields the raw relative policy density; Dimension 2 \"Independent Profitability Buffer\" (weight 35%): each province's total pharmaceutical manufacturing operating profit minus total government subsidies, divided by total assets, reflecting actual asset profitability excluding subsidies; Dimension 3 \"Technological Innovation Reserve Thickness\" (weight 30%): patent grants per unit of R&D investment by province, measuring R&D output efficiency. Each dimension is min-max normalized across provinces (mapped to 0-100), then weighted by the above weights to produce the comprehensive score. Among the top three ranked provinces, what is the average comprehensive score?",
+  "guidelines": "Answer format: numeric value (2 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 69.4,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From policy_release_status.csv, filter policy records whose policy name or full text involves the Chinese terms for pharmaceuticals or bio-industry, extract the province field, and count the number of pharmaceutical-related policies per province as well as the national total of such policies.",
+    "From regional_industry_status.csv, filter records with industry=\"Pharmaceutical Manufacturing\" and total enterprises>=10, extract province, total operating profit amount, total government reward and subsidy funds, total assets, total cumulative Chinese invention patent grants, and total R&D investment amount fields; 11 provinces found.",
+    "Filter provinces where all required fields are non-null, total assets>0, and total R&D investment amount>0; 10 provinces in total.",
+    "For each province, compute raw policy support intensity = that province's pharmaceutical-related policy count / national total of pharmaceutical-related policies.",
+    "For each province, compute raw financial buffer capacity = (total operating profit amount − total government reward and subsidy funds) / total assets, and raw innovation reserve = total cumulative Chinese invention patent grants / total R&D investment amount.",
+    "Perform min-max normalization to 0–100 for each of the three dimensions: policy support intensity, financial buffer capacity, and innovation reserve.",
+    "Sort by crisis response capability index in descending order; the top 3 provinces and their scores are: Guangdong Province (70.12), Shanghai (68.56), Beijing (69.23).",
+    "Compute average score = (70.12 + 68.56 + 69.23) / 3 = 69.40."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "National total of pharmaceutical-related policies": 21,
+    "Number of qualifying provinces": 10,
+    "Top 3 provinces and scores": [
+      {
+        "Province": "Guangdong Province",
+        "Score": 70.12
+      },
+      {
+        "Province": "Shanghai",
+        "Score": 68.56
+      },
+      {
+        "Province": "Beijing",
+        "Score": 69.23
+      }
+    ],
+    "Average score": 69.4
+  }
+}

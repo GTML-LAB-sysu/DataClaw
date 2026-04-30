@@ -1,0 +1,41 @@
+{
+  "id": "medium002",
+  "question": "In 2022, focusing on pharmaceutical manufacturing: among provinces included in the statistics (requiring total related enterprises in the province ≥ 10), if a province has R&D investment concentration CR3 greater than 60% and cumulative granted Chinese invention patent concentration CR3 also greater than 60%, classify that province as a high-risk \"R&D–patent dual head concentration\" province. How many provinces satisfy both dual-concentration conditions?",
+  "guidelines": "Answer format: an integer, e.g. \"3\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, group enterprise records by province and count enterprises per province; filter to provinces with total enterprises ≥ 10, obtaining 11 provinces: Beijing Municipality, Shanghai Municipality, Jiangsu Province, Guangdong Province, Zhejiang Province, Shandong Province, Sichuan Province, Hubei Province, Hunan Province, Jilin Province, Hong Kong SAR.",
+    "From company_profile.csv, filter records in the above provinces with industry = \"Pharmaceutical Manufacturing\", extract enterprise name, bmCode, and province fields, 340 enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by enterprise name and bmCode, extract R&D investment amount and cumulative granted Chinese invention patents.",
+    "For each qualifying province, filter enterprises with non-null R&D investment amount, sort by R&D investment amount descending, take the top 3 enterprises, compute R&D concentration CR3 = (sum of top 3 enterprises' R&D / sum of all enterprises' R&D in the province) × 100%, and select provinces with R&D CR3 > 60%.",
+    "For each qualifying province, filter enterprises with non-null cumulative granted Chinese invention patents, sort by cumulative patents descending, take the top 3 enterprises, compute patent output concentration CR3 = (sum of top 3 enterprises' patents / sum of all enterprises' patents in the province) × 100%, and select provinces with patent CR3 > 60%.",
+    "Take the intersection of provinces with R&D CR3 > 60% and provinces with patent CR3 > 60%; count provinces satisfying both dual-concentration conditions: 3."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "From company_profile.csv, grouped by province and filtered to provinces with total enterprises ≥ 10, 11 provinces obtained.",
+    "From company_profile.csv, found 340 pharmaceutical manufacturing enterprises in the above 11 provinces.",
+    "From company_operation_status.csv, obtained 2022 R&D investment amounts and cumulative granted Chinese invention patent counts for 340 enterprises."
+  ],
+  "milestone": {
+    "Provinces with total enterprises ≥ 10": 11,
+    "Provinces with R&D CR3 > 60%": [
+      "Hong Kong SAR",
+      "Jilin Province",
+      "Sichuan Province",
+      "Hubei Province"
+    ],
+    "Provinces with patent output CR3 > 60%": [
+      "Hong Kong SAR",
+      "Shanghai Municipality",
+      "Hubei Province",
+      "Sichuan Province"
+    ],
+    "Count of dual high-concentration risk provinces": 3
+  },
+  "answer": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "risk_assessment"
+  }
+}

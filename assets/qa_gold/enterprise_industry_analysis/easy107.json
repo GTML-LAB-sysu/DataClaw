@@ -1,0 +1,22 @@
+{
+  "id": "easy107",
+  "question": "Does San San Gong Ji Technology Co., Ltd. belong to the Non-metallic Mineral Products industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that San San Gong Ji Technology Co., Ltd.'s industry is Specialized Equipment Manufacturing",
+    "Compare with the industry named in the question, \"Non-metallic Mineral Products\"; the two are not the same",
+    "Therefore the company does not belong to non-metallic mineral products; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "San San Gong Ji Technology Co., Ltd. industry": "Specialized Equipment Manufacturing",
+    "Comparison industry": "Non-metallic Mineral Products",
+    "Whether belongs to this industry": "No"
+  }
+}

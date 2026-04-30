@@ -1,0 +1,26 @@
+{
+  "id": "medium059",
+  "question": "Which is larger: the HKEX-listed private enterprise count in the corresponding industry of Guangdong, where Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. is located, or the total HKEX-listed enterprise count in the corresponding industry of Guangdong, where Zhao Ye Ze Jin Di Chan Holdings Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: HKEX-listed private enterprise count in Guangdong Real Estate = 26",
+    "Extracted from company_profile.csv: province of Zhao Ye Ze Jin Di Chan Holdings Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: total HKEX-listed enterprise count in Guangdong Real Estate = 38",
+    "Compared 26 and 38; since 38 is larger, output \"Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Real Estate private enterprise HKEX-listed count": 26,
+    "Province of Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Real Estate HKEX-listed enterprise count": 38,
+    "Comparison result (larger)": "Zhao Ye Ze Jin Di Chan Holdings Co., Ltd."
+  }
+}

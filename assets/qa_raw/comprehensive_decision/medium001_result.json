@@ -1,0 +1,36 @@
+{
+  "id": "medium001",
+  "question": "For 2022 pharmaceutical manufacturing industry data by province, if R&D funding intensity is measured as each province's total R&D expenditure as a percentage of its total operating revenue, among all provinces with complete data records, what is the specific value of this ratio for the province with the highest level? Which company has the highest R&D funding intensity in that province?",
+  "guidelines": "The first answer is a numeric value (2 decimal places), unit is %; the second answer is the full company name, which must exactly match the \"Company Name\" field in company_profile.csv. If either question cannot be answered, respond with \"No relevant data found\".",
+  "steps": [
+    "From regional_industry_status.csv, filter industry=\"Pharmaceutical Manufacturing\", extract province, total R&D expenditure, total operating revenue; exclude records with missing total R&D expenditure or total operating revenue, or with total operating revenue ≤ 0, yielding 16 valid province records.",
+    "For each province, compute R&D funding intensity = total R&D expenditure ÷ total operating revenue × 100%, sort by intensity descending. Shanghai has the highest: total R&D expenditure 40,798,081,760.73 yuan, total operating revenue 160,133,198,188.25 yuan, intensity = 40,798,081,760.73 ÷ 160,133,198,188.25 × 100% = 25.48%.",
+    "From company_profile.csv, filter province=\"Shanghai\" and industry=\"Pharmaceutical Manufacturing\", obtain company names and bmCode list for pharmaceutical manufacturing firms in that city.",
+    "From company_operation_status.csv, filter year=2022 and bmCode in the above set, with non-null R&D expenditure and operating revenue, and operating revenue > 0.",
+    "For each company, compute R&D funding intensity = R&D expenditure ÷ operating revenue × 100% using the same formula. The highest is \"Kangsheng Anjian Biopharmaceutical Company\" (bmCode=505404): R&D expenditure 809,733,452.00 yuan, operating revenue 12,792,315.00 yuan, intensity = 809,733,452.00 ÷ 12,792,315.00 × 100% = 6329.84%."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "In regional_industry_status.csv, \"Pharmaceutical Manufacturing\" has 16 provinces after complete-data filtering; Shanghai ranks first in provincial R&D funding intensity.",
+    "Joining company_profile.csv with company_operation_status.csv (2022), R&D funding intensity can be computed for Shanghai pharmaceutical manufacturing firms; Kangsheng Anjian Biopharmaceutical Company has the highest ratio."
+  ],
+  "milestone": {
+    "Province with highest R&D funding intensity": "Shanghai",
+    "Shanghai total R&D expenditure (yuan)": 40798081760.73,
+    "Shanghai total operating revenue (yuan)": 160133198188.25,
+    "Provincial R&D funding intensity (%)": 25.48,
+    "Company with highest R&D funding intensity in that province": "Kangsheng Anjian Biopharmaceutical Company",
+    "Company R&D expenditure (yuan)": 809733452.0,
+    "Company operating revenue (yuan)": 12792315.0,
+    "Company R&D funding intensity (%)": 6329.84
+  },
+  "answer": [
+    25.48,
+    "Kangsheng Anjian Biopharmaceutical Company"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "hard006",
+  "question": "In 2022, in the comprehensive assessment of the semiconductor industry ecosystem, the scope is limited to provinces with total enterprises not less than 6. The assessment framework has three dimensions: ? \"Industry Scale Foundation\" (weight 30%): half the sum of each province's share of national semiconductor enterprise count and each province's share of national semiconductor operating revenue as the raw score for this dimension; ? \"Policy Ecosystem Density\" (weight 30%): each province's count of policies involving the Chinese terms for semiconductors, chips, or integrated circuits divided by the national total of such policies; ? \"Technological Accumulation Depth\" (weight 40%): each province's share of cumulative Chinese invention patent grants in the national total for the industry. Each dimension is min-max normalized (mapped to 0-100), then weighted to yield the comprehensive development potential index. Which province has the highest comprehensive score?",
+  "guidelines": "Answer format: province name. E.g. \"Guangdong Province\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Shanghai",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From national_industry_status.csv, filter records with industry=\"semiconductor industry\", and extract national benchmarks: total enterprises 172, total operating revenue amount 1494377201673.42, and total cumulative Chinese invention patent grants 54069.",
+    "From policy_release_status.csv, filter policy records whose policy name or full text involves the Chinese terms for semiconductors, chips, or integrated circuits, extract the province field, and count the number of semiconductor-related policies per province as well as the national total of such policies.",
+    "From regional_industry_status.csv, filter records with industry=\"semiconductor industry\" and total enterprises >= 6, extract the province, total enterprises, total operating revenue amount, and total cumulative Chinese invention patent grants fields; 6 provinces found.",
+    "Filter provinces where all required fields are non-null; 5 provinces in total.",
+    "For each province, compute raw industry scale foundation = (total enterprises / national total enterprises + total operating revenue amount / national total operating revenue amount) / 2.",
+    "For each province, compute raw policy ecosystem = that province's semiconductor-related policy count / national total semiconductor-related policies, and raw technological accumulation = total cumulative Chinese invention patent grants / national total cumulative Chinese invention patent grants.",
+    "Perform min-max normalization to 0–100 for industry scale foundation, policy ecosystem, and technological accumulation; for each province compute industry ecosystem resilience index = industry scale foundation score × 0.3 + policy ecosystem score × 0.3 + technological accumulation score × 0.4; sort by index in descending order; the highest-scoring province is Shanghai."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "National total enterprises": 172,
+    "National total semiconductor-related policies": 4,
+    "Number of qualifying provinces": 5,
+    "Highest-scoring province": "Shanghai",
+    "Highest score": 87.38
+  }
+}

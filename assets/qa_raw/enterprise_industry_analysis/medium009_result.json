@@ -1,0 +1,41 @@
+{
+  "id": "medium009",
+  "question": "In 2022, which is higher: the operating profit amount of Run Hui Shu Zhi Xi Tong Co., Ltd. or the total operating profit amount of the same industry in its province?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Run Hui Shu Zhi Xi Tong Co., Ltd. (2022 dataset value): operating profit amount = 9041715.19 CNY",
+    "The company is located in Jilin Province and belongs to Scientific Research and Technical Services",
+    "Total operating profit amount in Jilin Province for Scientific Research and Technical Services = 0 CNY"
+  ],
+  "milestone": {
+    "Run Hui Shu Zhi Xi Tong Co., Ltd. operating profit amount in 2022 (CNY)": 9041715.19,
+    "Province of Run Hui Shu Zhi Xi Tong Co., Ltd.": "Jilin Province",
+    "Industry of Run Hui Shu Zhi Xi Tong Co., Ltd.": "Scientific Research and Technical Services",
+    "Total operating profit amount in Jilin Province for Scientific Research and Technical Services (CNY)": 0,
+    "Comparison result (whether the company is higher)": "Yes"
+  },
+  "answer": "Run Hui Shu Zhi Xi Tong Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Run Hui Shu Zhi Xi Tong Co., Ltd. operating profit amount in 2022 = 9041715.19 CNY",
+    "Extracted from company_profile.csv: the company is in Jilin Province and belongs to Scientific Research and Technical Services",
+    "Extracted from regional_industry_status.csv: total operating profit amount in Jilin Province for this industry = 0 CNY",
+    "Compared 9041715.19 and 0; since 9041715.19 > 0, the company is higher, so output \"Run Hui Shu Zhi Xi Tong Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "reference": [
+    {
+      "company_operation_status": "ec61653b-88b8-4a5e-8e7d-ed9fda3dcfba"
+    },
+    {
+      "regional_industry_status": "a93c5a67-46ad-438a-be74-d49e8a6cbc1b"
+    },
+    {
+      "company_profile": "1e954ae5-70b5-48e4-90ee-a640834447cb"
+    }
+  ]
+}

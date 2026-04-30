@@ -1,0 +1,22 @@
+{
+  "id": "easy091",
+  "question": "Are Wuli Changyuan Wholesale Company and Xinhua Yuantong Chain Company in a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Wuli Changyuan Wholesale Company is in the Wholesale and Retail industry.",
+    "Extract from company_profile.csv that Xinhua Yuantong Chain Company is in the Wholesale and Retail industry.",
+    "Since the two companies are in the same industry, they are in a competitive relationship; output \"Yes\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Wuli Changyuan Wholesale Company": "Wholesale and Retail",
+    "Industry of Xinhua Yuantong Chain Company": "Wholesale and Retail",
+    "Competitive relationship": "Yes"
+  }
+}

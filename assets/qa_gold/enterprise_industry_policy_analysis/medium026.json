@@ -1,0 +1,26 @@
+{
+  "id": "medium026",
+  "question": "What is the difference between the number of central ministry/agency policies issued by the General Office of the China Banking and Insurance Regulatory Commission in the ministerial policies for the industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd. and the number of local policies for the Consumer Electronics and Electrical Equipment industry in Guangdong Province where Zhang Qiao Jin Chuang Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Ying Tai Sheng Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in the ministerial policies for Financial Services, the policy count issued by the General Office of the China Banking and Insurance Regulatory Commission is 1",
+    "Extract from company_profile.csv that Zhang Qiao Jin Chuang Technology Co., Ltd. is located in Guangdong Province and its industry is Consumer Electronics and Electrical Equipment",
+    "Extract from policy_release_status.csv that the local policies policy count for Consumer Electronics and Electrical Equipment in Guangdong Province is 1",
+    "Calculate the difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services ministerial policies_General Office of the China Banking and Insurance Regulatory Commission policy count": 1,
+    "Province of Zhang Qiao Jin Chuang Technology Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Consumer Electronics and Electrical Equipment local policies policy count": 1,
+    "Difference (General Office of the China Banking and Insurance Regulatory Commission policy count - local policies policy count)": 0.0
+  }
+}

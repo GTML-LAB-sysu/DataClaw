@@ -1,0 +1,41 @@
+{
+  "id": "medium012",
+  "question": "In 2022, is the debt-to-asset ratio of Zhong Ji Da Chang Tong Ye Co., Ltd. higher than the minimum debt-to-asset ratio of the corresponding industry in its province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Ji Da Chang Tong Ye Co., Ltd. (2022 dataset value): debt-to-asset ratio = 35.4 %",
+    "The company is located in Jiangsu Province and belongs to Agriculture, Forestry, Animal Husbandry and Fishery",
+    "Minimum debt-to-asset ratio in Jiangsu Province for Agriculture, Forestry, Animal Husbandry and Fishery = 23.15 %"
+  ],
+  "milestone": {
+    "Zhong Ji Da Chang Tong Ye Co., Ltd. debt-to-asset ratio in 2022": "35.4 %",
+    "Province of Zhong Ji Da Chang Tong Ye Co., Ltd.": "Jiangsu Province",
+    "Industry of Zhong Ji Da Chang Tong Ye Co., Ltd.": "Agriculture, Forestry, Animal Husbandry and Fishery",
+    "Minimum debt-to-asset ratio in Jiangsu Province for Agriculture, Forestry, Animal Husbandry and Fishery": "23.15 %",
+    "Comparison result (whether the company is higher than the provincial same-industry minimum)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Ji Da Chang Tong Ye Co., Ltd. debt-to-asset ratio in 2022 = 35.4 %",
+    "Extracted from company_profile.csv: the company is in Jiangsu Province and belongs to Agriculture, Forestry, Animal Husbandry and Fishery",
+    "Extracted from regional_industry_status.csv: minimum debt-to-asset ratio in the provincial same industry = 23.15 %",
+    "Compared 35.4 and 23.15; since 35.4 > 23.15, the judgment is \"Yes\""
+  ],
+  "steps_num": 4,
+  "reference": [
+    {
+      "company_operation_status": "1a43f9c2-bb1c-4f31-91c1-7fd599da75e2"
+    },
+    {
+      "regional_industry_status": "183e9fca-3979-4971-8a7f-a97cf04f2cea"
+    },
+    {
+      "company_profile": "b6494485-93ab-4705-ab72-0aa551d2f1d6"
+    }
+  ]
+}

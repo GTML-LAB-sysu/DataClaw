@@ -1,0 +1,26 @@
+{
+  "id": "medium014",
+  "question": "Comparing the number of SSE-listed state-owned enterprise institutes in the industry of Huijin Jinrui Wealth Management Co., Ltd. with the number of HKEX-listed sino-foreign joint ventures in the industry of Zhongke Zhiyun Data Services Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name, \"industry\", or \"Same\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Same",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Huijin Jinrui Wealth Management Co., Ltd. is Financial Industry.",
+    "Extracted from national_industry_status.csv that the number of SSE-listed state-owned enterprise institutes in Financial Industry is 1.",
+    "Extracted from company_profile.csv that the industry of Zhongke Zhiyun Data Services Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the number of HKEX-listed sino-foreign joint ventures in Information Transmission, Software and Information Technology Services is 1.",
+    "Compared the two counts and output the result corresponding to the predefined answer field: Same."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.": "Financial Industry",
+    "Number of SSE-listed state-owned enterprise institutes in Financial Industry": 1,
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Number of HKEX-listed sino-foreign joint ventures in Information Transmission, Software and Information Technology Services": 1,
+    "Comparison result (answer output)": "Same"
+  }
+}

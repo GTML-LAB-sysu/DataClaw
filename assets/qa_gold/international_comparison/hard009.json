@@ -1,0 +1,34 @@
+{
+  "id": "hard009",
+  "question": "An active equity manager uses a \"high-profit reinvestment\" framework for the internet retail growth sub-portfolio. For candidate companies, first calculate: ① High-quality growth score = difference between company net profit margin and median net profit margin of A-share wholesale and retail industry top 10% by revenue in 2022 + 0.5 × transaction services revenue ratio + 0.5 × R&D investment ratio; ② Policy diffusion ratio = count of wholesale and retail industry policies ÷ number of provincial-level administrative regions covered by non-national policies. If high-quality growth score > 35 and policy diffusion ratio > 2.0, list as strategic overweight with active weight = min(4.00%, high-quality growth score ÷ 10); otherwise ordinary position only. Using Pinduoduo (PDD) 2022 annual report and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: high-quality growth score, policy diffusion ratio, active weight (%), most appropriate conclusion. Retain 2 decimal places and return as an array; conclusion must specify position action. If relevant data cannot be found, please answer \"No relevant data found\".",
+  "answer": [
+    37.73,
+    2.0,
+    0.0,
+    "Ordinary position"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Web search Pinduoduo 2022 annual report; extract Transaction services = 27,626,494, Total revenues = 130,557,589, Research and development expenses = 10,384,716, Net income = 31,538,062, all in RMB thousand.",
+    "Calculate transaction services revenue ratio = 27,626,494 ÷ 130,557,589 × 100% = 21.1604%, rounded to 21.16%; calculate R&D investment ratio = 10,384,716 ÷ 130,557,589 × 100% = 7.9541%, rounded to 7.95%; calculate net profit margin = 31,538,062 ÷ 130,557,589 × 100% = 24.1564%, rounded to 24.16%.",
+    "Filter from company_profile.csv A-share companies with industry=\"wholesale and retail industry\", 273 total; then from company_operation_status.csv extract 2022 operating revenue amount and net profit amount for these companies.",
+    "Among 273 companies with valid operating revenue and net profit, calculate each company's net profit margin = net profit amount ÷ operating revenue amount × 100%, then sort by operating revenue descending and take top 10% = 28 companies, median net profit margin = 0.97%; thus net profit margin difference = 24.16% - 0.97% = 23.18 percentage points.",
+    "Calculate high-quality growth score per question definition = 23.18 + 0.5 × 21.16 + 0.5 × 7.95 = 23.18 + 10.58 + 3.975 = 37.7350, rounded to 37.73.",
+    "Filter from policy_release_status.csv policies whose industry field contains wholesale and retail industry, 28 records; after excluding province=\"national\", 14 provincial-level administrative regions covered. Calculate policy diffusion ratio = 28 ÷ 14 = 2.0000, rounded to 2.00.",
+    "Since high-quality growth score > 35 but policy diffusion ratio 2.00 does not meet the > 2.0 threshold, strategic overweight condition is not met; ordinary position only, strategic overweight active weight formula not applicable (recorded as 0.00%)."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Transaction services revenue ratio (%)": 21.16,
+    "R&D investment ratio (%)": 7.95,
+    "Net profit margin difference (percentage points)": 23.18,
+    "High-quality growth score": 37.73,
+    "Policy diffusion ratio": 2.0,
+    "Active weight (%)": 0.0
+  }
+}

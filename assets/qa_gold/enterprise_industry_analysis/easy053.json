@@ -1,0 +1,22 @@
+{
+  "id": "easy053",
+  "question": "In 2022, does the secondary industry of Bao He Hua Chang Jian She Kai Fa Co., Ltd. belong to the same industry as that of Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: secondary industry of Bao He Hua Chang Jian She Kai Fa Co., Ltd. = Residential Real Estate",
+    "Extracted from company_profile.csv: secondary industry of Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd. = Retail",
+    "Compared the two secondary industry texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Secondary industry of Bao He Hua Chang Jian She Kai Fa Co., Ltd.": "Residential Real Estate",
+    "Secondary industry of Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd.": "Retail",
+    "Comparison result (whether they belong to the same industry)": "No"
+  }
+}

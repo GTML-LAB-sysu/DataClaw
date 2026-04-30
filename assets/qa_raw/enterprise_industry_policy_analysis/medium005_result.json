@@ -1,0 +1,46 @@
+{
+  "id": "medium005",
+  "question": "Is the number of central ministry/agency policies issued by the Development and Reform Commission in the ministerial policies for the industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. higher than the number of local policies issued by the Shenzhen Municipality Bureau of Commerce in the local policies for the industry of Yi Hai Chang Jin Shang Wu Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies — Development and Reform Commission — number of policies: 2",
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.: Leasing and Business Services",
+    "Leasing and Business Services local policies — Shenzhen Municipality Bureau of Commerce — number of policies: 1"
+  ],
+  "milestone": {
+    "Industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies_Development and Reform Commission number of policies": 2,
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.": "Leasing and Business Services",
+    "Leasing and Business Services local policies_Shenzhen Municipality Bureau of Commerce number of policies": 1,
+    "Whether higher (Development and Reform Commission number of policies > Shenzhen Municipality Bureau of Commerce number of policies)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "From policy_release_status.csv, extract that in the ministerial policies for Information Transmission, Software and IT Services, the number of policies issued by the Development and Reform Commission is 2",
+    "From company_profile.csv, extract that Yi Hai Chang Jin Shang Wu Co., Ltd.'s industry is Leasing and Business Services",
+    "From policy_release_status.csv, extract that in the local policies for Leasing and Business Services, the number of policies issued by the Shenzhen Municipality Bureau of Commerce is 1",
+    "Determine whether 2 is greater than 1; if so, output \"Yes\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "policy_release_status": "5bec0ffb-41d8-4699-ad95-003164a2e21f"
+    },
+    {
+      "company_profile": "d6ab2642-2691-4f63-a197-6a4c29026c0d"
+    },
+    {
+      "policy_release_status": "b11a2b60-c999-4fc9-9581-5a6601001790"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    }
+  ]
+}

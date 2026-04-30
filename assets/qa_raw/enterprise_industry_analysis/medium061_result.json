@@ -1,0 +1,46 @@
+{
+  "id": "medium061",
+  "question": "Are the total State Natural Science Award values the same between the corresponding industry in Hong Kong, where Rui Xing Jian Kang Zhi Yao Co., Ltd. is located, and the corresponding industry in Zhejiang, where Wu Li Hui Da Chain Co., Ltd. is located?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Rui Xing Jian Kang Zhi Yao Co., Ltd.: Hong Kong SAR",
+    "Total State Natural Science Award value in Hong Kong Pharmaceutical Manufacturing: 0",
+    "Province of Wu Li Hui Da Chain Co., Ltd.: Zhejiang Province",
+    "Total State Natural Science Award value in Zhejiang Wholesale and Retail: 0"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Rui Xing Jian Kang Zhi Yao Co., Ltd.": "Hong Kong SAR",
+    "Total State Natural Science Award value in Hong Kong Pharmaceutical Manufacturing": 0,
+    "Province of Wu Li Hui Da Chain Co., Ltd.": "Zhejiang Province",
+    "Total State Natural Science Award value in Zhejiang Wholesale and Retail": 0,
+    "Whether identical": "Yes"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Rui Xing Jian Kang Zhi Yao Co., Ltd. = Hong Kong SAR",
+    "Extracted from regional_industry_status.csv: total State Natural Science Award value in Hong Kong Pharmaceutical Manufacturing = 0",
+    "Extracted from company_profile.csv: province of Wu Li Hui Da Chain Co., Ltd. = Zhejiang Province",
+    "Extracted from regional_industry_status.csv: total State Natural Science Award value in Zhejiang Wholesale and Retail = 0",
+    "Both values are 0, so the answer is \"Yes\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "481cddd5-7d34-4acc-ae6b-1a8e7de7444b"
+    },
+    {
+      "company_profile": "4c3a2a9c-278d-458c-8242-de58a40d50a1"
+    },
+    {
+      "regional_industry_status": "121a55c3-2823-410f-b764-12733c5e8754"
+    },
+    {
+      "company_profile": "24d73db3-b3be-4f9d-87e8-a8f7bcd7b0f9"
+    }
+  ]
+}

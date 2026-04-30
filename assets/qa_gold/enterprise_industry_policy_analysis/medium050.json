@@ -1,0 +1,24 @@
+{
+  "id": "medium050",
+  "question": "Wan Hui Jin Sheng Fang Di Chan Kai Fa Co., Ltd.industry's Shandong ProvinceNumber of policies (indicator) and Jiangxi Province Number of policies (indicator)how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Wan Hui Jin Sheng Fang Di Chan Kai Fa Co., Ltd.industry = Real Estate",
+    "Extracted from policy_release_status.csv: Real Estatelocal policies in Shandong ProvincepersonsNumber of policies (indicator)=1",
+    "policy_release_status.csv in by province=Jiangxi Province、industry=extractlocal policies in Jiangxi ProvincepersonsNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Wan Hui Jin Sheng Fang Di Chan Kai Fa Co., Ltd.industry": "Real Estate",
+    "Real Estatelocal policies_Shandong ProvincepersonsNumber of policies (indicator)": 1,
+    "Jiangxi Provincelocal policies_Jiangxi ProvincepersonsNumber of policies (indicator)": 1,
+    "Difference(Shandong ProvincepersonsNumber of policies (indicator)-Jiangxi ProvincepersonsNumber of policies (indicator))": 0.0
+  }
+}

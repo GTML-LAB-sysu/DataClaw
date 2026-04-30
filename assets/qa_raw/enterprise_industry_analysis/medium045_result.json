@@ -1,0 +1,46 @@
+{
+  "id": "medium045",
+  "question": "Comparing the number of HKEX-listed enterprises in the province where Huatu Wenjiao Online Education Co., Ltd. is located with the number of SZSE-listed enterprises in the industry of Yihai Changjin Business Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province where Huatu Wenjiao Online Education Co., Ltd. is located: Shanghai Municipality",
+    "Shanghai Education, number of HKEX-listed enterprises: 3",
+    "Industry of Yihai Changjin Business Co., Ltd.: Leasing and Business Services",
+    "Leasing and Business Services, number of SZSE-listed enterprises: 44"
+  ],
+  "answer": "Yihai Changjin Business Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province where Huatu Wenjiao Online Education Co., Ltd. is located": "Shanghai Municipality",
+    "Number of HKEX-listed enterprises in Shanghai Education": 3,
+    "Industry of Yihai Changjin Business Co., Ltd.": "Leasing and Business Services",
+    "Number of SZSE-listed enterprises in Leasing and Business Services": 44,
+    "Comparison conclusion (larger value)": "Yihai Changjin Business Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv that Huatu Wenjiao Online Education Co., Ltd. is located in Shanghai Municipality.",
+    "Extracted from regional_industry_status.csv that the number of HKEX-listed enterprises in Shanghai Education is 3.",
+    "Extracted from company_profile.csv that the industry of Yihai Changjin Business Co., Ltd. is Leasing and Business Services.",
+    "Extracted from national_industry_status.csv that the number of SZSE-listed enterprises in Leasing and Business Services is 44.",
+    "Compared 3 and 44; 44 is larger, so output \"Yihai Changjin Business Co., Ltd.\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "fdbbb94b-1ec1-433a-951c-dbf795fc477d"
+    },
+    {
+      "company_profile": "d5008c9a-7492-4ce4-b428-22e6861c68a7"
+    },
+    {
+      "national_industry_status": "e4578b09-ad56-4edf-adc8-9cd6b54149b7"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    }
+  ]
+}

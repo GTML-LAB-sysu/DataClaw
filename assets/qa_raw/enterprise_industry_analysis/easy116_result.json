@@ -1,0 +1,31 @@
+{
+  "id": "easy116",
+  "question": "Would changes in Guangdong Province's economic environment affect Hua Dian Neng Jin Hydropower Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Dian Neng Jin Hydropower Co., Ltd. (dataset value): registered province = Guangdong Province",
+    "Province specified in the question: Guangdong Province"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: registered province of Hua Dian Neng Jin Hydropower Co., Ltd. = Guangdong Province",
+    "Compared Guangdong Province with the question's province, Guangdong Province; they match",
+    "Therefore, provincial economic changes described in the question can affect the company's operating environment; output \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Registered province of Hua Dian Neng Jin Hydropower Co., Ltd.": "Guangdong Province",
+    "Compared province": "Guangdong Province",
+    "Whether affected by economic changes in Guangdong Province": "Yes"
+  },
+  "reference": [
+    {
+      "company_profile": "34cc539e-12b3-49ae-aecf-bc295add8fba"
+    }
+  ]
+}

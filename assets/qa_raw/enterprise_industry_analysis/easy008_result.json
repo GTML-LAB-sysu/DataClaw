@@ -1,0 +1,40 @@
+{
+  "id": "easy008",
+  "question": "In 2022, compared with Zhong Ke Chuang Xin Ruan Jian Co., Ltd., what is the difference in cumulative PCT patent applications of Bao Xin Ke Hui Ruan Jian Co., Ltd.?",
+  "guidelines": "The answer must be a number with one decimal place. Output only the number without units, commas, or any text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Bao Xin Ke Hui Ruan Jian Co., Ltd. (2022 dataset value): cumulative PCT patent applications = 7",
+    "Zhong Ke Chuang Xin Ruan Jian Co., Ltd. (2022 dataset value): cumulative PCT patent applications = 490"
+  ],
+  "milestone": {
+    "Cumulative PCT patent applications of Bao Xin Ke Hui Ruan Jian Co., Ltd. in 2022": 7,
+    "Cumulative PCT patent applications of Zhong Ke Chuang Xin Ruan Jian Co., Ltd. in 2022": 490,
+    "Difference (Bao Xin Ke Hui Ruan Jian Co., Ltd. - Zhong Ke Chuang Xin Ruan Jian Co., Ltd.)": -483.0
+  },
+  "answer": -483.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: cumulative PCT patent applications of Bao Xin Ke Hui Ruan Jian Co., Ltd. in 2022 = 7",
+    "Extracted from company_operation_status.csv: cumulative PCT patent applications of Zhong Ke Chuang Xin Ruan Jian Co., Ltd. in 2022 = 490",
+    "Calculated the difference (Bao Xin Ke Hui Ruan Jian Co., Ltd. - Zhong Ke Chuang Xin Ruan Jian Co., Ltd.): 7 - 490 = -483.0, and output with one decimal place as required"
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "8d756dae-ab72-486c-b4b4-051d5c60aded"
+    },
+    {
+      "company_operation_status": "6cd8b136-cff6-4f44-8317-ff6d6d3f5d18"
+    },
+    {
+      "company_profile": "1c1441c7-e95e-4f3e-ac46-37a48236ddbe"
+    },
+    {
+      "company_profile": "64052c09-3d7d-4553-beb2-2f25b7e94648"
+    }
+  ]
+}

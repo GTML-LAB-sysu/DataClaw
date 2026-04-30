@@ -1,0 +1,22 @@
+{
+  "id": "easy050",
+  "question": "In 2022, is the ownership type of Zhongbai Damao Wholesale Co., Ltd. the same as that of Luxi Runheng Chemical Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: ownership type of Zhongbai Damao Wholesale Co., Ltd. = Private Enterprise",
+    "Extracted from company_profile.csv: ownership type of Luxi Runheng Chemical Co., Ltd. = Private Enterprise",
+    "Compared the two ownership type texts and judged \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Ownership type of Zhongbai Damao Wholesale Co., Ltd.": "Private Enterprise",
+    "Ownership type of Luxi Runheng Chemical Co., Ltd.": "Private Enterprise",
+    "Comparison result (whether the ownership types are the same)": "Yes"
+  }
+}

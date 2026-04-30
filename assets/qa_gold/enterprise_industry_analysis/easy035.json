@@ -1,0 +1,22 @@
+{
+  "id": "easy035",
+  "question": "In 2022, are the industries of Gao Yin Ze Tong Pi Fa Co., Ltd. and Yong Hui Ze Hui Pi Fa Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Gao Yin Ze Tong Pi Fa Co., Ltd. = Wholesale and Retail",
+    "Extracted from company_profile.csv: industry of Yong Hui Ze Hui Pi Fa Co., Ltd. = Wholesale and Retail",
+    "Compared the industry text of both companies; they are the same, so the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Gao Yin Ze Tong Pi Fa Co., Ltd.": "Wholesale and Retail",
+    "Industry of Yong Hui Ze Hui Pi Fa Co., Ltd.": "Wholesale and Retail",
+    "Comparison result (whether the industries are the same)": "Yes"
+  }
+}

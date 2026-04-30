@@ -1,0 +1,40 @@
+{
+  "id": "medium105",
+  "question": "What is the difference between the mean number of provincial or ministerial Science and Technology Progress Awards in the province where Jinzhi Hongsheng Asset Management Company is located and the mean number of the same awards in China's Culture, Sports and Entertainment industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Jinzhi Hongsheng Asset Management Company: Shanghai Municipality",
+    "Shanghai Municipality - Financial industry: mean number of provincial or ministerial Science and Technology Progress Awards = 3",
+    "Culture, Sports and Entertainment (China): mean number of provincial or ministerial Science and Technology Progress Awards = 0"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Jinzhi Hongsheng Asset Management Company is located in Shanghai Municipality and belongs to the Financial industry.",
+    "Extract from regional_industry_status.csv that the mean number of provincial or ministerial Science and Technology Progress Awards in Shanghai Municipality - Financial industry is 3.",
+    "Extract from national_industry_status.csv that the mean number of provincial or ministerial Science and Technology Progress Awards in the Culture, Sports and Entertainment industry is 0.",
+    "Calculate the difference: 3 - 0 = 3.0."
+  ],
+  "steps_num": 4,
+  "answer": 3.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Jinzhi Hongsheng Asset Management Company": "Shanghai Municipality",
+    "Mean number of provincial or ministerial Science and Technology Progress Awards in Shanghai Municipality - Financial industry": 3,
+    "Mean number of provincial or ministerial Science and Technology Progress Awards in Culture, Sports and Entertainment": 0,
+    "Difference": 3.0
+  },
+  "reference": [
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "national_industry_status": "9e59028a-f6d1-4a30-ae4b-ce2b5174093e"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "medium030",
+  "question": "Did both the operating revenue and R&D investment of Haishan Changgong Equipment Company and Sansan Daten Heavy Industry Company show an upward trend in 2022?",
+  "guidelines": "The answer must be \"yes\" or \"no\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "no",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all records with enterprise names \"Haishan Changgong Equipment Company\" and \"Sansan Daten Heavy Industry Company\" from company_operation_status.csv, and extract the enterprise name, year, operating revenue amount, R&D investment amount, year-over-year change in operating revenue, and year-over-year change in R&D investment fields. Note: amounts are in yuan and do not require conversion.",
+    "Check the data years for both companies and find that only 2022 data is available; therefore use year-over-year change in operating revenue and year-over-year change in R&D investment to determine trends.",
+    "Analyze Haishan Changgong Equipment Company: year-over-year change in operating revenue is -19.28% (decline), year-over-year change in R&D investment is -14.09% (decline); neither operating revenue nor R&D investment shows an upward trend.",
+    "Analyze Sansan Daten Heavy Industry Company: year-over-year change in operating revenue is -9.41% (decline), year-over-year change in R&D investment is 26.97% (increase); operating revenue does not show an upward trend, but R&D investment does.",
+    "Comprehensive conclusion: Neither operating revenue nor R&D investment of Haishan Changgong Equipment Company shows an upward trend; for Sansan Daten Heavy Industry Company, operating revenue does not show an upward trend (only R&D investment increased). Therefore, it is not the case that both operating revenue and R&D investment of both companies show an upward trend. Conclusion: No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Haishan Changgong Equipment Company year-over-year change in operating revenue (%)": -19.28,
+    "Haishan Changgong Equipment Company year-over-year change in R&D investment (%)": -14.09,
+    "Haishan Changgong Equipment Company trend": "Both operating revenue and R&D investment declined",
+    "Sansan Daten Heavy Industry Company year-over-year change in operating revenue (%)": -9.41,
+    "Sansan Daten Heavy Industry Company year-over-year change in R&D investment (%)": 26.97,
+    "Sansan Daten Heavy Industry Company trend": "Operating revenue declined, R&D investment increased",
+    "Comprehensive conclusion": "Not all showing upward trend"
+  }
+}

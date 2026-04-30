@@ -1,0 +1,24 @@
+{
+  "id": "medium101",
+  "question": "What is the difference between the number of SSE-listed foreign-funded enterprises in the industry corresponding to Biyuan Zhize Urban Development Company and the number of HKEX-listed state-owned research institute enterprises in China's Pharmaceutical Manufacturing industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": 5.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that the corresponding industry of Biyuan Zhize Urban Development Company is Real Estate.",
+    "Extract from national_industry_status.csv that the number of SSE-listed foreign-funded enterprises in the Real Estate industry is 6.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed state-owned research institute enterprises in the Pharmaceutical Manufacturing industry is 1.",
+    "Calculate the difference: 6 - 1 = 5.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry corresponding to Biyuan Zhize Urban Development Company": "Real Estate",
+    "Number of SSE-listed foreign-funded enterprises in the Real Estate industry": 6,
+    "Number of HKEX-listed state-owned research institute enterprises in the Pharmaceutical Manufacturing industry": 1,
+    "Difference": 5.0
+  }
+}

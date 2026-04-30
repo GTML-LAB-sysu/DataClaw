@@ -1,0 +1,22 @@
+{
+  "id": "easy014",
+  "question": "In 2022, is the operating revenue of Wu Li Chang Yuan Pi Fa Co., Ltd. lower than that of Wu Li Hui Jin Ling Shou Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: operating revenue of Wu Li Chang Yuan Pi Fa Co., Ltd. in 2022 = 73443148744.17 CNY",
+    "Extracted from company_operation_status.csv: operating revenue of Wu Li Hui Jin Ling Shou Co., Ltd. in 2022 = 1144710941.0 CNY",
+    "Compared 73443148744.17 and 1144710941.0; since 73443148744.17 > 1144710941.0, the statement \"is lower\" is false, so the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Operating revenue of Wu Li Chang Yuan Pi Fa Co., Ltd. in 2022 (CNY)": 73443148744.17,
+    "Operating revenue of Wu Li Hui Jin Ling Shou Co., Ltd. in 2022 (CNY)": 1144710941.0,
+    "Comparison result (whether Wu Li Chang Yuan Pi Fa Co., Ltd. is lower than Wu Li Hui Jin Ling Shou Co., Ltd.)": "No"
+  }
+}

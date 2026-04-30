@@ -1,0 +1,39 @@
+{
+  "id": "medium020",
+  "question": "In 2022, amid national carbon peaking and clean energy development policies, what was JinkoSolar's asset-liability ratio (total liabilities ÷ total assets × 100%) in its annual report? Compared with the median asset-liability ratios among listed companies in China's Electricity, Heat, Gas and Water Supply industry—separately for state-owned enterprises (including centrally administered SOEs, locally administered SOEs, and other SOEs) and for private enterprises—how many percentage points higher is JinkoSolar's ratio in each case?",
+  "guidelines": "Answer in order: JinkoSolar's asset-liability ratio (%); percentage points above the state-owned median; percentage points above the private enterprise median. Use 2 decimal places; return as an array. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From JinkoSolar (JKS) 2022 annual report PDF (English Form 20-F), Consolidated Balance Sheets as of December 31, 2022: Total assets = RMB 108,662,182 thousand, Total liabilities = RMB 81,658,289 thousand.",
+    "Compute JinkoSolar's 2022 asset-liability ratio = 81,658,289 / 108,662,182 × 100% = 75.15%.",
+    "From company_profile.csv, filter industry = \"Electricity, Heat, Gas and Water Supply\", 189 companies. By ownership: state-owned enterprises (centrally administered SOEs 44 + locally administered SOEs 81 + other SOEs 1) = 126; private enterprises 56.",
+    "From company_operation_status.csv, read each company's asset-liability ratio; compute group medians: state-owned median = 61.27%, private enterprise median = 52.58%.",
+    "Compute gaps vs. JinkoSolar: above state-owned median 75.15% − 61.27% = 13.88 percentage points; above private enterprise median 75.15% − 52.58% = 22.57 percentage points."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "JinkoSolar (JKS) 2022 annual report PDF (Form 20-F): total assets RMB 108,662,182 thousand, total liabilities RMB 81,658,289 thousand.",
+    "company_profile.csv: 189 companies in Electricity, Heat, Gas and Water Supply — 126 state-owned, 56 private.",
+    "company_operation_status.csv: asset-liability ratio data for 189 companies."
+  ],
+  "milestone": {
+    "JinkoSolar total assets (thousand RMB)": 108662182,
+    "JinkoSolar total liabilities (thousand RMB)": 81658289,
+    "JinkoSolar asset-liability ratio (%)": 75.15,
+    "State-owned enterprise count (Electricity, Heat, Gas and Water Supply)": 126,
+    "Private enterprise count (Electricity, Heat, Gas and Water Supply)": 56,
+    "State-owned enterprises median asset-liability ratio (%)": 61.27,
+    "Private enterprises median asset-liability ratio (%)": 52.58,
+    "Above state-owned median (percentage points)": 13.88,
+    "Above private enterprise median (percentage points)": 22.57
+  },
+  "answer": [
+    75.15,
+    13.88,
+    22.57
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

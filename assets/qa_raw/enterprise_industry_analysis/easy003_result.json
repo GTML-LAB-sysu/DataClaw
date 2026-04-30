@@ -1,0 +1,39 @@
+{
+  "id": "easy003",
+  "question": "In 2022, which is lower: the year-over-year change rate of operating profit of Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. or the average of this indicator in its industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. (2022 dataset value): year-over-year operating profit change rate = -263.46 %",
+    "The company belongs to the Construction industry",
+    "Average year-over-year operating profit change rate in the Construction industry = -80.1477027027027 %"
+  ],
+  "milestone": {
+    "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. year-over-year operating profit change rate in 2022": "-263.46 %",
+    "Industry of Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd.": "Construction",
+    "Average year-over-year operating profit change rate in the Construction industry": "-80.1477027027027 %",
+    "Comparison result (whether the company is lower than the industry average)": "Yes"
+  },
+  "answer": "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd.",
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. year-over-year operating profit change rate in 2022 = -263.46 %",
+    "Extracted from company_profile.csv: the company belongs to Construction; extracted from national_industry_status.csv: industry average = -80.1477027027027 %",
+    "Compared -263.46 and -80.1477027027027; since -263.46 < -80.1477027027027, the company is lower, so the answer is \"Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd.\"."
+  ],
+  "steps_num": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "reference": [
+    {
+      "company_operation_status": "64cdaeda-369d-4d2e-9214-a7e2cb75edb0"
+    },
+    {
+      "national_industry_status": "a3ea618e-b6c2-4ae4-a46d-7d4fafa9aff9"
+    },
+    {
+      "company_profile": "6e6b4e87-8925-4b4b-a3d5-8f4e80099348"
+    }
+  ]
+}

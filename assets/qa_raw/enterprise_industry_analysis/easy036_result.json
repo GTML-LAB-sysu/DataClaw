@@ -1,0 +1,34 @@
+{
+  "id": "easy036",
+  "question": "Compared with the listing date of Yong Hui Ze Hui Pi Fa Co., Ltd., which listing date is earlier for Gao Yin Ze Tong Pi Fa Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Gao Yin Ze Tong Pi Fa Co., Ltd. (2022 dataset value): listing date = 1992-08-17",
+    "Yong Hui Ze Hui Pi Fa Co., Ltd. (2022 dataset value): listing date = 1993-02-02"
+  ],
+  "milestone": {
+    "Listing date of Gao Yin Ze Tong Pi Fa Co., Ltd.": "1992-08-17",
+    "Listing date of Yong Hui Ze Hui Pi Fa Co., Ltd.": "1993-02-02",
+    "Comparison result (which one is earlier)": "Gao Yin Ze Tong Pi Fa Co., Ltd."
+  },
+  "answer": "Gao Yin Ze Tong Pi Fa Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: listing date of Gao Yin Ze Tong Pi Fa Co., Ltd. = 1992-08-17",
+    "Extracted from company_profile.csv: listing date of Yong Hui Ze Hui Pi Fa Co., Ltd. = 1993-02-02",
+    "Compared the dates; 1992-08-17 is earlier than 1993-02-02, so the earlier one is \"Gao Yin Ze Tong Pi Fa Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_profile": "a9b797ac-f74d-4a35-acfa-01b494fe2b3f"
+    },
+    {
+      "company_profile": "c02c6c02-5aa8-45ac-a752-7feb7538bf2c"
+    }
+  ]
+}

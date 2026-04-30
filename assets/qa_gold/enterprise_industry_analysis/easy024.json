@@ -1,0 +1,22 @@
+{
+  "id": "easy024",
+  "question": "In 2022, is the cumulative number of PCT patent applications of Shi Yang Zhi Guang Dian Qi Co., Ltd. lower than the corresponding value of Xu Ye Zhi Gong Technology Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: cumulative number of PCT patent applications of Shi Yang Zhi Guang Dian Qi Co., Ltd. in 2022 = 93",
+    "Extracted from company_operation_status.csv: cumulative number of PCT patent applications of Xu Ye Zhi Gong Technology Co., Ltd. in 2022 = 10",
+    "Compared 93 and 10; since 93 < 10 is false, the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Cumulative number of PCT patent applications of Shi Yang Zhi Guang Dian Qi Co., Ltd. in 2022": 93,
+    "Cumulative number of PCT patent applications of Xu Ye Zhi Gong Technology Co., Ltd. in 2022": 10,
+    "Comparison result (whether Shi Yang Zhi Guang Dian Qi Co., Ltd. is lower than Xu Ye Zhi Gong Technology Co., Ltd.)": "No"
+  }
+}

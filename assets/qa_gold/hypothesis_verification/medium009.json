@@ -1,0 +1,26 @@
+{
+  "id": "medium009",
+  "question": "In the pharmaceutical manufacturing industry in 2022, verify whether the 'policy-innovation paradox' exists (i.e., the phenomenon where the strength of local pharmaceutical innovation support policies is negatively associated with innovation output). Among provinces that have issued pharmaceutical support policies, use the median number of policy entries as the threshold for support strength, and use the national average invention patent grants per province for pharmaceutical manufacturing as the innovation output benchmark. Count the number of provinces where policy support strength exceeds the median but total invention patent grants are below the national average.",
+  "guidelines": "Answer format: numerical value (integer). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  },
+  "steps": [
+    "Filter from policy_release_status.csv: policyClassification=\"local policy\", publishDate in 2022, industry contains \"pharmaceutical manufacturing\", province is non-empty and not \"national\" (全国). Aggregate policy entry counts by province to obtain 21 provinces that have issued pharmaceutical support policies.",
+    "Take the median of policy entry counts across those 21 provinces, yielding 2.0; define \"support strength above the median\" as a strictly greater policy count than 2.",
+    "From regional_industry_status.csv, filter rows where industry=\"pharmaceutical manufacturing\". Treat empty values in 「年度中国发明专利授权数合计」 (annual total China invention patent grants) as undisclosed: compute the national average invention patent grants per province for pharmaceutical manufacturing using only provincial records with non-empty values, yielding 15 provinces with disclosed data, total 3243, provincial average = 3243 / 15 = 216.20.",
+    "Link policy provinces with patent data: a province participates in the paradox judgment only if it has a disclosed annual total for invention patent grants; provinces without disclosed patent data are excluded from the comparison.",
+    "Filter provinces that simultaneously satisfy: policy entry count > 2.0 and disclosed patent total < 216.20, yielding: Shanghai (policy count = 11, patents = 210), Henan (policy count = 3, patents = 102), Sichuan (policy count = 4, patents = 112).",
+    "The final number of qualifying provinces is 3."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Number of provinces with valid disclosure": 15,
+    "Median policy entry count": 2.0,
+    "National average invention patent grants per province (pharmaceutical manufacturing)": 216.2,
+    "Number of paradox provinces": 3
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "easy006",
+  "question": "In 2022, what is Sichuan Province's national ranking by average R&D investment in the Information Transmission, Software and Information Technology Services industry?",
+  "guidelines": "The answer must be an exact number representing the ranking. Output only the number, do not add units, commas, or any textual explanation. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 10,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter from regional_industry_status.csv all records with industry=\"Information Transmission, Software and Information Technology Services\", finding data for 34 provinces/regions.",
+    "Extract the \"mean R&D investment amount\" field for each province to obtain mean R&D investment data for all provinces. Sort all provinces by mean R&D investment amount in descending order to determine the R&D investment ranking of each province.",
+    "Locate Sichuan Province's position in the sorted list. Sichuan Province's mean R&D investment amount is 147274301.44 CNY, and its ranking is 10th."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Mean R&D investment amount of Sichuan Province (CNY)": 147274301.44,
+    "Sichuan Province ranking": 10
+  }
+}

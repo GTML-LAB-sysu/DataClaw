@@ -1,0 +1,26 @@
+{
+  "id": "medium016",
+  "question": "What is the difference between the median annual number of Chinese invention patent applications in the industry of Changqiao Jinchuang Technology Co., Ltd. and the corresponding metric for the industry in Zhejiang Province where Wuli Huida Chain Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 16.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Changqiao Jinchuang Technology Co., Ltd. = Consumer Electronics and Electrical Industry",
+    "Extracted from national_industry_status.csv: median annual Chinese invention patent applications in Consumer Electronics and Electrical Industry = 18",
+    "Extracted from company_profile.csv: province of Wuli Huida Chain Co., Ltd. = Zhejiang Province",
+    "Extracted from regional_industry_status.csv: median annual Chinese invention patent applications in Zhejiang Wholesale and Retail Trade = 2",
+    "Calculated the difference: 18 - 2 = 16.0"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Changqiao Jinchuang Technology Co., Ltd.": "Consumer Electronics and Electrical Industry",
+    "Median annual Chinese invention patent applications in Consumer Electronics and Electrical Industry": 18,
+    "Province of Wuli Huida Chain Co., Ltd.": "Zhejiang Province",
+    "Median annual Chinese invention patent applications in Zhejiang Wholesale and Retail Trade": 2,
+    "Difference (Consumer Electronics and Electrical Industry - Zhejiang Wholesale and Retail Trade)": 16.0
+  }
+}

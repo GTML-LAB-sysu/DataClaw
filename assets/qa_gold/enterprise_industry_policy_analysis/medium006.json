@@ -1,0 +1,26 @@
+{
+  "id": "medium006",
+  "question": "Which is greater: the number of local policies issued by the Yunnan Province Communications Administration in the local policies for the industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd., or the number of central ministry/agency policies issued by the Development and Reform Commission in the ministerial policies for the industry of Yi Hai Chang Jin Shang Wu Co., Ltd.?",
+  "guidelines": "The answer must be either a company name or \"Equal\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "From policy_release_status.csv, extract that in the local policies for Information Transmission, Software and IT Services, the number of policies issued by the Yunnan Province Communications Administration is 1",
+    "From company_profile.csv, extract that Yi Hai Chang Jin Shang Wu Co., Ltd.'s industry is Leasing and Business Services",
+    "From policy_release_status.csv, extract that in the ministerial policies for Leasing and Business Services, the number of policies issued by the Development and Reform Commission is 1",
+    "Compare 1 and 1; if equal, output \"Equal\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies_Yunnan Province Communications Administration number of policies": 1,
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.": "Leasing and Business Services",
+    "Leasing and Business Services ministerial policies_Development and Reform Commission number of policies": 1,
+    "Comparison result": "Equal"
+  }
+}

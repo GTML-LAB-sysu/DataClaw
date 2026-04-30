@@ -1,0 +1,36 @@
+{
+  "id": "easy004",
+  "question": "In 2022, nationwide, what is the ranking of provinces by asset size in the Information Transmission, Software and Information Technology Services industry? Please list the top five provinces.",
+  "guidelines": "Answer format: [Province A, Province B, ...]. Output only the province ranking, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from regional_industry_status.csv all records with industry=\"Information Transmission, Software and Information Technology Services\", and extract the province and total assets fields.",
+    "Sort all provincial data in descending order by total assets to determine the asset size ranking of each province. Extract the top five provinces and their total assets: Beijing (10297490896006.5), Zhejiang Province (4115693929492.25), Guangdong Province (2262247330030.01), Shanghai (1282711003966.55), Jiangsu Province (177568006242.47)."
+  ],
+  "steps_num": 2,
+  "milestone": {
+    "Total assets of Beijing (CNY)": 10297490896006.5,
+    "Total assets of Zhejiang Province (CNY)": 4115693929492.25,
+    "Total assets of Guangdong Province (CNY)": 2262247330030.01,
+    "Total assets of Shanghai (CNY)": 1282711003966.55,
+    "Total assets of Jiangsu Province (CNY)": 177568006242.47,
+    "Top five provinces by ranking": [
+      "Beijing",
+      "Zhejiang Province",
+      "Guangdong Province",
+      "Shanghai",
+      "Jiangsu Province"
+    ]
+  },
+  "answer": [
+    "Beijing",
+    "Zhejiang Province",
+    "Guangdong Province",
+    "Shanghai",
+    "Jiangsu Province"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  }
+}

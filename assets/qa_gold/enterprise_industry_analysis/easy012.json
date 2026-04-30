@@ -1,0 +1,22 @@
+{
+  "id": "easy012",
+  "question": "In 2022, is the total assets of Yong Feng Xin Ruan Network Co., Ltd. lower than that of Jin Fei Shu Ruan Data Services Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Xin Ruan Network Co., Ltd. total assets in 2022 = 957348449.13 CNY",
+    "Extracted from company_operation_status.csv: Jin Fei Shu Ruan Data Services Co., Ltd. total assets in 2022 = 674647621.10 CNY",
+    "Compared 957348449.13 and 674647621.10; since 957348449.13 > 674647621.10, the condition \"lower than\" is false, so the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Yong Feng Xin Ruan Network Co., Ltd. total assets in 2022 (CNY)": 957348449.13,
+    "Jin Fei Shu Ruan Data Services Co., Ltd. total assets in 2022 (CNY)": 674647621.1,
+    "Comparison result (whether Yong Feng Xin Ruan Network Co., Ltd. is lower than Jin Fei Shu Ruan Data Services Co., Ltd.)": "No"
+  }
+}

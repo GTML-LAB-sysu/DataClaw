@@ -1,0 +1,34 @@
+{
+  "id": "easy064",
+  "question": "In 2022, which is higher: the average year-on-year operating profit growth rate of Beijing's real estate industry or that of the nationwide information transmission, software, and IT services industry?",
+  "guidelines": "The answer must be either \"Beijing Real Estate\" or \"Nationwide Information Transmission, Software and IT Services\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Beijing (2022 dataset value): average YoY operating profit growth rate of real estate = -45.385%",
+    "Nationwide (2022 dataset value): average YoY operating profit growth rate of information transmission, software and IT services = -137.175403726708%"
+  ],
+  "milestone": {
+    "Average YoY operating profit growth rate of Beijing real estate": "-45.385%",
+    "Average YoY operating profit growth rate of nationwide information transmission, software and IT services": "-137.175403726708%",
+    "Comparison result (which is higher)": "Beijing Real Estate"
+  },
+  "answer": "Beijing Real Estate",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: average YoY operating profit growth rate of Beijing real estate = -45.385%",
+    "Extracted from national_industry_status.csv: average YoY operating profit growth rate of nationwide information transmission, software and IT services = -137.175403726708%",
+    "Compared -45.385 and -137.175403726708; since -45.385 is higher, output \"Beijing Real Estate\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "regional_industry_status": "e89ca2d9-ede0-4a1c-aeaa-977be2dc7e53"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    }
+  ]
+}

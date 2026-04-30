@@ -1,0 +1,22 @@
+{
+  "id": "easy041",
+  "question": "Comparing the incorporation dates of Biyuan Chanhua Real Estate Holdings Co., Ltd. and Huarun Zhijin Construction Development Co., Ltd., which one was established earlier?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Biyuan Chanhua Real Estate Holdings Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: incorporation date of Biyuan Chanhua Real Estate Holdings Co., Ltd. = 1989-11-22",
+    "Extracted from company_profile.csv: incorporation date of Huarun Zhijin Construction Development Co., Ltd. = 1991-03-30",
+    "Compared dates 1989-11-22 and 1991-03-30; since 1989-11-22 is earlier, the judgment is \"Biyuan Chanhua Real Estate Holdings Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Incorporation date of Biyuan Chanhua Real Estate Holdings Co., Ltd.": "1989-11-22",
+    "Incorporation date of Huarun Zhijin Construction Development Co., Ltd.": "1991-03-30",
+    "Comparison result (which one is earlier)": "Biyuan Chanhua Real Estate Holdings Co., Ltd."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "medium037",
+  "question": "Which is greater: the number of SZSE-listed local state-owned enterprises in the industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd., or the number of HKEX-listed enterprises in the corresponding industry of Guangdong Province where Gao Yin Ze Tong Pi Fa Co., Ltd. is located?",
+  "guidelines": "The answer must be either \"Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. industry local state-owned enterprise SZSE-listed count\" or \"HKEX-listed enterprise count\". Output only the answer text without explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. industry local state-owned enterprise SZSE-listed count",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. = Information Transmission, Software and IT Services",
+    "Extracted from national_industry_status.csv: SZSE-listed local state-owned enterprise count in that industry = 26",
+    "Extracted from company_profile.csv: province of Gao Yin Ze Tong Pi Fa Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: HKEX-listed enterprise count in Guangdong Wholesale and Retail = 18",
+    "Compared 26 and 18; since 26 is greater, output the first allowed option"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.": "Information Transmission, Software and IT Services",
+    "SZSE-listed local state-owned enterprise count in that industry": 26,
+    "Province of Gao Yin Ze Tong Pi Fa Co., Ltd.": "Guangdong Province",
+    "HKEX-listed enterprise count in Guangdong Wholesale and Retail": 18,
+    "Comparison result (greater)": "Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. industry local state-owned enterprise SZSE-listed count"
+  }
+}

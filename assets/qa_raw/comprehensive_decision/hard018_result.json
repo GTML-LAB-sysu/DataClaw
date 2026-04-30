@@ -1,0 +1,35 @@
+{
+  "id": "hard018",
+  "question": "In 2022, does Lianji Chuangji Machine Tool Company meet the basic conditions under the Several Policies on Supporting the Construction of a Strong Province of Skilled Workers? If yes, treat it as a sample firm eligible for skills training subsidies and apply the following: all R&D personnel receive individual skill improvement subsidies at the \"senior technician\" rate; all non-R&D employees at the \"technician\" rate; assume all new subsidies are used to offset that year's R&D investment. Calculate by how many basis points the adjusted R&D investment ratio is lower than the disclosed 2022 R&D investment ratio.",
+  "guidelines": "Answer format: the number of basis points of decline. Two decimal places. Output the number only, no units or text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, confirm Lianji Chuangji Machine Tool Company is located in Anhui Province, satisfying the geographic condition for Anhui's local skills policy.",
+    "From policy_resource.jsonl, locate the Notice of Anhui Provincial People's Government on Several Policies Supporting the Construction of a Strong Province of Skilled Workers; extract individual skill improvement subsidy rates: technician 3,500 yuan per person, senior technician 5,000 yuan per person.",
+    "From company_operation_status.csv, filter records with bmCode=100791 and year=2022; extract total employees, R&D personnel count, R&D investment amount, operating revenue, and disclosed R&D investment ratio. Results: 1,276 employees, 290 R&D personnel, R&D investment 58,357,098.35 yuan, operating revenue 1,082,827,667.36 yuan, disclosed R&D ratio 5.37%.",
+    "Non-R&D employees = 1,276 − 290 = 986.",
+    "Total new subsidies = 290 × 5,000 + 986 × 3,500 = 4,901,000.00 yuan.",
+    "Adjusted R&D investment = 58,357,098.35 − 4,901,000.00 = 53,456,098.35 yuan.",
+    "Adjusted R&D ratio = 53,456,098.35 / 1,082,827,667.36 × 100% = 4.9367%. Compared with disclosed 5.37%, decline = 5.37% − 4.9367% = 0.4333%, or 43.33 basis points."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "From company_profile.csv, Lianji Chuangji Machine Tool Company was confirmed to be located in Anhui Province.",
+    "From policy_resource.jsonl, Anhui's strong-province-of-skilled-workers policy was found, with technician subsidy 3,500 yuan/person and senior technician 5,000 yuan/person.",
+    "From company_operation_status.csv, 2022 employee structure, R&D investment, operating revenue, and disclosed R&D ratio were obtained for the company."
+  ],
+  "milestone": {
+    "Total employees": 1276,
+    "R&D personnel count": 290,
+    "Non-R&D employee count": 986,
+    "Total new subsidies (yuan)": 4901000,
+    "Adjusted R&D investment (yuan)": 53456098.35,
+    "Adjusted R&D ratio (%)": 4.9367,
+    "Decline (basis points)": 43.33
+  },
+  "answer": "43.33",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  }
+}

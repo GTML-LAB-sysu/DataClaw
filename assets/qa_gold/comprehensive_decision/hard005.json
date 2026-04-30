@@ -1,0 +1,30 @@
+{
+  "id": "hard005",
+  "question": "In 2022, for the information transmission, software and information technology services industry, an industry research institute sought to obtain a policy-adjusted comprehensive innovation efficiency indicator by superimposing the incentive effect of local policy support on top of raw innovation efficiency. The calculation logic is as follows: first, exclude from enterprise microdata any samples with missing R&D expenditure or annual domestic invention patent grants; for the remaining valid enterprises, aggregate by province and calculate the ratio of total invention patent grants to total R&D expenditure (converted to 100 million yuan) for each province as the province's raw innovation efficiency benchmark; then use the proportion of policy items in that province out of all information technology policies as the policy support coefficient, and multiply the raw efficiency benchmark by (1 plus the policy support coefficient) to obtain the final policy-adjusted innovation efficiency. Among all provinces with data, what is the specific value of the province with the highest adjusted efficiency?",
+  "guidelines": "The answer should be a numerical value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 63.74,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter policy records from policy_release_status.csv where industry field contains \"Information Transmission, Software and Information Technology Services\"; 206 records found. Group by province to count policy numbers per province.",
+    "Filter enterprise records with industry=\"Information Transmission, Software and Information Technology Services\" from company_profile.csv, extract company name, bmCode, and province; 644 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract R&D expenditure and annual domestic invention patent grants; 644 records after merge.",
+    "Filter valid enterprises with non-null values for both R&D expenditure and annual domestic invention patent grants; 432 enterprises.",
+    "Group by province to sum R&D expenditure and annual domestic invention patent grants; 28 provinces have valid data.",
+    "Convert total R&D expenditure per province to 100 million yuan, calculate raw innovation efficiency = total patent grants / total R&D expenditure (100 million yuan). Merge with policy data, calculate policy support coefficient = province policy count / 206.",
+    "Calculate policy-adjusted innovation efficiency = raw innovation efficiency × (1 + policy support coefficient), sort by adjusted efficiency descending. Hong Kong Special Administrative Region has the highest: raw efficiency 63.7360, policy support coefficient 0.0000, adjusted efficiency = 63.7360."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Total information technology-related policies": 206,
+    "Total information technology services enterprises": 644,
+    "Number of valid enterprises": 432,
+    "Number of valid provinces": 28,
+    "Hong Kong SAR raw innovation efficiency": 63.736,
+    "Hong Kong SAR policy support coefficient": 0.0,
+    "Hong Kong SAR adjusted innovation efficiency": 63.74
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium040",
+  "question": "What is the difference between the number of local policies issued by the Guangzhou Development District Bureau of Economy and Information Technology in the local policies for the industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd. and the number of local policies issued by the Yunnan Province General Office of the People's Government in the local policies for the Scientific Research and Technical Services industry?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhong Ke Ke Shu Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services, the policy count issued by the Guangzhou Development District Bureau of Economy and Information Technology is 2",
+    "Extract from policy_release_status.csv that in the local policies for Scientific Research and Technical Services, the policy count issued by the Yunnan Province General Office of the People's Government is 2",
+    "Calculate the difference: 2 - 2 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies_Guangzhou Development District Bureau of Economy and Information Technology policy count": 2,
+    "Scientific Research and Technical Services local policies_Yunnan Province General Office of the People's Government policy count": 2,
+    "Difference (Guangzhou Development District Bureau of Economy and Information Technology policy count - Yunnan Province General Office of the People's Government policy count)": 0.0
+  }
+}

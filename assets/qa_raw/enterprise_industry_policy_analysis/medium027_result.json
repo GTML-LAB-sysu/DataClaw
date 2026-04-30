@@ -1,0 +1,46 @@
+{
+  "id": "medium027",
+  "question": "Between the number of local policies issued by the General Office of the People's Government of Henan Province in the local policies for the industry of Yi Hai Chang Jin Shang Wu Co., Ltd. and the number of local policies issued by the Shanghai Municipality Finance Bureau in the local policies for the industry of Lang Ji Hui Ruan Technology Co., Ltd. in Shanghai, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.: Leasing and Business Services",
+    "Leasing and Business Services local policies - Henan Province General Office of the People's Government - policy count = 1",
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.: Shanghai Municipality; industry: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies in Shanghai Municipality - Shanghai Municipality Finance Bureau - policy count = 2"
+  ],
+  "milestone": {
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.": "Leasing and Business Services",
+    "Leasing and Business Services local policies_Henan Province General Office of the People's Government policy count": 1,
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Information Transmission, Software and IT Services local policies in Shanghai Municipality_Shanghai Municipality Finance Bureau policy count": 2,
+    "Comparison result": "2 is greater; output Lang Ji Hui Ruan Technology Co., Ltd."
+  },
+  "steps": [
+    "Extract from company_profile.csv that Yi Hai Chang Jin Shang Wu Co., Ltd.'s industry is Leasing and Business Services",
+    "Extract from policy_release_status.csv that in the local policies for Leasing and Business Services, the policy count issued by Henan Province General Office of the People's Government is 1",
+    "Extract from company_profile.csv that Lang Ji Hui Ruan Technology Co., Ltd. is located in Shanghai Municipality and its industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services in Shanghai Municipality, the policy count issued by the Shanghai Municipality Finance Bureau is 2",
+    "Compare 1 and 2; since 2 is greater, output \"Lang Ji Hui Ruan Technology Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "answer": "Lang Ji Hui Ruan Technology Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "b11a2b60-c999-4fc9-9581-5a6601001790"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "policy_release_status": "0a1d883b-42a1-4d7a-938a-43e0301f00ac"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    }
+  ]
+}

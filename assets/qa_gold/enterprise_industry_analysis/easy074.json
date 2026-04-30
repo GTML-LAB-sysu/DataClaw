@@ -1,0 +1,22 @@
+{
+  "id": "easy074",
+  "question": "In 2022, which is higher: the maximum government award funding or subsidy value in Jilin's transportation, warehousing, and postal industry, or the same metric in the nationwide industry?",
+  "guidelines": "The answer must be \"Nationwide\" or \"Jilin\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Nationwide",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: maximum government award funding or subsidy in Jilin transportation, warehousing and postal industry = 1244449.8 yuan",
+    "Extracted from national_industry_status.csv: maximum government award funding or subsidy in nationwide transportation, warehousing and postal industry = 4688008342 yuan",
+    "Compared 1244449.8 and 4688008342; since 4688008342 is higher, output \"Nationwide\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Maximum government award funding or subsidy in Jilin transportation, warehousing and postal industry (yuan)": 1244449.8,
+    "Maximum government award funding or subsidy in nationwide transportation, warehousing and postal industry (yuan)": 4688008342,
+    "Comparison result (which is higher)": "Nationwide"
+  }
+}

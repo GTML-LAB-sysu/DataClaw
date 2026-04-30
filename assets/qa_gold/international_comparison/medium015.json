@@ -1,0 +1,31 @@
+{
+  "id": "medium015",
+  "question": "Delta Electronics (2308.TW) is a leading global provider of power and thermal management solutions. Based on Delta Electronics' 2022 annual report, compute its consolidated net profit margin (net profit / operating revenue × 100%) and benchmark against listed companies in China's Electrical Machinery and Equipment Manufacturing industry: the top 10% by operating revenue are defined as industry leaders. What is Delta Electronics' net profit margin? What is the gap (in percentage points) between Delta's net profit margin and the median net profit margin of industry leaders?",
+  "guidelines": "Answer in order: Delta Electronics 2022 consolidated net profit margin (%), and the gap (percentage points) between Delta Electronics and the median net profit margin of domestic Electrical Machinery and Equipment Manufacturing industry leaders (top 10% by revenue). Round all values to 2 decimal places, e.g. [9.62, 3.30]. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": [
+    9.62,
+    3.3
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "From Delta Electronics' 2022 annual report (ROC calendar year 111), consolidated condensed comprehensive income statement: consolidated operating revenue = 384,443,308 thousand TWD, consolidated net profit for the period = 36,990,738 thousand TWD.",
+    "Compute Delta consolidated net profit margin: 36,990,738 / 384,443,308 × 100% = 9.62%.",
+    "From company_profile.csv, filter industry = \"Electrical Machinery and Equipment Manufacturing\", 320 companies. Join company_operation_status.csv for 2022 net profit and operating revenue; compute each company's net profit margin (net profit / operating revenue × 100%); all 320 records valid.",
+    "Sort by operating revenue descending; top 10% (32 companies) as industry leaders, remaining 288 as non-leaders. Median net profit margin of industry leaders = 6.32%.",
+    "Compute the gap between Delta's net profit margin and the industry leaders' median: 9.62% − 6.32% = 3.30 percentage points. Delta's net profit margin is above the domestic industry leaders' median."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Delta Electronics 2022 consolidated operating revenue (thousand TWD)": 384443308,
+    "Delta Electronics 2022 consolidated net profit (thousand TWD)": 36990738,
+    "Delta Electronics net profit margin (%)": 9.62,
+    "Electrical Machinery and Equipment Manufacturing valid enterprise count": 320,
+    "Industry leader enterprise count": 32,
+    "Industry leaders median net profit margin (%)": 6.32,
+    "Gap between Delta Electronics and industry leaders median (percentage points)": 3.3
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "medium009",
+  "question": "Among the enterprises in the textile, footwear and apparel industry in 2022, find the enterprise with the largest R&D personnel scale; its province is the analysis object. For that province's textile, footwear and apparel industry, use the following two route scoring systems to determine which development route has the advantage—the \"automation upgrade route\" scores by three indicators: R&D investment intensity (= total R&D investment amount / total operating revenue, weight 0.4), capitalized R&D investment ratio (= total capitalized R&D investment / total R&D investment amount, weight 0.3), and count of equipment manufacturing policies (policy name contains \"equipment\" or \"intelligent manufacturing\", weight 0.3); the \"brand overseas expansion route\" scores by cumulative PCT patent applications (weight 0.4), per capita revenue (weight 0.3), and count of export-related policies (policy name contains \"export\", \"foreign trade\", or \"international\", weight 0.3); both routes use inter-provincial ranking scores for each indicator (score = (N - ranking) / (N - 1) × 100). Which route has the higher score for that province?",
+  "guidelines": "Answer format: \"Automation upgrade route\" or \"Brand overseas expansion route\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Automation upgrade route",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"textile, footwear and apparel industry\", extract enterprise name, bmCode, and province fields, finding 177 enterprises.",
+    "From company_operation_status.csv, link enterprises by bmCode, filter year=2022, extract R&D personnel count, filter out empty values, sort in descending order. The enterprise with the most R&D personnel is Anbu Shangchang Brand Company (2,826 people), located in Guangdong Province.",
+    "Filter from regional_industry_status.csv where industry=\"textile, footwear and apparel industry\", extract for each province total R&D investment amount, total operating revenue, total capitalized R&D investment, total cumulative PCT patent applications, and total number of employees, for 34 provincial-level regions.",
+    "Calculate each province's R&D investment intensity = total R&D investment amount / total operating revenue, Guangdong: 0.017511; capitalized R&D investment ratio = total capitalized R&D investment / total R&D investment amount, Guangdong: 0.004225; per capita revenue = total operating revenue / total number of employees, Guangdong: 269886.81. (Provinces with null values or a zero denominator are excluded from ranking for that indicator.)",
+    "From policy_release_status.csv, count by policy name: equipment manufacturing policies whose name contains \"equipment\" or \"intelligent manufacturing\"; export-related policies whose name contains \"export\", \"foreign trade\", or \"international\". Policies with province=\"全国\" count once for each of the 34 provincial samples; other policies are assigned to the corresponding province.",
+    "For each of the six indicators, rank provinces in descending order within the valid set for that indicator, with ties taking the best rank; Guangdong's ranking score = (N - ranking) / (N - 1) × 100. R&D intensity score = 30.77, capitalized R&D ratio score = 91.67, equipment policy score = 90.91, PCT patent score = 86.67, per capita revenue score = 0.00, export policy score = 90.91.",
+    "Calculate automation upgrade score = 30.77 × 0.4 + 91.67 × 0.3 + 90.91 × 0.3 = 67.08; brand overseas expansion score = 86.67 × 0.4 + 0.00 × 0.3 + 90.91 × 0.3 = 61.94.",
+    "Automation upgrade score 67.08 > brand overseas expansion score 61.94, therefore the automation upgrade route has the higher score."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "Enterprise with most R&D personnel": "Anbu Shangchang Brand Company",
+    "Target province": "Guangdong Province",
+    "R&D investment intensity score": 30.77,
+    "Capitalized R&D ratio score": 91.67,
+    "Equipment policy score": 90.91,
+    "PCT patent score": 86.67,
+    "Per capita revenue score": 0.0,
+    "Export policy score": 90.91,
+    "Automation upgrade route score": 67.08,
+    "Brand overseas expansion route score": 61.94
+  }
+}

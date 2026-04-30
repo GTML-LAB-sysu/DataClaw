@@ -1,0 +1,24 @@
+{
+  "id": "medium102",
+  "question": "Which is larger: the total number of Consumer Electronics and Electrical industry enterprises in the province where Changqiao Jinchuang Technology Company is located, or the number of HKEX-listed foreign-funded enterprises in China's Conglomerates industry?",
+  "guidelines": "The answer must be either \"the total number of Consumer Electronics and Electrical industry enterprises in the province where Changqiao Jinchuang Technology Company is located\" or \"the number of HKEX-listed foreign-funded enterprises in China's Conglomerates industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the number of HKEX-listed foreign-funded enterprises in China's Conglomerates industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Changqiao Jinchuang Technology Company is located in Gansu Province and belongs to the Consumer Electronics and Electrical industry.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Gansu Province - Consumer Electronics and Electrical industry is 0.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed foreign-funded enterprises in the Conglomerates industry is 5.",
+    "Compare the counts: 5 > 0, so the number of HKEX-listed foreign-funded enterprises in China's Conglomerates industry is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Changqiao Jinchuang Technology Company": "Gansu Province",
+    "Total number of enterprises in Gansu Province - Consumer Electronics and Electrical industry": 0,
+    "Number of HKEX-listed foreign-funded enterprises in the Conglomerates industry": 5,
+    "Comparison result (larger one)": "the number of HKEX-listed foreign-funded enterprises in China's Conglomerates industry"
+  }
+}

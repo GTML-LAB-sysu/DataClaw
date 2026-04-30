@@ -1,0 +1,24 @@
+{
+  "id": "medium041",
+  "question": "Between the number of central ministry/agency policies issued by the Ministry of Public Security for the industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd. and the number of local policies for the Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing industry in Anhui Province, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Hui Jin Jin Rui Cai Fu Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hui Jin Jin Rui Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in the ministerial policies for Financial Services, the policy count issued by the Ministry of Public Security is 1",
+    "Extract from policy_release_status.csv that in the local policies for Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing in Anhui Province, the policy count is 1",
+    "Compare 1 and 1; since they are equal, output \"Hui Jin Jin Rui Cai Fu Management Co., Ltd.\" according to the question requirement"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services ministerial policies_Ministry of Public Security policy count": 1,
+    "Anhui Province Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing local policies policy count": 1,
+    "Comparison result": "Equal; according to the question requirement, output Hui Jin Jin Rui Cai Fu Management Co., Ltd."
+  }
+}

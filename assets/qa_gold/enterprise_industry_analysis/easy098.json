@@ -1,0 +1,22 @@
+{
+  "id": "easy098",
+  "question": "Are Jingxin Ruihui Microelectronics Company and Ruixin Yaolan Integrated Circuit Company in the same industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Ruixin Yaolan Integrated Circuit Company is in the Semiconductor industry.",
+    "Extract from company_profile.csv that Jingxin Ruihui Microelectronics Company is in the Semiconductor industry.",
+    "Since the two companies are in the same industry, they are peers; output \"Yes\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Ruixin Yaolan Integrated Circuit Company": "Semiconductor industry",
+    "Industry of Jingxin Ruihui Microelectronics Company": "Semiconductor industry",
+    "Whether same industry": "Yes"
+  }
+}

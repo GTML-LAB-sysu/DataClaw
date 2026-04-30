@@ -1,0 +1,22 @@
+{
+  "id": "easy117",
+  "question": "Is Zhongke Zhiyun Data Services Co., Ltd. registered in Guangdong Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: registered province of Zhongke Zhiyun Data Services Co., Ltd. = Guangdong Province",
+    "Compared Guangdong Province with the question's province, Guangdong Province; they match",
+    "Therefore, the company is registered in Guangdong Province; output \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Registered province of Zhongke Zhiyun Data Services Co., Ltd.": "Guangdong Province",
+    "Compared province": "Guangdong Province",
+    "Whether registered in Guangdong Province": "Yes"
+  }
+}

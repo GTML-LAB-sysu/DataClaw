@@ -1,0 +1,36 @@
+{
+  "id": "medium007",
+  "question": "In 2022, analyze government subsidy leverage in the information transmission, software and information technology services industry. Define government subsidy leverage effect as the ratio of each province's total operating profit to total government subsidies. What is the specific ratio for the province with the highest government subsidy leverage effect? Which enterprise in that province has the highest leverage effect?",
+  "guidelines": "Two answers required: first is a numeric value (2 decimal places, unitless ratio); second is the full company name. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, filter industry=\"Information Transmission, Software and Information Technology Services\", extract company name, bmCode, and province.",
+    "Inner-join with company_operation_status.csv on year=2022 by company name and bmCode to obtain the 2022 enterprise sample for this industry (644 records, covering 31 provincial-level regions).",
+    "Group by province: sum operating profit to get each province's total operating profit; sum government rewards and subsidies to get each province's total government subsidies.",
+    "Keep provinces with total government subsidies > 0 and non-null total operating profit; compute government subsidy leverage effect = total operating profit / total government subsidies — 31 valid provinces; sort descending: first is Jiangxi Province — total operating profit 93,463,073.13 yuan, total government rewards and subsidies 1,391,005.09 yuan, provincial leverage = 67.19 (2 decimal places).",
+    "Sort enterprises by government subsidy leverage effect descending; top enterprise: Dongche Kexin Systems Company (bmCode=591984); operating profit 20,080,241.24 yuan, government rewards and subsidies 1,391,005.09 yuan, enterprise-level leverage ≈ 14.44; Zhongke Ruanchuang Software Company is excluded from enterprise-level ranking due to missing subsidy data."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found 644 enterprise records for information transmission, software and information technology services in company_profile.csv.",
+    "Found 644 year-2022 records in company_operation_status.csv matching those enterprises in company_profile.csv."
+  ],
+  "milestone": {
+    "Provincial aggregation note": "Aggregate by province from the enterprise table; do not use Jiangxi totals missing from the regional table",
+    "Jiangxi total operating profit (yuan)": 93463073.13,
+    "Jiangxi total government rewards and subsidies (yuan)": 1391005.09,
+    "Jiangxi government subsidy leverage effect": 67.19,
+    "Enterprise with highest government subsidy leverage effect": "Dongche Kexin Systems Company",
+    "Enterprise operating profit (yuan)": 20080241.24,
+    "Enterprise government rewards and subsidies (yuan)": 1391005.09,
+    "Enterprise government subsidy leverage effect": 14.44
+  },
+  "answer": [
+    67.19,
+    "Dongche Kexin Systems Company"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

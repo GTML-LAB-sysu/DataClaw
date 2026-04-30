@@ -1,0 +1,24 @@
+{
+  "id": "medium049",
+  "question": "Between the number of local policies for the industry of Wan Hui Jin Sheng Real Estate Development Co., Ltd. and the number of local policies issued by the Jiangxi Province People's Government for the Commercial Electrical Machinery and Equipment Manufacturing industry in Jiangxi Province, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Wan Hui Jin Sheng Real Estate Development Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Wan Hui Jin Sheng Real Estate Development Co., Ltd.'s industry is Real Estate",
+    "Extract from policy_release_status.csv that the local policies policy count for Real Estate is 2",
+    "Extract from policy_release_status.csv that in the local policies for Commercial Electrical Machinery and Equipment Manufacturing in Jiangxi Province, the policy count issued by the Jiangxi Province People's Government is 1",
+    "Compare 2 and 1; since 2 is greater, output \"Wan Hui Jin Sheng Real Estate Development Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Wan Hui Jin Sheng Real Estate Development Co., Ltd.": "Real Estate",
+    "Real Estate local policies policy count": 2,
+    "Jiangxi Province Commercial Electrical Machinery and Equipment Manufacturing local policies_Jiangxi Province People's Government policy count": 1,
+    "Comparison result": "2 is greater; output Wan Hui Jin Sheng Real Estate Development Co., Ltd."
+  }
+}

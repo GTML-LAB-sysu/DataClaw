@@ -1,0 +1,16 @@
+.git
+.github
+.cursor
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.log
+results
+report
+tmp
+output
+Images
+agent-tools
+*.plan.md

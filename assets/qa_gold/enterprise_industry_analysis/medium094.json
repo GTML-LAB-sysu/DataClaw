@@ -1,0 +1,24 @@
+{
+  "id": "medium094",
+  "question": "What is the difference between the number of SZSE-listed private enterprises in the industry where Yihai Changjin Business Company operates and that in China's Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": 14.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Yihai Changjin Business Company belongs to the Leasing and Business Services industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed private enterprises in the Leasing and Business Services industry is 29.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed private enterprises in the Transportation, Storage and Postal Services industry is 15.",
+    "Calculate the difference: 29 - 15 = 14.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Yihai Changjin Business Company": "Leasing and Business Services",
+    "Number of SZSE-listed private enterprises in the Leasing and Business Services industry": 29,
+    "Number of SZSE-listed private enterprises in the Transportation, Storage and Postal Services industry": 15,
+    "Difference": 14.0
+  }
+}

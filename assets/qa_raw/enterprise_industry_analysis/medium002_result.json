@@ -1,0 +1,40 @@
+{
+  "id": "medium002",
+  "question": "In 2022, what is the difference between the total number of employees of Kangsheng Kangjian Pharmaceutical Co., Ltd. and the industry average?",
+  "guidelines": "The answer must be an exact number and keep all significant decimal places. Output only the number without units, commas, or any additional text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Kangsheng Kangjian Pharmaceutical Co., Ltd. total employees in 2022: 2099.0",
+    "Industry of Kangsheng Kangjian Pharmaceutical Co., Ltd.: Pharmaceutical Manufacturing",
+    "Average total employees in Pharmaceutical Manufacturing: 3057.60986547085"
+  ],
+  "milestone": {
+    "Kangsheng Kangjian Pharmaceutical Co., Ltd. total employees in 2022": 2099.0,
+    "Industry of Kangsheng Kangjian Pharmaceutical Co., Ltd.": "Pharmaceutical Manufacturing",
+    "Average total employees in Pharmaceutical Manufacturing": 3057.60986547085,
+    "Difference (company - industry average)": -958.60986547085
+  },
+  "answer": -958.60986547085,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "reference": [
+    {
+      "company_operation_status": "aca07f14-a552-49a7-8fd9-cf23d30d5f81"
+    },
+    {
+      "national_industry_status": "9c71278e-97a3-4867-826d-e139f1dffc24"
+    },
+    {
+      "company_profile": "e655979a-a163-45f2-806f-97922582ee4d"
+    }
+  ],
+  "steps": [
+    "Extracted from company_operation_status.csv: Kangsheng Kangjian Pharmaceutical Co., Ltd. total employees in 2022 is 2099.0",
+    "Extracted from company_profile.csv: the company's industry is Pharmaceutical Manufacturing",
+    "Extracted from national_industry_status.csv: average total employees in Pharmaceutical Manufacturing is 3057.60986547085",
+    "Computed difference (company - industry average): 2099.0 - 3057.60986547085 = -958.60986547085"
+  ],
+  "steps_num": 4
+}

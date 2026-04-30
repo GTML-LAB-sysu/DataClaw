@@ -1,0 +1,37 @@
+{
+  "id": "easy090",
+  "question": "Between the minimum change in the R&D expenditure ratio of the Information Transmission, Software and IT Services industry and that of Other Manufacturing in China, which one is smaller?",
+  "guidelines": "The answer must be a single number with two decimal places. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Information Transmission, Software and IT Services: minimum change in R&D expenditure ratio -472 %",
+    "Other Manufacturing (China): minimum change in R&D expenditure ratio -19.89 %"
+  ],
+  "steps": [
+    "Extract from national_industry_status.csv that the minimum change in the R&D expenditure ratio for Information Transmission, Software and IT Services is -472 %.",
+    "Extract from national_industry_status.csv that the minimum change in the R&D expenditure ratio for Other Manufacturing is -19.89 %.",
+    "Compare the two minimum values: -472 % < -19.89 %, so Information Transmission, Software and IT Services is smaller."
+  ],
+  "steps_num": 3,
+  "answer": "Information Transmission, Software and IT Services",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Information Transmission, Software and IT Services minimum change in R&D expenditure ratio": -472,
+    "Other Manufacturing minimum change in R&D expenditure ratio": -19.89,
+    "Comparison result (smaller one)": "Information Transmission, Software and IT Services"
+  },
+  "reference": [
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "national_industry_status": "15b9907e-9b45-4636-bb57-dee26f48b2d3"
+    }
+  ]
+}

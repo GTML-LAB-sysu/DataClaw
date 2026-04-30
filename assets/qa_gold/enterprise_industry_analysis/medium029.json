@@ -1,0 +1,26 @@
+{
+  "id": "medium029",
+  "question": "Which is greater: the number of SSE-listed central state-owned enterprises in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd., or the number of SSE-listed enterprises in the industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: number of SSE-listed central state-owned enterprises in Real Estate = 3",
+    "Extracted from company_profile.csv: industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd. = Education",
+    "Extracted from national_industry_status.csv: number of SSE-listed enterprises in Education = 5",
+    "Compared 3 and 5; since 5 is greater, output \"Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "Number of SSE-listed central state-owned enterprises in Real Estate": 3,
+    "Industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.": "Education",
+    "Number of SSE-listed enterprises in Education": 5,
+    "Comparison result (greater)": "Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd."
+  }
+}

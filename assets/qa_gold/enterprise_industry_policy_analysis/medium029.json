@@ -1,0 +1,26 @@
+{
+  "id": "medium029",
+  "question": "Between the number of central ministry/agency policies in the ministerial policies for the industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd. and the number of local policies in the local policies for the industry of Hua Cheng Sheng Yuan Integrated Development Co., Ltd. in Guangdong Province, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Zhao Ye Hua Chang Real Estate Development Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhao Ye Hua Chang Real Estate Development Co., Ltd.'s industry is Real Estate",
+    "Extract from policy_release_status.csv that the ministerial policies policy count for Real Estate is 5",
+    "Extract from company_profile.csv that Hua Cheng Sheng Yuan Integrated Development Co., Ltd. is located in Guangdong Province and its industry is Integrated",
+    "Extract from policy_release_status.csv that the local policies policy count for Integrated in Guangdong Province is 2",
+    "Compare 5 and 2; since 5 is greater, output \"Zhao Ye Hua Chang Real Estate Development Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd.": "Real Estate",
+    "Real Estate ministerial policies policy count": 5,
+    "Province of Hua Cheng Sheng Yuan Integrated Development Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Integrated local policies policy count": 2,
+    "Comparison result": "5 is greater; output Zhao Ye Hua Chang Real Estate Development Co., Ltd."
+  }
+}

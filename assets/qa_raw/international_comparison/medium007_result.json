@@ -1,0 +1,35 @@
+{
+  "id": "medium007",
+  "question": "H World Group (HTHT) is one of China's leading hotel groups. Based on H World Group 2022 annual report, answer in order: (1) Revenue per employee (total operating revenue ÷ total employees, unit: ten thousand CNY); (2) Median revenue per employee of listed companies in China's accommodation and catering industry (ten thousand CNY); (3) How many times the industry median is H World Group's revenue per employee?",
+  "guidelines": "Answer the three sub-questions in order; values rounded to 2 decimal places, e.g. [56.96, 41.29, 1.38]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from H World Group 2022 20-F annual report: 2022 Total revenues = RMB 13,862 million (approx. 13.862 billion), total employees (Employees) = 24,335.",
+    "Calculate H World Group revenue per employee: 13,862,000,000 CNY / 24,335 persons / 10,000 = 56.96 ten thousand CNY per person.",
+    "Filter company_profile.csv for industry=\"accommodation and catering\", 35 companies. Obtain operating revenue and total employees from company_operation_status.csv; after excluding invalid data, 32 valid. Revenue per employee = operating revenue / total employees / 10000; median = 41.29 ten thousand CNY.",
+    "Calculate multiple: 56.96 / 41.29 = 1.38x. H World Group revenue per employee is about 1.38 times the domestic accommodation and catering industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "H World Group 2022 20-F annual report, including 2022 total operating revenue RMB 13,862 million, total employees 24,335.",
+    "company_profile.csv: 35 companies in accommodation and catering industry.",
+    "company_operation_status.csv: operating revenue and employee data for 32 companies; median revenue per employee computed."
+  ],
+  "milestone": {
+    "H World Group 2022 total operating revenue(RMB million)": 13862,
+    "H World Group 2022 total employees": 24335,
+    "H World Group revenue per employee(ten thousand CNY)": 56.96,
+    "Accommodation and catering industry valid company count": 32,
+    "Industry median revenue per employee(ten thousand CNY)": 41.29,
+    "H World Group vs industry median multiple": 1.38
+  },
+  "answer": [
+    56.96,
+    41.29,
+    1.38
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

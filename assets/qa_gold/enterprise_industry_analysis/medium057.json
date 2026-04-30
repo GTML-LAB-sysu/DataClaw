@@ -1,0 +1,26 @@
+{
+  "id": "medium057",
+  "question": "Is the maximum State Science and Technology Progress Award value in the corresponding industry of Shanghai, where Lang Ji Hui Ruan Technology Co., Ltd. is located, the same as the corresponding value in Beijing, where Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. is located?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Lang Ji Hui Ruan Technology Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: maximum State Science and Technology Progress Award in Shanghai Information Transmission, Software and IT Services = 0",
+    "Extracted from company_profile.csv: province of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. = Beijing Municipality",
+    "Extracted from regional_industry_status.csv: maximum State Science and Technology Progress Award in Beijing Health and Social Work = 0",
+    "Both values are 0, so the answer is \"Yes\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Information Transmission, Software and IT Services State Science and Technology Progress Award (maximum)": 0,
+    "Province of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd.": "Beijing Municipality",
+    "Beijing Municipality Health and Social Work State Science and Technology Progress Award (maximum)": 0,
+    "Whether identical": "Yes"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "medium052",
+  "question": "Between the number of local policies issued by the Sichuan Province People's Government in the local policies for the industry of Wu Li Hui Da Chain Co., Ltd. and the number of central ministry/agency policies in the China conglomerates category, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Wu Li Hui Da Chain Co., Ltd.: Wholesale and Retail",
+    "Wholesale and Retail local policies - Sichuan Province People's Government - policy count = 1",
+    "China conglomerates central ministry/agency policies policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Wu Li Hui Da Chain Co., Ltd.": "Wholesale and Retail",
+    "Wholesale and Retail local policies_Sichuan Province People's Government policy count": 1,
+    "China conglomerates central ministry/agency policies policy count": 1,
+    "Comparison result": "Equal; according to the question requirement, output Wu Li Hui Da Chain Co., Ltd."
+  },
+  "steps": [
+    "Extract from company_profile.csv that Wu Li Hui Da Chain Co., Ltd.'s industry is Wholesale and Retail",
+    "Extract from policy_release_status.csv that in the local policies for Wholesale and Retail, the policy count issued by the Sichuan Province People's Government is 1",
+    "Extract from policy_release_status.csv that in the China conglomerates central ministry/agency policies, the policy count is 1",
+    "Compare 1 and 1; since they are equal, output \"Wu Li Hui Da Chain Co., Ltd.\" according to the question requirement"
+  ],
+  "steps_num": 4,
+  "answer": "Wu Li Hui Da Chain Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "1f977ef9-1e22-45fc-8781-0f97b90702d3"
+    },
+    {
+      "company_profile": "24d73db3-b3be-4f9d-87e8-a8f7bcd7b0f9"
+    },
+    {
+      "policy_release_status": "69a94ba4-0c65-466a-9a53-0c1dd38a2375"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy013",
+  "question": "In 2022, is the company market value of Wu Li Chang Yuan Wholesale Co., Ltd. higher than that of Wu Li Hui Jin Retail Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Wu Li Chang Yuan Wholesale Co., Ltd. company market value in 2022 = 220.0 (100 million CNY)",
+    "Extracted from company_operation_status.csv: Wu Li Hui Jin Retail Co., Ltd. company market value in 2022 = 0.58 (100 million CNY)",
+    "Compared 220.0 and 0.58; since 220.0 > 0.58, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Wu Li Chang Yuan Wholesale Co., Ltd. company market value in 2022 (100 million CNY)": 220.0,
+    "Wu Li Hui Jin Retail Co., Ltd. company market value in 2022 (100 million CNY)": 0.58,
+    "Comparison result (whether Wu Li Chang Yuan Wholesale Co., Ltd. is higher than Wu Li Hui Jin Retail Co., Ltd.)": "Yes"
+  }
+}

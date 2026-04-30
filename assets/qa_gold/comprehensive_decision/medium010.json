@@ -1,0 +1,28 @@
+{
+  "id": "medium010",
+  "question": "In 2022, in the provincial data for the construction industry, each province has an indicator reflecting the average asset-liability ratio (financial leverage level) of enterprises in that province's industry (considering only enterprises with valid total assets and total liabilities). Among the provinces covered by valid data, which province has the lowest value for this mean indicator, and what is that value?",
+  "guidelines": "The answer should be a numerical value (rounded to 2 decimal places), in units of %. If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    "Shanxi Province",
+    27.17
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records from company_profile.csv where industry=\"Construction\", extract company name, bmCode and province fields, finding 148 enterprises in total.",
+    "Join with company_operation_status.csv by bmCode, extract total liabilities and total assets fields, resulting in 148 records after merging.",
+    "Filter enterprise records where both total liabilities and total assets are not empty and total assets is greater than 0, resulting in 148 valid enterprises covering 22 provinces.",
+    "Calculate asset-liability ratio for each enterprise = total liabilities / total assets × 100%, then group by province and calculate the mean asset-liability ratio for each province.",
+    "Sort all provinces by mean asset-liability ratio in ascending order. Shanxi Province has the lowest mean asset-liability ratio of 27.17%."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Total Number of Construction Enterprises": 148,
+    "Number of Valid Enterprises (total liabilities and total assets not empty)": 148,
+    "Number of Valid Provinces": 22,
+    "Shanxi Province Mean Asset-Liability Ratio (%)": 27.17
+  }
+}

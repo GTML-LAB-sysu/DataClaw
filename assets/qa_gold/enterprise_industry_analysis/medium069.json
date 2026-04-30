@@ -1,0 +1,24 @@
+{
+  "id": "medium069",
+  "question": "Between the maximum capitalized R&D expenditure of the corresponding industry in the province where Zhongche Yuanze Shipbuilding Company is located and the maximum capitalized R&D expenditure of the Electricity, Heat, Gas and Water Production and Supply industry, which is higher?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhongche Yuanze Shipbuilding Company is located in Beijing Municipality and its corresponding industry is Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing.",
+    "Extract from regional_industry_status.csv that the maximum capitalized R&D expenditure in Beijing Municipality - Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing is 353771542.85 Yuan.",
+    "Extract from national_industry_status.csv that the maximum capitalized R&D expenditure in the Electricity, Heat, Gas and Water Production and Supply industry is 1982740987.15 Yuan.",
+    "Compare the two maximum values: 1982740987.15 Yuan > 353771542.85 Yuan, so the industry is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Zhongche Yuanze Shipbuilding Company": "Beijing Municipality",
+    "Maximum capitalized R&D expenditure in Beijing Municipality - Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing (Yuan)": 353771542.85,
+    "Maximum capitalized R&D expenditure in the Electricity, Heat, Gas and Water Production and Supply industry (Yuan)": 1982740987.15,
+    "Comparison result (higher one)": "industry"
+  }
+}

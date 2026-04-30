@@ -1,0 +1,38 @@
+{
+  "id": "medium001",
+  "question": "Based on 2022 data, the following policy effect scenario is simulated: For provinces that have promulgated industrial policies containing the keywords \"semiconductor\" or \"integrated circuit\", policy empowerment accelerates the R&D investment expansion pace of their semiconductor enterprises to 2 times the current growth rate over the next 3 years; for provinces that have not yet issued such policies, R&D growth rate remains unchanged. Using the median year-on-year change in enterprise R&D investment as the baseline growth rate for each province, and projecting with 3-year compound growth, which province will have the highest total semiconductor industry R&D investment nationwide by 2025? What is the corresponding estimated amount?",
+  "guidelines": "Answer format: [province name, value (2 decimal places, unit: yuan)]. If relevant data cannot be found, please answer \"No relevant data found\".",
+  "steps": [
+    "Filter from policy_release_status.csv policy records whose name contains \"semiconductor\" or \"integrated circuit\", obtaining 4 records. Extract the list of involved provinces (deduplicated, excluding national policies), obtaining 4 provinces: Guangdong, Zhejiang, Shanghai, Anhui.",
+    "Filter from company_profile.csv all enterprise records with industry=\"semiconductor industry\", extract enterprise name, bmCode, and province fields, finding 172 enterprises.",
+    "From company_operation_status.csv, link the above enterprises by bmCode, extract R&D investment amount and year-on-year R&D investment change rate fields, filter out enterprises with either field empty, obtaining 168 valid enterprises.",
+    "Group by province, calculate total R&D investment amount and median year-on-year R&D investment change rate for each province, totaling 22 provinces.",
+    "For each province, determine whether it belongs to provinces with policy: adjusted growth rate for provinces with policy = median growth rate × 2; adjusted growth rate for provinces without policy = median growth rate. The top-ranked province Shanghai has policy support, with adjusted growth rate of 64.38%.",
+    "Calculate estimated total R&D investment for 2025 for each province = total R&D investment amount × (1 + adjusted growth rate/100)^3. Shanghai's estimated 2025 R&D investment = 22003461800.09 × (1+64.38/100)^3 = 97732260069.03 (yuan).",
+    "Sort all provinces by estimated total R&D investment for 2025 in descending order.",
+    "The top-ranked province is Shanghai, with estimated total R&D investment for 2025 of 97732260069.03 yuan."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "Found 4 policy records containing \"semiconductor\" or \"integrated circuit\" keywords in policy_release_status.csv, involving 4 provinces.",
+    "Found 172 semiconductor industry enterprises in company_profile.csv.",
+    "Found R&D investment amounts and year-on-year R&D investment change rates for 168 semiconductor industry enterprises in company_operation_status.csv."
+  ],
+  "milestone": {
+    "Provinces with policy": 4,
+    "Valid semiconductor industry enterprises": 168,
+    "Provinces involved": 22,
+    "Shanghai total R&D investment 2022 (yuan)": 22003461800.09,
+    "Shanghai adjusted growth rate (%)": 64.38,
+    "Shanghai estimated R&D investment 2025 (yuan)": 97732260069.03
+  },
+  "answer": [
+    "Shanghai",
+    97732260069.03
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

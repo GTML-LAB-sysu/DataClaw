@@ -1,0 +1,26 @@
+{
+  "id": "medium014",
+  "question": "Which is higher: the number of central ministry/agency policies issued by the Ministry of Agriculture and Rural Affairs in the ministerial policies for the industry of Bei Kong Ze Jing Water Co., Ltd., or the number of local policies issued by the Shanghai Municipality Health Commission for the Health and Social Work industry in Shanghai Municipality where Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Bei Kong Ze Jing Water Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Bei Kong Ze Jing Water Co., Ltd.'s industry is Water Conservancy, Environment and Public Facilities Management",
+    "Extract from policy_release_status.csv that in the ministerial policies for this industry, the policy count issued by the Ministry of Agriculture and Rural Affairs is 2",
+    "Extract from company_profile.csv that Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd. is located in Shanghai Municipality and its industry is Health and Social Work",
+    "Extract from policy_release_status.csv that in the local policies for Health and Social Work in Shanghai Municipality, the policy count issued by the Shanghai Municipality Health Commission is 1",
+    "Compare 2 and 1; 2 is higher; output \"Bei Kong Ze Jing Water Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Bei Kong Ze Jing Water Co., Ltd.": "Water Conservancy, Environment and Public Facilities Management",
+    "Water Conservancy, Environment and Public Facilities Management ministerial policies_Ministry of Agriculture and Rural Affairs policy count": 2,
+    "Province of Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Health and Social Work local policies_Shanghai Municipality Health Commission policy count": 1,
+    "Comparison result": "2 is higher; output Bei Kong Ze Jing Water Co., Ltd."
+  }
+}

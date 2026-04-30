@@ -1,0 +1,24 @@
+{
+  "id": "medium110",
+  "question": "What is the difference between the total annual number of China patent grants in the province where Xingkuwen Arts and Crafts Company is located and that in China's Chemical Fiber Manufacturing industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": -1314.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Xingkuwen Arts and Crafts Company is located in Zhejiang Province and belongs to the Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing industry.",
+    "Extract from regional_industry_status.csv that the total annual number of China patent grants in Zhejiang Province - Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing is 193.",
+    "Extract from national_industry_status.csv that the total annual number of China patent grants in the Chemical Fiber Manufacturing industry is 1507.",
+    "Calculate the gap: 193 - 1507 = -1314.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Xingkuwen Arts and Crafts Company": "Zhejiang Province",
+    "Total annual number of China patent grants in Zhejiang Province - Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing": 193,
+    "Total annual number of China patent grants in the Chemical Fiber Manufacturing industry": 1507,
+    "Gap": -1314.0
+  }
+}

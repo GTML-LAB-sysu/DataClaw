@@ -1,0 +1,26 @@
+{
+  "id": "medium053",
+  "question": "What is the difference between the number of HKEX-listed private enterprises in the corresponding industry of the province where Zhangqiao Jinchuang Technology Co., Ltd. is located and the number of HKEX-listed enterprises in the corresponding industry of the province where Zhaoye Huachang Real Estate Development Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": -11.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that Zhangqiao Jinchuang Technology Co., Ltd. is located in Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the number of HKEX-listed private enterprises in Guangdong consumer electronics and electrical industry is 27.",
+    "Extracted from company_profile.csv that Zhaoye Huachang Real Estate Development Co., Ltd. is located in Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the number of HKEX-listed enterprises in Guangdong real estate industry is 38.",
+    "Calculated the difference (former minus latter): 27 - 38 = -11.0."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province where Zhangqiao Jinchuang Technology Co., Ltd. is located": "Guangdong Province",
+    "Number of HKEX-listed private enterprises in Guangdong consumer electronics and electrical industry": 27,
+    "Province where Zhaoye Huachang Real Estate Development Co., Ltd. is located": "Guangdong Province",
+    "Number of HKEX-listed enterprises in Guangdong real estate industry": 38,
+    "Difference": -11.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy081",
+  "question": "In 2022, which is greater: the total number of enterprises in Jilin Province's chemical raw materials and chemical products manufacturing industry, or the number of SSE-listed enterprises in the same industry in Qinghai Province?",
+  "guidelines": "The answer must be \"Equal\", \"Qinghai\", or \"Jilin\" (as specified by the question). If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the total number of enterprises in Jilin Province's chemical raw materials and chemical products manufacturing industry is 1.",
+    "Extracted from regional_industry_status.csv that the number of SSE-listed enterprises in Qinghai Province's chemical raw materials and chemical products manufacturing industry is 1.",
+    "Compared 1 and 1, and determined \"Equal\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total number of enterprises in Jilin Province's chemical raw materials and chemical products manufacturing industry": 1,
+    "Number of SSE-listed enterprises in Qinghai Province's chemical raw materials and chemical products manufacturing industry": 1,
+    "Comparison result": "Equal"
+  }
+}

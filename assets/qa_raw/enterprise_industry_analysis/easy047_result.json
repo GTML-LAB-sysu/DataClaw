@@ -1,0 +1,34 @@
+{
+  "id": "easy047",
+  "question": "In 2022, are the industries of Hua Ying Tai Sheng Wealth Management Co., Ltd. and Yong Feng Lian Chuang Xi Tong Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Ying Tai Sheng Wealth Management Co., Ltd. (2022 dataset value): industry = Financial Industry",
+    "Yong Feng Lian Chuang Xi Tong Co., Ltd. (2022 dataset value): industry = Information Transmission, Software and IT Services"
+  ],
+  "milestone": {
+    "Industry of Hua Ying Tai Sheng Wealth Management Co., Ltd.": "Financial Industry",
+    "Industry of Yong Feng Lian Chuang Xi Tong Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Comparison result (whether the industries are the same)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Hua Ying Tai Sheng Wealth Management Co., Ltd. = Financial Industry",
+    "Extracted from company_profile.csv: industry of Yong Feng Lian Chuang Xi Tong Co., Ltd. = Information Transmission, Software and IT Services",
+    "Compared the two industry texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_profile": "b3ffe2d5-c5b8-4499-b7e7-c6955e84e897"
+    },
+    {
+      "company_profile": "8214fdfd-e320-4e2e-bdcf-a622940758af"
+    }
+  ]
+}

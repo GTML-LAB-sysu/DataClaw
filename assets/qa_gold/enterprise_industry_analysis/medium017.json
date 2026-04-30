@@ -1,0 +1,26 @@
+{
+  "id": "medium017",
+  "question": "What is the difference between the minimum R&D personnel ratio in the industry of Changqiao Jinchuang Technology Co., Ltd. and the corresponding metric for the industry in Zhejiang Province where Wuli Huida Chain Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to two decimal places. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 1.04,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Changqiao Jinchuang Technology Co., Ltd. = Consumer Electronics and Electrical Industry",
+    "Extracted from national_industry_status.csv: minimum R&D personnel ratio in Consumer Electronics and Electrical Industry = 1.87%",
+    "Extracted from company_profile.csv: province of Wuli Huida Chain Co., Ltd. = Zhejiang Province",
+    "Extracted from regional_industry_status.csv: minimum R&D personnel ratio in Zhejiang Wholesale and Retail Trade = 0.83%",
+    "Calculated the difference: 1.87 - 0.83 = 1.04"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Changqiao Jinchuang Technology Co., Ltd.": "Consumer Electronics and Electrical Industry",
+    "Minimum R&D personnel ratio in Consumer Electronics and Electrical Industry": "1.87%",
+    "Province of Wuli Huida Chain Co., Ltd.": "Zhejiang Province",
+    "Minimum R&D personnel ratio in Zhejiang Wholesale and Retail Trade": "0.83%",
+    "Difference (Consumer Electronics and Electrical Industry - Zhejiang Wholesale and Retail Trade)": 1.04
+  }
+}

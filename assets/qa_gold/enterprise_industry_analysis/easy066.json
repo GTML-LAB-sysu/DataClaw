@@ -1,0 +1,22 @@
+{
+  "id": "easy066",
+  "question": "In 2022, which value is higher: the minimum cumulative number of invalidated PCT invention patents in Beijing's comprehensive industry, or the same metric in the nationwide pharmaceutical manufacturing industry?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or the company name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: minimum cumulative invalidated PCT invention patents in Beijing comprehensive industry = 0",
+    "Extracted from national_industry_status.csv: minimum cumulative invalidated PCT invention patents in nationwide pharmaceutical manufacturing = 0",
+    "Compared the two values; they are equal, so output \"Equal\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Minimum cumulative invalidated PCT invention patents in Beijing comprehensive industry": 0,
+    "Minimum cumulative invalidated PCT invention patents in nationwide pharmaceutical manufacturing": 0,
+    "Comparison result": "Equal"
+  }
+}

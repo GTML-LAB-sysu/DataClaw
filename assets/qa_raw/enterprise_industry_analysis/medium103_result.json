@@ -1,0 +1,40 @@
+{
+  "id": "medium103",
+  "question": "Which is larger: the total number of Consumer Electronics and Electrical industry enterprises in the province where Changqiao Jinchuang Technology Company is located, or the number of HKEX-listed private enterprises in China's Conglomerates industry?",
+  "guidelines": "The answer must be either \"the total number of Consumer Electronics and Electrical industry enterprises in the province where Changqiao Jinchuang Technology Company is located\" or \"the number of HKEX-listed private enterprises in China's Conglomerates industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Changqiao Jinchuang Technology Company: Gansu Province",
+    "Gansu Province - Consumer Electronics and Electrical industry: total number of enterprises = 0",
+    "Conglomerates (China): number of HKEX-listed private enterprises = 12"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Changqiao Jinchuang Technology Company is located in Gansu Province and belongs to the Consumer Electronics and Electrical industry.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Gansu Province - Consumer Electronics and Electrical industry is 0.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed private enterprises in the Conglomerates industry is 12.",
+    "Compare the counts: 12 > 0, so the number of HKEX-listed private enterprises in China's Conglomerates industry is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the number of HKEX-listed private enterprises in China's Conglomerates industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Changqiao Jinchuang Technology Company": "Gansu Province",
+    "Total number of enterprises in Gansu Province - Consumer Electronics and Electrical industry": 0,
+    "Number of HKEX-listed private enterprises in the Conglomerates industry": 12,
+    "Comparison result (larger one)": "the number of HKEX-listed private enterprises in China's Conglomerates industry"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "3b2f0630-2cdb-49c4-9fae-264d4f9e4ff4"
+    },
+    {
+      "company_profile": "58eb73a2-c225-4c83-9324-b515fec3a76f"
+    },
+    {
+      "national_industry_status": "fee7bf00-36e3-4f1a-a296-f5612ad8cedd"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium058",
+  "question": "Shi Yang Jin Jin Electrical Appliances Co., Ltd.province Guangdong ProvinceNumber of policies (indicator) and China Hainan ProvinceNumber of policies (indicator)compared with difference how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Shi Yang Jin Jin Electrical Appliances Co., Ltd.province = Guangdong Province and industry = Transportation、Postal Services",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Transportation、Postal Servicesextractlocal policies in Guangdong ProvinceNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaFood and Beveragelocal policies in Hainan ProvinceNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Shi Yang Jin Jin Electrical Appliances Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceTransportation、Postal Serviceslocal policies_Guangdong ProvinceNumber of policies (indicator)": 1,
+    "ChinaFood and Beveragelocal policies_Hainan ProvinceNumber of policies (indicator)": 1,
+    "Difference(Guangdong ProvinceNumber of policies (indicator)-Hainan ProvinceNumber of policies (indicator))": 0.0
+  }
+}

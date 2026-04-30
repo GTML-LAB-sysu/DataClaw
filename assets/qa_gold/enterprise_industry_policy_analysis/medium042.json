@@ -1,0 +1,24 @@
+{
+  "id": "medium042",
+  "question": "Between the number of central ministry/agency policies issued by the General Administration of Sport of China in the ministerial policies for the industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd. and the total number of policies for the Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing industry in Anhui Province, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Hui Jin Jin Rui Cai Fu Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hui Jin Jin Rui Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in the ministerial policies for Financial Services, the policy count issued by the General Administration of Sport of China is 1",
+    "Extract from policy_release_status.csv that in Anhui Province, the policy count for the Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing industry is 1",
+    "Compare 1 and 1; since they are equal, output \"Hui Jin Jin Rui Cai Fu Management Co., Ltd.\" according to the question requirement"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services ministerial policies_General Administration of Sport of China policy count": 1,
+    "Anhui Province Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing policy count": 1,
+    "Comparison result": "Equal; according to the question requirement, output Hui Jin Jin Rui Cai Fu Management Co., Ltd."
+  }
+}

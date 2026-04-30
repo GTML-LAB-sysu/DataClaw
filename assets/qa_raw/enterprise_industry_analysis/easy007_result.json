@@ -1,0 +1,40 @@
+{
+  "id": "easy007",
+  "question": "In 2022, is the number of national standards participated in drafting by Bao Xin Ke Hui Ruan Jian Co., Ltd. the same as that of Zhong Ke Chuang Xin Ruan Jian Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Bao Xin Ke Hui Ruan Jian Co., Ltd. (2022 dataset value): number of national standards participated in drafting = 1",
+    "Zhong Ke Chuang Xin Ruan Jian Co., Ltd. (2022 dataset value): number of national standards participated in drafting = 1"
+  ],
+  "milestone": {
+    "Number of national standards participated in drafting by Bao Xin Ke Hui Ruan Jian Co., Ltd. in 2022": 1,
+    "Number of national standards participated in drafting by Zhong Ke Chuang Xin Ruan Jian Co., Ltd. in 2022": 1,
+    "Comparison result (whether they are the same)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: number of national standards participated in drafting by Bao Xin Ke Hui Ruan Jian Co., Ltd. in 2022 = 1",
+    "Extracted from company_operation_status.csv: number of national standards participated in drafting by Zhong Ke Chuang Xin Ruan Jian Co., Ltd. in 2022 = 1",
+    "Compared 1 and 1; since they are equal, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "8d756dae-ab72-486c-b4b4-051d5c60aded"
+    },
+    {
+      "company_operation_status": "6cd8b136-cff6-4f44-8317-ff6d6d3f5d18"
+    },
+    {
+      "company_profile": "1c1441c7-e95e-4f3e-ac46-37a48236ddbe"
+    },
+    {
+      "company_profile": "64052c09-3d7d-4553-beb2-2f25b7e94648"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "easy009",
+  "question": "In 2022, is the total number of employees of Can Xin Hui Xin Semiconductor Co., Ltd. higher than that of Rui Xin Xin Yao Materials Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Can Xin Hui Xin Semiconductor Co., Ltd. (2022 dataset value): total employees = 7277.0",
+    "Rui Xin Xin Yao Materials Co., Ltd. (2022 dataset value): total employees = 2989.0"
+  ],
+  "milestone": {
+    "Can Xin Hui Xin Semiconductor Co., Ltd. total employees in 2022": 7277.0,
+    "Rui Xin Xin Yao Materials Co., Ltd. total employees in 2022": 2989.0,
+    "Comparison result (whether Can Xin Hui Xin Semiconductor Co., Ltd. is higher than Rui Xin Xin Yao Materials Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Can Xin Hui Xin Semiconductor Co., Ltd. total employees in 2022 = 7277.0",
+    "Extracted from company_operation_status.csv: Rui Xin Xin Yao Materials Co., Ltd. total employees in 2022 = 2989.0",
+    "Compared 7277.0 and 2989.0; since 7277.0 > 2989.0, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "ddbff962-a84a-4b00-ab50-cbd0fd41ab5f"
+    },
+    {
+      "company_operation_status": "7d7e048d-3e3d-4ca6-8a8c-fff1dea07d45"
+    },
+    {
+      "company_profile": "70750f9d-0f29-4e45-acaa-95fdb53e4ec0"
+    },
+    {
+      "company_profile": "4226787a-eeb7-49c5-9b91-57d11e97296e"
+    }
+  ]
+}

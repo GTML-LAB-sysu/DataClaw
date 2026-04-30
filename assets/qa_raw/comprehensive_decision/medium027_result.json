@@ -1,0 +1,28 @@
+{
+  "id": "medium027",
+  "question": "In 2022, Compare the enterprise with the highest R&D input-output ratio in Guangdong Province and the enterprise with the highest R&D input-output ratio in Sichuan Province (R&D input-output ratio = operating revenue amount / R&D investment amount). Which enterprise has higher operating revenue? The unit of operating revenue is yuan.",
+  "guidelines": "The answer must be \"yes\" or \"no\". Output only the answer, without any additional explanation. If the relevant data cannot be found, please answer \"No relevant data retrieved\".",
+  "steps": [
+    "Filter all enterprise records with province=\"Guangdong Province\" and province=\"Sichuan Province\" from company_profile.csv, and extract the enterprise name and province fields.",
+    "Filter all records with year=2022 from company_operation_status.csv, and extract the enterprise name, operating revenue amount, and R&D investment amount fields. Note: The operating revenue amount in the file is in yuan; no conversion is needed.",
+    "Filter enterprise records where both operating revenue amount and R&D investment amount are not null and R&D investment amount is greater than 0. Calculate R&D input-output ratio = operating revenue amount / R&D investment amount.",
+    "Identify the enterprise with the highest R&D input-output ratio in Guangdong Province as \"Wulichangyuan Wholesale Company\", with an R&D input-output ratio of 8100.17 and operating revenue of 73,443,148,744.17 yuan.",
+    "Identify the enterprise with the highest R&D input-output ratio in Sichuan Province as \"Guotouzeyuan New Energy Company\", with an R&D input-output ratio of 56708.37 and operating revenue of 2,377,118,263.90 yuan. Compare the enterprise with the highest R&D input-output ratio in Guangdong Province (Wulichangyuan Wholesale Company, operating revenue 73,443,148,744.17 yuan) with the enterprise with the highest R&D input-output ratio in Sichuan Province (Guotouzeyuan New Energy Company, operating revenue 2,377,118,263.90 yuan), and determine that the Guangdong Province enterprise has higher operating revenue."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found enterprise information for Guangdong Province and Sichuan Province from company_profile.csv.",
+    "Found operating revenue amount (in yuan) and R&D investment amount for enterprises in 2022 from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Enterprise with highest R&D input-output ratio in Guangdong Province": "Wulichangyuan Wholesale Company",
+    "Enterprise with highest R&D input-output ratio in Sichuan Province": "Guotouzeyuan New Energy Company",
+    "Enterprise with higher operating revenue": "Enterprise with highest R&D input-output ratio in Guangdong Province (Wulichangyuan Wholesale Company)"
+  },
+  "answer": "The enterprise with the highest R&D input-output ratio in Guangdong Province (Wulichangyuan Wholesale Company) has higher operating revenue",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

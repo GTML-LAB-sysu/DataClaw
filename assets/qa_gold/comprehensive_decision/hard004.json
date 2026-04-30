@@ -1,0 +1,31 @@
+{
+  "id": "hard004",
+  "question": "In 2022, a provincial development and reform commission, when reviewing the effectiveness of fiscal subsidies for the chemical raw materials and chemical products manufacturing industry, needed to identify enterprises with misallocated subsidy resources. Specifically, analysts must first define the scope: only examine enterprises located in provinces that have policy entries for \"Chemical Raw Materials and Chemical Products Manufacturing\" in the policy release status data; then use the industry-wide median of government subsidies and the median operating profit margin (profit margin = operating profit ÷ operating revenue × 100%) as dual thresholds to identify \"capital misallocation\" enterprises—those that simultaneously have \"subsidy amount above the industry median\" but \"profit margin below the industry median\". Among the valid enterprises in the policy-covered provinces, what is the proportion of capital misallocation enterprises as a percentage of total valid enterprises in those provinces (express the result as a percentage with 2 decimal places, without the % symbol)?",
+  "guidelines": "The answer should be a percentage value with 2 decimal places. Output only the number, without the % symbol or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 23.18,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter policy records from policy_release_status.csv where industry field contains \"Chemical Raw Materials and Chemical Products Manufacturing\"; 60 records found. Extract province field, remove nulls and exclude \"National\" level; 23 policy-covered provinces: ['Shanghai', 'Yunnan Province', 'Inner Mongolia Autonomous Region', 'Sichuan Province', 'Ningxia Hui Autonomous Region', 'Anhui Province', 'Shandong Province', 'Shanxi Province', 'Guangdong Province', 'Guangxi Zhuang Autonomous Region', 'Xinjiang Uygur Autonomous Region', 'Jiangxi Province', 'Hebei Province', 'Henan Province', 'Hainan Province', 'Hubei Province', 'Hunan Province', 'Gansu Province', 'Fujian Province', 'Guizhou Province', 'Liaoning Province', 'Shaanxi Province', 'Heilongjiang Province'].",
+    "Filter enterprise records with industry=\"Chemical Raw Materials and Chemical Products Manufacturing\" from company_profile.csv, extract company name, bmCode, and province; 364 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract government rewards and subsidies, operating profit, and operating revenue; 364 records after merge.",
+    "Filter valid samples with non-null values for government rewards and subsidies, operating profit, and operating revenue; 362 enterprises.",
+    "Calculate industry-wide median benchmarks for valid enterprises: operating profit margin = operating profit/operating revenue × 100%; median government subsidy is 10,019,029.08 yuan, median operating profit margin is 10.00%.",
+    "Filter valid enterprises whose province is in the policy-covered province list; 233 enterprises.",
+    "Among the 233 valid enterprises in policy-covered provinces, filter \"high subsidy, low output\" enterprises with government subsidy > 10,019,029.08 and operating profit margin < 10.00%; 54 enterprises, proportion = 54/233 × 100% = 23.18%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of policy-covered provinces": 23,
+    "Total chemical enterprises": 364,
+    "Number of valid samples": 362,
+    "Median government subsidy (yuan)": 10019029.08,
+    "Median operating profit margin (%)": 10.0,
+    "Valid enterprises in policy-covered provinces": 233,
+    "High subsidy low output enterprises": 54,
+    "Proportion (%)": 23.18
+  }
+}

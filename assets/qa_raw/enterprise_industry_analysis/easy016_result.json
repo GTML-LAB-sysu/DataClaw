@@ -1,0 +1,40 @@
+{
+  "id": "easy016",
+  "question": "In 2022, is the annual number of authorized Chinese invention patents of Mei Neng Xuan Jin Dian Qi Co., Ltd. higher than the annual number of Chinese invention patent applications of Hai Li Chuang Yao Jia Dian Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Mei Neng Xuan Jin Dian Qi Co., Ltd. (2022 dataset value): annual number of authorized Chinese invention patents = 3304",
+    "Hai Li Chuang Yao Jia Dian Co., Ltd. (2022 dataset value): annual number of Chinese invention patent applications = 8"
+  ],
+  "milestone": {
+    "Annual number of authorized Chinese invention patents of Mei Neng Xuan Jin Dian Qi Co., Ltd. in 2022": 3304,
+    "Annual number of Chinese invention patent applications of Hai Li Chuang Yao Jia Dian Co., Ltd. in 2022": 8,
+    "Comparison result (whether Mei Neng Xuan Jin Dian Qi Co., Ltd. is higher than Hai Li Chuang Yao Jia Dian Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: annual number of authorized Chinese invention patents of Mei Neng Xuan Jin Dian Qi Co., Ltd. in 2022 = 3304",
+    "Extracted from company_operation_status.csv: annual number of Chinese invention patent applications of Hai Li Chuang Yao Jia Dian Co., Ltd. in 2022 = 8",
+    "Compared 3304 and 8; since 3304 > 8, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "3808263c-c56e-4eeb-b16d-b32302554002"
+    },
+    {
+      "company_operation_status": "1742607a-1367-458d-8bf9-b9850d72a344"
+    },
+    {
+      "company_profile": "90e9de1d-a9ed-4432-b6fb-3e488d2ee3c6"
+    },
+    {
+      "company_profile": "cbcdc5e9-a16e-41ca-9f5c-3b29d0902389"
+    }
+  ]
+}

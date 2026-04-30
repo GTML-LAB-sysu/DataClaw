@@ -1,0 +1,40 @@
+{
+  "id": "medium047",
+  "question": "Between the number of local policies issued by the Chengdu Municipality Bureau of Economy and Information Technology in the local policies for the industry of Hua Xin Yuan Shi New Materials Co., Ltd. and the number of local policies issued by the Gansu Province General Office of the People's Government in the local policies for the Pharmaceutical Manufacturing industry in Gansu Province, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"Equal\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hua Xin Yuan Shi New Materials Co., Ltd.: Non-metallic Mineral Products",
+    "Non-metallic Mineral Products local policies - Chengdu Municipality Bureau of Economy and Information Technology - policy count = 1",
+    "Pharmaceutical Manufacturing local policies in Gansu Province - Gansu Province General Office of the People's Government - policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Hua Xin Yuan Shi New Materials Co., Ltd.": "Non-metallic Mineral Products",
+    "Non-metallic Mineral Products local policies_Chengdu Municipality Bureau of Economy and Information Technology policy count": 1,
+    "Pharmaceutical Manufacturing local policies_Gansu Province General Office of the People's Government policy count": 1,
+    "Comparison result": "Equal"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Xin Yuan Shi New Materials Co., Ltd.'s industry is Non-metallic Mineral Products",
+    "Extract from policy_release_status.csv that in the local policies for Non-metallic Mineral Products, the policy count issued by the Chengdu Municipality Bureau of Economy and Information Technology is 1",
+    "Extract from policy_release_status.csv that in the local policies for Pharmaceutical Manufacturing in Gansu Province, the policy count issued by the Gansu Province General Office of the People's Government is 1",
+    "Compare 1 and 1; if they are equal, output \"Equal\""
+  ],
+  "steps_num": 4,
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "cd90a091-df5d-424c-a346-8964d348fe65"
+    },
+    {
+      "company_profile": "f150e113-74af-4929-b33d-7b30a892e86d"
+    },
+    {
+      "policy_release_status": "0c41d7a1-4f57-436d-9ea4-0b9e7e18eb45"
+    }
+  ]
+}

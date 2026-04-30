@@ -1,0 +1,32 @@
+{
+  "id": "hard006",
+  "question": "In 2022, to measure the impact of different ownership backgrounds on the operating performance of specialized equipment manufacturing enterprises, an analysis team compared each enterprise's return on equity (ROE) level with the industry-wide return level in its province to calculate \"excess ROE\" as a relative performance indicator. Specifically: enterprise ROE is calculated as net profit divided by net assets (total assets minus total liabilities) multiplied by 100%; provincial industry benchmark ROE is extracted from provincial industry summary tables, calculated as total industry net profit divided by total industry net assets (total assets minus total liabilities) multiplied by 100%; each enterprise's excess ROE is the difference between its own ROE and its province's benchmark ROE. After grouping by ownership type, which ownership category has the highest mean excess ROE among enterprises? What is that mean value in percentage points?",
+  "guidelines": "The answer should be a percentage value with 2 decimal places. Output only the number, without the % symbol or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    "Collective Enterprise",
+    5.17
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter enterprise records with industry=\"Specialized Equipment Manufacturing\" from company_profile.csv, extract company name, bmCode, ownership, and province; 447 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract net profit, total assets, total liabilities, and operating revenue; 447 records after merge.",
+    "Filter records with industry=\"Specialized Equipment Manufacturing\" from regional_industry_status.csv, calculate provincial industry average ROE = total net profit / (total assets - total liabilities) × 100%; 15 valid provinces.",
+    "Filter valid enterprises with total assets > total liabilities and non-null operating revenue; 444 enterprises.",
+    "Calculate net assets = total assets - total liabilities for each enterprise, then ROE = net profit / net assets × 100%.",
+    "Inner join enterprise data with provincial industry average ROE by province; 389 enterprises matched. Calculate excess ROE = enterprise ROE - provincial industry average ROE for each enterprise.",
+    "Group by ownership to calculate mean excess ROE for each ownership type; 6 ownership types. Collective enterprises (2 enterprises) have the highest mean excess ROE = 5.17%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Total specialized equipment manufacturing enterprises": 447,
+    "Number of valid enterprises": 444,
+    "Enterprises matched with provincial data": 389,
+    "Number of ownership types": 6,
+    "Collective enterprise count": 2,
+    "Collective enterprise mean excess ROE (%)": 5.17
+  }
+}

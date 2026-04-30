@@ -1,0 +1,31 @@
+{
+  "id": "medium003",
+  "question": "In 2022, measuring per capita output efficiency of automobile manufacturing by province using revenue per capita (total operating revenue ÷ total employee count), among all provinces nationwide, what is the specific value in yuan per person for the province with the highest indicator? Compared to the national average, by what percentage (1 decimal place) is that province's per capita revenue higher?",
+  "guidelines": "Two answers required: first is a numeric value (2 decimal places), unit yuan/person; second is a percentage (1 decimal place), unit %. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": [
+    3898878.23,
+    175.0
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter all province records with industry=\"Automobile Manufacturing\", extract province, total operating revenue, total employee count; 34 records obtained.",
+    "Filter province records with non-null total operating revenue and total employee count, and total employee count > 0; 14 valid provinces obtained.",
+    "Compute per capita revenue for each valid province = total operating revenue / total employee count, sort by this indicator descending; Beijing has the highest: 341,596,317,171.50 / 87,614 = 3,898,878.23 yuan/person.",
+    "From national_industry_status.csv, filter national records with industry=\"Automobile Manufacturing\", extract total operating revenue and total employee count: national total operating revenue 4,614,449,954,119.47 yuan, national total employee count 3,254,510, national average per capita revenue = 1,417,863.20 yuan/person.",
+    "Compute Beijing's excess over national average = (3,898,878.23 - 1,417,863.20) / 1,417,863.20 × 100% = 174.98%, rounded to 1 decimal place per requirement: 175.0%."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Beijing total operating revenue (yuan)": 341596317171.5,
+    "Beijing total employee count": 87614,
+    "Beijing per capita revenue (yuan/person)": 3898878.23,
+    "National total operating revenue (yuan)": 4614449954119.47,
+    "National total employee count": 3254510,
+    "National average per capita revenue (yuan/person)": 1417863.2,
+    "Beijing excess over national average (%)": 175.0
+  }
+}

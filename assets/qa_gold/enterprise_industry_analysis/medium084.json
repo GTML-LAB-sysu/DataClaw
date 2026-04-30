@@ -1,0 +1,24 @@
+{
+  "id": "medium084",
+  "question": "Which is larger: the number of SSE-listed central state-owned enterprises in the industry where Yihai Changjin Business Company operates, or the total number of enterprises in the Communication Transmission Equipment industry?",
+  "guidelines": "The answer must be either \"the number of SSE-listed central state-owned enterprises in the industry where Yihai Changjin Business Company operates\" or \"the total number of enterprises in the Communication Transmission Equipment industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the total number of enterprises in the Communication Transmission Equipment industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Yihai Changjin Business Company belongs to the Leasing and Business Services industry.",
+    "Extract from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in the Leasing and Business Services industry is 3.",
+    "Extract from national_industry_status.csv that the total number of enterprises in the Communication Transmission Equipment industry is 120.",
+    "Compare the counts: 120 > 3, so the total number of enterprises in the Communication Transmission Equipment industry is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Yihai Changjin Business Company": "Leasing and Business Services",
+    "Number of SSE-listed central state-owned enterprises in the Leasing and Business Services industry": 3,
+    "Total number of enterprises in the Communication Transmission Equipment industry": 120,
+    "Comparison result (larger one)": "the total number of enterprises in the Communication Transmission Equipment industry"
+  }
+}

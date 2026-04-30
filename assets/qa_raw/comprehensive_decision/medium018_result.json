@@ -1,0 +1,28 @@
+{
+  "id": "medium018",
+  "question": "In 2022 Nationwide, is the province with the highest R&D expenditure growth rate also the province with the lowest R&D expenditure?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From regional_industry_status.csv, read R&D expenditure data for all provinces, including province, total R&D expenditure, average year-on-year R&D expenditure growth rate, etc.",
+    "Aggregate total R&D expenditure and average year-on-year R&D expenditure growth rate by province; exclude provinces with total R&D expenditure of 0 (missing data).",
+    "Identify the province with the highest average year-on-year R&D expenditure growth rate: Hong Kong Special Administrative Region, R&D expenditure growth rate 212.35%, total R&D expenditure 14,248,827,635.96 yuan.",
+    "Identify the province with the lowest total R&D expenditure (excluding 0): Jilin Province, total R&D expenditure 8,574,294,268.49 yuan, R&D expenditure growth rate 16.95%.",
+    "Compare whether the province with the highest R&D expenditure growth rate (Hong Kong SAR) and the province with the lowest R&D expenditure (Jilin Province) are the same province.Conclusion: The province with the highest R&D expenditure growth rate is not the province with the lowest R&D expenditure; the answer is No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province with highest R&D expenditure growth rate": "Hong Kong Special Administrative Region",
+    "Highest R&D expenditure growth rate (%)": 212.35,
+    "Highest growth province total R&D expenditure (yuan)": 14248827635.96,
+    "Province with lowest R&D expenditure": "Jilin Province",
+    "Lowest R&D expenditure (yuan)": 8574294268.49,
+    "Lowest R&D province R&D expenditure growth rate (%)": 16.95,
+    "Is same province": false
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

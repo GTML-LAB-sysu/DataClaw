@@ -1,0 +1,22 @@
+{
+  "id": "easy052",
+  "question": "In 2022, are the stock exchanges of Mei Neng Xuan Yue Dian Qi Co., Ltd. and Bao Tie Yuan Chang Jin Shu Zhi Pin Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: stock exchange of Mei Neng Xuan Yue Dian Qi Co., Ltd. = Shenzhen Stock Exchange",
+    "Extracted from company_profile.csv: stock exchange of Bao Tie Yuan Chang Jin Shu Zhi Pin Co., Ltd. = Gang Jiao Suo",
+    "Compared the two stock exchange texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Stock exchange of Mei Neng Xuan Yue Dian Qi Co., Ltd.": "Shenzhen Stock Exchange",
+    "Stock exchange of Bao Tie Yuan Chang Jin Shu Zhi Pin Co., Ltd.": "Gang Jiao Suo",
+    "Comparison result (whether the stock exchanges are the same)": "No"
+  }
+}

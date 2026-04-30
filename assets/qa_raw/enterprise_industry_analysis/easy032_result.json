@@ -1,0 +1,40 @@
+{
+  "id": "easy032",
+  "question": "In 2022, is the number of R&D personnel of Heng Yi Run Heng Technology Co., Ltd. lower than the annual number of Chinese patent applications of Lian Ji Ji Jin Ji Chuang Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Heng Yi Run Heng Technology Co., Ltd. (2022 dataset value): number of R&D personnel = 257.0",
+    "Lian Ji Ji Jin Ji Chuang Co., Ltd. (2022 dataset value): annual Chinese patent applications = 75"
+  ],
+  "milestone": {
+    "Heng Yi Run Heng Technology Co., Ltd. number of R&D personnel in 2022": 257.0,
+    "Lian Ji Ji Jin Ji Chuang Co., Ltd. annual Chinese patent applications in 2022": 75,
+    "Comparison result (whether Heng Yi Run Heng Technology Co., Ltd. is lower than Lian Ji Ji Jin Ji Chuang Co., Ltd.)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Heng Yi Run Heng Technology Co., Ltd. number of R&D personnel in 2022 = 257.0",
+    "Extracted from company_operation_status.csv: Lian Ji Ji Jin Ji Chuang Co., Ltd. annual Chinese patent applications in 2022 = 75",
+    "Compared 257.0 and 75; since 257.0 < 75 is false, the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "445b18a4-fbae-4a49-b1f3-0c83f3557f04"
+    },
+    {
+      "company_operation_status": "c3537b48-5679-48c0-b912-9c181360ffdf"
+    },
+    {
+      "company_profile": "66aa1d69-d99c-4c11-8393-cd832d4ac729"
+    },
+    {
+      "company_profile": "8ea3eaf8-c762-4525-a573-ed3e5ac71842"
+    }
+  ]
+}

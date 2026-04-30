@@ -1,0 +1,23 @@
+{
+  "id": "medium043",
+  "question": "In 2022, for Pharmaceutical Manufacturing, is the province with the highest total assets also the province with the highest R&D investment?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only \"Yes\" or \"No\", do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from regional_industry_status.csv all provincial records with industry=\"Pharmaceutical Manufacturing\".",
+    "In the filtered results, sort by total assets in descending order. The province with the maximum total assets is \"Beijing\", with total assets of 813813599815.91.",
+    "In the same filtered results, sort by total R&D investment amount in descending order. The province with the maximum total R&D investment amount is \"Beijing\", with total R&D investment of 57722993168.07.",
+    "Compare whether the provinces with the maximum values for both indicators are the same: Beijing == Beijing, they are consistent, so the answer is \"Yes\"."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province with highest total assets in Pharmaceutical Manufacturing": "Beijing",
+    "Province with highest total R&D investment in Pharmaceutical Manufacturing": "Beijing",
+    "Whether the two top provinces are the same": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

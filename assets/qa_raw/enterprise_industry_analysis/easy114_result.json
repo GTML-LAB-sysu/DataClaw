@@ -1,0 +1,31 @@
+{
+  "id": "easy114",
+  "question": "Will changes in Guizhou Province's economic environment affect Zhong You Zheng Da Jin Yun Shu Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong You Zheng Da Jin Yun Shu Co., Ltd. (data in this dataset) registration province: Shanghai Municipality",
+    "The province named in the question is Guizhou Province"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong You Zheng Da Jin Yun Shu Co., Ltd.'s registration province is Shanghai Municipality",
+    "Compare Shanghai Municipality with the province named in the question, \"Guizhou Province\"; the two are not the same",
+    "Therefore changes in Guizhou Province's economic environment are not directly relevant to this enterprise; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Zhong You Zheng Da Jin Yun Shu Co., Ltd. registration province": "Shanghai Municipality",
+    "Comparison province": "Guizhou Province",
+    "Whether affected by Guizhou Province economic environment changes": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "c0d7672e-a099-4780-874d-29e8425af1c7"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium063",
+  "question": "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province Number of policies (indicator) and China TransportationNumber of policies (indicator)compared with  how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province = Guangdong Province and industry = Electronics",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Electronicsextractlocal policies in Guangdong ProvincepersonsNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaPlastic Productsministerial policies in TransportationNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceElectronicslocal policies_Guangdong ProvincepersonsNumber of policies (indicator)": 1,
+    "ChinaPlastic Productsministerial policies_TransportationNumber of policies (indicator)": 1,
+    "Difference(Guangdong ProvincepersonsNumber of policies (indicator)-TransportationNumber of policies (indicator))": 0.0
+  }
+}

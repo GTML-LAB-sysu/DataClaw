@@ -1,0 +1,63 @@
+{
+  "id": "medium028",
+  "question": "In 2022, for the enterprise ranked first in year-over-year growth rate of R&D investment in the chemical raw materials and chemical products manufacturing industry, which of its indicators perform below the industry average?",
+  "guidelines": "Output only the indicator name(s) as the answer, without any additional explanation. If the relevant data cannot be found, please answer \"No relevant data retrieved\"",
+  "steps": [
+    "Filter all enterprise records with industry=\"chemical raw materials and chemical products manufacturing\" from company_profile.csv, and extract the enterprise name and industry fields.",
+    "Filter all records with year=2022 from company_operation_status.csv, and extract the enterprise name, year-over-year change in R&D investment, and various indicator fields. Note: All amount-related indicators are in yuan; no conversion is needed.",
+    "Filter enterprise records where the year-over-year change in R&D investment is not null, sort by the year-over-year change in R&D investment in descending order, and identify the enterprise ranked first in R&D investment year-over-year growth rate as \"Huayichangze Technology Co., Ltd.\", with an R&D investment year-over-year growth rate of 2766.85%.",
+    "Calculate the average of each indicator for all enterprises in the chemical raw materials and chemical products manufacturing industry (excluding the year-over-year change in R&D investment itself).",
+    "Compare each indicator of this enterprise (Huayichangze Technology Co., Ltd.) with the industry average, and identify the indicators that are below the industry average. A total of 17 indicators were found: total assets, R&D investment ratio, capitalized R&D investment, year-over-year change in capitalized R&D investment, company market capitalization, cumulative China patent applications, cumulative China invention patent grants, cumulative China invention patent invalidations, annual China patent applications, annual China invention patent applications, annual China patent grants, annual China invention patent grants, R&D personnel ratio, total liabilities, cumulative citations of all patents, cumulative China invention patent applications, participation in drafting national standards."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found enterprise information for the chemical raw materials and chemical products manufacturing industry from company_profile.csv.",
+    "Found year-over-year change in R&D investment and various indicator data for enterprises in 2022 from company_operation_status.csv (amount-related indicators are in yuan)."
+  ],
+  "milestone": {
+    "Enterprise ranked first in R&D investment year-over-year growth rate": "Huayichangze Technology Co., Ltd.",
+    "Indicators below industry average": [
+      "Total assets",
+      "R&D investment ratio",
+      "Capitalized R&D investment",
+      "Year-over-year change in capitalized R&D investment",
+      "Company market capitalization",
+      "Cumulative China patent applications",
+      "Cumulative China invention patent grants",
+      "Cumulative China invention patent invalidations",
+      "Annual China patent applications",
+      "Annual China invention patent applications",
+      "Annual China patent grants",
+      "Annual China invention patent grants",
+      "R&D personnel ratio",
+      "Total liabilities",
+      "Cumulative citations of all patents",
+      "Cumulative China invention patent applications",
+      "Participation in drafting national standards"
+    ]
+  },
+  "answer": [
+    "Total assets",
+    "R&D investment ratio",
+    "Capitalized R&D investment",
+    "Year-over-year change in capitalized R&D investment",
+    "Company market capitalization",
+    "Cumulative China patent applications",
+    "Cumulative China invention patent grants",
+    "Cumulative China invention patent invalidations",
+    "Annual China patent applications",
+    "Annual China invention patent applications",
+    "Annual China patent grants",
+    "Annual China invention patent grants",
+    "R&D personnel ratio",
+    "Total liabilities",
+    "Cumulative citations of all patents",
+    "Cumulative China invention patent applications",
+    "Participation in drafting national standards"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

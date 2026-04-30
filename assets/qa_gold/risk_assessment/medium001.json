@@ -1,0 +1,31 @@
+{
+  "id": "medium001",
+  "question": "Based on 2022 data, consider the following policy effect scenario: For provinces that have promulgated local industrial policies whose titles contain the keywords \"semiconductor\" or \"integrated circuit\", policy support will accelerate their semiconductor industry enterprises' R&D expansion pace to 2× the current growth rate over the next 3 years; for provinces that have not yet issued such policies, R&D growth remains unchanged. Using the median year-on-year change in enterprise R&D investment by province as the baseline growth rate, projected with 3-year compound growth, which province will rank first nationwide in total semiconductor industry R&D investment by 2025? What is the projected amount?",
+  "guidelines": "Answer format: [Province name, value (2 decimal places, unit: yuan)]. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": [
+    "Shanghai",
+    97732260069.03
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From policy_resource.csv, filter policies whose titles contain \"semiconductor\" or \"integrated circuit\", 4 records. Extract the involved province list (deduplicated, excluding national policies), yielding 4 provinces: Guangdong, Zhejiang, Shanghai, Anhui.",
+    "From regional_industry_status.csv, filter records with industry = \"semiconductor industry\" and exclude provinces where either R&D investment amount or year-on-year R&D change is missing, 16 provinces: Guangdong Province, Beijing Municipality, Jiangsu Province, Shanghai Municipality, Zhejiang Province, Shandong Province, Sichuan Province, Anhui Province, Hong Kong SAR, Hunan Province, Hebei Province, Liaoning Province, Jilin Province, Xinjiang Uygur Autonomous Region, Shanxi Province.",
+    "Group by province, calculate total R&D investment and median year-on-year R&D change for each province, 16 provinces.",
+    "For each province, determine if it is a policy province: policy provinces use adjusted growth rate = median growth rate × 2; non-policy provinces use adjusted growth rate = median growth rate. The top-ranked province, Shanghai, is a policy province with adjusted growth rate 64.38%.",
+    "Calculate each province's projected 2025 total R&D investment = total R&D investment × (1 + adjusted growth rate/100)^3. Shanghai's projected 2025 R&D investment = 22003461800.09 × (1+64.38/100)^3 = 97732260069.03.",
+    "The top-ranked province is Shanghai, with projected 2025 total R&D investment of 97732260069.03 yuan."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Provinces with policy count": 4,
+    "Provinces with valid data count": 16,
+    "Shanghai 2022 total R&D investment (yuan)": 22003461800.09,
+    "Shanghai 2022 median YoY R&D change (%)": 32.19,
+    "Shanghai adjusted growth rate (%)": 64.38,
+    "Shanghai projected 2025 R&D investment (yuan)": 97732260069.03
+  }
+}

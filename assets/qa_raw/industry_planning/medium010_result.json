@@ -1,0 +1,40 @@
+{
+  "id": "medium010",
+  "question": "Sort the semiconductor industry in 2022 by operating revenue from high to low, identify the top 10 enterprises by revenue scale, and count the provinces to which these leading enterprises belong; the province with the highest frequency is the research target. Next, conduct a national horizontal comparison of that province based on four industrial competitiveness dimensions—dimension one is enterprise agglomeration (total number of semiconductor industry enterprises per province), dimension two is innovation activity (= total annual Chinese invention patent grants ÷ total number of enterprises), dimension three is policy support (= count of relevant policies whose name contains \"semiconductor\" or \"integrated circuit\"), dimension four is industry scale (= total operating revenue). Among the national provincial rankings for each dimension, in how many dimensions did that province rank in the top 3?",
+  "guidelines": "Answer format: Integer. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"semiconductor industry\", extract enterprise name, bmCode, and province fields, finding 172 enterprises.",
+    "From company_operation_status.csv, link enterprises by bmCode, extract operating revenue amount field; 172 enterprises after filtering empty values. Sort in descending order and take the top 10 enterprises.",
+    "Count provincial distribution of top 10 enterprises: Shanghai (4), Taiwan (3), Guangdong (2), Jiangsu (1). Shanghai has the highest frequency with 4 enterprises.",
+    "Filter from regional_industry_status.csv where industry=\"semiconductor industry\", extract total number of enterprises, total annual Chinese invention patent grants, and total operating revenue for each province, totaling 22 provinces.",
+    "Calculate each province's innovation activity = total annual Chinese invention patent grants / total number of enterprises (exclude provinces with 0 enterprises). Shanghai's innovation activity = 35.1852.",
+    "Filter from policy_release_status.csv policies whose name contains \"semiconductor\" or \"integrated circuit\", 4 records total. Group by province to count relevant policy count. Shanghai has 1 relevant policy.",
+    "Sort the four indicators in descending order respectively. Shanghai's rankings: enterprise agglomeration 2nd (27 enterprises), innovation activity 4th (35.1852), policy support 2nd (1 record), industry scale 2nd (247438863786.89 yuan).",
+    "Count the number of dimensions in which Shanghai ranks ≤ 3 among the four dimensions. 3 dimensions rank in the national top 3."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "Found 172 semiconductor industry enterprises in company_profile.csv.",
+    "Found operating revenue data for 172 semiconductor industry enterprises in company_operation_status.csv.",
+    "Found semiconductor industry statistics for 22 provinces in regional_industry_status.csv.",
+    "Found 4 policy records containing \"semiconductor\" or \"integrated circuit\" in policy_release_status.csv."
+  ],
+  "milestone": {
+    "Province with most top 10 enterprises by revenue": "Shanghai",
+    "Shanghai enterprise agglomeration (enterprise count)": 27,
+    "Shanghai enterprise agglomeration ranking": 2,
+    "Shanghai innovation activity": 35.1852,
+    "Shanghai innovation activity ranking": 4,
+    "Shanghai policy support (policy count)": 1,
+    "Shanghai policy support ranking": 2,
+    "Shanghai industry scale (total operating revenue)": 247438863786.89,
+    "Shanghai industry scale ranking": 2,
+    "Number of dimensions in top 3": 3
+  },
+  "answer": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

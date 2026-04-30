@@ -1,0 +1,30 @@
+{
+  "id": "medium018",
+  "question": "In 2022, amid China's new energy vehicle industry policy support, what was XPeng's net profit margin (net profit ÷ operating revenue × 100%) in its annual report? What is the difference in percentage points compared with the median net profit margin of domestic automotive manufacturing industry leaders (top 10% by revenue)?",
+  "guidelines": "Answer in order: XPeng net profit margin (%) and the difference from industry leaders median (percentage points; negative value means XPeng is lower). Values rounded to 2 decimal places, e.g. [-34.03, -37.27]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "answer": [
+    -34.03,
+    -37.27
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Extract from XPeng 2022 annual report (20-F) PDF: Total revenues = RMB 26,855,119 thousand (approx. 26.855 billion), Net loss = RMB 9,138,972 thousand (approx. 9.139 billion). Net profit margin = -9,138,972 / 26,855,119 × 100% = -34.03%.",
+    "Filter company_profile.csv for industry=\"automotive manufacturing\", 230 companies; obtain operating revenue and net profit from company_operation_status.csv; after excluding invalid data, 230 companies have complete financial data.",
+    "Rank by operating revenue descending; take top 10% (23 companies) as industry leaders. Compute net profit margin (net profit / operating revenue × 100%) for each leader; median = 3.24%.",
+    "Calculate difference: XPeng net profit margin (-34.03%) - leaders median (3.24%) = -37.27 percentage points."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "XPeng 2022 operating revenue(hundred million CNY)": 268.55,
+    "XPeng 2022 net loss(hundred million CNY)": 91.39,
+    "XPeng net profit margin(%)": -34.03,
+    "Automotive manufacturing total company count": 230,
+    "Industry leaders count": 23,
+    "Industry leaders median net profit margin(%)": 3.24,
+    "Difference(percentage points)": -37.27
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium041",
+  "question": "Which is larger: the number of SSE-listed local state-owned enterprises in the industry of Hua Xin Yuan Shi New Materials Co., Ltd., or the number of BSE-listed enterprises in the corresponding industry of Guangdong where Zhong Ke Ke Shu Software Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hua Xin Yuan Shi New Materials Co., Ltd.: Non-metallic Mineral Products",
+    "SSE-listed local state-owned enterprise count in Non-metallic Mineral Products: 13",
+    "Province of Zhong Ke Ke Shu Software Co., Ltd.: Guangdong Province",
+    "BSE-listed enterprise count in Guangdong Information Transmission, Software and IT Services: 1"
+  ],
+  "answer": "Hua Xin Yuan Shi New Materials Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Hua Xin Yuan Shi New Materials Co., Ltd.": "Non-metallic Mineral Products",
+    "SSE-listed local state-owned enterprise count in Non-metallic Mineral Products": 13,
+    "Province of Zhong Ke Ke Shu Software Co., Ltd.": "Guangdong Province",
+    "BSE-listed enterprise count in Guangdong Information Transmission, Software and IT Services": 1,
+    "Comparison result (larger)": "Hua Xin Yuan Shi New Materials Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Hua Xin Yuan Shi New Materials Co., Ltd. = Non-metallic Mineral Products",
+    "Extracted from national_industry_status.csv: SSE-listed local state-owned enterprise count in Non-metallic Mineral Products = 13",
+    "Extracted from company_profile.csv: province of Zhong Ke Ke Shu Software Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: BSE-listed enterprise count in Guangdong Information Transmission, Software and IT Services = 1",
+    "Compared 13 and 1; since 13 is larger, output \"Hua Xin Yuan Shi New Materials Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "be3c0164-12b0-4453-8c7a-e198721d914b"
+    },
+    {
+      "company_profile": "f150e113-74af-4929-b33d-7b30a892e86d"
+    },
+    {
+      "regional_industry_status": "5eb24927-5b7a-4561-96df-b86398387e2b"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium054",
+  "question": "Which is higher: the minimum R&D expenditure ratio in the corresponding industry of the province where Zhangqiao Jinchuang Technology Co., Ltd. is located, or the minimum R&D expenditure ratio in the corresponding industry of the province where Zhaoye Huachang Real Estate Development Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province where Zhangqiao Jinchuang Technology Co., Ltd. is located: Guangdong Province",
+    "Minimum R&D expenditure ratio in Guangdong consumer electronics and electrical industry: 1.3 %",
+    "Province where Zhaoye Huachang Real Estate Development Co., Ltd. is located: Guangdong Province",
+    "Minimum R&D expenditure ratio in Guangdong real estate industry: 0 %"
+  ],
+  "answer": "Zhangqiao Jinchuang Technology Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province where Zhangqiao Jinchuang Technology Co., Ltd. is located": "Guangdong Province",
+    "Minimum R&D expenditure ratio in Guangdong consumer electronics and electrical industry": 1.3,
+    "Province where Zhaoye Huachang Real Estate Development Co., Ltd. is located": "Guangdong Province",
+    "Minimum R&D expenditure ratio in Guangdong real estate industry": 0,
+    "Comparison conclusion (higher value)": "Zhangqiao Jinchuang Technology Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv that Zhangqiao Jinchuang Technology Co., Ltd. is located in Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the minimum R&D expenditure ratio in Guangdong consumer electronics and electrical industry is 1.3 %.",
+    "Extracted from company_profile.csv that Zhaoye Huachang Real Estate Development Co., Ltd. is located in Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the minimum R&D expenditure ratio in Guangdong real estate industry is 0 %.",
+    "Compared 1.3 % and 0 %; 1.3 % is higher, so output \"Zhangqiao Jinchuang Technology Co., Ltd.\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "c17be31b-e2ca-440d-ac53-1d0061273700"
+    },
+    {
+      "company_profile": "58eb73a2-c225-4c83-9324-b515fec3a76f"
+    },
+    {
+      "regional_industry_status": "1e971ba1-a0ba-4221-908d-a308281f06d3"
+    },
+    {
+      "company_profile": "3f2c07ea-c142-43aa-ab56-ee76d8aaa4e5"
+    }
+  ]
+}

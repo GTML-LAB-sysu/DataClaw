@@ -1,0 +1,31 @@
+{
+  "id": "easy099",
+  "question": "Will a downturn in the rubber and plastic products industry directly affect the operating conditions of Yao Shi Yuan Ze Sheng Wu Yi Yao Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Yao Shi Yuan Ze Sheng Wu Yi Yao Co., Ltd. (data in this dataset) industry: Pharmaceutical Manufacturing",
+    "Rubber and Plastic Products and Pharmaceutical Manufacturing are different industry categories"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Yao Shi Yuan Ze Sheng Wu Yi Yao Co., Ltd.'s industry is Pharmaceutical Manufacturing",
+    "Conclude that a downturn in the rubber and plastic products industry is not directly equivalent to the operating performance measure of pharmaceutical manufacturing and does not constitute a direct impact",
+    "Output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Yao Shi Yuan Ze Sheng Wu Yi Yao Co., Ltd. industry": "Pharmaceutical Manufacturing",
+    "Comparison industry": "Rubber and Plastic Products",
+    "Whether direct impact": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "b1359959-96f4-4f78-b803-7d92de8c80ba"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium009",
+  "question": "Which is greater: the number of local policies issued by the Guangdong Province General Office of the People's Government in the local policies for the industry of Zhang Qiao Jin Chuang Technology Co., Ltd., or the number of central ministry/agency policies issued by the National Cryptography Administration in the ministerial policies for the industry of Heng Li Ke Zhi Ruan Jian Co., Ltd.?",
+  "guidelines": "The answer must be either \"Number of local policies issued by the Guangdong Province General Office of the People's Government for the industry of Zhang Qiao Jin Chuang Technology Co., Ltd.\" or \"Number of central ministry/agency policies issued by the National Cryptography Administration for the industry of Heng Li Ke Zhi Ruan Jian Co., Ltd.\" or \"Equal\". Output only the selected answer text, without any explanation, analysis, or descriptive wording. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhang Qiao Jin Chuang Technology Co., Ltd.: Consumer Electronics and Electrical Equipment",
+    "Consumer Electronics and Electrical Equipment local policies — Guangdong Province General Office of the People's Government — number of policies: 1",
+    "Industry of Heng Li Ke Zhi Ruan Jian Co., Ltd.: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies — National Cryptography Administration — number of policies: 1"
+  ],
+  "milestone": {
+    "Industry of Zhang Qiao Jin Chuang Technology Co., Ltd.": "Consumer Electronics and Electrical Equipment",
+    "Consumer Electronics and Electrical Equipment local policies_Guangdong Province General Office of the People's Government number of policies": 1,
+    "Industry of Heng Li Ke Zhi Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies_National Cryptography Administration number of policies": 1,
+    "Comparison result": "Equal"
+  },
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhang Qiao Jin Chuang Technology Co., Ltd.'s industry is Consumer Electronics and Electrical Equipment",
+    "From policy_release_status.csv, extract that in the local policies for Consumer Electronics and Electrical Equipment, the number of policies issued by the Guangdong Province General Office of the People's Government is 1",
+    "From company_profile.csv, extract that Heng Li Ke Zhi Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "From policy_release_status.csv, extract that in the ministerial policies for Information Transmission, Software and IT Services, the number of policies issued by the National Cryptography Administration is 1",
+    "Compare 1 and 1; if equal, output \"Equal\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "policy_release_status": "d3414a8b-ce02-4229-b6f0-34e0aa208f3c"
+    },
+    {
+      "company_profile": "58eb73a2-c225-4c83-9324-b515fec3a76f"
+    },
+    {
+      "policy_release_status": "5bec0ffb-41d8-4699-ad95-003164a2e21f"
+    },
+    {
+      "company_profile": "6c1bc3d3-0763-4686-bb01-a61e146eee63"
+    }
+  ]
+}

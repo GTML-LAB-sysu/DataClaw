@@ -1,0 +1,42 @@
+{
+  "id": "medium013",
+  "question": "In 2022, is the market capitalization of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. lower than the operating revenue of Long He Zhi Jin Zhi Ye Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. (2022 dataset value): market capitalization = 310.0 hundred million CNY",
+    "Long He Zhi Jin Zhi Ye Co., Ltd. (2022 dataset value): operating revenue = 1702394443.0 CNY"
+  ],
+  "milestone": {
+    "Market capitalization of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. in 2022 (hundred million CNY)": 310.0,
+    "Converted market capitalization of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. in 2022 (CNY)": 31000000000,
+    "Operating revenue of Long He Zhi Jin Zhi Ye Co., Ltd. in 2022 (CNY)": 1702394443.0,
+    "Comparison result (whether the market capitalization of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. is lower than the operating revenue of Long He Zhi Jin Zhi Ye Co., Ltd.)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: market capitalization of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. in 2022 = 310.0 hundred million CNY",
+    "Converted 310.0 hundred million CNY to CNY: 310.0 * 100000000 = 31000000000 CNY",
+    "Extracted from company_operation_status.csv: operating revenue of Long He Zhi Jin Zhi Ye Co., Ltd. in 2022 = 1702394443.0 CNY",
+    "Compared 31000000000 and 1702394443.0; since 31000000000 > 1702394443.0, the judgment is \"No\""
+  ],
+  "steps_num": 4,
+  "reference": [
+    {
+      "company_operation_status": "42462fed-6dbc-400e-b9da-c46efc7fcf28"
+    },
+    {
+      "company_operation_status": "e42fabec-4192-4d35-8382-c3f2c2575de0"
+    },
+    {
+      "company_profile": "41fc40f8-35ba-4a45-9c72-56aa081d8caa"
+    },
+    {
+      "company_profile": "26b455a0-8084-4ea6-a2d9-b08d9305f26b"
+    }
+  ]
+}

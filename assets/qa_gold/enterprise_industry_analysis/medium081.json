@@ -1,0 +1,24 @@
+{
+  "id": "medium081",
+  "question": "What is the difference between the number of SZSE-listed enterprises in the industry where Zhaoye Huachang Real Estate Development Company operates and the number of SZSE-listed private enterprises in the General Equipment Manufacturing industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": -35.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhaoye Huachang Real Estate Development Company belongs to the Real Estate industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed enterprises in the Real Estate industry is 51.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed private enterprises in the General Equipment Manufacturing industry is 86.",
+    "Calculate the difference: 51 - 86 = -35.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhaoye Huachang Real Estate Development Company": "Real Estate",
+    "Number of SZSE-listed enterprises in the Real Estate industry": 51,
+    "Number of SZSE-listed private enterprises in the General Equipment Manufacturing industry": 86,
+    "Difference": -35.0
+  }
+}

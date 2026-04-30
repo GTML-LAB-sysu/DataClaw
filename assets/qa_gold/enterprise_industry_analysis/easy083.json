@@ -1,0 +1,22 @@
+{
+  "id": "easy083",
+  "question": "In 2022, which is higher: the average capitalized R&D investment in Jilin's petroleum processing, coking, and nuclear fuel processing industry, or the same metric in Xinjiang?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or company name without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: average capitalized R&D investment in Jilin petroleum processing, coking and nuclear fuel processing = 0 yuan",
+    "Extracted from regional_industry_status.csv: average capitalized R&D investment in Xinjiang petroleum processing, coking and nuclear fuel processing = 0 yuan",
+    "Compared 0 and 0, and judged \"Equal\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Average capitalized R&D investment in Jilin petroleum processing, coking and nuclear fuel processing (yuan)": 0,
+    "Average capitalized R&D investment in Xinjiang petroleum processing, coking and nuclear fuel processing (yuan)": 0,
+    "Comparison result": "Equal"
+  }
+}

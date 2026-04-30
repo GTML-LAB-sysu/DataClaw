@@ -1,0 +1,40 @@
+{
+  "id": "easy020",
+  "question": "In 2022, is the debt-to-asset ratio of Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. higher than that of Yi Shan Tai Tai Medical Devices Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. (2022 dataset value): debt-to-asset ratio = 63.23 %",
+    "Yi Shan Tai Tai Medical Devices Co., Ltd. (2022 dataset value): debt-to-asset ratio = 39.97 %"
+  ],
+  "milestone": {
+    "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. debt-to-asset ratio in 2022": "63.23 %",
+    "Yi Shan Tai Tai Medical Devices Co., Ltd. debt-to-asset ratio in 2022": "39.97 %",
+    "Comparison result (whether Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. is higher than Yi Shan Tai Tai Medical Devices Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. debt-to-asset ratio in 2022 = 63.23 %",
+    "Extracted from company_operation_status.csv: Yi Shan Tai Tai Medical Devices Co., Ltd. debt-to-asset ratio in 2022 = 39.97 %",
+    "Compared 63.23 and 39.97; since 63.23 > 39.97, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "82b1665a-ac50-4f32-bb39-62e19fce2035"
+    },
+    {
+      "company_operation_status": "a50f3044-957a-4380-8852-f32116951aed"
+    },
+    {
+      "company_profile": "6e6b4e87-8925-4b4b-a3d5-8f4e80099348"
+    },
+    {
+      "company_profile": "14950802-93f3-4237-a0ed-9d1b591fab65"
+    }
+  ]
+}

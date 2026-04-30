@@ -1,0 +1,24 @@
+{
+  "id": "medium064",
+  "question": "Is the number of specific local policies in the province where Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd. is located the same as the number of policies issued by the Hainan Province Department of Industry and Information Technology for China's rubber and plastic products industry local policies?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd. is in Guangdong Province and its industry is Consumer Electronics and Electrical Equipment",
+    "From policy_release_status.csv, filter by province = Guangdong Province and industry = Consumer Electronics and Electrical Equipment, and extract the number of local policies issued by the Guangdong Province General Office of the People's Government: 1",
+    "From policy_release_status.csv, extract the number of China rubber and plastic products industry local policies issued by the Hainan Province Department of Industry and Information Technology: 1",
+    "Compare whether 1 equals 1; if so, output \"Yes\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Consumer Electronics and Electrical Equipment local policies_Guangdong Province General Office of the People's Government number of policies": 1,
+    "China rubber and plastic products industry local policies_Hainan Province Department of Industry and Information Technology number of policies": 1,
+    "Whether the same": "Yes"
+  }
+}

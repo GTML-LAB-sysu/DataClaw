@@ -1,0 +1,24 @@
+{
+  "id": "medium006",
+  "question": "In 2022, is the year-over-year net profit change rate of Yong Feng Xin Chuang Ke Ji Co., Ltd. higher than the median of this indicator in its industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Xin Chuang Ke Ji Co., Ltd. year-over-year net profit change rate in 2022 = 40.82 %",
+    "Extracted from company_profile.csv: the company belongs to Information Transmission, Software and Information Technology Services",
+    "Extracted from national_industry_status.csv: industry median year-over-year net profit change rate = -15.96 %",
+    "Compared 40.82 and -15.96; since 40.82 > -15.96, the judgment is \"Yes\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Yong Feng Xin Chuang Ke Ji Co., Ltd. year-over-year net profit change rate in 2022": "40.82 %",
+    "Industry of Yong Feng Xin Chuang Ke Ji Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Median year-over-year net profit change rate in Information Transmission, Software and Information Technology Services": "-15.96 %",
+    "Comparison result (whether the company is higher than the industry median)": "Yes"
+  }
+}

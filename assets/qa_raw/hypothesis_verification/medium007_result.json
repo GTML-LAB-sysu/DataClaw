@@ -1,0 +1,56 @@
+{
+  "id": "medium007",
+  "question": "In the 2022 data, to verify the hypothesis that private enterprises in the communications transmission equipment industry benefit more from policies than state-owned enterprises, we focus on communications transmission equipment enterprises in provinces that have issued local policies involving the \"communications\"-related industry. Enterprises are grouped by ownership type (private enterprises vs. state-owned enterprises, where state-owned enterprises include only central state-owned enterprises and local state-owned enterprises). Within each group, the per capita revenue (total revenue / total number of employees) is calculated using the weighted consolidation method. Finally, return the specific difference between per capita revenue of the private enterprise group and that of the state-owned enterprise group. ",
+  "guidelines": "Answer format: numerical value (retain 2 decimal places, unit: yuan/person). A positive value indicates private enterprises are higher. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter policy records from policy_release_status.csv where policyClassification=\"local policy\" and the industry field contains \"communications\", finding 48 relevant policies. Extract the deduplicated province field (excluding \"national\"), obtaining 18 provinces with policies: Shanghai, Yunnan, Beijing, Sichuan, Anhui, Shandong, Guangdong, Xinjiang Uygur Autonomous Region, Jiangxi, Henan, Hainan, Hubei, Hunan, Fujian, Guizhou, Liaoning, Chongqing, Shaanxi.",
+    "Filter from company_profile.csv companies whose industry contains \"communications transmission equipment\" and province is among the policy provinces. Extract company name, bmCode, and ownership fields, finding 88 companies.",
+    "Divide enterprises into the private enterprise group (ownership=\"private enterprise\", 61 companies) and the state-owned enterprise group (ownership is \"central state-owned enterprise\" or \"local state-owned enterprise\", 21 companies).",
+    "From company_operation_status.csv, associate 2022 data based on bmCode, extract revenue amount and total employee fields. Private enterprises: 61 associated; state-owned enterprises: 21 associated.",
+    "Filter out records with empty revenue amount or total employees, or zero total employees. Valid private enterprises: 61; valid state-owned enterprises: 20.",
+    "Calculate per capita revenue of private enterprise group = total revenue of private enterprises / total employees of private enterprises = 1009833229861.02 / 471176 = 2143218.73 yuan/person; calculate per capita revenue of state-owned enterprise group = total revenue of state-owned enterprises / total employees of state-owned enterprises = 227578562511.11 / 119917 = 1897800.67 yuan/person.",
+    "Calculate difference = per capita revenue of private enterprises - per capita revenue of state-owned enterprises = 2143218.73 - 1897800.67 = 245418.07 yuan/person."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Filtered 48 local policies involving industries containing \"communications\" from policy_release_status.csv, covering 18 provinces.",
+    "Found 88 communications transmission equipment companies in policy provinces from company_profile.csv, including 61 private enterprises and 21 state-owned enterprises.",
+    "Associated 2022 revenue and employee data from company_operation_status.csv. After filtering, 61 valid private enterprises and 20 valid state-owned enterprises."
+  ],
+  "milestone": {
+    "List of provinces with policies": [
+      "Shanghai",
+      "Yunnan",
+      "Beijing",
+      "Sichuan",
+      "Anhui",
+      "Shandong",
+      "Guangdong",
+      "Xinjiang Uygur Autonomous Region",
+      "Jiangxi",
+      "Henan",
+      "Hainan",
+      "Hubei",
+      "Hunan",
+      "Fujian",
+      "Guizhou",
+      "Liaoning",
+      "Chongqing",
+      "Shaanxi"
+    ],
+    "Number of private enterprises": 61,
+    "Number of state-owned enterprises": 20,
+    "Total revenue of private enterprises": 1009833229861.02,
+    "Total employees of private enterprises": 471176,
+    "Total revenue of state-owned enterprises": 227578562511.11,
+    "Total employees of state-owned enterprises": 119917,
+    "Per capita revenue of private enterprises": 2143218.73,
+    "Per capita revenue of state-owned enterprises": 1897800.67
+  },
+  "answer": 245418.07,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

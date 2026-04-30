@@ -1,0 +1,33 @@
+{
+  "id": "medium013",
+  "question": "In 2022, in the information transmission, software and information technology services industry, researchers aim to characterize a type of dual anomaly enterprises with high valuation and high R&D investment, yet weak profitability and insufficient patent influence. The specific criteria are: valid enterprises must have complete data for all four indicators—market cap, revenue (non-zero), R&D investment ratio, and cumulative total patent citations; net profit margin is calculated as net profit amount divided by revenue amount times 100%; among all valid enterprises, using each indicator's median as the threshold, filter enterprises where market cap exceeds the median and net profit margin is below the median, while R&D investment ratio exceeds the median and cumulative patent citations are below the median. What is the proportion of such enterprises among all valid enterprises?",
+  "guidelines": "Answer format: proportional value (retain 2 decimal places, unit: %). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter all enterprises with industry=\"information transmission, software and information technology services\" from company_profile.csv, finding 644 enterprises.",
+    "From company_operation_status.csv, associate 2022 data for these enterprises based on bmCode, extract market cap, net profit amount, revenue amount, R&D investment ratio, and cumulative total patent citations fields. Successfully associated 644 enterprises.",
+    "Filter out 100 enterprises with any of market cap, revenue amount, R&D investment ratio, or cumulative total patent citations empty, or with zero revenue. 544 valid enterprises remain.",
+    "Calculate net profit margin = net profit amount / revenue amount × 100%. Net profit margin range: -1857.0154% to 80.7125%.",
+    "Calculate median for each of the four indicators: median market cap = 59.5, median net profit margin = 3.2905%, median R&D investment ratio = 12.155000000000001, median cumulative total patent citations = 363.0.",
+    "Filter dual anomaly enterprises satisfying all four conditions (market cap > median, net profit margin < median, R&D investment ratio > median, cumulative patent citations < median), 19 enterprises in total.",
+    "Calculate proportion = 19 / 544 × 100% = 3.49%."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 644 information transmission, software and information technology services enterprises from company_profile.csv.",
+    "Associated 2022 data on market cap, net profit amount, revenue amount, R&D investment ratio, and cumulative total patent citations for 644 enterprises from company_operation_status.csv. After filtering: 544 valid enterprises."
+  ],
+  "milestone": {
+    "Total number of valid enterprises": 544,
+    "Median market cap": 59.5,
+    "Median net profit margin (%)": 3.2905,
+    "Median R&D investment ratio": 12.155,
+    "Median cumulative patent citations": 363.0,
+    "Number of anomaly enterprises": 19
+  },
+  "answer": 3.49,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

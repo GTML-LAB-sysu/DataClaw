@@ -1,0 +1,22 @@
+{
+  "id": "easy104",
+  "question": "Does Wan Hui Sheng Zhi Construction Development Co., Ltd. belong to the Real Estate industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Wan Hui Sheng Zhi Construction Development Co., Ltd.'s industry is Real Estate",
+    "This matches the industry named in the question, \"Real Estate\"",
+    "Therefore the company belongs to real estate; output \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Wan Hui Sheng Zhi Construction Development Co., Ltd. industry": "Real Estate",
+    "Comparison industry": "Real Estate",
+    "Whether belongs to this industry": "Yes"
+  }
+}

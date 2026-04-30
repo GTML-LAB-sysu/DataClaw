@@ -1,0 +1,46 @@
+{
+  "id": "medium047",
+  "question": "Which is higher: the maximum cumulative citations of all patents in the corresponding industry in Shanghai, where Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd. is located, or the same metric in the industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.: Shanghai Municipality",
+    "Shanghai Municipality Financial Industry Cumulative citations of all patents (maximum)：11161 items",
+    "Industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.: Real Estate",
+    "Maximum cumulative citations of all patents in Real Estate: 6946"
+  ],
+  "answer": "Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Financial Industry Cumulative citations of all patents (maximum)": 11161,
+    "Industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.": "Real Estate",
+    "Maximum cumulative citations of all patents in Real Estate": 6946,
+    "Comparison result (higher)": "Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: maximum cumulative citations of all patents in Shanghai Financial Industry = 11161",
+    "Extracted from company_profile.csv: industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: maximum cumulative citations of all patents in Real Estate = 6946",
+    "Compared 11161 and 6946; since 11161 is higher, output \"Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "3f2c07ea-c142-43aa-ab56-ee76d8aaa4e5"
+    }
+  ]
+}

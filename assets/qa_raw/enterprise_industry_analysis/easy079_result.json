@@ -1,0 +1,34 @@
+{
+  "id": "easy079",
+  "question": "In 2022, is the total number of enterprises in Tibet Autonomous Region's electricity, heat, gas and water production and supply industry the same as that in the metal products industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Tibet Autonomous Region (2022 dataset value): total number of enterprises in the electricity, heat, gas and water production and supply industry = 0",
+    "Tibet Autonomous Region (2022 dataset value): total number of enterprises in the metal products industry = 0"
+  ],
+  "milestone": {
+    "Total number of enterprises in Tibet Autonomous Region's electricity, heat, gas and water production and supply industry": 0,
+    "Total number of enterprises in Tibet Autonomous Region's metal products industry": 0,
+    "Comparison result (whether the counts are the same)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the total number of enterprises in Tibet Autonomous Region's electricity, heat, gas and water production and supply industry is 0.",
+    "Extracted from regional_industry_status.csv that the total number of enterprises in Tibet Autonomous Region's metal products industry is 0.",
+    "Compared the two counts and determined \"Yes\" because they are the same."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "regional_industry_status": "6cfae52b-5907-4f04-bbae-fe07d0314711"
+    },
+    {
+      "regional_industry_status": "fe9ea1bf-ccc2-42a0-a9d1-1240d3e24000"
+    }
+  ]
+}

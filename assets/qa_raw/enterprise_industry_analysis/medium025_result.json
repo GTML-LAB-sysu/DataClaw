@@ -1,0 +1,46 @@
+{
+  "id": "medium025",
+  "question": "Is the average number of provincial or ministerial natural science awards in the industry of Biyuan Shenghua Construction Development Co., Ltd. lower than that in the industry of Baoxin Huihui Network Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Biyuan Shenghua Construction Development Co., Ltd.: Real Estate",
+    "Average number of provincial or ministerial natural science awards in Real Estate: 0",
+    "Industry of Baoxin Huihui Network Co., Ltd.: Information Transmission, Software and Information Technology Services",
+    "Average number of provincial or ministerial natural science awards in Information Transmission, Software and Information Technology Services: 1"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Biyuan Shenghua Construction Development Co., Ltd.": "Real Estate",
+    "Average number of provincial or ministerial natural science awards in Real Estate": 0,
+    "Industry of Baoxin Huihui Network Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Average number of provincial or ministerial natural science awards in Information Transmission, Software and Information Technology Services": 1,
+    "Whether lower": "Yes"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Biyuan Shenghua Construction Development Co., Ltd. is Real Estate.",
+    "Extracted from national_industry_status.csv that the average number of provincial or ministerial natural science awards in Real Estate is 0.",
+    "Extracted from company_profile.csv that the industry of Baoxin Huihui Network Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the average number of provincial or ministerial natural science awards in Information Transmission, Software and Information Technology Services is 1.",
+    "Judged whether 0 is lower than 1; the conclusion is \"Yes\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "a0b01b7e-ed2c-4c4a-b7d7-15062fab3ef4"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "fe635f7d-bee1-4e2e-9ed6-3923871590d0"
+    }
+  ]
+}

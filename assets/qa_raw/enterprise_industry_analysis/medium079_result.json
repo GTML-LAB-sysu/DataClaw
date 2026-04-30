@@ -1,0 +1,40 @@
+{
+  "id": "medium079",
+  "question": "What is the difference between the number of SZSE-listed central state-owned enterprises in the industry where Huijin Jinrui Wealth Management Company operates and the number of HKEX-listed central state-owned enterprises in the Electrical Machinery and Equipment Manufacturing industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Huijin Jinrui Wealth Management Company: Financial industry",
+    "Financial industry: number of SZSE-listed central state-owned enterprises = 5",
+    "Electrical Machinery and Equipment Manufacturing industry: number of HKEX-listed central state-owned enterprises = 3"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Huijin Jinrui Wealth Management Company belongs to the financial industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in the financial industry is 5.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed central state-owned enterprises in the Electrical Machinery and Equipment Manufacturing industry is 3.",
+    "Calculate the difference: 5 - 3 = 2.0."
+  ],
+  "steps_num": 4,
+  "answer": 2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Company": "Financial industry",
+    "Number of SZSE-listed central state-owned enterprises in the financial industry": 5,
+    "Number of HKEX-listed central state-owned enterprises in the Electrical Machinery and Equipment Manufacturing industry": 3,
+    "Difference": 2.0
+  },
+  "reference": [
+    {
+      "national_industry_status": "5dc0d9db-af52-48e2-8eef-98a66f67632f"
+    },
+    {
+      "company_profile": "f3c336ac-af8f-4c74-aed7-cc746cbb5826"
+    },
+    {
+      "national_industry_status": "15263bd4-fe7b-43f3-bd79-b697b63a42b7"
+    }
+  ]
+}

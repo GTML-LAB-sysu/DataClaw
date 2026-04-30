@@ -1,0 +1,46 @@
+{
+  "id": "medium035",
+  "question": "Comparing the number of HKEX-listed sino-foreign joint ventures in the industry of Yihai Changjin Business Co., Ltd. with the number of SSE-listed local state-owned enterprises in the corresponding industry of Shanghai where Jinzhi Hongsheng Asset Management Co., Ltd. is located, which is larger?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yihai Changjin Business Co., Ltd.: Leasing and Business Services",
+    "Leasing and Business Services, number of HKEX-listed sino-foreign joint ventures: 1",
+    "Province/municipality where Jinzhi Hongsheng Asset Management Co., Ltd. is located: Shanghai Municipality",
+    "Shanghai Municipality, Financial Industry, number of SSE-listed local state-owned enterprises: 8"
+  ],
+  "answer": "Jinzhi Hongsheng Asset Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Yihai Changjin Business Co., Ltd.": "Leasing and Business Services",
+    "Number of HKEX-listed sino-foreign joint ventures in Leasing and Business Services": 1,
+    "Province/municipality where Jinzhi Hongsheng Asset Management Co., Ltd. is located": "Shanghai Municipality",
+    "Number of SSE-listed local state-owned enterprises in Shanghai Financial Industry": 8,
+    "Conclusion (larger value)": "Jinzhi Hongsheng Asset Management Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Yihai Changjin Business Co., Ltd. is Leasing and Business Services.",
+    "Extracted from national_industry_status.csv that the number of HKEX-listed sino-foreign joint ventures in Leasing and Business Services is 1.",
+    "Extracted from company_profile.csv that Jinzhi Hongsheng Asset Management Co., Ltd. is located in Shanghai Municipality.",
+    "Extracted from regional_industry_status.csv that the number of SSE-listed local state-owned enterprises in Shanghai Financial Industry is 8.",
+    "Compared 1 and 8; 8 is larger, so output \"Jinzhi Hongsheng Asset Management Co., Ltd.\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "e4578b09-ad56-4edf-adc8-9cd6b54149b7"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "medium023",
+  "question": "In 2022 is the average year-on-year net profit growth rate for the industry where Haishan Changgong Equipment Company operates higher than the average R&D investment growth rate?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, find the record with company name=\"Haishan Changgong Equipment Company\", extract the industry field, determine its industry as \"General equipment manufacturing\".",
+    "From national_industry_status.csv, filter records with industry=\"General equipment manufacturing\" and district=\"National\", extract net profit year-on-year growth rate mean and R&D investment year-on-year growth rate mean fields.",
+    "Obtain the net profit year-on-year growth rate mean for general equipment manufacturing as -79.47492958%, and the R&D investment year-on-year growth rate mean as 10.1399523809524%.",
+    "Compare the average year-on-year net profit growth rate (-79.47492958%) with the R&D investment growth rate (10.1399523809524%), determine that -79.47492958 is less than 10.1399523809524, conclusion: No."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "Found information for Haishan Changgong Equipment Company from company_profile.csv, confirmed its industry as \"General equipment manufacturing\".",
+    "Found net profit year-on-year growth rate mean and R&D investment year-on-year growth rate mean for national general equipment manufacturing data from national_industry_status.csv."
+  ],
+  "milestone": {
+    "Industry where Haishan Changgong Equipment Company operates": "General equipment manufacturing",
+    "General equipment manufacturing net profit year-on-year growth rate mean (%)": -79.47492958,
+    "General equipment manufacturing R&D investment year-on-year growth rate mean (%)": 10.1399523809524,
+    "Comparison result": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

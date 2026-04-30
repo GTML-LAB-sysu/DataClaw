@@ -1,0 +1,46 @@
+{
+  "id": "medium033",
+  "question": "Comparing the number of enterprises in Health and Social Work in the industry of Jianfan Ningze Elderly Care Services Co., Ltd. with the number of SSE-listed central state-owned enterprises in the industry of Zhongche Yuanze Shipbuilding Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Jianfan Ningze Elderly Care Services Co., Ltd.: Health and Social Work",
+    "Health and Social Work, number of enterprises in Health and Social Work: 29",
+    "Industry of Zhongche Yuanze Shipbuilding Co., Ltd.: Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing, number of SSE-listed central state-owned enterprises: 25"
+  ],
+  "answer": "Jianfan Ningze Elderly Care Services Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Jianfan Ningze Elderly Care Services Co., Ltd.": "Health and Social Work",
+    "Number of enterprises in Health and Social Work": 29,
+    "Industry of Zhongche Yuanze Shipbuilding Co., Ltd.": "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Number of SSE-listed central state-owned enterprises in Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing": 25,
+    "Conclusion (larger value)": "Jianfan Ningze Elderly Care Services Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Jianfan Ningze Elderly Care Services Co., Ltd. is Health and Social Work.",
+    "Extracted from national_industry_status.csv that the number of enterprises in Health and Social Work is 29.",
+    "Extracted from company_profile.csv that the industry of Zhongche Yuanze Shipbuilding Co., Ltd. is Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing.",
+    "Extracted from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in this industry is 25.",
+    "Compared 29 and 25; 29 is larger, so output \"Jianfan Ningze Elderly Care Services Co., Ltd.\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "a08b718a-c663-4252-a4f4-56c3034bae0c"
+    },
+    {
+      "company_profile": "ca56f5f4-4ea0-433d-9eb2-cf2c630fc69d"
+    },
+    {
+      "national_industry_status": "4e4122cb-0cfc-47c7-8dde-7296312f31a7"
+    },
+    {
+      "company_profile": "b5c4bcce-8ecd-4a6e-b6ca-e5b6eb41fb8e"
+    }
+  ]
+}

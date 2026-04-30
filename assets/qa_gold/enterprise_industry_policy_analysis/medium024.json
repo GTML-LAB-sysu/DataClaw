@@ -1,0 +1,26 @@
+{
+  "id": "medium024",
+  "question": "Which is greater: the number of central ministry/agency policies issued by the Ministry of Science and Technology in the ministerial policies for the industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd., or the number of local policies for the Consumer Electronics and Electrical Equipment industry in Guangdong Province where Zhang Qiao Jin Chuang Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.'s industry is Real Estate",
+    "Extract from policy_release_status.csv that in the ministerial policies for Real Estate, the policy count issued by the Ministry of Science and Technology is 1",
+    "Extract from company_profile.csv that Zhang Qiao Jin Chuang Technology Co., Ltd. is located in Guangdong Province and its industry is Consumer Electronics and Electrical Equipment",
+    "Extract from policy_release_status.csv that the local policies policy count for Consumer Electronics and Electrical Equipment in Guangdong Province is 1",
+    "Compare 1 and 1; if equal, output \"Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.\" as required by the question"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.": "Real Estate",
+    "Real Estate ministerial policies_Ministry of Science and Technology policy count": 1,
+    "Province of Zhang Qiao Jin Chuang Technology Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Consumer Electronics and Electrical Equipment local policies policy count": 1,
+    "Comparison result": "Equal; per question requirement, output Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd."
+  }
+}

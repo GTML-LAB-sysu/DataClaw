@@ -1,0 +1,30 @@
+{
+  "id": "hard014",
+  "question": "In 2022, a technology innovation fund evaluated the \"R&D-patent conversion\" full-chain efficiency of the consumer electronics and electrical industry across provinces, seeking to identify the province with optimal conversion efficiency (only provinces with valid enterprise count >= 3 are included). What is the R&D-patent conversion efficiency value of that province? (R&D-patent conversion efficiency = sum of annual Chinese invention patent grants / sum of annual Chinese invention patent applications × R&D output density; R&D output density = sum of annual Chinese invention patent applications / sum of R&D investment amount (100 million yuan))",
+  "guidelines": "The answer should be a numeric value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 47.29,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all enterprise records with industry=\"Consumer Electronics and Electrical\" from company_profile.csv, extract company name, bmCode, and province fields; 358 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract annual Chinese invention patent applications, annual Chinese invention patent grants, and R&D investment amount fields; 358 records after merge.",
+    "Filter records with industry=\"Consumer Electronics and Electrical\" from national_industry_status.csv to obtain national benchmark data: total enterprises 358, total R&D investment amount 245,156,000,000.00 yuan, total annual invention patent applications 63,940, total annual invention patent grants 43,780.",
+    "Filter 266 valid enterprises with all three fields (annual Chinese invention patent applications, annual Chinese invention patent grants, R&D investment amount) non-null; retain 13 provinces with valid enterprise count >= 3 after grouping by province.",
+    "Aggregate by province: sum of annual Chinese invention patent applications, sum of annual Chinese invention patent grants, and sum of R&D investment amount.",
+    "Calculate R&D output density per province = sum of annual Chinese invention patent applications / sum of R&D investment amount (100 million yuan); conversion efficiency = (sum of annual Chinese invention patent grants / sum of annual Chinese invention patent applications) × R&D output density.",
+    "Sort by conversion efficiency in descending order; the province with the highest conversion efficiency is Shandong, with 24,694 patent applications, 15,143 patent grants, R&D output density 77.1105, conversion efficiency = 47.29."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "National total consumer electronics and electrical enterprises": 358,
+    "Number of valid enterprises": 266,
+    "Number of valid provinces": 13,
+    "Shandong patent applications": 24694.0,
+    "Shandong patent grants": 15143.0,
+    "Shandong R&D output density": 77.1105,
+    "Shandong conversion efficiency": 47.29
+  }
+}

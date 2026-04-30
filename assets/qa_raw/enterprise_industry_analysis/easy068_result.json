@@ -1,0 +1,34 @@
+{
+  "id": "easy068",
+  "question": "In 2022, which is higher: the average year-over-year change rate of R&D personnel in Guangdong Province's scientific research and technical services industry, or that of the same industry nationwide?",
+  "guidelines": "The answer must be \"National\" or \"Guangdong\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Guangdong Province (2022 dataset value): average year-over-year change rate of R&D personnel in the scientific research and technical services industry = 5.80304347826087 %",
+    "Nationwide (2022 dataset value): average year-over-year change rate of R&D personnel in the scientific research and technical services industry = 18.2512727272727 %"
+  ],
+  "milestone": {
+    "Average year-over-year change rate of R&D personnel in Guangdong Province's scientific research and technical services industry": "5.80304347826087 %",
+    "Average year-over-year change rate of R&D personnel in the nationwide scientific research and technical services industry": "18.2512727272727 %",
+    "Comparison result (which is higher)": "National"
+  },
+  "answer": "National",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the average year-over-year change rate of R&D personnel for Guangdong Province in the scientific research and technical services industry is 5.80304347826087 %.",
+    "Extracted from national_industry_status.csv that the average year-over-year change rate of R&D personnel in the scientific research and technical services industry is 18.2512727272727 %.",
+    "Compared 5.80304347826087 and 18.2512727272727; since 18.2512727272727 is higher, output \"National\"."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "regional_industry_status": "d3b2b4cc-9f44-422e-a3f1-5dcc6c3906c0"
+    },
+    {
+      "national_industry_status": "83fd9785-8bdc-4a18-ad0a-83f92b9aef7c"
+    }
+  ]
+}

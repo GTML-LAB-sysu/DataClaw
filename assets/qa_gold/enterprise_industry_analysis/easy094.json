@@ -1,0 +1,22 @@
+{
+  "id": "easy094",
+  "question": "Are Zhong Fang Chang Da Zhong Gong Co., Ltd. and Bao Xin Zhi Zhi Xi Tong Co., Ltd. in a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Fang Chang Da Zhong Gong Co., Ltd.'s industry is Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "From company_profile.csv, extract that Bao Xin Zhi Zhi Xi Tong Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "The two companies are in different industries; they do not constitute a competitive relationship; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Zhong Fang Chang Da Zhong Gong Co., Ltd. industry": "Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "Bao Xin Zhi Zhi Xi Tong Co., Ltd. industry": "Information Transmission, Software and IT Services",
+    "Competitive relationship": "No"
+  }
+}

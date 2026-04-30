@@ -1,0 +1,40 @@
+{
+  "id": "easy028",
+  "question": "In 2022, is the government reward fund or subsidy of Guang Sheng Chang Ze Group Co., Ltd. higher than that of Zhong You Zheng Yun Yun Port Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Guang Sheng Chang Ze Group Co., Ltd. (2022 dataset value): government reward fund or subsidy = 8527155.34 CNY",
+    "Zhong You Zheng Yun Yun Port Co., Ltd. (2022 dataset value): government reward fund or subsidy = 36491108.19 CNY"
+  ],
+  "milestone": {
+    "Guang Sheng Chang Ze Group Co., Ltd. government reward fund or subsidy in 2022 (CNY)": 8527155.34,
+    "Zhong You Zheng Yun Yun Port Co., Ltd. government reward fund or subsidy in 2022 (CNY)": 36491108.19,
+    "Comparison result (whether Guang Sheng Chang Ze Group Co., Ltd. is higher than Zhong You Zheng Yun Yun Port Co., Ltd.)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Guang Sheng Chang Ze Group Co., Ltd. government reward fund or subsidy in 2022 = 8527155.34 CNY",
+    "Extracted from company_operation_status.csv: Zhong You Zheng Yun Yun Port Co., Ltd. government reward fund or subsidy in 2022 = 36491108.19 CNY",
+    "Compared 8527155.34 and 36491108.19; since 8527155.34 < 36491108.19, the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "991d4848-80a3-44e7-a032-e3cf54278e83"
+    },
+    {
+      "company_operation_status": "51152e33-2b18-4711-bfda-d4a1fc5b16e0"
+    },
+    {
+      "company_profile": "604aa624-c515-41ee-b7b2-7b253cdfb094"
+    },
+    {
+      "company_profile": "bc15ef65-603d-4fea-8d76-65d5708c8459"
+    }
+  ]
+}

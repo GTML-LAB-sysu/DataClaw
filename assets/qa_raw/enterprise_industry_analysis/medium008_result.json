@@ -1,0 +1,41 @@
+{
+  "id": "medium008",
+  "question": "In 2022, compared with the average level of the same industry in its province, which is higher: the number of R&D personnel of Lianji Chuangji Machine Tool Company or the industry average?",
+  "guidelines": "The answer must be either the company name or the word \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Lianji Chuangji Machine Tool Company (2022 data in this dataset) has 290.0 R&D personnel",
+    "Lianji Chuangji Machine Tool Company is located in Anhui Province and belongs to the Water Conservancy, Environment and Public Facilities Management industry",
+    "The average number of R&D personnel in Anhui Province for the Water Conservancy, Environment and Public Facilities Management industry is 132.111111111111"
+  ],
+  "milestone": {
+    "Number of R&D personnel of Lianji Chuangji Machine Tool Company in 2022": 290.0,
+    "Province of Lianji Chuangji Machine Tool Company": "Anhui Province",
+    "Industry of Lianji Chuangji Machine Tool Company": "Water Conservancy, Environment and Public Facilities Management",
+    "Average number of R&D personnel in Anhui Province for the Water Conservancy, Environment and Public Facilities Management industry": 132.111111111111,
+    "Comparison result (whether the company is higher)": "Yes"
+  },
+  "answer": "Lianji Chuangji Machine Tool Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_operation_status.csv that the number of R&D personnel of Lianji Chuangji Machine Tool Company in 2022 is 290.0.",
+    "Extract from company_profile.csv that the company is located in Anhui Province and belongs to the Water Conservancy, Environment and Public Facilities Management industry.",
+    "Extract from regional_industry_status.csv that the average number of R&D personnel in Anhui Province for this industry is 132.111111111111.",
+    "Compare 290.0 with 132.111111111111; since 290.0 > 132.111111111111, the company is higher, so output \"Lianji Chuangji Machine Tool Company\"."
+  ],
+  "steps_num": 4,
+  "reference": [
+    {
+      "company_operation_status": "a81bbdaf-4973-42a6-92c1-d9aeced396da"
+    },
+    {
+      "regional_industry_status": "9827d220-2c11-4ff3-ac01-b163706f67b3"
+    },
+    {
+      "company_profile": "ba97b51b-d1a5-4e35-b2c9-d975b493d133"
+    }
+  ]
+}

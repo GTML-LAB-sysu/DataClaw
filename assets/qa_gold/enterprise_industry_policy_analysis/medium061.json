@@ -1,0 +1,24 @@
+{
+  "id": "medium061",
+  "question": "Hua Cheng Sheng Yuan Integrated Development Co., Ltd.province Guangzhou CityHuang Pu DistrictNumber of policies (indicator) and China Number of policies (indicator)compared with which unitsgreater？",
+  "guidelines": "The answer must a company name or \"industry\", Output onlyname, without any explanation or description.Wu, answer\"No relevant data found\".",
+  "answer": "Hua Cheng Sheng Yuan Integrated Development Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Hua Cheng Sheng Yuan Integrated Development Co., Ltd.province = Guangdong Province and industry = Information Transmission, Software and IT Services",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Information Transmission, Software and IT Servicesextractlocal policies in Guangzhou CityHuang Pu DistrictNumber of policies (indicator)=2",
+    "Extracted from policy_release_status.csv: ChinaSemiconductor Industrylocal policies in Number of policies (indicator)=1",
+    "Compare2 and 1, 2greater, output\"Hua Cheng Sheng Yuan Integrated Development Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Hua Cheng Sheng Yuan Integrated Development Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceInformation Transmission, Software and IT Serviceslocal policies_Guangzhou CityHuang Pu DistrictNumber of policies (indicator)": 2,
+    "ChinaSemiconductor Industrylocal policies_Number of policies (indicator)": 1,
+    "Comparison result": "2greater，outputHua Cheng Sheng Yuan Integrated Development Co., Ltd."
+  }
+}

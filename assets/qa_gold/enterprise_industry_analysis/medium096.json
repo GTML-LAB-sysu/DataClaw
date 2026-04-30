@@ -1,0 +1,24 @@
+{
+  "id": "medium096",
+  "question": "Which is larger: the number of HKEX-listed central state-owned enterprises in the industry where Zhongche Yuanze Shipbuilding Company operates, or the number of HKEX-listed private enterprises in China's Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhongche Yuanze Shipbuilding Company belongs to the Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing industry.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed central state-owned enterprises in this industry is 7.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed private enterprises in China's Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing industry is 13.",
+    "Compare the counts: 13 > 7, so the industry side is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhongche Yuanze Shipbuilding Company": "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Number of HKEX-listed central state-owned enterprises in Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing": 7,
+    "Number of HKEX-listed private enterprises in Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing": 13,
+    "Comparison result (larger one)": "industry"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium025",
+  "question": "What is the difference between the number of local policies issued by the Anhui Province People's Government for the industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd. and the total number of local policies for the Consumer Electronics and Electrical Equipment industry in Guangdong Province where Zhang Qiao Jin Chuang Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.: Financial Services",
+    "Financial Services local policies - Anhui Province People's Government - policy count = 1",
+    "Province of Zhang Qiao Jin Chuang Technology Co., Ltd.: Guangdong Province; industry: Consumer Electronics and Electrical Equipment",
+    "Guangdong Province Consumer Electronics and Electrical Equipment local policies policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services local policies_Anhui Province People's Government policy count": 1,
+    "Province of Zhang Qiao Jin Chuang Technology Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Consumer Electronics and Electrical Equipment local policies policy count": 1,
+    "Difference (Anhui Province People's Government policy count - local policies policy count)": 0.0
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Ying Tai Sheng Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in the local policies for Financial Services, the policy count issued by the Anhui Province People's Government is 1",
+    "Extract from company_profile.csv that Zhang Qiao Jin Chuang Technology Co., Ltd. is located in Guangdong Province and its industry is Consumer Electronics and Electrical Equipment",
+    "Extract from policy_release_status.csv that the local policies policy count for Consumer Electronics and Electrical Equipment in Guangdong Province is 1",
+    "Calculate the difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 5,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "a2734b19-8347-4c63-b17b-61453aab869e"
+    },
+    {
+      "company_profile": "b3ffe2d5-c5b8-4499-b7e7-c6955e84e897"
+    },
+    {
+      "policy_release_status": "558608bf-1ac0-4a8b-8285-011f4eb6f845"
+    },
+    {
+      "company_profile": "58eb73a2-c225-4c83-9324-b515fec3a76f"
+    }
+  ]
+}

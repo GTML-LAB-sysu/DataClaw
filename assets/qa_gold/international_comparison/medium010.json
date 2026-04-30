@@ -1,0 +1,29 @@
+{
+  "id": "medium010",
+  "question": "What was Futu Holdings' (FUTU) net profit per employee in 2022, in ten thousand CNY? What is the multiple of Futu's net profit per employee compared with the median net profit per employee of listed companies in China's capital market services industry (securities and diversified financials)?",
+  "guidelines": "Answer both sub-questions: 1) Futu Holdings 2022 net profit per employee (2 decimal places, ten thousand CNY; convert HKD to CNY using 2022 average rate 1 HKD ≈ 0.86 RMB); 2) Multiple of Futu net profit per employee vs domestic capital market services industry median (2 decimal places). If relevant data cannot be found, reply \"No relevant data found\".",
+  "answer": [
+    90.42,
+    5.62
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Extract from Futu Holdings 2022 annual report (20-F) consolidated financial data: 2022 net profit attributable to shareholders = 2,926,944 thousand HKD, total employees = 2,784.",
+    "Convert net profit to CNY: 2,926,944 × 1000 × 0.86 = 2,517,171,840 CNY; net profit per employee = 2,517,171,840 / 2,784 / 10,000 = 90.42 ten thousand CNY.",
+    "Filter company_profile.csv for capital market services with secondary industry \"securities\" and \"diversified financials\", 202 companies.",
+    "Obtain 2022 net profit and total employees for these companies from company_operation_status.csv; after excluding invalid data, 201 valid records. Compute net profit per employee for each; median = 16.09 ten thousand CNY.",
+    "Calculate multiple: 90.42 / 16.09 = 5.62x; Futu net profit per employee is about 5.62 times the domestic capital market services industry median."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Futu 2022 net profit(thousand HKD)": 2926944,
+    "Futu 2022 employee count": 2784,
+    "Futu net profit per employee(ten thousand CNY)": 90.42,
+    "Domestic capital market services median net profit per employee(ten thousand CNY)": 16.09,
+    "Multiple": 5.62
+  }
+}

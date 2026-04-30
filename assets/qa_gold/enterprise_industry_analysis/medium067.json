@@ -1,0 +1,24 @@
+{
+  "id": "medium067",
+  "question": "Between the number of HKEX-listed foreign-funded enterprises in the corresponding industry of the province where Aijian Yikang Fuzhongxin Company is located and the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry, which value is larger?",
+  "guidelines": "The answer must be either \"the number of HKEX-listed foreign-funded enterprises in the corresponding industry of the province where Aijian Yikang Fuzhongxin Company is located\" or \"the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Aijian Yikang Fuzhongxin Company is located in Beijing Municipality and its corresponding industry is Health and Social Work.",
+    "Extract from regional_industry_status.csv that the number of HKEX-listed foreign-funded enterprises in Beijing Municipality – Health and Social Work is 2.",
+    "Extract from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry is 7.",
+    "Compare the counts: 7 > 2, so the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Aijian Yikang Fuzhongxin Company": "Beijing Municipality",
+    "Number of HKEX-listed foreign-funded enterprises in Beijing Municipality – Health and Social Work": 2,
+    "Number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry": 7,
+    "Comparison result (larger one)": "the number of SSE-listed central state-owned enterprises in the pharmaceutical manufacturing industry"
+  }
+}

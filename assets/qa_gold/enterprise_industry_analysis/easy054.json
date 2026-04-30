@@ -1,0 +1,22 @@
+{
+  "id": "easy054",
+  "question": "In 2022, are the industries of Bao He Hua Chang Jian She Kai Fa Co., Ltd. and Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bao He Hua Chang Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from company_profile.csv: industry of Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd. = Wholesale and Retail",
+    "Compared the two industry texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Bao He Hua Chang Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "Industry of Li Qun Tong Tong Dian Zi Shang Wu Co., Ltd.": "Wholesale and Retail",
+    "Comparison result (whether the industries are the same)": "No"
+  }
+}

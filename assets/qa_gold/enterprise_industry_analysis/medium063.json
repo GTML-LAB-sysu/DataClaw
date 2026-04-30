@@ -1,0 +1,24 @@
+{
+  "id": "medium063",
+  "question": "What is the difference between the number of central state-owned enterprises listed on the Shenzhen Stock Exchange in the corresponding industry of the province where Baoxin Huihui Network Company is located and the number of central state-owned enterprises in the metal smelting and rolling industry listed on the Hong Kong Stock Exchange?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": -2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Baoxin Huihui Network Company is located in Beijing Municipality and its corresponding industry is Information Transmission, Software and IT Services.",
+    "Extract from regional_industry_status.csv that the number of central state-owned enterprises in Beijing Municipality – Information Transmission, Software and IT Services that are listed on the Shenzhen Stock Exchange is 4.",
+    "Extract from national_industry_status.csv that the number of central state-owned enterprises in the metal smelting and rolling processing industry that are listed on the Hong Kong Stock Exchange is 6.",
+    "Calculate the difference: 4 - 6 = -2.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Baoxin Huihui Network Company": "Beijing Municipality",
+    "Number of central state-owned enterprises listed on the Shenzhen Stock Exchange in Beijing Municipality – Information Transmission, Software and IT Services": 4,
+    "Number of central state-owned enterprises listed on the Hong Kong Stock Exchange in the metal smelting and rolling processing industry": 6,
+    "Difference": -2.0
+  }
+}

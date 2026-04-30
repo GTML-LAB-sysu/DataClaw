@@ -1,0 +1,37 @@
+{
+  "id": "hard005",
+  "question": "In 2022, against the backdrop of intensively issued policies in Shanghai, Hefei, Hangzhou and elsewhere promoting high-quality development of the integrated circuit industry, what is Silicon Motion Technology's per capita net profit in the annual report converted to RMB in ten thousand yuan? Compared with the median per capita net profit of private enterprises and state-owned enterprises in the domestic semiconductor industry respectively, by how many times is it higher?",
+  "guidelines": "Answer in order: Silicon Motion 2022 per capita net profit (ten thousand yuan, converted at 2022 average exchange rate 1 USD ≈ 6.73 RMB), ratio to domestic semiconductor industry private enterprise median per capita net profit (times), ratio to state-owned enterprise median per capita net profit (times). Retain 2 decimal places and return as an array. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    70.66,
+    8.23,
+    4.79
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Extract from Silicon Motion (SIMO) 2022 Annual Report PDF (20-F): Consolidated Statements of Income - Net Income = US$172,510 thousand (i.e., $172.51 million). From Item 6 Employees section: As of December 31, 2022, the company had 1,643 employees.",
+    "Calculate Silicon Motion 2022 per capita net profit: 172,510,000 / 1,643 = 104,996.96 USD per person. Convert to RMB at 2022 average rate 6.73: 104,996.96 × 6.73 = 706,629.52 yuan = 70.66 ten thousand yuan.",
+    "Filter from company_profile.csv enterprises with industry=\"semiconductor industry\", 172 enterprises total. Group by ownership: 111 private enterprises, 20 foreign enterprises, 16 local state-owned enterprises, 12 central state-owned enterprises, 9 Sino-foreign joint ventures, 2 other state-owned, 2 research-institute state-owned.",
+    "Merge with company_operation_status.csv, read \"net profit amount\" and \"total employees\" fields, calculate each enterprise's per capita net profit = net profit amount / total employees, convert to ten thousand yuan. Exclude records with zero employees or missing data.",
+    "Calculate median per capita net profit by ownership: 111 private enterprises, median = 8.58 ten thousand yuan; state-owned enterprises (12 central + 16 local + 2 other + 2 research-institute) = 32 total, median = 14.75 ten thousand yuan.",
+    "Calculate Silicon Motion per capita net profit as multiple of domestic semiconductor industry private enterprise median: 70.66 / 8.58 = 8.23x; as multiple of state-owned enterprise median: 70.66 / 14.75 = 4.79x."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Silicon Motion Net Income (thousand USD)": 172510,
+    "Silicon Motion employee count": 1643,
+    "Silicon Motion per capita net profit (USD)": 104996.96,
+    "2022 average exchange rate (USD/RMB)": 6.73,
+    "Silicon Motion per capita net profit (ten thousand RMB)": 70.66,
+    "Semiconductor industry private enterprise sample count": 111,
+    "Semiconductor industry state-owned enterprise sample count": 32,
+    "Private enterprise median per capita net profit (ten thousand yuan)": 8.58,
+    "State-owned enterprise median per capita net profit (ten thousand yuan)": 14.75,
+    "Silicon Motion vs. private ratio (x)": 8.23,
+    "Silicon Motion vs. state-owned ratio (x)": 4.79
+  }
+}

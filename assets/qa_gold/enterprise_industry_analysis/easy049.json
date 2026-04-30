@@ -1,0 +1,22 @@
+{
+  "id": "easy049",
+  "question": "In 2022, is the board segment of Zhongbai Damao Wholesale Co., Ltd. the same as that of Luxi Runheng Chemical Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: board segment of Zhongbai Damao Wholesale Co., Ltd. = Main Board",
+    "Extracted from company_profile.csv: board segment of Luxi Runheng Chemical Co., Ltd. = Main Board",
+    "Compared the two board segment texts and judged \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Board segment of Zhongbai Damao Wholesale Co., Ltd.": "Main Board",
+    "Board segment of Luxi Runheng Chemical Co., Ltd.": "Main Board",
+    "Comparison result (whether the board segments are the same)": "Yes"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "medium008",
+  "question": "Using the specialized equipment manufacturing industry in 2022 as the research subject, some researchers believe that enterprise size may confound the relationship between listing history length and cumulative patent accumulation. To test this hypothesis: First, among all valid enterprises (with non-null cumulative China patent applications), calculate the Pearson correlation coefficient r1 between listing years (derived by subtracting listing year from 2022) and cumulative China patent applications; second, restrict the sample to the large enterprise subset whose total assets exceed the industry median total assets in the national industry aggregate data, then calculate the Pearson correlation coefficient r2 for the same pair of variables; finally, report the specific value of the difference r2 − r1.",
+  "guidelines": "Answer format: the difference between the two correlation coefficients (retain 4 decimal places). Difference = large enterprise correlation coefficient − all enterprises correlation coefficient. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0.0093,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  },
+  "steps": [
+    "Filter industry=\"specialized equipment manufacturing\" from national_industry_status.csv, extract the median total assets field. National median total assets for specialized equipment manufacturing: 2619344581.0.",
+    "Filter all enterprises with industry=\"specialized equipment manufacturing\" from company_profile.csv, extract company name, bmCode, and listingDate fields, finding 447 companies.",
+    "Filter out 0 companies with empty listingDate, 447 companies remain. Calculate listing years = 2022 - listing year based on listingDate, listing years range from 0 to 34 years.",
+    "From company_operation_status.csv, associate 2022 data for these companies based on bmCode, extract total assets and cumulative China patent applications fields, successfully associating 447 companies.",
+    "Filter out 20 companies with empty cumulative China patent applications, 427 valid enterprises remain for the full sample. Calculate Pearson correlation coefficient r1 between listing years and cumulative China patent applications = 0.3377.",
+    "Further filter large enterprises with total assets exceeding the national industry median (2619344581.0), 217 companies in total.",
+    "Calculate Pearson correlation coefficient r2 between listing years and cumulative China patent applications for the large enterprise group = 0.3471.",
+    "Calculate difference = r2 - r1 = 0.3471 - 0.3377 = 0.0093."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "National median total assets": 2619344581.0,
+    "Number of all valid enterprises": 427,
+    "r1 value": 0.3377,
+    "Number of large enterprises": 217,
+    "r2 value": 0.3471
+  }
+}

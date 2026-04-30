@@ -1,0 +1,24 @@
+{
+  "id": "medium026",
+  "question": "In 2022, does the industry with the highest average asset-liability ratio in Guangdong Province belong to the industry with the highest average asset-liability ratio nationwide?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Only output the answer, do not add any explanation. If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all records with province=\"Guangdong Province\" from regional_industry_status.csv, extract the fields: industry and average asset-liability ratio.",
+    "Filter industry records where the average asset-liability ratio is not empty. Sort by the average asset-liability ratio field in descending order. The industry with the highest average asset-liability ratio in Guangdong Province is \"Textile, footwear and apparel industry\", with an average asset-liability ratio of 724.30%.",
+    "Filter all records with district=\"National\" from national_industry_status.csv, extract the fields: industry and average asset-liability ratio.",
+    "Filter industry records where the average asset-liability ratio is not empty. Sort by the average asset-liability ratio field in descending order. The industry with the highest average asset-liability ratio nationwide is \"Financial industry\", with an average asset-liability ratio of 518.42%.",
+    "Compare the industry with the highest average asset-liability ratio in Guangdong Province (Textile, footwear and apparel industry) with the industry with the highest average asset-liability ratio nationwide (Financial industry). Conclude that they are not the same, so the answer is: No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry with the highest average asset-liability ratio in Guangdong Province": "Textile, footwear and apparel industry",
+    "Industry with the highest average asset-liability ratio nationwide": "Financial industry",
+    "Comparison result": "No"
+  }
+}

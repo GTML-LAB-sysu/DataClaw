@@ -1,0 +1,24 @@
+{
+  "id": "medium005",
+  "question": "In 2022, which is higher: the year-over-year employee change rate of Yong Feng Xin Chuang Ke Ji Co., Ltd. or the maximum value of this indicator in its industry?",
+  "guidelines": "The answer must be either \"industry\" or the company name. Output only one word or the company name, without any explanation, analysis, or descriptive text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Xin Chuang Ke Ji Co., Ltd. year-over-year employee change rate in 2022 = 12.61 %",
+    "Extracted from company_profile.csv: the company belongs to Information Transmission, Software and Information Technology Services",
+    "Extracted from national_industry_status.csv: industry maximum year-over-year employee change rate = 416.95 %",
+    "Compared 12.61 and 416.95; since 416.95 > 12.61, the industry is higher, so output \"industry\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Yong Feng Xin Chuang Ke Ji Co., Ltd. year-over-year employee change rate in 2022": "12.61 %",
+    "Industry of Yong Feng Xin Chuang Ke Ji Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Maximum year-over-year employee change rate in Information Transmission, Software and Information Technology Services": "416.95 %",
+    "Comparison result (whether the industry is higher)": "Yes"
+  }
+}

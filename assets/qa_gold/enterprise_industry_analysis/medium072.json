@@ -1,0 +1,24 @@
+{
+  "id": "medium072",
+  "question": "Which value is larger: the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located, or the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located\" or \"the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Biyuan Chanjin Real Estate Company is located in Tianjin Municipality and its corresponding industry is Real Estate.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Tianjin Municipality - Real Estate is 7.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry is 5.",
+    "Compare the values: 7 > 5, so the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Biyuan Chanjin Real Estate Company": "Tianjin Municipality",
+    "Total number of enterprises in Tianjin Municipality - Real Estate": 7,
+    "Number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry": 5,
+    "Comparison result (larger one)": "the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located"
+  }
+}

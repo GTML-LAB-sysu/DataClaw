@@ -1,0 +1,40 @@
+{
+  "id": "easy010",
+  "question": "In 2022, is the cumulative number of granted Chinese invention patents of Chuang Wei Yao Yao Dian Qi Co., Ltd. lower than that of Mei Neng Dian Jin Technology Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Chuang Wei Yao Yao Dian Qi Co., Ltd. (2022 dataset value): cumulative granted Chinese invention patents = 59",
+    "Mei Neng Dian Jin Technology Co., Ltd. (2022 dataset value): cumulative granted Chinese invention patents = 140"
+  ],
+  "milestone": {
+    "Chuang Wei Yao Yao Dian Qi Co., Ltd. cumulative granted Chinese invention patents in 2022": 59,
+    "Mei Neng Dian Jin Technology Co., Ltd. cumulative granted Chinese invention patents in 2022": 140,
+    "Comparison result (whether Chuang Wei Yao Yao Dian Qi Co., Ltd. is lower than Mei Neng Dian Jin Technology Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Chuang Wei Yao Yao Dian Qi Co., Ltd. cumulative granted Chinese invention patents in 2022 = 59",
+    "Extracted from company_operation_status.csv: Mei Neng Dian Jin Technology Co., Ltd. cumulative granted Chinese invention patents in 2022 = 140",
+    "Compared 59 and 140; since 59 < 140, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "f1c231b9-3bb2-4ccb-9dea-015c6d03b2ab"
+    },
+    {
+      "company_operation_status": "e8c24716-5362-4b4d-b0fd-7fac6e3faba7"
+    },
+    {
+      "company_profile": "3aae2df1-8ad3-4eed-bba9-92c1e96021af"
+    },
+    {
+      "company_profile": "cfc78306-ad47-4edd-a11f-d441d5797ce0"
+    }
+  ]
+}

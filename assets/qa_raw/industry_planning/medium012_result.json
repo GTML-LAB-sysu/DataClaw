@@ -1,0 +1,39 @@
+{
+  "id": "medium012",
+  "question": "In 2022, in the railway, ship, aerospace and other transport equipment manufacturing industry, take the province with the highest concentration of the top 5 enterprises by total assets as the research object. What is that province's comprehensive ranking (ranking based on the arithmetic mean of the three dimension rankings) across three high-end manufacturing dimensions: technology intensity (technology intensity = total R&D personnel / total employees), capital intensity (capital intensity = total assets / total employees), and policy concentration (policy concentration = count of relevant policies)?",
+  "guidelines": "Answer format: Integer (unit: rank). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"railway, ship, aerospace and other transport equipment manufacturing industry\", extract enterprise name, bmCode, and province fields, finding 99 enterprises.",
+    "From company_operation_status.csv, link enterprises by bmCode, extract total assets field; 99 enterprises after filtering empty values. Sort in descending order and take the top 5 enterprises.",
+    "Count provincial distribution of top 5 enterprises: Beijing (4), Shanghai (1). Beijing has the highest concentration with 4 enterprises.",
+    "Filter from regional_industry_status.csv where industry=\"railway, ship, aerospace and other transport equipment manufacturing industry\", extract total R&D personnel, total employees, and total assets for each province, totaling 34 provinces.",
+    "Calculate each province's technology intensity = total R&D personnel / total employees, capital intensity = total assets / total employees (exclude provinces with 0 employees), 14 valid provinces.",
+    "Filter from policy_release_status.csv policies whose involved industry contains \"aviation\" or \"aerospace\" or \"ship\", 46 records total. Group by province to count relevant policy count (excluding \"national\" level).",
+    "Sort the three indicators in descending order respectively. Beijing's rankings: technology intensity 4th, capital intensity 4th, policy concentration 9th. Average ranking = 5.67.",
+    "Sort all provinces by average ranking in ascending order. Beijing's comprehensive ranking is 4th."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "Found 99 railway, ship, aerospace and other transport equipment manufacturing industry enterprises in company_profile.csv.",
+    "Found total assets data for 99 enterprises in company_operation_status.csv.",
+    "Found industry statistics for 14 provinces in regional_industry_status.csv.",
+    "Found 46 policy records whose involved industry contains \"aviation\" or \"aerospace\" or \"ship\" in policy_release_status.csv."
+  ],
+  "milestone": {
+    "Province with most top 5 enterprises by total assets": "Beijing",
+    "Beijing technology intensity": 0.210283,
+    "Beijing technology intensity ranking": 4,
+    "Beijing capital intensity": 3488225.06,
+    "Beijing capital intensity ranking": 4,
+    "Beijing policy concentration (policy count)": 0,
+    "Beijing policy concentration ranking": 9,
+    "Beijing average ranking": 5.67,
+    "Comprehensive ranking": 4
+  },
+  "answer": 4,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

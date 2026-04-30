@@ -1,0 +1,26 @@
+{
+  "id": "medium038",
+  "question": "What is the difference between the maximum capitalized R&D expenditure of the industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. and the corresponding industry metric in Guangdong Province where Gao Yin Ze Tong Pi Fa Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to two decimal places. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 4026077173.89,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd. = Information Transmission, Software and IT Services",
+    "Extracted from national_industry_status.csv: maximum capitalized R&D expenditure in that industry = 4055287084",
+    "Extracted from company_profile.csv: province of Gao Yin Ze Tong Pi Fa Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: maximum capitalized R&D expenditure in Guangdong Wholesale and Retail = 29209910.11",
+    "Calculated difference (national industry metric - provincial industry metric): 4055287084 - 29209910.11 = 4026077173.89"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Zhi Yun Shu Ju Fu Wu Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Maximum capitalized R&D expenditure in that industry (yuan)": 4055287084,
+    "Province of Gao Yin Ze Tong Pi Fa Co., Ltd.": "Guangdong Province",
+    "Maximum capitalized R&D expenditure in Guangdong Wholesale and Retail (yuan)": 29209910.11,
+    "Difference": 4026077173.89
+  }
+}

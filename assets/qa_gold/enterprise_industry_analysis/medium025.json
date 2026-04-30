@@ -1,0 +1,26 @@
+{
+  "id": "medium025",
+  "question": "Is the average number of provincial or ministerial natural science awards in the industry of Biyuan Shenghua Construction Development Co., Ltd. lower than that in the industry of Baoxin Huihui Network Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Biyuan Shenghua Construction Development Co., Ltd. is Real Estate.",
+    "Extracted from national_industry_status.csv that the average number of provincial or ministerial natural science awards in Real Estate is 0.",
+    "Extracted from company_profile.csv that the industry of Baoxin Huihui Network Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the average number of provincial or ministerial natural science awards in Information Transmission, Software and Information Technology Services is 1.",
+    "Judged whether 0 is lower than 1; the conclusion is \"Yes\"."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Biyuan Shenghua Construction Development Co., Ltd.": "Real Estate",
+    "Average number of provincial or ministerial natural science awards in Real Estate": 0,
+    "Industry of Baoxin Huihui Network Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Average number of provincial or ministerial natural science awards in Information Transmission, Software and Information Technology Services": 1,
+    "Whether lower": "Yes"
+  }
+}

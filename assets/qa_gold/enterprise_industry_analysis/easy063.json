@@ -1,0 +1,22 @@
+{
+  "id": "easy063",
+  "question": "In 2022, which is lower: the average year-on-year net profit growth rate of Beijing's furniture manufacturing industry or that of the nationwide chemical fiber manufacturing industry?",
+  "guidelines": "The answer must be either \"Beijing Furniture Manufacturing\" or \"Nationwide Chemical Fiber Manufacturing\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Beijing Furniture Manufacturing",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: average YoY net profit growth rate of Beijing furniture manufacturing = -80.49%",
+    "Extracted from national_industry_status.csv: average YoY net profit growth rate of nationwide chemical fiber manufacturing = -12.5773529411765%",
+    "Compared -80.49 and -12.5773529411765; since -80.49 is lower, output \"Beijing Furniture Manufacturing\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Average YoY net profit growth rate of Beijing furniture manufacturing": "-80.49%",
+    "Average YoY net profit growth rate of nationwide chemical fiber manufacturing": "-12.5773529411765%",
+    "Comparison result (which is lower)": "Beijing Furniture Manufacturing"
+  }
+}

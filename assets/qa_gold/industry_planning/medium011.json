@@ -1,0 +1,36 @@
+{
+  "id": "medium011",
+  "question": "In the 2022 pharmaceutical manufacturing industry data, find the listed enterprise with the highest total Chinese patent grants in that year; after identifying that enterprise's province, construct a four-dimensional evaluation framework around \"innovation ecosystem\": R&D intensity (= total R&D investment amount ÷ total operating revenue), patent conversion efficiency (= total cumulative Chinese invention patent grants ÷ total cumulative Chinese invention patent applications), industry scale (= total operating revenue), and policy support (= count of relevant policies whose name contains \"pharmaceutical\" or \"biotechnology\"). For each dimension, identify the top 5 provinces nationwide and calculate their mean. Is that province's overall innovation ecosystem level above or below the average of the national top 5 across these four dimensions?",
+  "guidelines": "Answer format: \"Above average\" or \"Below average\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Below average",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"pharmaceutical manufacturing industry\", extract enterprise name, bmCode, and province fields, finding 449 enterprises.",
+    "From company_operation_status.csv, link enterprises by bmCode, extract annual Chinese patent grants field; after filtering empty values, sort in descending order. The enterprise with the most annual Chinese patent grants is Puge Ruijian Biopharmaceutical Company (337 grants), located in Henan Province.",
+    "Filter from regional_industry_status.csv where industry=\"pharmaceutical manufacturing industry\", extract total R&D investment amount, total operating revenue, total cumulative Chinese invention patent grants, and total cumulative Chinese invention patent applications for each province, totaling 34 provinces.",
+    "Calculate each province's R&D intensity = total R&D investment amount / total operating revenue, patent conversion efficiency = total cumulative Chinese invention patent grants / total cumulative Chinese invention patent applications (exclude provinces with zero denominator), 15 valid provinces.",
+    "Filter from policy_release_status.csv policies whose name contains \"pharmaceutical\" or \"biotechnology\", 21 records total. Group by province to count relevant policy count.",
+    "Sort the four indicators in descending order respectively, take the top 5 provinces for each, and calculate averages: R&D intensity top 5 average = 0.182465, patent conversion efficiency top 5 average = 0.522743, industry scale top 5 average = 237558091257.40, policy support top 5 average = 1.80.",
+    "Henan Province's values for the four indicators: R&D intensity = 0.075724, patent conversion efficiency = 0.311526, industry scale = 18878671803.01, policy support = 2. Compared with top 5 averages, 1 dimension is above average.",
+    "Comprehensive score 1 < 2, output \"Below average\"."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "Enterprise with most annual Chinese patent grants": "Puge Ruijian Biopharmaceutical Company",
+    "Province of that enterprise": "Henan Province",
+    "Annual Chinese patent grants": 337,
+    "Henan Province R&D intensity": 0.075724,
+    "R&D intensity top 5 average": 0.182465,
+    "Henan Province patent conversion efficiency": 0.311526,
+    "Patent conversion efficiency top 5 average": 0.522743,
+    "Henan Province industry scale": 18878671803.01,
+    "Industry scale top 5 average": 237558091257.4,
+    "Henan Province policy support": 2,
+    "Policy support top 5 average": 1.8,
+    "Number of dimensions above average": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "medium012",
+  "question": "In 2022, among all enterprises in Guangdong Province belonging to the wholesale and retail trade industry, using each enterprise's net profit margin as the comparison standard, what is the indicator value for the enterprise with the highest net profit margin? What is that enterprise's rank among all enterprises in this industry nationwide? ",
+  "guidelines": "Two answers required: first is a numeric value (2 decimal places, unit %); second is the rank number (integer, e.g. \"7\" means 7th place). If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, filter all enterprise records with industry=\"Wholesale and Retail Trade\" and province=\"Guangdong Province\", extract company name and bmCode; 43 Guangdong wholesale and retail enterprises found.",
+    "From company_operation_status.csv, join 2022 data by bmCode for these enterprises, extract net profit and operating revenue; 2022 data found for 43 enterprises.",
+    "Filter enterprise records with non-null net profit and operating revenue, and operating revenue ≠ 0; 43 valid records.",
+    "Compute each enterprise's net profit margin = net profit / operating revenue × 100%. Sort all enterprises by net profit margin descending; the enterprise with the highest net profit margin is \"Yonghui Changda Wholesale Company\", net profit 292,221,119.71 yuan, operating revenue 935,248,730.59 yuan, net profit margin = 31.25%.",
+    "From company_profile.csv, filter all enterprises nationwide with industry=\"Wholesale and Retail Trade\"; from company_operation_status.csv, take year=2022 with operating revenue > 0 and non-null net profit. Sort nationwide valid enterprises by net profit margin descending; Yonghui Changda Wholesale Company ranks 7th."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found 43 Guangdong wholesale and retail enterprises from company_profile.csv.",
+    "Found 2022 net profit and operating revenue data for 43 Guangdong wholesale and retail enterprises from company_operation_status.csv; Yonghui Changda Wholesale Company has the highest net profit margin (31.25%).",
+    "Nationwide (same criteria: 2022 and operating revenue > 0) there are 273 valid enterprises; Yonghui Changda Wholesale Company ranks 7th in net profit margin in this industry nationwide."
+  ],
+  "milestone": {
+    "Yonghui Changda Wholesale Company net profit (yuan)": 292221119.71,
+    "Yonghui Changda Wholesale Company operating revenue (yuan)": 935248730.59,
+    "Yonghui Changda Wholesale Company net profit margin (%)": 31.25,
+    "Yonghui Changda Wholesale Company nationwide rank": 7
+  },
+  "answer": [
+    31.25,
+    7
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy115",
+  "question": "Does Huan Xing Jin Ya Apparel Co., Ltd. contribute to the development of Jiangxi Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: registered province of Huan Xing Jin Ya Apparel Co., Ltd. = Jiangsu Province",
+    "Compared Jiangsu Province with the question's province, Jiangxi Province; they do not match",
+    "Therefore, the condition in the question is not satisfied; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Registered province of Huan Xing Jin Ya Apparel Co., Ltd.": "Jiangsu Province",
+    "Compared province": "Jiangxi Province",
+    "Whether it contributes to Jiangxi Province's development": "No"
+  }
+}

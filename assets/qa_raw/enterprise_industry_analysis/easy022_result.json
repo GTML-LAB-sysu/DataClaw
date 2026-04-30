@@ -1,0 +1,40 @@
+{
+  "id": "easy022",
+  "question": "In 2022, is the annual number of Chinese patent applications of Pu Ge Jian Chen Pharmaceutical Co., Ltd. higher than that of Jin Hu Real Estate Construction Development Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Pu Ge Jian Chen Pharmaceutical Co., Ltd. (2022 dataset value): annual Chinese patent applications = 11",
+    "Jin Hu Real Estate Construction Development Co., Ltd. (2022 dataset value): annual Chinese patent applications = 6"
+  ],
+  "milestone": {
+    "Pu Ge Jian Chen Pharmaceutical Co., Ltd. annual Chinese patent applications in 2022": 11,
+    "Jin Hu Real Estate Construction Development Co., Ltd. annual Chinese patent applications in 2022": 6,
+    "Comparison result (whether Pu Ge Jian Chen Pharmaceutical Co., Ltd. is higher than Jin Hu Real Estate Construction Development Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Pu Ge Jian Chen Pharmaceutical Co., Ltd. annual Chinese patent applications in 2022 = 11",
+    "Extracted from company_operation_status.csv: Jin Hu Real Estate Construction Development Co., Ltd. annual Chinese patent applications in 2022 = 6",
+    "Compared 11 and 6; since 11 > 6, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "6b625166-a050-4409-961c-ac618ab953a1"
+    },
+    {
+      "company_operation_status": "3cb33706-a1b1-455f-8576-c81fef20c0dc"
+    },
+    {
+      "company_profile": "d2100a92-abee-4ae0-bc48-dd4086571095"
+    },
+    {
+      "company_profile": "93890202-7e17-4984-8ee9-30c130437075"
+    }
+  ]
+}

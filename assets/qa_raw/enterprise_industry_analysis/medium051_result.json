@@ -1,0 +1,46 @@
+{
+  "id": "medium051",
+  "question": "What is the gap between the number of SZSE-listed foreign-funded enterprises in the corresponding industry of Guangdong, where Gao Yin Ze Tong Pi Fa Co., Ltd. is located, and the number of SSE-listed enterprises in the industry of Lang Ji Hui Ruan Technology Co., Ltd.?",
+  "guidelines": "The answer must be a number with one decimal place. Output only the number, without units, commas, or any text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Gao Yin Ze Tong Pi Fa Co., Ltd.: Guangdong Province",
+    "SZSE-listed foreign-funded enterprise count in Guangdong Wholesale and Retail: 2",
+    "Industry of Lang Ji Hui Ruan Technology Co., Ltd.: Information Transmission, Software and IT Services",
+    "SSE-listed enterprise count in Information Transmission, Software and IT Services: 141"
+  ],
+  "answer": -139.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Gao Yin Ze Tong Pi Fa Co., Ltd.": "Guangdong Province",
+    "SZSE-listed foreign-funded enterprise count in Guangdong Wholesale and Retail": 2,
+    "Industry of Lang Ji Hui Ruan Technology Co., Ltd.": "Information Transmission, Software and IT Services",
+    "SSE-listed enterprise count in Information Transmission, Software and IT Services": 141,
+    "difference": -139.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Gao Yin Ze Tong Pi Fa Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: SZSE-listed foreign-funded enterprise count in Guangdong Wholesale and Retail = 2",
+    "Extracted from company_profile.csv: industry of Lang Ji Hui Ruan Technology Co., Ltd. = Information Transmission, Software and IT Services",
+    "Extracted from national_industry_status.csv: SSE-listed enterprise count in Information Transmission, Software and IT Services = 141",
+    "Calculated difference: 2 - 141 = -139.0"
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "f9807af7-8cc0-4d23-9032-70752be13a89"
+    },
+    {
+      "company_profile": "a9b797ac-f74d-4a35-acfa-01b494fe2b3f"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    }
+  ]
+}

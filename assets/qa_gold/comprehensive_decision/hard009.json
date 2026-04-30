@@ -1,0 +1,31 @@
+{
+  "id": "hard009",
+  "question": "In 2022, an investment manager at a merger and acquisition fund was seeking \"high R&D, low valuation\" M&A targets in the textile, footwear and apparel industry, but the scope was limited to provinces covered by textile, footwear and apparel industry-related policies. The prerequisite for screening valid enterprises is: net profit amount strictly greater than zero, and both R&D investment ratio and company market cap fields have data records. On this basis, first use all valid enterprises in the industry as the benchmark population to calculate the median R&D investment ratio and the median P/E ratio respectively; then from the subset of valid enterprises located in policy-covered provinces, filter enterprises whose R&D investment ratio is higher than the industry median and whose P/E ratio is lower than the industry median. How many enterprises satisfy the above dual screening conditions? (P/E ratio = company market cap (100 million yuan) ÷ net profit amount (100 million yuan))",
+  "guidelines": "The answer should be an integer. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 9,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter policy records with industry field containing \"Textile, Footwear and Apparel\" from policy_release_status.csv, 21 records in total. Extract province field, remove nulls and exclude \"National\" level, to obtain 11 policy-covered provinces: ['Shanghai', 'Sichuan', 'Shandong', 'Guangdong', 'Guangxi', 'Xinjiang', 'Hebei', 'Hunan', 'Fujian', 'Liaoning', 'Shaanxi'].",
+    "Filter all enterprise records with industry=\"Textile, Footwear and Apparel\" from company_profile.csv, extract company name, bmCode, and province fields; 177 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract R&D investment ratio, net profit amount, and company market cap fields; 177 records after merge.",
+    "Filter valid enterprises with net profit amount > 0 and both R&D investment ratio and company market cap non-null; 81 enterprises in total.",
+    "Confirm data units: company market cap is in 100 million yuan, net profit amount is in yuan. Unify units for P/E calculation: P/E = company market cap (100 million yuan) ÷ (net profit amount (yuan) ÷ 100000000), i.e., P/E = company market cap (100 million yuan) ÷ net profit amount (100 million yuan).",
+    "Calculate industry-wide median benchmarks for valid enterprises: median R&D investment ratio is 2.8, median P/E = company market cap (100 million yuan) / net profit amount (100 million yuan) is 23.13.",
+    "Among valid enterprises, filter those whose province is in the policy-covered province list; 29 enterprises in total.",
+    "Among the 29 valid enterprises in policy-covered provinces, filter enterprises with R&D investment ratio > 2.8 and P/E < 23.13; 9 enterprises in total."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "Number of policy-covered provinces": 11,
+    "Total textile, footwear and apparel enterprises": 177,
+    "Number of valid enterprises": 81,
+    "Median R&D investment ratio": 2.8,
+    "Median P/E": 23.13,
+    "Valid enterprises in policy-covered provinces": 29,
+    "Number of enterprises meeting conditions": 9
+  }
+}

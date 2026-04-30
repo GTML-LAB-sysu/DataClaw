@@ -1,0 +1,22 @@
+{
+  "id": "easy030",
+  "question": "In 2022, is the total assets of Yong Feng Ke Lian Software Co., Ltd. higher than that of Hai Li Xuan Yue Electric Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Ke Lian Software Co., Ltd. total assets in 2022 = 17094624520.40 CNY",
+    "Extracted from company_operation_status.csv: Hai Li Xuan Yue Electric Co., Ltd. total assets in 2022 = 2678955419.08 CNY",
+    "Compared 17094624520.40 and 2678955419.08; since 17094624520.40 > 2678955419.08, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Yong Feng Ke Lian Software Co., Ltd. total assets in 2022 (CNY)": 17094624520.4,
+    "Hai Li Xuan Yue Electric Co., Ltd. total assets in 2022 (CNY)": 2678955419.08,
+    "Comparison result (whether Yong Feng Ke Lian Software Co., Ltd. is higher than Hai Li Xuan Yue Electric Co., Ltd.)": "Yes"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "medium002",
+  "question": "In 2022, assume that in the pharmaceutical manufacturing industry, the annual operating revenue growth rate of private enterprises is 5 percentage points higher than state-owned enterprises (including central and local state-owned enterprises) in the same province, while state-owned enterprises maintain their current growth rate unchanged (growth rate measured by the median year-on-year change in operating revenue of enterprises in the same province). By 2025, how many provinces will have private enterprise total revenue exceeding state-owned enterprise total revenue for the first time?",
+  "guidelines": "Answer format: integer (unit: count). If relevant data cannot be found, please answer \"No relevant data found\".",
+  "steps": [
+    "Filter from company_profile.csv all enterprise records with industry=\"pharmaceutical manufacturing industry\", extract enterprise name, bmCode, province, and ownership fields, finding 449 enterprises.",
+    "Divide enterprises into two groups by ownership: private enterprise group (ownership=\"private enterprise\") 346 enterprises, state-owned enterprise group (ownership=\"central state-owned enterprise\" or \"local state-owned enterprise\") 65 enterprises.",
+    "From company_operation_status.csv, link the above enterprises by bmCode, extract operating revenue amount and year-on-year operating revenue change rate fields, filter out enterprises with either field empty. Private enterprises: 331 valid records; state-owned enterprises: 64 valid records.",
+    "Group by province, calculate total operating revenue amount and median year-on-year operating revenue change rate for private and state-owned enterprises in each province respectively. Private enterprises cover 30 provinces, state-owned enterprises cover 24 provinces.",
+    "Filter provinces that have both private and state-owned enterprise data, totaling 24. Calculate adjusted growth rates: private enterprise growth = private median growth + 5; state-owned enterprise growth = state-owned median growth (unchanged).",
+    "For each valid province, project 2025 revenue: private 2025 revenue = private 2022 total × (1 + private adjusted growth/100)^3; state-owned 2025 revenue = state-owned 2022 total × (1 + state-owned growth/100)^3.",
+    "Filter provinces meeting the condition: private revenue lower than state-owned revenue in 2022, but estimated private revenue higher than state-owned revenue in 2025. Provinces meeting the condition: Heilongjiang.",
+    "Count provinces meeting the condition: 1."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "Found 449 pharmaceutical manufacturing enterprises in company_profile.csv, including 346 private enterprises and 65 state-owned enterprises.",
+    "Found 331 valid operating revenue records for private enterprises and 64 for state-owned enterprises in company_operation_status.csv.",
+    "24 provinces have both private and state-owned enterprise data."
+  ],
+  "milestone": {
+    "Pharmaceutical manufacturing private enterprises": 346,
+    "Pharmaceutical manufacturing state-owned enterprises": 65,
+    "Provinces with both enterprise types": 24,
+    "Provinces where private exceeded state-owned in 2025 after being lower in 2022": 1,
+    "Provinces meeting the condition": [
+      "Heilongjiang Province"
+    ]
+  },
+  "answer": 1,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

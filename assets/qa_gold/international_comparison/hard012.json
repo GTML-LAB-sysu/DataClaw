@@ -1,0 +1,34 @@
+{
+  "id": "hard012",
+  "question": "A real estate transformation special account evaluates companies that replace development cycles with existing property services. For candidate companies, apply the following rules: ① Transformation buffer = home renovation and furnishing revenue ratio + R&D investment ratio; ② Profit gap = median net profit margin of top 10% A-share real estate companies by revenue in 2022 - company net profit margin; ③ Net transformation score = transformation buffer - profit gap. If net transformation score ≤ 0, exclude; if 0 < net transformation score < 5, only tactical small overweight is permitted, with active weight = min(1.50%, net transformation score ÷ 10); if net transformation score ≥ 5, standard overweight is permitted. Based on KE Holdings (BEKE) 2022 annual report and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: Transformation buffer, profit gap (percentage points), net transformation score, and the most appropriate conclusion. Retain 2 decimal places for numerical values and return as an array. The conclusion must include position action and active weight. If relevant data cannot be found, respond with \"Relevant data not found\".",
+  "answer": [
+    12.51,
+    4.22,
+    8.29,
+    "Standard overweight; the rules do not specify a concrete active weight percentage"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Search the web for KE Holdings' 2022 annual report, extract Home renovation and furnishing revenue of 5,046,627, Total net revenues of 60,668,779, Research and development expenses of 2,545,549, and Net loss of 1,397,284, all in RMB thousand.",
+    "Calculate home renovation and furnishing revenue ratio = 5,046,627 ÷ 60,668,779 × 100% = 8.3148%, rounded to 8.31% with two decimal places; calculate R&D investment ratio = 2,545,549 ÷ 60,668,779 × 100% = 4.1958%, rounded to 4.20% with two decimal places; calculate net profit margin = -1,397,284 ÷ 60,668,779 × 100% = -2.3032%, rounded to -2.30% with two decimal places.",
+    "According to the problem definition, calculate transformation buffer = 8.31 + 4.20 = 12.51.",
+    "From company_profile.csv, filter A-share companies with companyType=\"沪深\" and exchange in SZSE/SSE/BSE and industry=\"房地产业\"; merge with company_operation_status.csv records where year=2022 on bmCode.",
+    "Among samples with valid operating revenue > 0 (110 companies in total), sort by operating revenue descending, take top 10% = ceil(110×10%) = 11 companies, compute net profit margin = net profit amount ÷ operating revenue amount × 100% for each; median net profit margin is 1.92%; therefore profit gap = 1.92% - (-2.30%) = 4.22 percentage points.",
+    "Calculate net transformation score = 12.51 - 4.22 = 8.29. Since net transformation score ≥ 5, KE Holdings is eligible for standard overweight; the problem only specifies active weight formula min(1.50%, net transformation score ÷ 10) for tactical small overweight, and does not specify a concrete active weight percentage for standard overweight."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Home renovation and furnishing revenue ratio (%)": 8.31,
+    "R&D investment ratio (%)": 4.2,
+    "Transformation buffer": 12.51,
+    "Median net profit margin of top 10% A-share real estate companies by revenue (%)": 1.92,
+    "Profit gap (percentage points)": 4.22,
+    "Net transformation score": 8.29,
+    "Active weight (%)": null
+  }
+}

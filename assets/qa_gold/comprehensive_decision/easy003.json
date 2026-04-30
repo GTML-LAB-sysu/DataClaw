@@ -1,0 +1,23 @@
+{
+  "id": "easy003",
+  "question": "In 2022, in the Qilu region (Shandong Province), how many policies support Zhongbai Jinmao Chain Company in its industry?",
+  "guidelines": "The answer must be an exact number. Output only the number, do not add units, commas, or any textual explanation. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 2,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Search for records of \"Zhongbai Jinmao Chain Company\" in company_profile.csv, extract the industry field, and determine that its industry is \"Wholesale and Retail Trade\".",
+    "Filter from policy_release_status.csv for all policy records with province=\"Shandong Province\", and policies where the industry field contains \"Wholesale and Retail Trade\". Found 2 policies: 1 from \"Local Policy - Shandong Provincial People's Government General Office Policy Count\" and 1 from \"Local Policy - Shandong Provincial Development and Reform Commission Policy Count\".",
+    "Count the number of policies meeting the criteria, which is 2."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Zhongbai Jinmao Chain Company": "Wholesale and Retail Trade",
+    "Shandong Province Local Policy - Shandong Provincial People's Government General Office Policy Count": 1,
+    "Shandong Province Local Policy - Shandong Provincial Development and Reform Commission Policy Count": 1,
+    "Number of policies in Shandong Province related to Wholesale and Retail Trade": 2
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "medium035",
+  "question": "What is the difference between the number of local policies issued by the Shanghai Municipality Commission of Economy and Information Technology in the local policies for the industry of Rui Xing Jian Kang Zhi Yao Co., Ltd. and the number of local policies issued by the Liaoning Province People's Government in the local policies for the Cultural, Arts, Sports and Entertainment Goods Manufacturing industry?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Rui Xing Jian Kang Zhi Yao Co., Ltd.: Pharmaceutical Manufacturing",
+    "Pharmaceutical Manufacturing local policies - Shanghai Municipality Commission of Economy and Information Technology - policy count = 3",
+    "Cultural, Arts, Sports and Entertainment Goods Manufacturing local policies - Liaoning Province People's Government - policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Rui Xing Jian Kang Zhi Yao Co., Ltd.": "Pharmaceutical Manufacturing",
+    "Pharmaceutical Manufacturing local policies_Shanghai Municipality Commission of Economy and Information Technology policy count": 3,
+    "Cultural, Arts, Sports and Entertainment Goods Manufacturing local policies_Liaoning Province People's Government policy count": 1,
+    "Difference (Shanghai Municipality Commission of Economy and Information Technology policy count - Liaoning Province People's Government policy count)": 2.0
+  },
+  "steps": [
+    "Extract from company_profile.csv that Rui Xing Jian Kang Zhi Yao Co., Ltd.'s industry is Pharmaceutical Manufacturing",
+    "Extract from policy_release_status.csv that in the local policies for Pharmaceutical Manufacturing, the policy count issued by the Shanghai Municipality Commission of Economy and Information Technology is 3",
+    "Extract from policy_release_status.csv that in the local policies for Cultural, Arts, Sports and Entertainment Goods Manufacturing, the policy count issued by the Liaoning Province People's Government is 1",
+    "Calculate the difference: 3 - 1 = 2.0"
+  ],
+  "steps_num": 4,
+  "answer": 2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "5cf78286-0cc2-4d3f-bdda-e401124cca92"
+    },
+    {
+      "company_profile": "4c3a2a9c-278d-458c-8242-de58a40d50a1"
+    },
+    {
+      "policy_release_status": "ae96a1ad-d893-4619-aac3-ae9056fffb7e"
+    }
+  ]
+}

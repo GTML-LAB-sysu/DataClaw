@@ -1,0 +1,46 @@
+{
+  "id": "medium021",
+  "question": "What is the difference between the median operating profit amount of the industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd. and that of the industry of Tong Tong Ze Hong Securities Co., Ltd.?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd.: Real Estate",
+    "Median operating profit amount in Real Estate: 130368786 yuan",
+    "Industry of Tong Tong Ze Hong Securities Co., Ltd.: Financial Industry",
+    "Median operating profit amount in Financial Industry: 1010930425 yuan"
+  ],
+  "milestone": {
+    "Industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd.": "Real Estate",
+    "Median operating profit amount in Real Estate (yuan)": 130368786,
+    "Industry of Tong Tong Ze Hong Securities Co., Ltd.": "Financial Industry",
+    "Median operating profit amount in Financial Industry (yuan)": 1010930425,
+    "Difference (Real Estate - Financial Industry)": -880561639.0
+  },
+  "answer": -880561639.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Zhao Ye Hua Chang Real Estate Development Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: median operating profit amount in Real Estate = 130368786",
+    "Extracted from company_profile.csv: industry of Tong Tong Ze Hong Securities Co., Ltd. = Financial Industry",
+    "Extracted from national_industry_status.csv: median operating profit amount in Financial Industry = 1010930425",
+    "Calculated the difference (Real Estate - Financial Industry): 130368786 - 1010930425 = -880561639.0"
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "3f2c07ea-c142-43aa-ab56-ee76d8aaa4e5"
+    },
+    {
+      "national_industry_status": "5dc0d9db-af52-48e2-8eef-98a66f67632f"
+    },
+    {
+      "company_profile": "63debe9f-0257-4192-a552-fe35fb82a435"
+    }
+  ]
+}

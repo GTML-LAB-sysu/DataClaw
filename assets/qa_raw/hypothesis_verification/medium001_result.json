@@ -1,0 +1,49 @@
+{
+  "id": "medium001",
+  "question": "Using 2022 data, to verify the hypothesis that policy has a positive effect on corporate R&D: among listed semiconductor firms, divide them by whether their registered province has ever issued a local industrial policy whose name or covered-industry field contains \"semiconductor\" or \"integrated circuit\" (either condition suffices). What is the difference in mean R&D investment ratio between the policy-covered group and the non-covered group (difference = policy-province group mean minus non-policy-province group mean), in percentage points?",
+  "guidelines": "Answer format: a numeric value (two decimal places, in percentage points). A positive value means the policy-province group is higher; a negative value means the non-policy-province group is higher. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From policy_release_status.csv, filter policies with policyClassification=\"local policy\" and (policy name contains \"semiconductor\" or \"integrated circuit\", or industry field contains \"semiconductor\"), yielding 35 relevant policies. Extract unique province values (excluding \"nationwide\"), giving 15 policy provinces: Shanghai, Yunnan, Sichuan, Anhui, Shandong, Guangdong, Xinjiang Uygur Autonomous Region, Jiangxi, Henan, Zhejiang, Hainan, Hunan, Fujian, Chongqing, Shaanxi.",
+    "From company_profile.csv, filter firms whose industry is semiconductor, extract company name, bmCode, and province, yielding 172 semiconductor firms.",
+    "From company_operation_status.csv, join 2022 data by bmCode for these firms, extract R&D investment ratio; 172 firms successfully matched.",
+    "Exclude 3 firms with null R&D investment ratio and 0 firms with R&D ratio > 100% (outliers); 169 valid firms remain.",
+    "Split firms by whether their province is in the policy-province list: policy group (110 firms) and non-policy group (59 firms).",
+    "Policy group mean R&D investment ratio = Σ(firm R&D ratio) / firm count = 10.8880%; non-policy group mean = Σ(firm R&D ratio) / firm count = 11.6136%.",
+    "Difference = policy group mean − non-policy group mean = 10.8880 − 11.6136 = −0.73 percentage points."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "From policy_release_status.csv, 35 local policies related to semiconductor/integrated circuit were found, covering 15 provinces.",
+    "From company_profile.csv, 172 semiconductor firms were found.",
+    "From company_operation_status.csv, 2022 R&D investment ratio data were joined for 172 semiconductor firms; after filtering, 169 valid firms."
+  ],
+  "milestone": {
+    "Policy province list": [
+      "Shanghai",
+      "Yunnan",
+      "Sichuan",
+      "Anhui",
+      "Shandong",
+      "Guangdong",
+      "Xinjiang Uygur Autonomous Region",
+      "Jiangxi",
+      "Henan",
+      "Zhejiang",
+      "Hainan",
+      "Hunan",
+      "Fujian",
+      "Chongqing",
+      "Shaanxi"
+    ],
+    "Policy group firm count": 110,
+    "Non-policy group firm count": 59,
+    "Policy group mean R&D investment ratio (%)": 10.888,
+    "Non-policy group mean R&D investment ratio (%)": 11.6136
+  },
+  "answer": -0.73,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

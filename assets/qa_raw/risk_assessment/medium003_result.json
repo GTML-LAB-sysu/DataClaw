@@ -1,0 +1,32 @@
+{
+  "id": "medium003",
+  "question": "In 2022, assume all national R&D tax incentives are cancelled. Among manufacturing industries (only industries with total enterprises ≥ 20 and complete R&D investment and operating revenue data, positive revenue, excluding \"Financial Services\", \"Real Estate\", and \"Conglomerates\"), assume a corporate income tax rate of 25%; R&D tax benefits include 100% additional deduction. What is the sum of the declines (in percentage points) for the three industries with the largest average net profit margin decline, where net profit margin impact = R&D × 100% × 25% / operating revenue × 100%?",
+  "guidelines": "Answer format: a numeric value (2 decimal places). For example, 15.67 means the sum of the three industries' declines is 15.67 percentage points. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From national_industry_status.csv, extract total enterprises for all industries; filter to manufacturing industries with total enterprises ≥ 20; exclude non-manufacturing industries such as \"Financial Services\", \"Real Estate\", and \"Conglomerates\", obtaining 41 qualifying industries. Identify 30 valid provinces: Guangdong Province, Zhejiang Province, Jiangsu Province, Beijing Municipality, Shanghai Municipality, Shandong Province, Hong Kong SAR, Fujian Province, Sichuan Province, Anhui Province, Hubei Province, Hunan Province, Henan Province, Liaoning Province, Hebei Province, Shaanxi Province, Tianjin Municipality, Chongqing Municipality, Xinjiang Uygur Autonomous Region, Jilin Province, Shanxi Province, Guangxi Zhuang Autonomous Region, Yunnan Province, Heilongjiang Province, Gansu Province, Guizhou Province, Inner Mongolia Autonomous Region, Hainan Province, Tibet Autonomous Region.",
+    "From company_profile.csv, filter all enterprises in the qualifying industries, extract enterprise name, bmCode, and industry fields; related enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by enterprise name and bmCode; keep records where R&D investment amount and operating revenue amount are both non-null and operating revenue amount > 0, 5416 enterprises.",
+    "For each enterprise, compute net profit margin impact = (R&D investment amount × 100% × 25%) / operating revenue amount × 100%.",
+    "For each industry, compute average enterprise net profit margin decline = Σ(enterprise net profit margin impact) / number of enterprises in that industry; average decline computed for 41 industries.",
+    "Sort by average net profit margin decline descending; take the top 3 industries (Pharmaceutical Manufacturing, Specialized Equipment Manufacturing, Information Transmission, Software and IT Services); sum their declines = 601.08 percentage points."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "From national_industry_status.csv: 41 manufacturing industries with total enterprises ≥ 20, 30 valid provinces.",
+    "From company_profile.csv and company_operation_status.csv: 5416 enterprises with complete data.",
+    "Average decline computed for 41 industries."
+  ],
+  "milestone": {
+    "Qualifying industries count": 41,
+    "Qualifying provinces count": 30,
+    "Enterprises with complete data": 5416,
+    "Industries with computed average decline": 41,
+    "Sum of top-3 industry declines (percentage points)": 601.08
+  },
+  "answer": 601.08,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "risk_assessment"
+  }
+}

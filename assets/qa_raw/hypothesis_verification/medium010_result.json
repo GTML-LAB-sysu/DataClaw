@@ -1,0 +1,34 @@
+{
+  "id": "medium010",
+  "question": "In 2022, based on the 'high input low output' hypothesis in Romer's endogenous growth theory, verify whether state-owned enterprises in the semiconductor industry exhibit the dual anomaly of 'large asset scale but low operating profit margin' and 'high R&D investment but low patent conversion efficiency'. The hypothesis states: when state-owned enterprises rank high in the industry in both asset scale (total assets) and R&D investment (amount), their operating profit margin (operating profit / revenue) and patent conversion efficiency (cumulative China invention patent grants / R&D investment × 100 million) should rank low in the industry. Please count the number of enterprises that simultaneously satisfy the following conditions (state-owned enterprises include central state-owned enterprises, local state-owned enterprises, state-owned enterprises (research institutes), and state-owned enterprises (other)): ① total assets > median total assets of industry-wide state-owned enterprises; ② operating profit margin < median operating profit margin of industry-wide state-owned enterprises; ③ R&D investment amount > median R&D investment amount of industry-wide state-owned enterprises; ④ patent conversion efficiency < median patent conversion efficiency of industry-wide state-owned enterprises.",
+  "guidelines": "Answer format: numerical value (integer, unit: enterprises). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"semiconductor\" and ownership as state-owned enterprise types (central state-owned enterprise, local state-owned enterprise, state-owned enterprise (research institute), state-owned enterprise (other)), finding 32 state-owned enterprises.",
+    "From company_operation_status.csv, associate 2022 data for these enterprises, extract total assets, operating profit amount, revenue amount, R&D investment amount, and cumulative China invention patent grants fields. Data associated for 32 enterprises.",
+    "Filter out enterprises with empty or zero revenue amount, 32 valid enterprises remain. Calculate operating profit margin = operating profit amount / revenue amount × 100%.",
+    "Filter out enterprises with empty or zero R&D investment amount, 32 valid enterprises remain. Calculate patent conversion efficiency = cumulative China invention patent grants / R&D investment amount × 100 million.",
+    "Calculate median for each indicator: median total assets = 5937801202.30 yuan, median operating profit margin = 11.9667%, median R&D investment amount = 245125759.25 yuan, median patent conversion efficiency = 50.7635 grants per 100 million yuan.",
+    "Filter enterprises satisfying all four conditions: total assets > median (16), operating profit margin < median (16), R&D investment amount > median (16), patent conversion efficiency < median (15). Enterprises satisfying all four conditions: 3.",
+    "Count dual anomaly enterprises: 3."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 32 semiconductor industry state-owned enterprises from company_profile.csv.",
+    "Associated 2022 operation data for 32 enterprises from company_operation_status.csv, with 32 enterprises having valid data for both operating profit margin and patent conversion efficiency."
+  ],
+  "milestone": {
+    "Total number of state-owned enterprises": 32,
+    "Number of valid enterprises": 32,
+    "Median total assets (yuan)": 5937801202.3,
+    "Median operating profit margin (%)": 11.9667,
+    "Median R&D investment amount (yuan)": 245125759.25,
+    "Median patent conversion efficiency (grants per 100 million yuan)": 50.7635,
+    "Number of enterprises satisfying conditions": 3
+  },
+  "answer": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

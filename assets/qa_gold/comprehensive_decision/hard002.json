@@ -1,0 +1,28 @@
+{
+  "id": "hard002",
+  "question": "In 2022, conduct a quantitative assessment of the investment value of the semiconductor industry across provinces. The evaluation framework requires incorporating three dimensions: first, industry scale (40% weight), measured by the inter-provincial rank percentile of total operating revenue in each province; second, profitability quality (30% weight), reflected by the inter-provincial rank percentile of operating profit margin (total operating profit divided by total operating revenue) in each province; third, technology output intensity (30% weight), measured by the inter-provincial rank percentile of the ratio of total patent applications to R&D expenditure (converted to 100 million yuan) in each province. The rank percentile for each indicator is calculated by sorting values from low to high, using the formula (rank - 1) / (total number of provinces - 1). Note that only provinces with complete data for all three indicators are included in the calculation. Under this weighted scoring system, what is the final score of the province ranked first in comprehensive investment value?",
+  "guidelines": "The answer should be a numerical value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0.67,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records with industry=\"Semiconductor Industry\" from regional_industry_status.csv, extract province, total operating revenue, total operating profit, and total R&D expenditure; 34 records were found.",
+    "Filter enterprises with industry=\"Semiconductor Industry\" from company_profile.csv, extract company name, bmCode, and province; 172 enterprises were found.",
+    "Join with company_operation_status.csv via bmCode to extract annual domestic invention patent applications. Filter 149 valid records with non-null values, group by province to sum annual domestic invention patent applications; 22 provinces have patent data.",
+    "Inner join regional data with enterprise-level patent summary by province, filter records with total operating revenue > 0 and total R&D expenditure > 0; 13 valid provinces. Calculate three original indicators: industry scale = total operating revenue, profitability = total operating profit / total operating revenue, innovation output = total annual domestic invention patent applications / total R&D expenditure (in 100 million yuan).",
+    "Rank each indicator by value from low to high (rank method = min), calculate rank percentile = (rank - 1) / (13 - 1).",
+    "Calculate investment value composite score = industry scale rank percentile × 0.4 + profitability rank percentile × 0.3 + innovation output rank percentile × 0.3.",
+    "Sort by composite score in descending order. Zhejiang Province has the highest composite score, with industry scale rank percentile 0.6667, profitability rank percentile 0.5000, innovation output rank percentile 0.8333, and composite score = 0.6667."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of valid provinces": 13,
+    "Zhejiang Province industry scale rank percentile": 0.6667,
+    "Zhejiang Province profitability rank percentile": 0.5,
+    "Zhejiang Province innovation output rank percentile": 0.8333,
+    "Zhejiang Province composite score": 0.6667
+  }
+}

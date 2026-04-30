@@ -1,0 +1,26 @@
+{
+  "id": "medium020",
+  "question": "Which is greater: the number of central ministry/agency policies issued by the Ministry of Housing and Urban-Rural Development in the ministerial policies for the industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd., or the number of local policies for the Conglomerates industry in Guangdong Province where Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"Equal\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhong Ke Ke Shu Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the ministerial policies for this industry, the policy count issued by the Ministry of Housing and Urban-Rural Development is 2",
+    "Extract from company_profile.csv that Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd. is located in Guangdong Province and its industry is Conglomerates",
+    "Extract from policy_release_status.csv that in Guangdong Province, the Conglomerates local policies policy count is 2",
+    "Compare 2 and 2; if equal, output \"Equal\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies_Ministry of Housing and Urban-Rural Development policy count": 2,
+    "Province of Hua Cheng Sheng Yuan Zong He Kai Fa Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Conglomerates local policies policy count": 2,
+    "Comparison result": "Equal"
+  }
+}

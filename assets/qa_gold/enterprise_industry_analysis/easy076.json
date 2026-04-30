@@ -1,0 +1,22 @@
+{
+  "id": "easy076",
+  "question": "In 2022, is there any difference between the total number of enterprises in the Tibet Autonomous Region's electricity, heat, gas, and water production and supply industry and that in the construction industry?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or the company name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: total enterprises in Tibet electricity, heat, gas, and water production and supply industry = 0",
+    "Extracted from regional_industry_status.csv: total enterprises in Tibet construction industry = 0",
+    "Compared whether the two values are the same, and judged \"Equal\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total enterprises in Tibet electricity, heat, gas, and water production and supply industry": 0,
+    "Total enterprises in Tibet construction industry": 0,
+    "Comparison result (whether there is a difference)": "Equal"
+  }
+}

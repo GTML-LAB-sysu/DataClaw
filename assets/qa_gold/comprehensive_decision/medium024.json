@@ -1,0 +1,24 @@
+{
+  "id": "medium024",
+  "question": "In 2022, is the region with the highest total operating revenue nationwide also the one with the largest total enterprise market capitalization?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter all provincial records (excluding \"National\"), extract province, total operating revenue amount, and total company market capitalization fields.",
+    "Aggregate total operating revenue amount (yuan) across all industries by province, obtain total operating revenue amount (yuan) for each province. Note: operating revenue amount in the file is in yuan, no conversion needed.",
+    "Identify the region with the highest total operating revenue amount (yuan) as \"Beijing\" with total operating revenue of 54,657,099,005,195.0 yuan.",
+    "Convert total company market capitalization from 10,000 yuan unit to yuan unit (multiply by 10,000), aggregate total company market capitalization (yuan) across all industries by province, obtain total enterprise market capitalization (yuan) for each province.",
+    "Identify the region with the largest total enterprise market capitalization (yuan) as \"Beijing\" with total enterprise market capitalization of 3,959,736,000.0 yuan. Compare the region with the highest total operating revenue amount (yuan) (Beijing) with the region with the largest total enterprise market capitalization (yuan) (Beijing), determine they are the same, conclusion: Yes."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Region with highest total operating revenue amount (yuan)": "Beijing",
+    "Region with largest total enterprise market capitalization (yuan)": "Beijing",
+    "Comparison result": "Yes"
+  }
+}

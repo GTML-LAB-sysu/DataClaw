@@ -1,0 +1,24 @@
+{
+  "id": "medium019",
+  "question": "In 2022, Sichuan Province, is Zhongbai Jinmao Chain Company's R&D expenditure higher than the R&D expenditure of the enterprise ranked 15th nationwide in its industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From company_profile.csv, find the record for company name=\"Zhongbai Jinmao Chain Company\", extract industry and province; industry is \"Wholesale and Retail Trade\", province is \"Sichuan Province\".",
+    "From company_operation_status.csv, filter 2022 data for company name=\"Zhongbai Jinmao Chain Company\", extract R&D expenditure; Zhongbai Jinmao Chain Company's R&D expenditure is 11,270,987.0 yuan.",
+    "From company_profile.csv, filter all enterprise records with industry=\"Wholesale and Retail Trade\", extract company name or bmCode; 273 wholesale and retail enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by company name or bmCode, extract R&D expenditure; 2022 R&D expenditure data found for 273 wholesale and retail enterprises.",
+    "Filter enterprise records with non-null R&D expenditure; sort all enterprises by R&D expenditure descending to determine R&D expenditure ranking. Enterprise ranked 15th: Lianhua Tongze Commerce Company, R&D expenditure 265,616,054.7 yuan, province Beijing. Compare Zhongbai Jinmao Chain Company's R&D expenditure (11,270,987.0 yuan) with the 15th-ranked nationwide wholesale and retail enterprise's R&D expenditure (265,616,054.7 yuan). Since 11,270,987.0 < 265,616,054.7, the answer is No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Zhongbai Jinmao Chain Company R&D expenditure (yuan)": 11270987.0,
+    "15th-ranked nationwide wholesale and retail enterprise R&D expenditure (yuan)": 265616054.7,
+    "Comparison result": "No"
+  }
+}

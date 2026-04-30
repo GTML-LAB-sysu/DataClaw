@@ -1,0 +1,39 @@
+{
+  "id": "medium005",
+  "question": "In 2022, to verify the hypothesis that there is a clear relationship between enterprise total assets and invention patent count in the Consumer Electronics and Electrical Industry, we focus only on provinces with high R&D density (provinces where the mean R&D investment ratio in provincial industry aggregate data exceeds the corresponding national industry aggregate mean). Among all listed enterprises in this industry within these provinces, what is the Pearson correlation coefficient between enterprise total asset scale and annual China invention patent applications?",
+  "guidelines": "Answer format: numeric value (rounded to 4 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from national_industry_status.csv for industry=\"Consumer Electronics and Electrical Industry\", extract the mean R&D investment ratio field. The national mean R&D investment ratio for Consumer Electronics and Electrical Industry is 7.77502994011976.",
+    "Filter from regional_industry_status.csv for industry=\"Consumer Electronics and Electrical Industry\", extract province and mean R&D investment ratio fields. 16 provinces have data.",
+    "Filter provinces where mean R&D investment ratio exceeds the national benchmark of 7.77502994011976, obtaining 4 R&D-intensive provinces: Guangdong Province, Beijing, Shanghai, Henan Province.",
+    "Filter from company_profile.csv enterprises with industry=\"Consumer Electronics and Electrical Industry\" and province in the R&D-intensive province list, finding 180 enterprises.",
+    "Join with company_operation_status.csv for 2022 data of these enterprises, extract total assets and annual China invention patent applications fields, obtaining data for 180 enterprises.",
+    "Filter out records where total assets or annual China invention patent applications is null, leaving 153 valid enterprises. Mean total assets is 24143218637.14 CNY, mean annual China invention patent applications is 197.82.",
+    "Calculate the Pearson correlation coefficient between total assets and annual China invention patent applications: r = 0.8294."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Retrieved national mean R&D investment ratio for Consumer Electronics and Electrical Industry of 7.77502994011976 from national_industry_status.csv.",
+    "Found mean R&D investment ratio data for 16 provinces in Consumer Electronics and Electrical Industry from regional_industry_status.csv; 4 provinces exceed the national benchmark.",
+    "Found 180 Consumer Electronics and Electrical Industry enterprises in R&D-intensive provinces from company_profile.csv.",
+    "Joined with company_operation_status.csv for total assets and annual China invention patent applications data of 153 valid enterprises."
+  ],
+  "milestone": {
+    "National mean R&D investment ratio": 7.77502994011976,
+    "R&D-intensive province list": [
+      "Guangdong Province",
+      "Beijing",
+      "Shanghai",
+      "Henan Province"
+    ],
+    "Valid enterprises": 153,
+    "Mean total assets (CNY)": 24143218637.14,
+    "Mean annual China invention patent applications": 197.82
+  },
+  "answer": 0.8294,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

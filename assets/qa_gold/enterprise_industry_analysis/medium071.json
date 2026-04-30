@@ -1,0 +1,24 @@
+{
+  "id": "medium071",
+  "question": "Which is larger: the number of SSE-listed enterprises in the province where Biyuan Chanjin Real Estate Company is located, or the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"the number of SSE-listed enterprises in the province where Biyuan Chanjin Real Estate Company is located\" or \"the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Biyuan Chanjin Real Estate Company is located in Tianjin Municipality and its corresponding industry is Real Estate.",
+    "Extract from regional_industry_status.csv that the number of SSE-listed enterprises in Tianjin Municipality - Real Estate is 3.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry is 15.",
+    "Compare the counts: 15 > 3, so the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Biyuan Chanjin Real Estate Company": "Tianjin Municipality",
+    "Number of SSE-listed enterprises in Tianjin Municipality - Real Estate": 3,
+    "Number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry": 15,
+    "Comparison result (larger one)": "the number of SZSE-listed local state-owned enterprises in the Transportation, Storage and Postal Services industry"
+  }
+}

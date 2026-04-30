@@ -1,0 +1,22 @@
+{
+  "id": "easy056",
+  "question": "In 2022, did the core competitiveness of Zhong Ke Sheng Ke Ji Shu Yan Jiu Yuan Co., Ltd. and that of Lian Ji Zhi Sheng Ji Xie Co., Ltd. in the same province show a competitive relationship in terms of technical capabilities?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted the core competitiveness description of Zhong Ke Sheng Ke Ji Shu Yan Jiu Yuan Co., Ltd. from company_core.csv and identified that its technical capability focuses on biopharmaceutical R&D and production technology (such as recombinant proteins and mRNA raw-material enzymes)",
+    "Extracted the core competitiveness description of Lian Ji Zhi Sheng Ji Xie Co., Ltd. from company_core.csv and identified that its technical capability focuses on manufacturing R&D for fastening tools (such as gas nail guns) and construction hardware",
+    "Determined that the two companies have different technical directions and the descriptions provide no direct evidence of competition, and judged \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Technical focus of Zhong Ke Sheng Ke Ji Shu Yan Jiu Yuan Co., Ltd.": "Biopharmaceutical-related R&D and production technology platform",
+    "Technical focus of Lian Ji Zhi Sheng Ji Xie Co., Ltd.": "R&D and manufacturing of fastening tools and construction hardware",
+    "Comparison result (whether there is a competitive relationship in technical capabilities)": "No"
+  }
+}

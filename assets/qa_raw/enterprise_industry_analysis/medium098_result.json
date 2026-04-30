@@ -1,0 +1,40 @@
+{
+  "id": "medium098",
+  "question": "Which is larger: the number of SZSE-listed enterprises in the industry where Yihai Changjin Business Company operates, or the number of SZSE-listed private enterprises in China's Conglomerates industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yihai Changjin Business Company: Leasing and Business Services",
+    "Leasing and Business Services: number of SZSE-listed enterprises = 44",
+    "Conglomerates (China): number of SZSE-listed private enterprises = 4"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Yihai Changjin Business Company belongs to the Leasing and Business Services industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed enterprises in the Leasing and Business Services industry is 44.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed private enterprises in the Conglomerates industry is 4.",
+    "Compare the counts: 44 > 4, so Yihai Changjin Business Company is higher."
+  ],
+  "steps_num": 4,
+  "answer": "Yihai Changjin Business Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Yihai Changjin Business Company": "Leasing and Business Services",
+    "Number of SZSE-listed enterprises in the Leasing and Business Services industry": 44,
+    "Number of SZSE-listed private enterprises in the Conglomerates industry": 4,
+    "Comparison result (larger one)": "Yihai Changjin Business Company"
+  },
+  "reference": [
+    {
+      "national_industry_status": "e4578b09-ad56-4edf-adc8-9cd6b54149b7"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "national_industry_status": "fee7bf00-36e3-4f1a-a296-f5612ad8cedd"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy070",
+  "question": "In 2022, comparing the median number of participation in drafting industry standards for Jilin Province's comprehensive industry and the same indicator for the nationwide comprehensive industry, which one is lower?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or a company name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the median number of participation in drafting industry standards for Jilin Province's comprehensive industry is 0.",
+    "Extracted from national_industry_status.csv that the median number of participation in drafting industry standards for the comprehensive industry is 0.",
+    "Compared 0 and 0, and determined the result is \"Equal\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Median number of participation in drafting industry standards in Jilin Province's comprehensive industry": 0,
+    "Median number of participation in drafting industry standards in the nationwide comprehensive industry": 0,
+    "Comparison result": "Equal"
+  }
+}

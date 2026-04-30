@@ -1,0 +1,40 @@
+{
+  "id": "medium106",
+  "question": "What is the difference between the total number of Consumer Electronics and Electrical industry enterprises in the province where Shiyang Jinjin Electrical Appliances Company is located and the number of SZSE-listed enterprises in China's Rubber and Plastic Products industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Shiyang Jinjin Electrical Appliances Company: Inner Mongolia Autonomous Region",
+    "Inner Mongolia Autonomous Region - Consumer Electronics and Electrical industry: total number of enterprises = 0",
+    "Rubber and Plastic Products industry (China): number of SZSE-listed enterprises = 68"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Shiyang Jinjin Electrical Appliances Company is located in the Inner Mongolia Autonomous Region and belongs to the Consumer Electronics and Electrical industry.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Inner Mongolia Autonomous Region - Consumer Electronics and Electrical industry is 0.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed enterprises in the Rubber and Plastic Products industry is 68.",
+    "Calculate the difference: 0 - 68 = -68.0."
+  ],
+  "steps_num": 4,
+  "answer": -68.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Shiyang Jinjin Electrical Appliances Company": "Inner Mongolia Autonomous Region",
+    "Total number of enterprises in Inner Mongolia Autonomous Region - Consumer Electronics and Electrical industry": 0,
+    "Number of SZSE-listed enterprises in the Rubber and Plastic Products industry": 68,
+    "Difference": -68.0
+  },
+  "reference": [
+    {
+      "regional_industry_status": "fa024fe2-f4d4-401e-9630-e58759c828a0"
+    },
+    {
+      "company_profile": "c4791202-0687-425c-9012-35538f3a300c"
+    },
+    {
+      "national_industry_status": "82707f38-7a84-4096-a41e-d04d8382f558"
+    }
+  ]
+}

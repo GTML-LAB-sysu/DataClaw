@@ -1,0 +1,34 @@
+{
+  "id": "medium020",
+  "question": "In 2022, the chemical raw materials and chemical products manufacturing industry in Shandong Province, is the market capitalization of the leading enterprises by operating revenue among the top 3 in this industry nationwide?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, filter all enterprise records with province=\"Shandong Province\" and industry=\"Chemical raw materials and chemical products manufacturing\", extract company names, identify enterprises in the chemical raw materials and chemical products manufacturing industry in Shandong Province.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by bmCode or company name, extract operating revenue amount and company market capitalization, obtain operating revenue and market capitalization for each enterprise.",
+    "Filter enterprises with non-null operating revenue amount and company market capitalization, sort by operating revenue amount descending, determine the leading enterprise by operating revenue as \"Hengyi Changhua Fine Chemical Company\" with operating revenue of 165,565,462,711.66 yuan and company market capitalization of 2,754.0.",
+    "From company_profile.csv, filter all enterprise records with industry=\"Chemical raw materials and chemical products manufacturing\", from company_operation_status.csv obtain 2022 company market capitalization for these enterprises by bmCode or company name.",
+    "Filter enterprises with non-null company market capitalization, sort by company market capitalization descending, determine nationwide market capitalization ranking for this industry; identify top 3: No.1 \"Hengyi Changhua Fine Chemical Company\" (Shandong Province) 2,754.0, No.2 \"Rongsheng Jinsheng Chemical Company\" (Qinghai Province) 1,040.0, No.3 \"Hengyi Yuanjin Fine Chemical Company\" (Ningxia Hui Autonomous Region) 927.0. Determine whether the Shandong Province revenue-leading enterprise \"Hengyi Changhua Fine Chemical Company\" ranks among the nationwide top 3 by market capitalization: this enterprise is No.1 nationwide by market capitalization, thus it is among the top 3, conclusion: Yes."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found 41 enterprises in chemical raw materials and chemical products manufacturing in Shandong Province from company_profile.csv, along with their bmCode or names.",
+    "Found 2022 operating revenue amount and company market capitalization data for these enterprises from company_operation_status.csv.",
+    "Found nationwide chemical raw materials and chemical products manufacturing enterprises from company_profile.csv, along with their bmCode or names.",
+    "Found their 2022 company market capitalization data from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Shandong Province operating revenue leading enterprise name": "Hengyi Changhua Fine Chemical Company",
+    "Shandong Province operating revenue leading enterprise operating revenue (yuan)": 165565462711.66,
+    "Shandong Province operating revenue leading enterprise company market capitalization": 2754.0,
+    "Chemical raw materials and chemical products manufacturing nationwide market cap No.1 enterprise": "Hengyi Changhua Fine Chemical Company",
+    "Chemical raw materials and chemical products manufacturing nationwide market cap No.3 enterprise": "Hengyi Yuanjin Fine Chemical Company",
+    "Chemical raw materials and chemical products manufacturing nationwide market cap No.3 enterprise market capitalization": 927.0,
+    "Comparison result": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

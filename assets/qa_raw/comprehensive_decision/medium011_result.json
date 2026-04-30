@@ -1,0 +1,28 @@
+{
+  "id": "medium011",
+  "question": "In 2022, among all enterprises in the rubber and plastic products industry with R&D investment records, what is the R&D concentration CR5? ",
+  "guidelines": "The answer should be a numerical value (rounded to 2 decimal places), in units of %. If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter records from company_profile.csv where industry=\"Rubber and plastic products\", extract company name and bmCode fields, finding 107 enterprises in total.",
+    "Join with company_operation_status.csv by bmCode to retrieve 2022 data for these enterprises, extract R&D investment amount field.",
+    "Filter records where R&D investment amount is not empty, resulting in 106 enterprises with R&D investment data. Sort by R&D investment amount in descending order, extract the top 5 enterprises and their R&D investment amounts.",
+    "Calculate the sum of R&D investment amounts of the top 5 enterprises as 4,221,126,553.77 CNY. Calculate the total R&D investment amount of all valid enterprises in the industry as 12,179,847,530.98 CNY.",
+    "Calculate R&D concentration CR5 = (4,221,126,553.77 / 12,179,847,530.98) × 100% = 34.66%."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found 107 rubber and plastic products enterprises from company_profile.csv.",
+    "Found 2022 R&D investment amount data for 106 enterprises from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Sum of R&D Investment Amount of Top 5 Enterprises (CNY)": 4221126553.77,
+    "Total R&D Investment Amount of the Industry (CNY)": 12179847530.98,
+    "R&D Concentration CR5 (%)": 34.66
+  },
+  "answer": 34.66,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

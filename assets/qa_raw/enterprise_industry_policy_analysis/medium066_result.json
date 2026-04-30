@@ -1,0 +1,40 @@
+{
+  "id": "medium066",
+  "question": "Zhong Ke Ke Shu Software Co., Ltd.province Guangzhou CitypersonsNumber of policies (indicator) and China Hunan ProvincepersonsNumber of policies (indicator)compared with which unitsgreater？",
+  "guidelines": "The answer must a company name or \"industry\", Output onlyname, without any explanation or description.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Zhong Ke Ke Shu Software Co., Ltd.province = Guangdong Province",
+    "Guangdong ProvinceCommunication Transmission Equipmentlocal policies_Guangzhou CitypersonsNumber of policies (indicator)=2",
+    "ChinaMetal Productslocal policies_Hunan ProvincepersonsNumber of policies (indicator)=1"
+  ],
+  "milestone": {
+    "Zhong Ke Ke Shu Software Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceCommunication Transmission Equipmentlocal policies_Guangzhou CitypersonsNumber of policies (indicator)": 2,
+    "ChinaMetal Productslocal policies_Hunan ProvincepersonsNumber of policies (indicator)": 1,
+    "Comparison result": "2greater，outputZhong Ke Ke Shu Software Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Zhong Ke Ke Shu Software Co., Ltd.province = Guangdong Province and industry = Communication Transmission Equipment",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Communication Transmission Equipmentextractlocal policies in Guangzhou CitypersonsNumber of policies (indicator)=2",
+    "Extracted from policy_release_status.csv: ChinaMetal Productslocal policies in Hunan ProvincepersonsNumber of policies (indicator)=1",
+    "Compare2 and 1, 2greater, output\"Zhong Ke Ke Shu Software Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "answer": "Zhong Ke Ke Shu Software Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "f1c9e833-ad21-4fe3-a5ca-32da9783df10"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "policy_release_status": "2d5ad892-2195-4230-854d-7c1dc5913951"
+    }
+  ]
+}

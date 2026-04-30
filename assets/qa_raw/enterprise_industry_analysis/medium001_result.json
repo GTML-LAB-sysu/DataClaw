@@ -1,0 +1,40 @@
+{
+  "id": "medium001",
+  "question": "In 2022, what is the difference between the year-over-year employee change rate of Kangsheng Kangjian Pharmaceutical Co., Ltd. and the minimum level of its industry?",
+  "guidelines": "The answer must be a number with two decimal places. Output only the number without units, commas, or any additional text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Kangsheng Kangjian Pharmaceutical Co., Ltd. year-over-year employee change rate: 28.63 %",
+    "Industry of Kangsheng Kangjian Pharmaceutical Co., Ltd.: Pharmaceutical Manufacturing",
+    "Minimum year-over-year employee change rate in Pharmaceutical Manufacturing: -65.72 %"
+  ],
+  "milestone": {
+    "Kangsheng Kangjian Pharmaceutical Co., Ltd. year-over-year employee change rate": "28.63 %",
+    "Industry of Kangsheng Kangjian Pharmaceutical Co., Ltd.": "Pharmaceutical Manufacturing",
+    "Minimum year-over-year employee change rate in Pharmaceutical Manufacturing": "-65.72 %",
+    "Difference between the two": 94.35
+  },
+  "answer": 94.35,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "reference": [
+    {
+      "company_operation_status": "aca07f14-a552-49a7-8fd9-cf23d30d5f81"
+    },
+    {
+      "national_industry_status": "9c71278e-97a3-4867-826d-e139f1dffc24"
+    },
+    {
+      "company_profile": "e655979a-a163-45f2-806f-97922582ee4d"
+    }
+  ],
+  "steps": [
+    "Extracted from company_operation_status.csv: Kangsheng Kangjian Pharmaceutical Co., Ltd. 2022 year-over-year employee change rate is 28.63 %",
+    "Extracted from company_profile.csv: the company's industry is Pharmaceutical Manufacturing",
+    "Extracted from national_industry_status.csv: for Pharmaceutical Manufacturing, the minimum year-over-year employee change rate is -65.72 %",
+    "Computed difference: 28.63 - (-65.72) = 94.35"
+  ],
+  "steps_num": 4
+}

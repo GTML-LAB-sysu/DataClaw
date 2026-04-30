@@ -1,0 +1,22 @@
+{
+  "id": "easy068",
+  "question": "In 2022, which is higher: the average year-over-year change rate of R&D personnel in Guangdong Province's scientific research and technical services industry, or that of the same industry nationwide?",
+  "guidelines": "The answer must be \"National\" or \"Guangdong\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "National",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the average year-over-year change rate of R&D personnel for Guangdong Province in the scientific research and technical services industry is 5.80304347826087 %.",
+    "Extracted from national_industry_status.csv that the average year-over-year change rate of R&D personnel in the scientific research and technical services industry is 18.2512727272727 %.",
+    "Compared 5.80304347826087 and 18.2512727272727; since 18.2512727272727 is higher, output \"National\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Average year-over-year change rate of R&D personnel in Guangdong Province's scientific research and technical services industry": "5.80304347826087 %",
+    "Average year-over-year change rate of R&D personnel in the nationwide scientific research and technical services industry": "18.2512727272727 %",
+    "Comparison result (which is higher)": "National"
+  }
+}

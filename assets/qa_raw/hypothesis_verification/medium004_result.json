@@ -1,0 +1,33 @@
+{
+  "id": "medium004",
+  "question": "In 2022, to verify the hypothesis on the effect of debt ratio on R&D investment ratio in Raw Chemical Materials and Chemical Products Manufacturing, calculate the difference in the mean R&D investment ratio (in percentage points) between the high-debt group (asset-liability ratio above the national industry median) and the low-debt group (asset-liability ratio below the national industry median).",
+  "guidelines": "Answer format: numeric value (rounded to 2 decimal places, unit: percentage points). A positive value indicates the high-debt group is higher. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from national_industry_status.csv for industry=\"Raw Chemical Materials and Chemical Products Manufacturing\", extract the asset-liability ratio median field. The national median asset-liability ratio for this industry is 36.815.",
+    "Filter from company_profile.csv all enterprises with industry=\"Raw Chemical Materials and Chemical Products Manufacturing\", extract enterprise name and bmCode fields, finding 364 enterprises.",
+    "Join with company_operation_status.csv by bmCode to obtain 2022 data for these enterprises, extract asset-liability ratio and R&D investment ratio fields, obtaining data for 364 enterprises.",
+    "Filter out enterprises where asset-liability ratio or R&D investment ratio is null; exclude 0 anomalous enterprises with R&D investment ratio above 100%, leaving 349 valid enterprises.",
+    "Group by comparing asset-liability ratio with the national median of 36.815: asset-liability ratio above median is the high-debt group (175 enterprises); below median is the low-debt group (174 enterprises); 0 enterprises equal to median are excluded from grouping.",
+    "Calculate high-debt group average R&D investment ratio = Σ(enterprise R&D investment ratio) / number of enterprises = 3.6595%; low-debt group average R&D investment ratio = Σ(enterprise R&D investment ratio) / number of enterprises = 4.2648%.",
+    "Calculate difference = high-debt group average R&D investment ratio - low-debt group average R&D investment ratio = 3.6595 - 4.2648 = -0.61 percentage points."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found national industry aggregate data for Raw Chemical Materials and Chemical Products Manufacturing in national_industry_status.csv, with asset-liability ratio median of 36.815.",
+    "Found 364 enterprises in Raw Chemical Materials and Chemical Products Manufacturing in company_profile.csv.",
+    "Joined with company_operation_status.csv for 2022 asset-liability ratio and R&D investment ratio data of 364 enterprises; after excluding anomalies, 349 valid enterprises."
+  ],
+  "milestone": {
+    "National asset-liability ratio median": 36.815,
+    "High-debt group enterprises": 175,
+    "Low-debt group enterprises": 174,
+    "High-debt group average R&D investment ratio (%)": 3.6595,
+    "Low-debt group average R&D investment ratio (%)": 4.2648
+  },
+  "answer": -0.61,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

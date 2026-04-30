@@ -1,0 +1,36 @@
+{
+  "id": "medium022",
+  "question": "In 2022, against the backdrop of intensive policy rollouts for the new energy vehicle industry, what was the proportion of R&D personnel to total employees in NIO's annual report? By how many percentage points did it differ from the median R&D personnel ratio among private enterprises and state-owned enterprises (including central and local state-owned enterprises) in China's automobile manufacturing industry?",
+  "guidelines": "Answer in order: NIO's R&D personnel ratio (%), the number of percentage points above the private enterprise median, and the number of percentage points above the state-owned enterprise median. Retain 2 decimal places for values. E.g. [37.46, 24.19, 22.02]. If the relevant data cannot be found, answer \"Relevant data not found\"",
+  "answer": [
+    37.46,
+    24.19,
+    22.02
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "From NIO's 2022 Annual Report PDF (20-F) employee section (Item 6.D Employees, As of December 31, 2022), extract: Total employees = 26,763; Product and software development = 10,025 (i.e., R&D personnel).",
+    "Calculate NIO's 2022 R&D personnel ratio = 10,025 / 26,763 × 100% = 37.46%.",
+    "From company_profile.csv, filter enterprises with industry \"Automobile Manufacturing\", totaling 230. Group by ownership: 161 private enterprises (149 with R&D personnel ratio data); 48 state-owned enterprises (17 central + 31 local, 43 with data).",
+    "From company_operation_status.csv, read the R&D personnel ratio field for the above enterprises and calculate the median for each group: Private enterprise median = 13.27%; State-owned enterprise median = 15.44%.",
+    "Calculate NIO's gap from each group: 37.46% - 13.27% = 24.19 percentage points above private enterprise median; 37.46% - 15.44% = 22.02 percentage points above state-owned enterprise median."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "NIO total employees (persons)": 26763,
+    "NIO R&D personnel (persons)": 10025,
+    "NIO R&D personnel ratio (%)": 37.46,
+    "Automobile manufacturing private enterprises (count)": 161,
+    "Automobile manufacturing private enterprises with data (count)": 149,
+    "Automobile manufacturing state-owned enterprises (count)": 48,
+    "Automobile manufacturing state-owned enterprises with data (count)": 43,
+    "Private enterprise R&D personnel ratio median (%)": 13.27,
+    "State-owned enterprise R&D personnel ratio median (%)": 15.44,
+    "Above private enterprise median (percentage points)": 24.19,
+    "Above state-owned enterprise median (percentage points)": 22.02
+  }
+}

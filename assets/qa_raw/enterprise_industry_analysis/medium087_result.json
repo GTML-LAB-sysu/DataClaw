@@ -1,0 +1,40 @@
+{
+  "id": "medium087",
+  "question": "Which is larger: the number of SZSE-listed central state-owned enterprises in the industry where Wuli Huida Chain Company operates, or the number of HKEX-listed foreign-funded enterprises in the Communication Transmission Equipment industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Wuli Huida Chain Company: Wholesale and Retail",
+    "Wholesale and Retail: number of SZSE-listed central state-owned enterprises = 8",
+    "Communication Transmission Equipment industry: number of HKEX-listed foreign-funded enterprises = 1"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Wuli Huida Chain Company belongs to the Wholesale and Retail industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in the Wholesale and Retail industry is 8.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed foreign-funded enterprises in the Communication Transmission Equipment industry is 1.",
+    "Compare the counts: 8 > 1, so the industry where Wuli Huida Chain Company operates is larger."
+  ],
+  "steps_num": 4,
+  "answer": "Wuli Huida Chain Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Wuli Huida Chain Company": "Wholesale and Retail",
+    "Number of SZSE-listed central state-owned enterprises in the Wholesale and Retail industry": 8,
+    "Number of HKEX-listed foreign-funded enterprises in the Communication Transmission Equipment industry": 1,
+    "Comparison result (larger one)": "Wuli Huida Chain Company"
+  },
+  "reference": [
+    {
+      "national_industry_status": "85944882-55f3-4542-bc32-331105184238"
+    },
+    {
+      "company_profile": "24d73db3-b3be-4f9d-87e8-a8f7bcd7b0f9"
+    },
+    {
+      "national_industry_status": "22fbfe9c-7c9b-4c5c-82a5-46baa3b08f2e"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "hard010",
+  "question": "A private wealth global consumption themed account wishes to incorporate the feature of 'overseas cash flow hedging domestic cycle' for China optional consumption. For candidate companies, apply the following rules: ① Overseas Hedging Quality Score = the difference between the company's net profit margin and the median net profit margin of A-share wholesale and retail industry in 2022 + 0.5 × international market revenue share; ② If the score ≥ 15, list as core holding, with active weight = min(3.00%, Overseas Hedging Quality Score ÷ 8); otherwise, only satellite holding is permitted. Based on MINISO (MNSO) FY2022 annual report and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: International market revenue share (%), the difference between net profit margin and the median net profit margin of A-share wholesale and retail industry (percentage points), Overseas Hedging Quality Score, and the most appropriate conclusion. Retain 2 decimal places for numerical values and return as an array. The conclusion must include position action and active weight. Example: [\"26.20\", \"4.79\", \"17.89\", \"Core holding, active weight 2.24%\"]. If relevant data cannot be found, respond with \"Relevant data not found\".",
+  "steps": [
+    "Search the web for MINISO's FY2022 annual report; extract Revenue of 10,085,649 and Profit for the year of 639,743, both in RMB thousand; and extract international market revenue contribution of 26.2% from segment disclosure.",
+    "International market revenue share is directly disclosed in the annual report as 26.20%. Calculate net profit margin = 639,743 ÷ 10,085,649 × 100% ≈ 6.34% (two decimal places).",
+    "From national_industry_status.csv, select the row where the industry is \"批发和零售业\" (wholesale and retail) and district is \"全国\" (national). Compute the industry-level median net profit margin as median net profit amount ÷ median revenue amount × 100% = 78,000,847 ÷ 3,970,535,358 × 100% ≈ 1.96%.",
+    "Net profit margin difference vs. the industry benchmark = 6.34% − 1.96% = 4.38 percentage points (two decimal places).",
+    "Per the problem definition, Overseas Hedging Quality Score = 4.38 + 0.5 × 26.20 = 17.48.",
+    "Because the score is ≥ 15, the position qualifies as a core holding; active weight = min(3.00%, 17.48 ÷ 8) = 2.18% (two decimal places)."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "Web search yielded MINISO FY2022 revenue, profit for the year, and international market revenue share of 10,085,649 (RMB thousand), 639,743 (RMB thousand), and 26.2% respectively.",
+    "national_industry_status.csv provides the national wholesale-and-retail sample's median net profit amount and median revenue amount used to define the industry median net profit margin."
+  ],
+  "milestone": {
+    "International market revenue share (%)": 26.2,
+    "Net profit margin (%)": 6.34,
+    "Median net profit margin of A-share wholesale and retail industry (%)": 1.96,
+    "Net profit margin difference (percentage points)": 4.38,
+    "Overseas Hedging Quality Score": 17.48,
+    "Active weight (%)": 2.18
+  },
+  "answer": [
+    26.2,
+    4.38,
+    17.48,
+    "Core holding, active weight 2.18%"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

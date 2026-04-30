@@ -1,0 +1,31 @@
+{
+  "id": "easy100",
+  "question": "Will a downturn in the Information Transmission, Software and IT Services industry directly affect the operating conditions of Zhong Ji Chang Yuan Gang Tie Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Ji Chang Yuan Gang Tie Co., Ltd. (data in this dataset) industry: Metal Products",
+    "Information Transmission, Software and IT Services and Metal Products are different industry categories"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Ji Chang Yuan Gang Tie Co., Ltd.'s industry is Metal Products",
+    "Conclude that Information Transmission, Software and IT Services and Metal Products do not belong to the same industry category",
+    "Therefore a downturn in the former is not directly equivalent to a direct impact on the company's operating conditions; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Zhong Ji Chang Yuan Gang Tie Co., Ltd. industry": "Metal Products",
+    "Comparison industry": "Information Transmission, Software and IT Services",
+    "Whether direct impact": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "3cb448ab-b13e-4078-8442-555fec5b53a3"
+    }
+  ]
+}

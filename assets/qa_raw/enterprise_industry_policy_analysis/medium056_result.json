@@ -1,0 +1,40 @@
+{
+  "id": "medium056",
+  "question": "Tong Tong Ze Hong Zheng Quan Co., Ltd.industry's local policiesGuangzhou CitypersonsNumber of policies (indicator) and China ministerial policiesNational Development and Reform CommissionNumber of policies (indicator)compared with difference how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Tong Tong Ze Hong Zheng Quan Co., Ltd.industry = Financial Industry",
+    "Financial Industrylocal policies_Guangzhou CitypersonsNumber of policies (indicator)=1",
+    "ChinaBusiness Servicesministerial policies_National Development and Reform CommissionNumber of policies (indicator)=1"
+  ],
+  "milestone": {
+    "Tong Tong Ze Hong Zheng Quan Co., Ltd.industry": "Financial Industry",
+    "Financial Industrylocal policies_Guangzhou CitypersonsNumber of policies (indicator)": 1,
+    "ChinaBusiness Servicesministerial policies_National Development and Reform CommissionNumber of policies (indicator)": 1,
+    "Difference(Guangzhou CitypersonsNumber of policies (indicator)-National Development and Reform CommissionNumber of policies (indicator))": 0.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Tong Tong Ze Hong Zheng Quan Co., Ltd.industry = Financial Industry",
+    "Extracted from policy_release_status.csv: Financial Industrylocal policies in Guangzhou CitypersonsNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaBusiness Servicesministerial policies in National Development and Reform CommissionNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "a2734b19-8347-4c63-b17b-61453aab869e"
+    },
+    {
+      "company_profile": "63debe9f-0257-4192-a552-fe35fb82a435"
+    },
+    {
+      "policy_release_status": "b11a2b60-c999-4fc9-9581-5a6601001790"
+    }
+  ]
+}

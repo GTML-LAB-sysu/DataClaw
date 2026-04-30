@@ -1,0 +1,24 @@
+{
+  "id": "medium048",
+  "question": "Between the number of policies issued by the Shandong Province Department of Industry and Information Technology in the local policies for the industry of Hua Xin Yuan Shi Xin Cai Liao Co., Ltd. and the number of policies for the Pharmaceutical Manufacturing industry in Gansu Province, which is higher?",
+  "guidelines": "The answer must be a company name or the word \"Equal\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Xin Yuan Shi Xin Cai Liao Co., Ltd.'s industry is Non-metallic Mineral Products",
+    "Extract from policy_release_status.csv that in the local policies for Non-metallic Mineral Products, the policy count issued by the Shandong Province Department of Industry and Information Technology is 1",
+    "Extract from policy_release_status.csv that in Gansu Province, the policy count for the Pharmaceutical Manufacturing industry is 1",
+    "Compare 1 and 1; if they are equal, output \"Equal\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hua Xin Yuan Shi Xin Cai Liao Co., Ltd.": "Non-metallic Mineral Products",
+    "Non-metallic Mineral Products local policies_Shandong Province Department of Industry and Information Technology policy count": 1,
+    "Gansu Province Pharmaceutical Manufacturing policy count": 1,
+    "Comparison result": "Equal"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "medium033",
+  "question": "Between the number of local policies issued by the General Office of the Guangxi Zhuang Autonomous Regional People's Government in the local policies for the industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd. and the number of local policies issued by the Guizhou Province Department of Housing and Urban-Rural Development in the local policies for the Information Transmission, Software and IT Services industry, which is greater?",
+  "guidelines": "The answer must be \"Equal\", a company name, or the word \"industry\"; output only one word or company name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.: Education",
+    "Education local policies - General Office of the Guangxi Zhuang Autonomous Regional People's Government - policy count = 1",
+    "Information Transmission, Software and IT Services local policies - Guizhou Province Department of Housing and Urban-Rural Development - policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.": "Education",
+    "Education local policies_General Office of the Guangxi Zhuang Autonomous Regional People's Government policy count": 1,
+    "Information Transmission, Software and IT Services local policies_Guizhou Province Department of Housing and Urban-Rural Development policy count": 1,
+    "Comparison result": "Equal"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.'s industry is Education",
+    "Extract from policy_release_status.csv that in the local policies for Education, the policy count issued by the General Office of the Guangxi Zhuang Autonomous Regional People's Government is 1",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services, the policy count issued by the Guizhou Province Department of Housing and Urban-Rural Development is 1",
+    "Compare 1 and 1; if they are equal, output \"Equal\""
+  ],
+  "steps_num": 4,
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "3f9efae4-8dfb-4ec7-bea9-87bba16a53d7"
+    },
+    {
+      "company_profile": "d5008c9a-7492-4ce4-b428-22e6861c68a7"
+    },
+    {
+      "policy_release_status": "5bec0ffb-41d8-4699-ad95-003164a2e21f"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium080",
+  "question": "Between the median net profit amount of Huijin Jinrui Wealth Management Company and that of the Electrical Machinery and Equipment Manufacturing industry, which is higher?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Huijin Jinrui Wealth Management Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Huijin Jinrui Wealth Management Company belongs to the financial industry.",
+    "Extract from national_industry_status.csv that the median net profit amount of the financial industry is 837989445.74 Yuan.",
+    "Extract from national_industry_status.csv that the median net profit amount of the Electrical Machinery and Equipment Manufacturing industry is 117943061.895 Yuan.",
+    "Compare the two medians: 837989445.74 Yuan > 117943061.895 Yuan, so Huijin Jinrui Wealth Management Company is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Company": "Financial industry",
+    "Median net profit amount of the financial industry (Yuan)": 837989445.74,
+    "Median net profit amount of the Electrical Machinery and Equipment Manufacturing industry (Yuan)": 117943061.895,
+    "Comparison result (higher one)": "Huijin Jinrui Wealth Management Company"
+  }
+}

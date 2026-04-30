@@ -1,0 +1,55 @@
+{
+  "id": "hard011",
+  "question": "In 2022, a think tank was commissioned to study the impact of policy intervention on R&D behavior in the communication transmission equipment industry. The research design divides all enterprises with R&D investment ratio data records into two groups: one group from provinces that have appeared in policy release information with \"Communication Transmission Equipment\" related policy entries (\"National\" level entries do not count as provinces and are not included in either group); the other group from provinces that have never appeared in the above policy entries. After grouping, calculate the arithmetic mean of R&D investment ratio for each group respectively, then compute the difference between them (policy-covered provinces mean minus non-policy-covered provinces mean). This difference reflects the association between policy coverage and R&D intensity of communication transmission equipment enterprises within the jurisdiction. What is this difference in percentage points?",
+  "guidelines": "The answer should be a numeric value with 2 decimal places. A positive number indicates policy-covered provinces are higher; a negative number indicates non-policy-covered provinces are higher. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter policy records with industry field containing \"Communication Transmission Equipment\" from policy_release_status.csv, 70 records in total. Extract unique province values and exclude \"National\" to obtain 17 policy-covered provinces: ['Anhui', 'Shandong', 'Guangdong', 'Sichuan', 'Hubei', 'Fujian', 'Jiangxi', 'Chongqing', 'Hunan', 'Yunnan', 'Guizhou', 'Henan', 'Shaanxi', 'Hainan', 'Beijing', 'Shanghai', 'Xinjiang'].",
+    "Filter enterprise records with industry=\"Communication Transmission Equipment\" from company_profile.csv, extract company name, bmCode, and province fields; 120 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract R&D investment ratio field; 120 records after merge.",
+    "Filter valid enterprises with non-null R&D investment ratio; 117 enterprises in total.",
+    "Based on the policy-covered province list from step 1, divide valid enterprises into two groups: 86 enterprises in policy-covered provinces, 31 enterprises in non-policy-covered provinces.",
+    "Calculate mean R&D investment ratio for each group: policy-covered provinces average = 14.35%, non-policy-covered provinces average = 9.45%.",
+    "Calculate difference = policy-covered average R&D ratio - non-policy-covered average R&D ratio = 14.35 - 9.45 = 4.90 percentage points."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "70 communication transmission equipment industry related policies were found in policy_release_status.csv, covering 17 provinces.",
+    "120 communication transmission equipment industry enterprises were found in company_profile.csv.",
+    "R&D investment ratio data for 120 enterprises were obtained from company_operation_status.csv; 117 valid enterprises."
+  ],
+  "milestone": {
+    "Number of communication transmission equipment policies": 70,
+    "Policy-covered provinces": [
+      "Anhui",
+      "Shandong",
+      "Guangdong",
+      "Sichuan",
+      "Hubei",
+      "Fujian",
+      "Jiangxi",
+      "Chongqing",
+      "Hunan",
+      "Yunnan",
+      "Guizhou",
+      "Henan",
+      "Shaanxi",
+      "Hainan",
+      "Beijing",
+      "Shanghai",
+      "Xinjiang"
+    ],
+    "Number of communication transmission equipment enterprises": 120,
+    "Number of valid enterprises": 117,
+    "Enterprises in policy-covered provinces": 86,
+    "Enterprises in non-policy-covered provinces": 31,
+    "Policy-covered average R&D ratio (%)": 14.35,
+    "Non-policy-covered average R&D ratio (%)": 9.45,
+    "Difference (percentage points)": 4.9
+  },
+  "answer": 4.9,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  }
+}

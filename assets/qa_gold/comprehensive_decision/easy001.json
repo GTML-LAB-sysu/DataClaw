@@ -1,0 +1,22 @@
+{
+  "id": "easy001",
+  "question": "In which province is the enterprise with the highest R&D investment ratio nationwide in 2022 located?",
+  "guidelines": "The answer must be \"yes\" or \"no\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Jiangsu Province",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all records with year=2022 from company_operation_status.csv, and extract the enterprise name and R&D investment ratio fields.",
+    "Filter enterprise records with non-null R&D investment ratio, sort by R&D investment ratio in descending order, and identify the enterprise with the highest R&D investment ratio as \"Yaoshi Shenkang Medical Equipment Company\" with an R&D investment ratio of 934642.80%.",
+    "Look up the record for enterprise name \"Yaoshi Shenkang Medical Equipment Company\" in company_profile.csv, extract the province field, and obtain the province where the enterprise is located as \"Jiangsu Province\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Enterprise with highest R&D investment ratio": "Yaoshi Shenkang Medical Equipment Company",
+    "R&D investment ratio (%)": 934642.8,
+    "Province of location": "Jiangsu Province"
+  }
+}

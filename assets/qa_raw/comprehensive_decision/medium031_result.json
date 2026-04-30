@@ -1,0 +1,30 @@
+{
+  "id": "medium031",
+  "question": "In 2022, was Haishan Changgong Equipment Company the only enterprise in its region with both increased operating revenue and R&D investment?",
+  "guidelines": "The answer must be \"yes\" or \"no\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Look up the record for enterprise name \"Haishan Changgong Equipment Company\" in company_profile.csv, extract the province field, and obtain the region where the enterprise is located as \"Shandong Province\".",
+    "Filter records with enterprise name \"Haishan Changgong Equipment Company\" and year=2022 from company_operation_status.csv, and extract the year-over-year change in operating revenue and year-over-year change in R&D investment fields.",
+    "Analyze Haishan Changgong Equipment Company's data: year-over-year change in operating revenue is -19.28% (decline), year-over-year change in R&D investment is -14.09% (decline); neither operating revenue nor R&D investment increased.",
+    "Since neither operating revenue nor R&D investment of Haishan Changgong Equipment Company increased, it cannot be the only enterprise in its region with both increased operating revenue and R&D investment. Conclusion: No."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "The region where Haishan Changgong Equipment Company is located (Shandong Province) was found in company_profile.csv.",
+    "Year-over-year change in operating revenue and R&D investment data for Haishan Changgong Equipment Company was found in company_operation_status.csv."
+  ],
+  "milestone": {
+    "Region where Haishan Changgong Equipment Company is located": "Shandong Province",
+    "Haishan Changgong Equipment Company year-over-year change in operating revenue (%)": -19.28,
+    "Haishan Changgong Equipment Company year-over-year change in R&D investment (%)": -14.09,
+    "Did operating revenue increase": "No",
+    "Did R&D investment increase": "No",
+    "Conclusion": "No"
+  },
+  "answer": "no",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

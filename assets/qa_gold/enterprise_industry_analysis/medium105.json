@@ -1,0 +1,24 @@
+{
+  "id": "medium105",
+  "question": "What is the difference between the mean number of provincial or ministerial Science and Technology Progress Awards in the province where Jinzhi Hongsheng Asset Management Company is located and the mean number of the same awards in China's Culture, Sports and Entertainment industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": 3.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Jinzhi Hongsheng Asset Management Company is located in Shanghai Municipality and belongs to the Financial industry.",
+    "Extract from regional_industry_status.csv that the mean number of provincial or ministerial Science and Technology Progress Awards in Shanghai Municipality - Financial industry is 3.",
+    "Extract from national_industry_status.csv that the mean number of provincial or ministerial Science and Technology Progress Awards in the Culture, Sports and Entertainment industry is 0.",
+    "Calculate the difference: 3 - 0 = 3.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Jinzhi Hongsheng Asset Management Company": "Shanghai Municipality",
+    "Mean number of provincial or ministerial Science and Technology Progress Awards in Shanghai Municipality - Financial industry": 3,
+    "Mean number of provincial or ministerial Science and Technology Progress Awards in Culture, Sports and Entertainment": 0,
+    "Difference": 3.0
+  }
+}

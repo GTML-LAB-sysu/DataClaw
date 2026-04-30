@@ -1,0 +1,24 @@
+{
+  "id": "medium054",
+  "question": "Hua Ying Tai Sheng Wealth Management Co., Ltd.industry's Shanghai Municipalitypersons Number of policies (indicator) and China Number of policies issued by Ministry of Educationcompared with which unitsgreater？",
+  "guidelines": "The answer must a company name or \"industry\"\"Equal\", Output onlyname, without any explanation or description.Wu, answer\"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Hua Ying Tai Sheng Wealth Management Co., Ltd.industry = Financial Industry",
+    "Extracted from policy_release_status.csv: Financial Industrylocal policies in Shanghai MunicipalitypersonsNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaFinancial Industryministerial policies in EducationNumber of policies (indicator)=1",
+    "Compare1 and 1, Equalthen output\"Equal\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Hua Ying Tai Sheng Wealth Management Co., Ltd.industry": "Financial Industry",
+    "Financial Industrylocal policies_Shanghai MunicipalitypersonsNumber of policies (indicator)": 1,
+    "ChinaFinancial Industryministerial policies_EducationNumber of policies (indicator)": 1,
+    "Comparison result": "Equal"
+  }
+}

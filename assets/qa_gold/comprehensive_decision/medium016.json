@@ -1,0 +1,22 @@
+{
+  "id": "medium016",
+  "question": "In 2022, between Sichuan Province's top enterprise by operating revenue and Shandong Province's top enterprise by net profit in the pharmaceutical manufacturing industry, which one has the highest tax payment?",
+  "guidelines": "The answer must be the company name. Output only the company name, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": "No relevant data found",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From company_profile.csv, filter all enterprise records with province=\"Sichuan Province\", extract company name and bmCode; 198 Sichuan enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by company name and bmCode, extract operating revenue; sort by operating revenue descending. Top enterprise by operating revenue: Dexi Jinjin Intelligent Electrical Company (bmCode: 451895), operating revenue 142,422,544,758.90 yuan.",
+    "From company_profile.csv, filter all enterprise records with province=\"Shandong Province\" and industry=\"Pharmaceutical Manufacturing\", extract company name and bmCode; 22 Shandong pharmaceutical manufacturing enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by company name and bmCode, extract net profit; sort by net profit descending. Top enterprise by net profit: Jianming Anyuan Medical Technology Company (bmCode: 199134), net profit 2,950,153,469.00 yuan.",
+    "Checked all fields in company_operation_status.csv, company_profile.csv, company_core.csv, etc.; no tax payment related fields found. Since the data files do not contain tax payment information, the tax payments of the two enterprises cannot be compared."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Tax payment field exists": false
+  }
+}

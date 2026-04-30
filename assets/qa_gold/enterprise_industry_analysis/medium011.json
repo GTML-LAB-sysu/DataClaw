@@ -1,0 +1,25 @@
+{
+  "id": "medium011",
+  "question": "In 2022, which is higher: the cumulative number of PCT invention patent applications of Zhong Ji Da Chang Tong Ye Co., Ltd. or the minimum value of the same indicator in the same industry in its province?",
+  "guidelines": "The answer must be \"equal\", the company name, or \"industry\". Output only one word or the company name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Ji Da Chang Tong Ye Co., Ltd. cumulative PCT invention patent applications in 2022 = 1",
+    "Extracted from company_profile.csv: the company is in Jiangsu Province and belongs to Agriculture, Forestry, Animal Husbandry and Fishery",
+    "Extracted from regional_industry_status.csv: minimum cumulative PCT invention patent applications in the provincial same industry = 1",
+    "Compared 1 and 1; they are equal, so output \"equal\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Zhong Ji Da Chang Tong Ye Co., Ltd. cumulative PCT invention patent applications in 2022": 1,
+    "Province of Zhong Ji Da Chang Tong Ye Co., Ltd.": "Jiangsu Province",
+    "Industry of Zhong Ji Da Chang Tong Ye Co., Ltd.": "Agriculture, Forestry, Animal Husbandry and Fishery",
+    "Minimum cumulative PCT invention patent applications in Jiangsu Province for Agriculture, Forestry, Animal Husbandry and Fishery": 1,
+    "Comparison result": "Equal"
+  }
+}

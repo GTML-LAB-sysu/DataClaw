@@ -1,0 +1,33 @@
+{
+  "id": "medium001",
+  "question": "What was NetEase's R&D intensity (R&D expenses as a percentage of revenue) in 2022? Compared with the median R&D intensity of listed companies in China's information transmission, software and IT services industry, how many percentage points higher or lower is it?",
+  "guidelines": "Answer both sub-questions: 1) NetEase 2022 R&D intensity (2 decimal places, %); 2) Difference from industry median (2 decimal places, percentage points; positive value means above industry median; return as an array). If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from NetEase 2022 annual report (20-F) consolidated income statement: total revenue = 96,495,809 thousand CNY, R&D expenses = 15,039,014 thousand CNY; R&D intensity = 15,039,014 / 96,495,809 × 100 = 15.59%.",
+    "Filter company_profile.csv for companies with industry=\"information transmission, software and information technology services\" (information transmission, software and IT services), 644 companies.",
+    "Obtain 2022 \"R&D intensity\" for these companies from company_operation_status.csv; after removing missing values, 606 valid records; median = 11.82%.",
+    "Calculate difference: 15.59% - 11.82% = 3.77 percentage points; NetEase R&D intensity is 3.77 percentage points above industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "NetEase 2022 annual report (SEC 20-F filing): total revenue 96,495,809 thousand CNY, R&D expenses 15,039,014 thousand CNY",
+    "company_profile.csv: 644 companies in information transmission, software and IT services industry",
+    "company_operation_status.csv: 606 records of 2022 R&D intensity for above companies, median 11.82%"
+  ],
+  "milestone": {
+    "NetEase 2022 revenue(thousand CNY)": 96495809,
+    "NetEase 2022 R&D expenses(thousand CNY)": 15039014,
+    "NetEase R&D intensity(%)": 15.59,
+    "Industry median R&D intensity(%)": 11.82,
+    "Difference(percentage points)": 3.77
+  },
+  "answer": [
+    15.59,
+    3.77
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

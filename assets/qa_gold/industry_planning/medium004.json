@@ -1,0 +1,28 @@
+{
+  "id": "medium004",
+  "question": "In 2022, in the communication transmission equipment industry, assuming that enterprises with R&D investment ratio below the national industry median will be eliminated from the market within 3 years, and only enterprises with R&D investment ratio not lower than the national median will be retained, what is the proportion for the province with the highest ratio of remaining enterprises' operating revenue after elimination to operating revenue before elimination?",
+  "guidelines": "Answer format: Value (2 decimal places, unit: %). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 100.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "Filter from national_industry_status.csv where industry=\"communication transmission equipment industry\", extract the R&D investment ratio median of 9.92 as the national benchmark.",
+    "Filter from company_profile.csv all enterprise records with industry=\"communication transmission equipment industry\", extract enterprise name, bmCode, and province fields, finding 120 enterprises.",
+    "From company_operation_status.csv, link the above enterprises by bmCode, extract operating revenue amount and R&D investment ratio fields, linking 120 enterprises.",
+    "Group by province, calculate total operating revenue amount for each province before elimination (all enterprises, including those with empty R&D investment ratio), totaling 19 provinces.",
+    "Filter enterprises with non-empty R&D investment ratio and not lower than the national median of 9.92 (enterprises with empty R&D investment ratio are deemed below median and automatically eliminated), group by province to calculate total operating revenue of remaining enterprises after elimination. 13 provinces have surviving enterprises after elimination.",
+    "For each valid province, calculate revenue retention ratio = total revenue after elimination / total revenue before elimination × 100. Anhui Province's revenue retention ratio = 2727186878.01 / 2727186878.01 × 100 = 100.00%.",
+    "Sort by revenue retention ratio in descending order. Anhui Province ranks highest with a ratio of 100.00%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "National R&D investment ratio median": 9.92,
+    "Total communication transmission equipment industry enterprises": 120,
+    "Anhui Province total revenue before elimination (yuan)": 2727186878.01,
+    "Anhui Province total revenue after elimination (yuan)": 2727186878.01,
+    "Anhui Province revenue retention ratio (%)": 100.0
+  }
+}

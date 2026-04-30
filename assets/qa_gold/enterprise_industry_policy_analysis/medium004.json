@@ -1,0 +1,26 @@
+{
+  "id": "medium004",
+  "question": "Which is larger: the number of central ministry/agency policies issued by the Ministry of Agriculture and Rural Affairs in the ministerial policies for the Financial Services industry, or the number of central ministry/agency policies issued by the National Health Commission in the ministerial policies for the Water Conservancy, Environment and Public Facilities Management industry?",
+  "guidelines": "The answer must be a company name; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Bei Kong Ze Jing Water Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hua Ying Tai Sheng Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "From policy_release_status.csv, extract that in the ministerial policies for Financial Services, the number of policies issued by the Ministry of Agriculture and Rural Affairs is 1",
+    "From company_profile.csv, extract that Bei Kong Ze Jing Water Co., Ltd.'s industry is Water Conservancy, Environment and Public Facilities Management",
+    "From policy_release_status.csv, extract that in the ministerial policies for Water Conservancy, Environment and Public Facilities Management, the number of policies issued by the National Health Commission is 2",
+    "Compare 1 and 2; 2 is larger; output \"Bei Kong Ze Jing Water Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services ministerial policies_Ministry of Agriculture and Rural Affairs number of policies": 1,
+    "Industry of Bei Kong Ze Jing Water Co., Ltd.": "Water Conservancy, Environment and Public Facilities Management",
+    "Water Conservancy, Environment and Public Facilities Management ministerial policies_National Health Commission number of policies": 2,
+    "Comparison result": "2 is larger; output Bei Kong Ze Jing Water Co., Ltd."
+  }
+}

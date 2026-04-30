@@ -1,0 +1,24 @@
+{
+  "id": "medium068",
+  "question": "What is the difference between the maximum annual number of China patent applications for the corresponding industry in the province where Aijian Yikang Fuzhongxin Company is located and the maximum annual number of China patent applications for the pharmaceutical manufacturing industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": -329.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Aijian Yikang Fuzhongxin Company is located in Beijing Municipality and its corresponding industry is Health and Social Work.",
+    "Extract from regional_industry_status.csv that the maximum annual number of China patent applications in Beijing Municipality - Health and Social Work is 0.",
+    "Extract from national_industry_status.csv that the maximum annual number of China patent applications in the pharmaceutical manufacturing industry is 329.",
+    "Calculate the difference: 0 - 329 = -329.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Province of Aijian Yikang Fuzhongxin Company": "Beijing Municipality",
+    "Maximum annual number of China patent applications in Beijing Municipality - Health and Social Work": 0,
+    "Maximum annual number of China patent applications in the pharmaceutical manufacturing industry": 329,
+    "Difference": -329.0
+  }
+}

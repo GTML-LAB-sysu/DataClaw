@@ -1,0 +1,24 @@
+{
+  "id": "medium099",
+  "question": "Yi Hai Chang Jin Shang Wu Co., Ltd.industry's Number of SZSE-listed enterprises and China ConglomeratesindustryPrivate enterpriseShenzhen Stock Exchange countcompared with which unitsgreater？",
+  "guidelines": "The answer must a company name or \"industry\", Output onlyname, without any explanation or description.Wu, answer\"No relevant data found\".",
+  "answer": "Yi Hai Chang Jin Shang Wu Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Yi Hai Chang Jin Shang Wu Co., Ltd.industry = Business Services",
+    "national_industry_status.csv in extractBusiness Services Number of SZSE-listed enterprises= 44",
+    "national_industry_status.csv in extractConglomeratesindustry Private enterprise_Number of SZSE-listed enterprises= 4",
+    "Comparecount：44 > 4, Yi Hai Chang Jin Shang Wu Co., Ltd.higher"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Yi Hai Chang Jin Shang Wu Co., Ltd.industry": "Business Services",
+    "Business Services Number of SZSE-listed enterprises": 44,
+    "Conglomerates Private enterprise_Number of SZSE-listed enterprises": 4,
+    "（greater）": "Yi Hai Chang Jin Shang Wu Co., Ltd."
+  }
+}

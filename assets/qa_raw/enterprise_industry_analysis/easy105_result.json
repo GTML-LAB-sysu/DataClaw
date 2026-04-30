@@ -1,0 +1,31 @@
+{
+  "id": "easy105",
+  "question": "Does Hang Fa Yuan Jin Hang Kong Technology Co., Ltd. belong to Education?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hang Fa Yuan Jin Hang Kong Technology Co., Ltd. (data in this dataset) industry: Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "Education and Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing are different industry categories"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hang Fa Yuan Jin Hang Kong Technology Co., Ltd.'s industry is Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "Compare with the industry named in the question, \"Education\"; the two are not the same",
+    "Therefore the company does not belong to education; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Hang Fa Yuan Jin Hang Kong Technology Co., Ltd. industry": "Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "Comparison industry": "Education",
+    "Whether belongs to this industry": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "0faeadd3-eaa1-4e7a-b038-fed69e679c62"
+    }
+  ]
+}

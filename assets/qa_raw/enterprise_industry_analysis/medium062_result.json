@@ -1,0 +1,46 @@
+{
+  "id": "medium062",
+  "question": "Rui Xing Jian Kang Zhi Yao Co., Ltd.industry in its province R&D headcount YoY change (minimum) and Wu Li Hui Da Chain Co., Ltd.industry in its province R&D headcount YoY change (minimum)compared with difference how much？",
+  "guidelines": "The answer must units, .Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Rui Xing Jian Kang Zhi Yao Co., Ltd.province：Hong Kong SAR",
+    "Hong Kong SAR-：R&D headcount YoY change (minimum) -33.3 %",
+    "Wu Li Hui Da Chain Co., Ltd.province：Zhejiang Province",
+    "Zhejiang Province-Retail：R&D headcount YoY change (minimum) -14.11 %"
+  ],
+  "steps": [
+    "Extracted from company_profile.csv: Rui Xing Jian Kang Zhi Yao Co., Ltd.province = Hong Kong SAR, industry=",
+    "regional_industry_status.csv in extractHong Kong SAR- R&D headcount YoY change (minimum)= -33.3 %",
+    "Extracted from company_profile.csv: Wu Li Hui Da Chain Co., Ltd.province = Zhejiang Province, industry=Retail",
+    "regional_industry_status.csv in extractZhejiang Province-Retail R&D headcount YoY change (minimum)= -14.11 %",
+    "Calculate difference: -33.3 - (-14.11) = -19.19"
+  ],
+  "steps_num": 5,
+  "answer": -19.19,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Rui Xing Jian Kang Zhi Yao Co., Ltd.province": "Hong Kong SAR",
+    "Hong Kong SAR  R&D headcount YoY change (minimum)": -33.3,
+    "Wu Li Hui Da Chain Co., Ltd.province": "Zhejiang Province",
+    "Zhejiang Province Retail R&D headcount YoY change (minimum)": -14.11,
+    "difference": -19.19
+  },
+  "reference": [
+    {
+      "regional_industry_status": "481cddd5-7d34-4acc-ae6b-1a8e7de7444b"
+    },
+    {
+      "company_profile": "4c3a2a9c-278d-458c-8242-de58a40d50a1"
+    },
+    {
+      "regional_industry_status": "121a55c3-2823-410f-b764-12733c5e8754"
+    },
+    {
+      "company_profile": "24d73db3-b3be-4f9d-87e8-a8f7bcd7b0f9"
+    }
+  ]
+}

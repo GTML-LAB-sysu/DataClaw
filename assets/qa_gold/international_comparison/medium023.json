@@ -1,0 +1,32 @@
+{
+  "id": "medium023",
+  "question": "Against the backdrop of the state promoting high-quality development of the digital economy and platform economy, what were JD.com's total revenue and total number of employees disclosed in its 2022 annual report? What is the per capita revenue in 10,000 yuan calculated therefrom? Among industries with no fewer than 30 domestic enterprises (excluding financial, real estate and diversified industries), how many times is JD.com's per capita revenue compared to the industry with the highest median per capita revenue?",
+  "guidelines": "Please answer in order: (1) JD.com's 2022 total revenue (100 million yuan, 2 decimal places); (2) JD.com's 2022 total employees (persons); (3) JD.com's per capita revenue (10,000 yuan, 2 decimal places); (4) The ratio of JD.com's per capita revenue to the industry with highest median per capita revenue (2 decimal places). Return as an array. If the relevant data cannot be found, answer \"Relevant data not found\".",
+  "answer": [
+    10462.36,
+    450679,
+    232.15,
+    0.69
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "From JD.com's 2022 Annual Report (20-F) PDF, extract financial data: Total net revenues RMB 1,046,236 million (i.e., 1046.236 billion yuan), total employees 450,679 (as of December 31, 2022).",
+    "Calculate JD.com's per capita revenue: 1046.236 billion yuan / 450,679 employees = 232.15 ten thousand yuan per person.",
+    "From company_profile.csv obtain industry classification for each enterprise, merge with company_operation_status.csv, calculate per capita revenue for each enterprise (operating revenue / total employees / 10000, unit: 10,000 yuan). Exclude financial, real estate, and diversified industries; filter industries with enterprise count >= 30.",
+    "For the 36 qualifying industries, rank by median per capita revenue in descending order; confirm the highest industry is metal smelting and rolling, median 335.86 ten thousand yuan (145 enterprises).",
+    "Calculate the ratio of JD.com's per capita revenue to this industry's median: 232.15 / 335.86 = 0.69."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "JD.com 2022 total revenue (100 million yuan)": 10462.36,
+    "JD.com 2022 total employees (persons)": 450679,
+    "JD.com per capita revenue (10,000 yuan)": 232.15,
+    "Qualifying industries count": 36,
+    "Metal smelting and rolling median per capita revenue (10,000 yuan)": 335.86,
+    "Ratio of JD.com per capita revenue to industry median": 0.69
+  }
+}

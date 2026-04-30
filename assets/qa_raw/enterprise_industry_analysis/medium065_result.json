@@ -1,0 +1,40 @@
+{
+  "id": "medium065",
+  "question": "Between the number of Shanghai Stock Exchange-listed private enterprises in the corresponding industry of the province where Beikong Zejing Water Company is located and the number of Beijing Stock Exchange-listed enterprises in the Information Transmission, Software and IT Services industry, which is larger?",
+  "guidelines": "The answer must be either \"the number of SSE-listed private enterprises in the corresponding industry of the province where Beikong Zejing Water Company is located\" or \"the number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Beikong Zejing Water Company: Guangdong Province",
+    "Guangdong Province – Water Conservancy, Environment and Public Facilities Management: number of SSE-listed private enterprises = 1",
+    "Information Transmission, Software and IT Services: number of BSE-listed enterprises = 17"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Beikong Zejing Water Company is located in Guangdong Province and its corresponding industry is Water Conservancy, Environment and Public Facilities Management.",
+    "Extract from regional_industry_status.csv that the number of SSE-listed private enterprises in Guangdong Province – Water Conservancy, Environment and Public Facilities Management is 1.",
+    "Extract from national_industry_status.csv that the number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry is 17.",
+    "Compare the counts: 17 > 1, so the number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Beikong Zejing Water Company": "Guangdong Province",
+    "Number of SSE-listed private enterprises in Guangdong Province – Water Conservancy, Environment and Public Facilities Management": 1,
+    "Number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry": 17,
+    "Comparison result (larger one)": "the number of BSE-listed enterprises in the Information Transmission, Software and IT Services industry"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "0e750378-8b90-47a3-8828-1b5f5ea324da"
+    },
+    {
+      "company_profile": "b32ab5eb-bfc5-4320-8527-8c31fd09ac36"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    }
+  ]
+}

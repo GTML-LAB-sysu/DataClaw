@@ -1,0 +1,24 @@
+{
+  "id": "medium060",
+  "question": "Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.province Number of policies (indicator) and China  in Guangdong ProvinceNumber of policies (indicator)compared with which unitsgreater？",
+  "guidelines": "The answer must a company name or \"industry\", Output onlyname, without any explanation or description.Wu, answer\"No relevant data found\".",
+  "answer": "Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.province = Shanghai Municipality and industry = ",
+    "policy_release_status.csv in by province=Shanghai Municipality、industry=extractNumber of policies (indicator)=11",
+    "Extracted from policy_release_status.csv: ChinaSemiconductor Industrylocal policies in  in Guangdong ProvinceNumber of policies (indicator)=1",
+    "Compare11 and 1, 11greater, output\"Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Jian Fan Ning Ze Yang Lao Fu Wu Co., Ltd.province": "Shanghai Municipality",
+    "Shanghai MunicipalityNumber of policies (indicator)": 11,
+    "ChinaSemiconductor Industrylocal policies_ in Guangdong ProvinceNumber of policies (indicator)": 1,
+    "Comparison result": "11greater，outputJian Fan Ning Ze Yang Lao Fu Wu Co., Ltd."
+  }
+}

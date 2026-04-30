@@ -1,0 +1,36 @@
+{
+  "id": "medium007",
+  "question": "In the 2022 data for the chemical raw materials and chemical products manufacturing industry, first identify the enterprise with the largest total assets in the entire industry and determine its registration province; then take that province as the research object, and use the four-indicator equal-weight scoring method (each indicator score = (N - inter-provincial ranking) / (N - 1) × 100) to compare two industrial strategy routes: the \"R&D-driven route\" comprehensively evaluates four indicators: total private enterprise R&D investment, total state-owned enterprise R&D investment (central state-owned + local state-owned + other state-owned enterprises + state-owned enterprises (research institutes)), regional R&D intensity (mean R&D investment ratio), and count of relevant R&D policies (policy name contains \"R&D\", \"innovation\", or \"technology/science\"); the \"scale expansion route\" comprehensively evaluates four indicators: total assets, total operating revenue, total number of enterprises, and total government subsidies. Which route has the higher comprehensive score for that province?",
+  "guidelines": "Answer format: \"R&D-driven route\" or \"Scale expansion route\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Scale expansion route",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "Filter from company_profile.csv enterprises with industry=\"chemical raw materials and chemical products manufacturing industry\", extract enterprise name, bmCode, province, and ownership fields, finding 364 enterprises.",
+    "From company_operation_status.csv, link enterprises by bmCode and restrict year=2022, extract the total assets field, filter out empty values and sort in descending order. The enterprise with the highest total assets is Hengyi Changhua Fine Chemical Company (total assets 200843104094.19 yuan), located in Shandong Province.",
+    "From company_operation_status.csv, extract the R&D investment amount field for enterprises in this industry, filter out empty values, then aggregate by province and ownership; Shandong Province private enterprise total R&D investment is 6239314301.75 yuan, and state-owned enterprises (central state-owned + local state-owned + other state-owned enterprises + state-owned enterprises (research institutes)) total R&D investment is 6670389432.99 yuan.",
+    "Filter from regional_industry_status.csv where industry=\"chemical raw materials and chemical products manufacturing industry\" and province is non-empty and not \"national aggregate\", yielding 34 province rows; extract mean R&D investment ratio, total assets, total operating revenue, enterprise count, and total government reward and subsidy per province. For each of the eight indicators, ranking uses only provinces with non-missing values for that field; effective province count N is computed separately per indicator (e.g. R&D intensity N=16, enterprise count N=34).",
+    "Filter from policy_release_status.csv records whose policy name contains \"R&D\" or \"innovation\" or \"technology/science\" and whose province is non-empty and not \"national aggregate\", group by province to count; Shandong has 7 records (93 policy records in the full database satisfying this rule).",
+    "Rank each of the eight indicators in descending order by value (ties share the same rank and subsequent ranks skip accordingly), and compute Shandong's score per indicator = (N - rank) / (N - 1) × 100 (if N < 2, that indicator score is 100). Private R&D score = 96.30, state-owned R&D score = 100.00, R&D intensity score = 40.00, policy count score = 91.67, total assets score = 100.00, operating revenue score = 100.00, enterprise count score = 93.94, total subsidy score = 93.33.",
+    "R&D-driven score = (96.30 + 100.00 + 40.00 + 91.67) × 0.25 = 81.99; scale expansion score = (100.00 + 100.00 + 93.94 + 93.33) × 0.25 = 96.82.",
+    "R&D-driven score 81.99 < scale expansion score 96.82, therefore the scale expansion route has the higher score."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "Enterprise with highest total assets": "Hengyi Changhua Fine Chemical Company",
+    "Target province": "Shandong Province",
+    "Private R&D investment score": 96.3,
+    "State-owned R&D investment score": 100.0,
+    "R&D intensity score": 40.0,
+    "R&D policy score": 91.67,
+    "Total assets score": 100.0,
+    "Operating revenue score": 100.0,
+    "Enterprise count score": 93.94,
+    "Total subsidy score": 93.33,
+    "R&D-driven route score": 81.99,
+    "Scale expansion route score": 96.82
+  }
+}

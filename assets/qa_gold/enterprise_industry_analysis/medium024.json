@@ -1,0 +1,26 @@
+{
+  "id": "medium024",
+  "question": "What is the difference between the minimum value of provincial enterprise technology innovation awards in the industry of Aijian Yikang Fuzhongxin Co., Ltd. and that in the industry of Zhongke Zhiyun Data Services Co., Ltd.?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Aijian Yikang Fuzhongxin Co., Ltd. is Health and Social Work.",
+    "Extracted from national_industry_status.csv that the minimum value of provincial enterprise technology innovation awards in Health and Social Work is 0.",
+    "Extracted from company_profile.csv that the industry of Zhongke Zhiyun Data Services Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the minimum value of provincial enterprise technology innovation awards in Information Transmission, Software and Information Technology Services is 0.",
+    "Calculated the difference: 0 - 0 = 0.0."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Aijian Yikang Fuzhongxin Co., Ltd.": "Health and Social Work",
+    "Minimum value of provincial enterprise technology innovation awards in Health and Social Work": 0,
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Minimum value of provincial enterprise technology innovation awards in Information Transmission, Software and Information Technology Services": 0,
+    "Difference": 0.0
+  }
+}

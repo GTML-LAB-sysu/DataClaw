@@ -1,0 +1,35 @@
+{
+  "id": "medium005",
+  "question": "ZTO Express is a profit leader in China's express delivery industry. Based on ZTO Express 2022 annual report, answer in order: (1) ZTO Express 2022 net profit per employee (net profit ÷ total employees, unit: ten thousand CNY); (2) Median net profit per employee of listed companies in China's transport, storage and postal services industry (ten thousand CNY); (3) How many times the industry median is ZTO Express net profit per employee?",
+  "guidelines": "Answer the three sub-questions in order; values rounded to 2 decimal places, e.g. [26.76, 13.26, 2.02]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from ZTO Express 2022 20-F annual report PDF: 2022 consolidated net profit (Net income) = RMB 6,658,966 thousand (approx. 6.659 billion), total employees (Employees) = 24,888.",
+    "Calculate ZTO net profit per employee: 6,658,966,000 CNY / 24,888 persons / 10,000 = 26.76 ten thousand CNY per person.",
+    "Filter company_profile.csv for industry=='transport, storage and postal services' (transport, storage and postal services), 176 companies. Obtain net profit and total employees for these 176 from company_operation_status.csv; after excluding missing values, 174 valid. Net profit per employee = net profit / total employees / 10000; median = 13.26 ten thousand CNY.",
+    "Calculate multiple: 26.76 / 13.26 = 2.02x. ZTO Express net profit per employee is about 2 times the domestic transport, storage and postal services industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "ZTO Express 2022 20-F annual report, including 2022 consolidated net profit RMB 6,658,966 thousand, total employees 24,888.",
+    "company_profile.csv: 176 companies in transport, storage and postal services industry.",
+    "company_operation_status.csv: net profit and employee data for 174 companies; median net profit per employee computed."
+  ],
+  "milestone": {
+    "ZTO Express 2022 net profit(RMB thousand)": 6658966,
+    "ZTO Express 2022 total employees": 24888,
+    "ZTO Express net profit per employee(ten thousand CNY)": 26.76,
+    "Transport storage postal industry valid company count": 174,
+    "Industry median net profit per employee(ten thousand CNY)": 13.26,
+    "ZTO vs industry median multiple": 2.02
+  },
+  "answer": [
+    26.76,
+    13.26,
+    2.02
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

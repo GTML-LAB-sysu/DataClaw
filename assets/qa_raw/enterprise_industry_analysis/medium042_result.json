@@ -1,0 +1,46 @@
+{
+  "id": "medium042",
+  "question": "Comparing the minimum cumulative citation count of core patents in the industry of Huijin Jinrui Wealth Management Co., Ltd. with the same indicator in the corresponding industry of the province where the company is located, which value is larger?",
+  "guidelines": "The answer must be either \"minimum cumulative citation count of core patents in the industry of Huijin Jinrui Wealth Management Co., Ltd.\" or \"the same indicator in the corresponding industry of the province where the company is located\". Output only the province or region name without any explanation, analysis, or descriptive text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.: Financial Industry",
+    "Minimum cumulative citation count of core patents in Financial Industry: 0",
+    "Province where Huijin Jinrui Wealth Management Co., Ltd. is located: Guangdong Province",
+    "Minimum cumulative citation count of core patents in Guangdong Financial Industry: 0"
+  ],
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.": "Financial Industry",
+    "Minimum cumulative citation count of core patents in Financial Industry": 0,
+    "Province where Huijin Jinrui Wealth Management Co., Ltd. is located": "Guangdong Province",
+    "Minimum cumulative citation count of core patents in Guangdong Financial Industry": 0,
+    "Comparison conclusion": "Equal"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Huijin Jinrui Wealth Management Co., Ltd. is Financial Industry.",
+    "Extracted from national_industry_status.csv that the minimum cumulative citation count of core patents in Financial Industry is 0.",
+    "Extracted from company_profile.csv that the province where Huijin Jinrui Wealth Management Co., Ltd. is located is Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the minimum cumulative citation count of core patents in Guangdong Financial Industry is 0.",
+    "Both values are 0, so neither side is larger; output \"Equal\"."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "5dc0d9db-af52-48e2-8eef-98a66f67632f"
+    },
+    {
+      "company_profile": "f3c336ac-af8f-4c74-aed7-cc746cbb5826"
+    },
+    {
+      "regional_industry_status": "69c8be8c-6e7d-4ef2-b1ba-f721802f73cb"
+    },
+    {
+      "company_profile": "f3c336ac-af8f-4c74-aed7-cc746cbb5826"
+    }
+  ]
+}

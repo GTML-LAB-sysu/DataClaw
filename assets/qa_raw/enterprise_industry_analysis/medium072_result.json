@@ -1,0 +1,40 @@
+{
+  "id": "medium072",
+  "question": "Which value is larger: the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located, or the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located\" or \"the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Biyuan Chanjin Real Estate Company: Tianjin Municipality",
+    "Tianjin Municipality - Real Estate: total number of enterprises = 7",
+    "Transportation, Storage and Postal Services: number of SZSE-listed central state-owned enterprises = 5"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Biyuan Chanjin Real Estate Company is located in Tianjin Municipality and its corresponding industry is Real Estate.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Tianjin Municipality - Real Estate is 7.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry is 5.",
+    "Compare the values: 7 > 5, so the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Biyuan Chanjin Real Estate Company": "Tianjin Municipality",
+    "Total number of enterprises in Tianjin Municipality - Real Estate": 7,
+    "Number of SZSE-listed central state-owned enterprises in the Transportation, Storage and Postal Services industry": 5,
+    "Comparison result (larger one)": "the total number of real estate enterprises in the province where Biyuan Chanjin Real Estate Company is located"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "f570645f-cb9b-4537-bbc4-39cfb7471a8c"
+    },
+    {
+      "company_profile": "7569b54a-60ea-4334-be2d-085b96a7730b"
+    },
+    {
+      "national_industry_status": "c5e98e13-e208-406f-aa43-9e029e2c4de6"
+    }
+  ]
+}

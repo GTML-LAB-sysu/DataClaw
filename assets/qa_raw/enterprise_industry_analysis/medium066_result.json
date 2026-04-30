@@ -1,0 +1,40 @@
+{
+  "id": "medium066",
+  "question": "Which is larger: the total assets of the corresponding industry in the province where Beikong Zejing Water Company is located, or the total assets of the Information Transmission, Software and IT Services industry?",
+  "guidelines": "The answer must be either \"the total assets of the corresponding industry in the province where Beikong Zejing Water Company is located\" or \"the Information Transmission, Software and IT Services industry\". Output only the name, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Beikong Zejing Water Company: Guangdong Province",
+    "Guangdong Province – Water Conservancy, Environment and Public Facilities Management: total assets = 194502203663.44 Yuan",
+    "Information Transmission, Software and IT Services: total assets = 18848109950318 Yuan"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Beikong Zejing Water Company is located in Guangdong Province and its corresponding industry is Water Conservancy, Environment and Public Facilities Management.",
+    "Extract from regional_industry_status.csv that the total assets of Water Conservancy, Environment and Public Facilities Management in Guangdong Province are 194502203663.44 Yuan.",
+    "Extract from national_industry_status.csv that the total assets of the Information Transmission, Software and IT Services industry are 18848109950318 Yuan.",
+    "Compare the total assets: 18848109950318 > 194502203663.44, so the Information Transmission, Software and IT Services industry is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the Information Transmission, Software and IT Services industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Beikong Zejing Water Company": "Guangdong Province",
+    "Total assets of Water Conservancy, Environment and Public Facilities Management in Guangdong Province (Yuan)": 194502203663.44,
+    "Total assets of the Information Transmission, Software and IT Services industry (Yuan)": 18848109950318,
+    "Comparison result (larger one)": "the Information Transmission, Software and IT Services industry"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "0e750378-8b90-47a3-8828-1b5f5ea324da"
+    },
+    {
+      "company_profile": "b32ab5eb-bfc5-4320-8527-8c31fd09ac36"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "medium064",
+  "question": "Between the median R&D expenditure ratio of the corresponding industry in the province where Baoxin Huihui Network Company is located and that of the metal smelting and rolling processing industry, which is higher?",
+  "guidelines": "The answer must be either a company name or the word \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Baoxin Huihui Network Company: Beijing Municipality",
+    "Beijing Municipality – Information Transmission, Software and IT Services: median R&D expenditure ratio 12.16 %",
+    "Metal smelting and rolling processing industry: median R&D expenditure ratio 3.03 %"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Baoxin Huihui Network Company is located in Beijing Municipality and its corresponding industry is Information Transmission, Software and IT Services.",
+    "Extract from regional_industry_status.csv that the median R&D expenditure ratio for Information Transmission, Software and IT Services in Beijing Municipality is 12.16 %.",
+    "Extract from national_industry_status.csv that the median R&D expenditure ratio for the metal smelting and rolling processing industry is 3.03 %.",
+    "Compare the two medians: 12.16 % > 3.03 %, so the corresponding industry in the province where Baoxin Huihui Network Company is located is higher."
+  ],
+  "steps_num": 4,
+  "answer": "Baoxin Huihui Network Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Baoxin Huihui Network Company": "Beijing Municipality",
+    "Median R&D expenditure ratio for Information Transmission, Software and IT Services in Beijing Municipality": 12.16,
+    "Median R&D expenditure ratio for the metal smelting and rolling processing industry": 3.03,
+    "Comparison result (higher one)": "Baoxin Huihui Network Company"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "e7d170ae-b276-465b-b737-971c81e11168"
+    },
+    {
+      "company_profile": "fe635f7d-bee1-4e2e-9ed6-3923871590d0"
+    },
+    {
+      "national_industry_status": "e12e3329-0ab1-4bf1-b19d-0a5c9610b5ce"
+    }
+  ]
+}

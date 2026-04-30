@@ -1,0 +1,43 @@
+{
+  "id": "medium029",
+  "question": "Total number of all enterprises affected by the policy 'Notice of the General Office of Guangdong Provincial People's Government on Printing and Distributing Several Measures of Guangdong Province for Further Promoting Steady Growth of Industrial Economy' in 2022",
+  "guidelines": "The answer must be \"yes\" or \"no\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 416,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Search policy_resource.csv for policy records whose policy name contains \"Guangdong Province's Promotion of Steady Industrial Economic Growth\" and \"Guangdong Province\" to identify the policy.",
+    "Extract the industries involved from the industry field of the policy record, obtaining 8 industries: Consumer Electronics and Electrical Equipment, Automobile Manufacturing, Textile and Footwear, Special Purpose Equipment Manufacturing, General Purpose Equipment Manufacturing, Communication Transmission Equipment, Semiconductor, and Other Manufacturing.",
+    "Filter all enterprise records with province=\"Guangdong Province\" from company_profile.csv, and extract the province and industry fields.",
+    "Count the number of enterprises in each involved industry in Guangdong Province: Consumer Electronics and Electrical Equipment 150, Automobile Manufacturing 27, Textile and Footwear 33, Special Purpose Equipment Manufacturing 80, General Purpose Equipment Manufacturing 20, Communication Transmission Equipment 38, Semiconductor 54, Other Manufacturing 14.",
+    "Calculate the total number of enterprises across all involved industries: 150+27+33+80+20+38+54+14=416."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Number of industries involved in the policy": 8,
+    "Involved industries": [
+      "Consumer Electronics and Electrical Equipment",
+      "Automobile Manufacturing",
+      "Textile and Footwear",
+      "Special Purpose Equipment Manufacturing",
+      "General Purpose Equipment Manufacturing",
+      "Communication Transmission Equipment",
+      "Semiconductor",
+      "Other Manufacturing"
+    ],
+    "Enterprise count per industry": {
+      "Consumer Electronics and Electrical Equipment": 150,
+      "Automobile Manufacturing": 27,
+      "Textile and Footwear": 33,
+      "Special Purpose Equipment Manufacturing": 80,
+      "General Purpose Equipment Manufacturing": 20,
+      "Communication Transmission Equipment": 38,
+      "Semiconductor": 54,
+      "Other Manufacturing": 14
+    },
+    "Total number of enterprises": 416
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "hard013",
+  "question": "In 2022 regional data for the general purpose equipment manufacturing industry, for the province with the highest total government reward and subsidy funds: comprehensively rate its industrial competitiveness along two strategic dimensions. \"Industrial Upgrading Capacity\" combines the province's average rank across three sub-indicators (R&D investment growth rate, year-on-year change in Chinese patent applications, R&D personnel share); \"Industrial Base\" combines the province's average rank across three sub-indicators (total enterprises, total operating revenue, subsidy efficiency = total operating revenue / total government subsidies). The overall comprehensive performance rank is the average of the two dimension ranks. Answer only: Can this province's comprehensive industrial performance rank among the top 5 nationally?",
+  "guidelines": "Answer format: \"Yes\" or \"No\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From regional_industry_status.csv, filter industry=\"General Purpose Equipment Manufacturing\", extract province and total government reward and subsidy funds fields; after filtering nulls, 16 provinces.",
+    "Sort by total subsidies in descending order; the province with the highest total government subsidies is Shanghai (2466523519.29 yuan).",
+    "From the same table, extract per-province mean year-on-year R&D investment change, mean R&D personnel share, total enterprises, total operating revenue amount, and total annual Chinese patent applications fields.",
+    "Compute per-province subsidy efficiency = total operating revenue amount / total government reward and subsidy funds (filter out zero denominator); 14 valid provinces.",
+    "Rank all provinces in descending order for each of the six indicators (R&D growth rate, annual patent applications, R&D personnel share, enterprise scale, revenue scale, subsidy efficiency); compute each province's rank on the six indicators.",
+    "Compute industrial upgrading capacity rank = (R&D growth rank + patent application rank + talent share rank) / 3; Shanghai's industrial upgrading capacity rank = 8.67.",
+    "Compute industrial base rank = (enterprise scale rank + revenue scale rank + subsidy efficiency rank) / 3; Shanghai's industrial base rank = 4.33.",
+    "Comprehensive performance rank = (industrial upgrading rank + industrial base rank) / 2; Shanghai's comprehensive performance rank value = 6.50.",
+    "Sort all provinces by comprehensive performance rank in ascending order; Shanghai's comprehensive rank is 6th, > 5; output \"No\"."
+  ],
+  "steps_num": 9,
+  "evidence": [
+    "Found government subsidy data for 16 provinces in general purpose equipment manufacturing from regional_industry_status.csv.",
+    "Found complete statistics for 14 provinces in general purpose equipment manufacturing from regional_industry_status.csv (subsidy efficiency computable)."
+  ],
+  "milestone": {
+    "Province with highest government subsidies": "Shanghai",
+    "Shanghai total government subsidies (yuan)": 2466523519.29,
+    "Shanghai industrial upgrading capacity rank": 8.67,
+    "Shanghai industrial base rank": 4.33,
+    "Shanghai comprehensive performance rank value": 6.5,
+    "Shanghai comprehensive rank": 6
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  }
+}

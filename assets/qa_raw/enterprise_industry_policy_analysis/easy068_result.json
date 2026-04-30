@@ -1,0 +1,34 @@
+{
+  "id": "easy068",
+  "question": "大花表仪医疗科技公司所在行业是否会受到“合肥市促进“两强一增”行动若干政策”的影响？",
+  "guidelines": "答案必须是\"是\"或\"否\"，仅输出一个字，不要添加任何解释或说明。如果无法找到相关数据，请回答\"未查询到相关数据\"。",
+  "evidence": [
+    "大花表仪医疗科技公司所在省份为四川省",
+    "政策《合肥市促进“两强一增”行动若干政策》适用区域为合肥市"
+  ],
+  "milestone": {
+    "大花表仪医疗科技公司所在省份": "四川省",
+    "政策适用区域": "合肥市",
+    "是否适用": "否"
+  },
+  "steps": [
+    "从company_profile.csv中抽取大花表仪医疗科技公司所在省份为四川省",
+    "从policy_resource.csv中抽取政策《合肥市促进“两强一增”行动若干政策》的适用区域为合肥市",
+    "判断企业所在省份是否在政策适用区域内，不在则输出「否」"
+  ],
+  "steps_num": 3,
+  "answer": "否",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "company_profile": "2b695e04-ab4e-4b46-ab33-61011693d5b1"
+    },
+    {
+      "policy_resource": "85b2dea8-e5f8-433b-b361-ec609e9156b7"
+    }
+  ]
+}

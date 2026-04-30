@@ -1,0 +1,65 @@
+{
+  "id": "medium015",
+  "question": "List the 2022 indicators for which Shandong Province's financial industry enterprise averages are below the national financial industry medians.",
+  "guidelines": "The answer must list all qualifying indicator names, separated by semicolons. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": [
+    "Year-on-year R&D personnel growth rate",
+    "Year-on-year operating profit growth rate",
+    "Year-on-year net profit growth rate",
+    "Year-on-year employee growth rate",
+    "Capitalized R&D expenditure",
+    "Year-on-year capitalized R&D expenditure growth rate",
+    "Annual PCT patent applications",
+    "Annual PCT invention patent applications",
+    "Provincial/ministerial science and technology progress award",
+    "Participation in drafting national standards",
+    "Participation in drafting industry standards",
+    "Annual Chinese patent applications",
+    "Annual Chinese invention patent applications",
+    "Annual Chinese patent grants",
+    "Cumulative Chinese invention patent applications",
+    "Annual Chinese invention patent grants",
+    "Cumulative PCT patent applications",
+    "Cumulative PCT invention patent applications",
+    "Cumulative Chinese patent applications",
+    "Cumulative Chinese invention patent grants",
+    "Cumulative patent citations",
+    "R&D personnel ratio",
+    "R&D personnel count",
+    "Year-on-year R&D expenditure growth rate",
+    "Cumulative Chinese invention patent lapses",
+    "Company market value",
+    "Asset-liability ratio",
+    "Total employee count"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"Financial Industry\" and province=\"Shandong Province\", extract total enterprise count; 12 Shandong financial industry enterprises found.",
+    "From national_industry_status.csv, filter records with industry=\"Financial Industry\" and district=\"National\", extract total enterprise count; 297 national financial industry enterprises found.",
+    "From regional_industry_status.csv, extract all indicator averages for Shandong financial industry enterprises, including average total assets, average net profit, average total employee count, average operating revenue, average asset-liability ratio, average R&D expenditure, etc.",
+    "From national_industry_status.csv, extract all indicator medians for national financial industry enterprises, including median total assets, median net profit, median total employee count, median operating revenue, median asset-liability ratio, median R&D expenditure, etc.",
+    "Compare each Shandong financial industry indicator average with the corresponding national financial industry median; exclude indicators such as enterprise count and totals that are not suitable for comparison. Filter indicators where Shandong average is below national median; 28 indicators found, mainly including year-on-year R&D personnel growth rate, year-on-year operating profit growth rate, year-on-year net profit growth rate, annual Chinese patent applications, cumulative Chinese patent applications, R&D personnel count, R&D personnel ratio, etc. Final result: Shandong Province financial industry enterprises have 28 indicators with averages below the national financial industry medians."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Shandong Province financial industry enterprise count": 12,
+    "National financial industry enterprise count": 297,
+    "Indicator count below national median": 28,
+    "Main indicator list": [
+      "Year-on-year R&D personnel growth rate",
+      "Year-on-year operating profit growth rate",
+      "Year-on-year net profit growth rate",
+      "Year-on-year employee growth rate",
+      "Capitalized R&D expenditure",
+      "Year-on-year capitalized R&D expenditure growth rate",
+      "Annual PCT patent applications",
+      "Annual PCT invention patent applications",
+      "Provincial/ministerial science and technology progress award",
+      "Participation in drafting national standards"
+    ]
+  }
+}

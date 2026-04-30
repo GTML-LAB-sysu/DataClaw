@@ -1,0 +1,22 @@
+{
+  "id": "easy101",
+  "question": "Does the non-metallic mineral products industry include Lang Ji Lian Chuang Xin Xi Ji Shu Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Lang Ji Lian Chuang Xin Xi Ji Shu Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Compare with the industry named in the question, \"Non-metallic Mineral Products\"; the two are not the same",
+    "Therefore the company does not belong to non-metallic mineral products; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Lang Ji Lian Chuang Xin Xi Ji Shu Co., Ltd. industry": "Information Transmission, Software and IT Services",
+    "Comparison industry": "Non-metallic Mineral Products",
+    "Whether belongs to this industry": "No"
+  }
+}

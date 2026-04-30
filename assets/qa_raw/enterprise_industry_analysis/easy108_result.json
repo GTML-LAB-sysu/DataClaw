@@ -1,0 +1,31 @@
+{
+  "id": "easy108",
+  "question": "Is Zhong Ju Yue Yin Shi Pin Co., Ltd. registered in Chongqing Municipality?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Ju Yue Yin Shi Pin Co., Ltd. (data in this dataset) registration province: Hainan Province",
+    "The province named in the question is Chongqing Municipality"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Ju Yue Yin Shi Pin Co., Ltd.'s registration province is Hainan Province",
+    "Compare Hainan Province with the province named in the question, \"Chongqing Municipality\"; the two are not the same",
+    "Therefore the company is not registered in Chongqing Municipality; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Zhong Ju Yue Yin Shi Pin Co., Ltd. registration province": "Hainan Province",
+    "Comparison province": "Chongqing Municipality",
+    "Whether registered in Chongqing Municipality": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "3fa7a55f-b108-450a-96b7-0fab5a72735a"
+    }
+  ]
+}

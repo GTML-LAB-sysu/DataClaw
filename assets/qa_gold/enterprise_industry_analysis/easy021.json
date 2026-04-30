@@ -1,0 +1,22 @@
+{
+  "id": "easy021",
+  "question": "In 2022, is the total citations of all patents of Guang Sheng Chang Ze Group Co., Ltd. higher than the corresponding indicator of Lang Ji Yun Hui Technology Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Guang Sheng Chang Ze Group Co., Ltd. total citations of all patents in 2022 = 199",
+    "Extracted from company_operation_status.csv: Lang Ji Yun Hui Technology Co., Ltd. total citations of all patents in 2022 = 2107",
+    "Compared 199 and 2107; since 199 < 2107, the judgment is \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Guang Sheng Chang Ze Group Co., Ltd. total citations of all patents in 2022": 199,
+    "Lang Ji Yun Hui Technology Co., Ltd. total citations of all patents in 2022": 2107,
+    "Comparison result (whether Guang Sheng Chang Ze Group Co., Ltd. is higher than Lang Ji Yun Hui Technology Co., Ltd.)": "No"
+  }
+}

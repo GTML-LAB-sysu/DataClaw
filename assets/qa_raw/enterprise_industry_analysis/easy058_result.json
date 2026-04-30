@@ -1,0 +1,40 @@
+{
+  "id": "easy058",
+  "question": "In 2022, compared with the products of Jiejie Dahang Equipment Co., Ltd., are the products of Sansan Gongzhi Technology Co., Ltd. in a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "According to the publicly disclosed 2022 annual report of Sansan Gongzhi Technology Co., Ltd., its core competitiveness description shows that its products cover medical diagnostic and monitoring devices such as blood oxygen, monitoring, ECG, ultrasound, and blood pressure.",
+    "According to the publicly disclosed 2022 annual report of Jiejie Dahang Equipment Co., Ltd., its core competitiveness description shows that its products are precision automation equipment for the electronics industry (such as printing equipment, dispensing equipment, and die-bonding equipment)."
+  ],
+  "milestone": {
+    "Product focus of Sansan Gongzhi Technology Co., Ltd.": "Medical diagnostic and monitoring devices",
+    "Product focus of Jiejie Dahang Equipment Co., Ltd.": "Precision automation equipment for the electronics industry",
+    "Comparison result (whether there is a competitive relationship between the products)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_core.csv the core competitiveness description of Sansan Gongzhi Technology Co., Ltd. and identified its product focus as medical diagnostic and monitoring devices (blood oxygen, ECG, ultrasound, etc.).",
+    "Extracted from company_core.csv the core competitiveness description of Jiejie Dahang Equipment Co., Ltd. and identified its product focus as precision automation equipment for the electronics industry (printing, dispensing, die-bonding, etc.).",
+    "Judged that the two product directions are different, and no direct evidence of head-to-head competition in similar products is provided in the descriptions, so the result is \"No\"."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_Core": "2124e52b-570e-4892-ba89-1870bfa0103d"
+    },
+    {
+      "company_Core": "1141129a-d648-4d67-b840-632fad2f44e8"
+    },
+    {
+      "company_profile": "0217f60b-ffb8-4df3-b87e-a2f9e42418a9"
+    },
+    {
+      "company_profile": "86a75b5f-6cee-47f2-964e-0114659fe4cd"
+    }
+  ]
+}

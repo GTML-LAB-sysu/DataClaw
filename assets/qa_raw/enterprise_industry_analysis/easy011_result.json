@@ -1,0 +1,40 @@
+{
+  "id": "easy011",
+  "question": "In 2022, is the R&D investment ratio of Yong Feng Xin Ruan Network Co., Ltd. higher than that of Jin Fei Shu Ruan Data Services Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Yong Feng Xin Ruan Network Co., Ltd. (2022 dataset value): R&D investment ratio = 11.7 %",
+    "Jin Fei Shu Ruan Data Services Co., Ltd. (2022 dataset value): R&D investment ratio = 5.85 %"
+  ],
+  "milestone": {
+    "Yong Feng Xin Ruan Network Co., Ltd. R&D investment ratio in 2022": "11.7 %",
+    "Jin Fei Shu Ruan Data Services Co., Ltd. R&D investment ratio in 2022": "5.85 %",
+    "Comparison result (whether Yong Feng Xin Ruan Network Co., Ltd. is higher than Jin Fei Shu Ruan Data Services Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Xin Ruan Network Co., Ltd. R&D investment ratio in 2022 = 11.7 %",
+    "Extracted from company_operation_status.csv: Jin Fei Shu Ruan Data Services Co., Ltd. R&D investment ratio in 2022 = 5.85 %",
+    "Compared 11.7 and 5.85; since 11.7 > 5.85, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "7e4ee9ad-488e-4b1e-957c-ec4ef746b558"
+    },
+    {
+      "company_operation_status": "757b1209-5063-43ce-a251-537667e340a1"
+    },
+    {
+      "company_profile": "5f8d33d8-0528-451e-aaf6-8ea404fd0080"
+    },
+    {
+      "company_profile": "6070c698-de3e-4b37-874c-056225b3214e"
+    }
+  ]
+}

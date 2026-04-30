@@ -1,0 +1,30 @@
+{
+  "id": "hard007",
+  "question": "In 2022, Guangdong Province's automobile manufacturing industry faces pressure from subsidy phase-out. A three-year phase-out path is set: compared with the actual subsidy amount in 2022, cut 20% in 2023, 40% in 2024, and 60% in 2025. For each Guangdong automobile manufacturing enterprise that has a recorded government reward/subsidy amount, its net profit loss in each year is exactly equal to that year's subsidy reduction; summing the losses for 2023–2025 gives the enterprise's cumulative net profit loss. Under this definition, how many hundred million yuan is the three-year total loss for the enterprise with the heaviest cumulative damage?",
+  "guidelines": "Answer format: a numeric value (2 decimal places). For example, \"5.67\" means a cumulative loss of 5.67 hundred million yuan. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From company_profile.csv, filter records with province = \"Guangdong Province\" and industry = \"Automobile Manufacturing\", extract enterprise name and bmCode fields, 27 enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by enterprise name and bmCode, extract the government reward/subsidy field, 27 enterprises matched.",
+    "Filter to records where government reward/subsidy is not null, 26 enterprises.",
+    "For each enterprise, compute 2023 subsidy reduction = government reward/subsidy × 0.2.",
+    "For each enterprise, compute 2024 subsidy reduction = government reward/subsidy × 0.4.",
+    "For each enterprise, compute 2025 subsidy reduction = government reward/subsidy × 0.6.",
+    "For each enterprise, compute cumulative net profit loss = 2023 subsidy reduction + 2024 subsidy reduction + 2025 subsidy reduction; sort by cumulative loss descending. The enterprise with the largest cumulative loss is Bei Qi Lu Yuan Xin Neng Yuan Qi Che Co., Ltd.; convert the amount from yuan to hundred million yuan, cumulative loss 20.53 hundred million yuan."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 27 Guangdong Province automobile manufacturing enterprises in company_profile.csv.",
+    "Found 26 enterprises with complete government subsidy data in company_operation_status.csv."
+  ],
+  "milestone": {
+    "Enterprises with complete government subsidy data": 26,
+    "Maximum cumulative loss (yuan)": 2052595485.6,
+    "Maximum cumulative loss (hundred million yuan)": 20.53
+  },
+  "answer": "20.53",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  }
+}

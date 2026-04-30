@@ -1,0 +1,33 @@
+{
+  "id": "medium033",
+  "question": "In the industry with the most invention patent grants in 2022, what is the average asset-liability ratio of enterprises? In which province is this industry concentrated?",
+  "guidelines": "Answer data should retain two decimal places. Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter all records with district=\"National\" from national_industry_status.csv, and extract the industry and total cumulative China invention patent grants fields.",
+    "Filter industry records with non-null total cumulative China invention patent grants, sort by total cumulative China invention patent grants in descending order, and identify the industry with the most invention patent grants as \"Consumer Electronics and Electrical Equipment\" with a total of 217,188 cumulative China invention patent grants.",
+    "Filter industry \"Consumer Electronics and Electrical Equipment\" from national_industry_status.csv to obtain the average asset-liability ratio of 85.70%.",
+    "Filter enterprises with industry \"Consumer Electronics and Electrical Equipment\" from company_profile.csv, and count enterprises by region.",
+    "From the regional enterprise counts, determine the province with the maximum number as \"Guangdong Province\" with 150 enterprises."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Total cumulative China invention patent grants for each industry at the national level was found in national_industry_status.csv.",
+    "Industry information for each enterprise was found in company_profile.csv.",
+    "Asset-liability ratio data for enterprises in 2022 was found in company_operation_status.csv."
+  ],
+  "milestone": {
+    "Industry with the most invention patent grants": "Consumer Electronics and Electrical Equipment",
+    "Number of enterprises in this industry": 358,
+    "Average asset-liability ratio (%)": 85.7,
+    "Number of 'Consumer Electronics and Electrical Equipment' enterprises in Guangdong Province": 150
+  },
+  "answer": [
+    85.7,
+    "Guangdong Province"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

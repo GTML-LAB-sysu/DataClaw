@@ -1,0 +1,40 @@
+{
+  "id": "medium077",
+  "question": "Which is greater: the number of BSE-listed enterprises in the industry of Lang Ji Hui Ruan Technology Co., Ltd., or the number of enterprises in chemical raw materials and chemical products manufacturing?",
+  "guidelines": "The answer must be either \"Number of BSE-listed enterprises in the industry of Lang Ji Hui Ruan Technology Co., Ltd.\" or \"Number of enterprises in chemical raw materials and chemical products manufacturing\"; output only the designated answer text, without any explanation, analysis, or descriptive wording. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Lang Ji Hui Ruan Technology Co., Ltd. industry: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services: Number of BSE-listed enterprises 17",
+    "Chemical Raw Materials and Chemical Products Manufacturing: Number of enterprises 364"
+  ],
+  "steps": [
+    "From company_profile.csv, extract that Lang Ji Hui Ruan Technology Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "From national_industry_status.csv, extract that the number of BSE-listed enterprises for Information Transmission, Software and IT Services is 17",
+    "From national_industry_status.csv, extract that the number of enterprises in chemical raw materials and chemical products manufacturing is 364",
+    "Compare counts: 364 > 17; therefore the number of enterprises in chemical raw materials and chemical products manufacturing is greater"
+  ],
+  "steps_num": 4,
+  "answer": "Chemical Raw Materials and Chemical Products Manufacturing",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Lang Ji Hui Ruan Technology Co., Ltd. industry": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services Number of BSE-listed enterprises": 17,
+    "Chemical Raw Materials and Chemical Products Manufacturing Number of enterprises": 364,
+    "Comparison conclusion (greater)": "Chemical Raw Materials and Chemical Products Manufacturing"
+  },
+  "reference": [
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    },
+    {
+      "national_industry_status": "6162f9dd-dbef-46a3-a3fc-558b013d65bf"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "easy084",
+  "question": "In 2022, which is larger: the number of HKEX-listed central state-owned enterprises in China's petroleum processing, coking, and nuclear fuel processing industry, or the total number of enterprises in the textiles, footwear, and apparel industry?",
+  "guidelines": "The answer must be either \"Petroleum Processing, Coking and Nuclear Fuel Processing\" or \"Textiles, Footwear and Apparel\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Nationwide (2022 dataset value): number of HKEX-listed central state-owned enterprises in petroleum processing, coking and nuclear fuel processing = 2",
+    "Nationwide (2022 dataset value): enterprise count in textiles, footwear and apparel = 177"
+  ],
+  "milestone": {
+    "Number of HKEX-listed central state-owned enterprises in nationwide petroleum processing, coking and nuclear fuel processing": 2,
+    "Enterprise count in nationwide textiles, footwear and apparel": 177,
+    "Comparison result (which is larger)": "Textiles, Footwear and Apparel"
+  },
+  "answer": "Textiles, Footwear and Apparel",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from national_industry_status.csv: HKEX-listed central state-owned enterprise count in petroleum processing, coking and nuclear fuel processing = 2",
+    "Extracted from national_industry_status.csv: enterprise count in textiles, footwear and apparel = 177",
+    "Compared 2 and 177; since 177 is larger, output \"Textiles, Footwear and Apparel\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "national_industry_status": "655b2fa1-a92d-49c6-9093-92c5a222ba75"
+    },
+    {
+      "national_industry_status": "84366a3d-230e-40ab-9da7-166ad7ac948a"
+    }
+  ]
+}

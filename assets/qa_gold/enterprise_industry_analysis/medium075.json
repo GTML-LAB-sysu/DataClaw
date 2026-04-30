@@ -1,0 +1,24 @@
+{
+  "id": "medium075",
+  "question": "What is the difference between the number of SSE-listed foreign-funded enterprises in the industry where Hengli Kezhi Software Company operates and the number of SSE-listed private enterprises in the conglomerates industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": 2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hengli Kezhi Software Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the number of SSE-listed foreign-funded enterprises in Information Transmission, Software and IT Services is 7.",
+    "Extract from national_industry_status.csv that the number of SSE-listed private enterprises in the conglomerates industry is 5.",
+    "Calculate the difference: 7 - 5 = 2.0."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hengli Kezhi Software Company": "Information Transmission, Software and IT Services",
+    "Number of SSE-listed foreign-funded enterprises in Information Transmission, Software and IT Services": 7,
+    "Number of SSE-listed private enterprises in the conglomerates industry": 5,
+    "Difference": 2.0
+  }
+}

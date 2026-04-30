@@ -1,0 +1,30 @@
+{
+  "id": "medium014",
+  "question": "In 2022, for the metal smelting and rolling processing industry, among provinces with valid records for both total government subsidies and total industry employee count, per capita subsidy is computed as each province's total government rewards and subsidies divided by that province's industry employee count. What is the per capita subsidy in yuan for the province with the highest per capita subsidy? What is the nationwide rank of the enterprise with the highest such indicator in that province among all enterprises in this industry?",
+  "guidelines": "Two answers required: first is a numeric value (2 decimal places, unit yuan/person), i.e. the highest provincial per capita subsidy; second is a rank number (integer), indicating the nationwide rank of the enterprise with the highest indicator in that province among all enterprises in this industry. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": [
+    17569.95,
+    12
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter all province records with industry=\"Metal Smelting and Rolling Processing\", extract province, total government rewards and subsidies, total employee count; 34 province records obtained.",
+    "Filter records with non-null total government rewards and subsidies and total employee count, total employee count > 0 and total government rewards and subsidies > 0; 16 valid provinces.",
+    "Compute each province's per capita subsidy (yuan/person) = total government rewards and subsidies / total employee count, sort by per capita subsidy descending. Province with highest per capita subsidy: Shanghai; 893,080,778.37 / 50,830 = 17,569.95 yuan/person.",
+    "Within Shanghai: from company_profile.csv, filter enterprises with industry=\"Metal Smelting and Rolling Processing\" and province=\"Shanghai\", obtain bmCode set; from company_operation_status.csv, filter year=2022 and bmCode in that set, with government rewards and subsidies > 0 and total employee count > 0. Compute each enterprise's per capita subsidy = government rewards and subsidies / total employee count, sort descending; first place: Xin Ge Jinze Materials Company.",
+    "Nationwide, for all enterprises in this industry (year=2022, government rewards and subsidies > 0, total employee count > 0), compute per capita subsidy using the same formula and sort descending; Xin Ge Jinze Materials Company ranks 12th nationwide."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Shanghai total government rewards and subsidies (yuan)": 893080778.37,
+    "Shanghai total employee count": 50830.0,
+    "Shanghai per capita subsidy (yuan/person)": 17569.95,
+    "Enterprise with highest indicator in Shanghai": "Xin Ge Jinze Materials Company",
+    "Enterprise per capita subsidy (yuan/person)": 31941.25,
+    "Enterprise nationwide rank": 12
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "medium039",
+  "question": "Is there any difference between the minimum State Technological Invention Award value in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. and the corresponding industry metric in Shanghai where Lang Ji Hui Ruan Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be \"No difference\" or the other entity mentioned in the question. Output only the entity text without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No difference",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: minimum State Technological Invention Award value in Real Estate = 0",
+    "Extracted from company_profile.csv: province of Lang Ji Hui Ruan Technology Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: minimum State Technological Invention Award value in Shanghai Information Transmission, Software and IT Services = 0",
+    "Both values are 0, so output \"No difference\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "Minimum State Technological Invention Award value in Real Estate": 0,
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Minimum State Technological Invention Award value in Shanghai Information Transmission, Software and IT Services": 0,
+    "Whether different": "No difference"
+  }
+}

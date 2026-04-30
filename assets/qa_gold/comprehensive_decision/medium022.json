@@ -1,0 +1,24 @@
+{
+  "id": "medium022",
+  "question": "In 2022 is the region with the highest average R&D investment growth rate also the one with the most policy quantity?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, with no additional text. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter all provincial records, extract province and year-on-year R&D investment growth rate mean fields, obtain R&D investment growth rate data for each province and industry.",
+    "Aggregate R&D investment growth rate data by province, calculate the average R&D investment growth rate for each province (average of year-on-year R&D investment growth rate mean across all industries).",
+    "Identify the region with the highest average R&D investment growth rate as \"Hong Kong Special Administrative Region\" with an average R&D investment growth rate of 212.35%.",
+    "From policy_release_status.csv, filter all provincial records, count policy quantity by province, obtain policy quantity for each province.",
+    "Identify the region with the most policies as \"Guangdong Province\" with 59 policies. Compare the region with the highest average R&D investment growth rate (Hong Kong Special Administrative Region) with the region with the most policies (Guangdong Province), determine they are not the same, conclusion: No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Region with highest average R&D investment growth rate": "Hong Kong Special Administrative Region",
+    "Region with most policies": "Guangdong Province",
+    "Comparison result": "No"
+  }
+}

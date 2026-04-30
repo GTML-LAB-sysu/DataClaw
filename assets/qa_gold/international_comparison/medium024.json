@@ -1,0 +1,37 @@
+{
+  "id": "medium024",
+  "question": "Against the backdrop of national policies promoting high-level AI application and supporting digital economy enterprises in strengthening hard-tech innovation, what was Baidu's (BIDU, listed on NASDAQ) R&D intensity (R&D expenses as a percentage of revenue) in 2022? Compared with A-share listed companies in China's information transmission, software, and information technology services industry, when divided into leading enterprises (revenue ≥ 90th percentile) and non-leading enterprises, by how many percentage points did Baidu's R&D intensity exceed the median R&D ratio of each group?",
+  "guidelines": "Answer in order: Baidu's R&D intensity (%), the number of percentage points above the A-share leading group (revenue ≥ sample 90th percentile) median R&D ratio, and the number of percentage points above the A-share non-leading group. Retain 2 decimal places, return as an array. If the relevant data cannot be found, answer \"Relevant data not found\".",
+  "answer": [
+    18.85,
+    12.59,
+    5.79
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "From Baidu (BIDU) 2022 Annual Report PDF (20-F, filed with SEC) Consolidated Statements of Comprehensive Income, extract: Total revenues = RMB 123,675 million (123.675 billion yuan); Research and development = RMB 23,315 million (23.315 billion yuan).",
+    "Calculate Baidu's 2022 R&D intensity = 23,315 / 123,675 × 100% = 18.85%.",
+    "From company_profile.csv, filter A-share listed companies with industry \"Information transmission, software, and information technology services\" and companyType \"Shanghai-Shenzhen\", 433 enterprises; merge with company_operation_status.csv, filter valid samples with operating revenue > 0 and non-null R&D ratio, 430 enterprises.",
+    "Calculate sample 90th percentile threshold for operating revenue ≈ 5.653 billion yuan; leading group (43 enterprises) with revenue ≥ threshold, non-leading group (387 enterprises) for the rest. Calculate median R&D ratio by group: leading group median = 6.26%, non-leading group median = 13.06%.",
+    "Calculate Baidu's difference from each group median: 18.85% - 6.26% = 12.59 percentage points; 18.85% - 13.06% = 5.79 percentage points."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Baidu total revenue (million RMB)": 123675,
+    "Baidu R&D expenses (million RMB)": 23315,
+    "Baidu R&D intensity (%)": 18.85,
+    "A-share IT industry profile count": 433,
+    "A-share IT industry valid samples": 430,
+    "Revenue 90th percentile threshold (billion yuan)": 56.53,
+    "Leading group enterprises count": 43,
+    "Non-leading group enterprises count": 387,
+    "Leading group R&D intensity median (%)": 6.26,
+    "Non-leading group R&D intensity median (%)": 13.06,
+    "Baidu above leading group median (percentage points)": 12.59,
+    "Baidu above non-leading group median (percentage points)": 5.79
+  }
+}

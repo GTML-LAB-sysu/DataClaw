@@ -1,0 +1,22 @@
+{
+  "id": "easy058",
+  "question": "In 2022, compared with the products of Jiejie Dahang Equipment Co., Ltd., are the products of Sansan Gongzhi Technology Co., Ltd. in a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_core.csv the core competitiveness description of Sansan Gongzhi Technology Co., Ltd. and identified its product focus as medical diagnostic and monitoring devices (blood oxygen, ECG, ultrasound, etc.).",
+    "Extracted from company_core.csv the core competitiveness description of Jiejie Dahang Equipment Co., Ltd. and identified its product focus as precision automation equipment for the electronics industry (printing, dispensing, die-bonding, etc.).",
+    "Judged that the two product directions are different, and no direct evidence of head-to-head competition in similar products is provided in the descriptions, so the result is \"No\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Product focus of Sansan Gongzhi Technology Co., Ltd.": "Medical diagnostic and monitoring devices",
+    "Product focus of Jiejie Dahang Equipment Co., Ltd.": "Precision automation equipment for the electronics industry",
+    "Comparison result (whether there is a competitive relationship between the products)": "No"
+  }
+}

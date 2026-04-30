@@ -1,0 +1,22 @@
+{
+  "id": "easy025",
+  "question": "In 2022, is the government award funding or subsidy of Shi Yang Zhi Guang Dian Qi Co., Ltd. lower than that of Xu Ye Zhi Gong Technology Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: government award funding or subsidy of Shi Yang Zhi Guang Dian Qi Co., Ltd. in 2022 = 14071208.03 CNY",
+    "Extracted from company_operation_status.csv: government award funding or subsidy of Xu Ye Zhi Gong Technology Co., Ltd. in 2022 = 100476261.0 CNY",
+    "Compared 14071208.03 and 100476261.0; since 14071208.03 < 100476261.0, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Government award funding or subsidy of Shi Yang Zhi Guang Dian Qi Co., Ltd. in 2022 (CNY)": 14071208.03,
+    "Government award funding or subsidy of Xu Ye Zhi Gong Technology Co., Ltd. in 2022 (CNY)": 100476261.0,
+    "Comparison result (whether Shi Yang Zhi Guang Dian Qi Co., Ltd. is lower than Xu Ye Zhi Gong Technology Co., Ltd.)": "Yes"
+  }
+}

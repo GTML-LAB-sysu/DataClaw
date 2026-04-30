@@ -1,0 +1,26 @@
+{
+  "id": "medium018",
+  "question": "Which is greater: the number of local policies issued by the Liaoning Province People's Government for the industry of Bei Kong Ze Jing Water Co., Ltd., or the number of local policies issued by the Guangdong Province General Office of the People's Government for the Financial Services industry in Guangdong Province where Hui Jin Jin Rui Cai Fu Management Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Hui Jin Jin Rui Cai Fu Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Bei Kong Ze Jing Water Co., Ltd.'s industry is Water Conservancy, Environment and Public Facilities Management",
+    "Extract from policy_release_status.csv that in the local policies for this industry, the policy count issued by the Liaoning Province People's Government is 1",
+    "Extract from company_profile.csv that Hui Jin Jin Rui Cai Fu Management Co., Ltd. is located in Guangdong Province and its industry is Financial Services",
+    "Extract from policy_release_status.csv that in the local policies for Financial Services in Guangdong Province, the policy count issued by the Guangdong Province General Office of the People's Government is 2",
+    "Compare 1 and 2; 2 is greater; output \"Hui Jin Jin Rui Cai Fu Management Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Bei Kong Ze Jing Water Co., Ltd.": "Water Conservancy, Environment and Public Facilities Management",
+    "Water Conservancy, Environment and Public Facilities Management local policies_Liaoning Province People's Government policy count": 1,
+    "Province of Hui Jin Jin Rui Cai Fu Management Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Financial Services local policies_Guangdong Province General Office of the People's Government policy count": 2,
+    "Comparison result": "2 is greater; output Hui Jin Jin Rui Cai Fu Management Co., Ltd."
+  }
+}

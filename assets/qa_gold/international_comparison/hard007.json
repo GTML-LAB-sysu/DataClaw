@@ -1,0 +1,39 @@
+{
+  "id": "hard007",
+  "question": "A global electric vehicle growth portfolio uses an \"innovation offsets earnings deficit\" framework for loss-making but high-R&D complete vehicle companies. For each candidate, first calculate: 1. Innovation excess = company R&D-to-revenue ratio − median R&D-to-revenue ratio among A-share automotive manufacturing firms in the top 10% by operating revenue in 2022; 2. Profit gap = median net profit margin among those top-10%-by-revenue A-share automotive manufacturing firms − company net profit margin; 3. Policy leverage = number of China automotive manufacturing industry policies ÷ number of provincial-level administrative regions covered by non-national policies. If innovation excess > 8, profit gap < 10, and policy leverage > 1.5, tactical overweight is allowed with active weight = min(2.00%, innovation excess ÷ 5 − profit gap ÷ 10 + policy leverage ÷ 10); otherwise only the watch list applies. Using Li Auto (LI) 2022 annual report and the local database, compute and state the most appropriate conclusion.",
+  "guidelines": "Answer in order: innovation excess (percentage points), profit gap (percentage points), policy leverage, most appropriate conclusion. Retain 2 decimal places and return as an array; the conclusion must specify position action and active weight. If relevant data cannot be found, please answer \"No relevant data found\".",
+  "answer": [
+    10.19,
+    7.73,
+    3.45,
+    "Tactical overweight, active weight 1.61%"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Web search Li Auto 2022 annual report; take Total revenues 45,286,816, Research and development expenses 6,780,032, Net loss 2,032,348 (RMB thousand); R&D-to-revenue ratio = 6,780,032 ÷ 45,286,816 × 100% = 14.9713%, rounded to 14.97%; net profit margin = −2,032,348 ÷ 45,286,816 × 100% = −4.4877%, rounded to −4.49%.",
+    "In company_profile.csv, filter industry=\"automotive manufacturing industry\" and A-share exchanges (SZSE, SSE, BSE), excluding Hong Kong listings; join company_operation_status.csv on bmCode with year=2022. The profile lists 230 automotive manufacturing firms (including 7 Hong Kong–listed); the valid A-share sample is 187 firms. Among rows with non-empty R&D-to-revenue ratio, operating revenue, and net profit, sort by operating revenue descending.",
+    "Top-10% count k = max(1, ⌈10% × N⌉); for N = 187, k = 19. For these 19 firms: median R&D-to-revenue ratio is 4.78%; for each firm compute net profit margin = net profit ÷ operating revenue × 100%, median net profit margin is 3.24%.",
+    "Innovation excess = 14.97% − 4.78% = 10.19 percentage points; profit gap = 3.24% − (−4.49%) = 7.73 percentage points.",
+    "In policy_release_status.csv, count as automotive manufacturing policies those whose industry field contains \"automotive manufacturing industry\", 69 records; after excluding province=\"national\", deduplicate province on the remainder to obtain 20 provincial-level regions covered by non-national policies.",
+    "Policy leverage = 69 ÷ 20 = 3.45.",
+    "Because innovation excess 10.19 > 8, profit gap 7.73 < 10, and policy leverage 3.45 > 1.5, tactical overweight conditions are met; active weight = min(2.00%, 10.19 ÷ 5 − 7.73 ÷ 10 + 3.45 ÷ 10) = min(2.00%, 1.61%) = 1.61%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Li Auto R&D-to-revenue ratio (%)": 14.97,
+    "A-share automotive manufacturing valid sample count (2022)": 187,
+    "Top-10%-by-revenue firm count": 19,
+    "Median R&D-to-revenue ratio of A-share automotive top 10% by revenue (%)": 4.78,
+    "Innovation excess (percentage points)": 10.19,
+    "Median net profit margin of A-share automotive top 10% by revenue (%)": 3.24,
+    "Profit gap (percentage points)": 7.73,
+    "China automotive manufacturing related policy count": 69,
+    "Non-national policy covered provincial regions (deduped)": 20,
+    "Policy leverage": 3.45,
+    "Active weight (%)": 1.61
+  }
+}

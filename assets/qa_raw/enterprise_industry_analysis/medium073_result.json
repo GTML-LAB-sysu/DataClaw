@@ -1,0 +1,40 @@
+{
+  "id": "medium073",
+  "question": "What is the difference between the number of SZSE-listed foreign-funded enterprises in the industry where Zhongke Keshu Software Company operates and the number of BSE-listed private enterprises in the construction industry?",
+  "guidelines": "The answer must be a single number rounded to one decimal place. Output only the number, without units, commas, or any explanatory text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhongke Keshu Software Company: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services: number of SZSE-listed foreign-funded enterprises = 4",
+    "Construction industry: number of BSE-listed private enterprises = 2"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Zhongke Keshu Software Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed foreign-funded enterprises in Information Transmission, Software and IT Services is 4.",
+    "Extract from national_industry_status.csv that the number of BSE-listed private enterprises in the construction industry is 2.",
+    "Calculate the difference: 4 - 2 = 2.0."
+  ],
+  "steps_num": 4,
+  "answer": 2.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Zhongke Keshu Software Company": "Information Transmission, Software and IT Services",
+    "Number of SZSE-listed foreign-funded enterprises in Information Transmission, Software and IT Services": 4,
+    "Number of BSE-listed private enterprises in the construction industry": 2,
+    "Difference": 2.0
+  },
+  "reference": [
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "national_industry_status": "a3ea618e-b6c2-4ae4-a46d-7d4fafa9aff9"
+    }
+  ]
+}

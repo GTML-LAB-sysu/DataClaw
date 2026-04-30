@@ -1,0 +1,46 @@
+{
+  "id": "medium028",
+  "question": "What is the difference between the number of central ministry/agency policies issued by the China Federation of Logistics & Purchasing in the ministerial policies for the industry of Yi Hai Chang Jin Shang Wu Co., Ltd. and the number of local policies for the Information Transmission, Software and IT Services industry in Shanghai Municipality where Lang Ji Hui Ruan Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.: Leasing and Business Services",
+    "Leasing and Business Services ministerial policies - China Federation of Logistics & Purchasing - policy count = 1",
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.: Shanghai Municipality; industry: Information Transmission, Software and IT Services",
+    "Shanghai Municipality Information Transmission, Software and IT Services local policies policy count = 15"
+  ],
+  "milestone": {
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.": "Leasing and Business Services",
+    "Leasing and Business Services ministerial policies_China Federation of Logistics & Purchasing policy count": 1,
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Information Transmission, Software and IT Services local policies policy count": 15,
+    "Difference (China Federation of Logistics & Purchasing policy count - local policies policy count)": -14.0
+  },
+  "answer": -14.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Yi Hai Chang Jin Shang Wu Co., Ltd.'s industry is Leasing and Business Services",
+    "Extract from policy_release_status.csv that in the ministerial policies for Leasing and Business Services, the policy count issued by the China Federation of Logistics & Purchasing is 1",
+    "Extract from company_profile.csv that Lang Ji Hui Ruan Technology Co., Ltd. is located in Shanghai Municipality and its industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that the local policies policy count for Information Transmission, Software and IT Services in Shanghai Municipality is 15",
+    "Calculate the difference: 1 - 15 = -14.0"
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "policy_release_status": "b11a2b60-c999-4fc9-9581-5a6601001790"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "policy_release_status": "0a1d883b-42a1-4d7a-938a-43e0301f00ac"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    }
+  ]
+}

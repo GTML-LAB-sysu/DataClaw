@@ -1,0 +1,21 @@
+{
+  "id": "easy088",
+  "question": "Were the policy \"Notice on Qualification Recognition Matters for Relevant R&D Institutions in Pudong New Area of Shanghai Applicable to Import Tax Policies\" and the policy \"Notice of the General Office of the Shanghai Municipal People's Government on Issuing the Action Plan for Cultivating the New Metaverse Track\" issued by the same department?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted the issuing authority fields of the two policies from policy_resource.csv.",
+    "Compared the issuing authority texts of the two policies, found them inconsistent, and judged \"No\"."
+  ],
+  "steps_num": 2,
+  "milestone": {
+    "Issuing authorities of Policy 1": "Ministry of Finance, Ministry of Science and Technology, Ministry of Civil Affairs, Ministry of Commerce, General Administration of Customs, State Taxation Administration",
+    "Issuing authority of Policy 2": "General Office of the Shanghai Municipal People's Government",
+    "Comparison result (whether issued by the same department)": "No"
+  }
+}

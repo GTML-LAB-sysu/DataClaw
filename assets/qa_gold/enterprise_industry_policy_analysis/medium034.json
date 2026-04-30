@@ -1,0 +1,24 @@
+{
+  "id": "medium034",
+  "question": "Between the number of policies issued by the Yunnan Province Department of Industry and Information Technology in the local policies for the industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd. and the number of policies issued by the Provincial General Office of the People's Government in the local policies for the Information Transmission, Software and IT Services industry, which is greater?",
+  "guidelines": "The answer must be \"Number of policies for the industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd. issued by the Yunnan Province Department of Industry and Information Technology\", \"Number of policies for the Information Transmission, Software and IT Services industry issued by the Provincial General Office of the People's Government\", or \"Equal\". Output only the specified answer text, without any explanation, analysis, or descriptive wording. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.'s industry is Education",
+    "Extract from policy_release_status.csv that in the local policies for Education, the policy count issued by the Yunnan Province Department of Industry and Information Technology is 1",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services, the policy count issued by the Provincial General Office of the People's Government is 1",
+    "Compare 1 and 1; if they are equal, output \"Equal\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hua Tu Wen Jiao Zai Xian Jiao Yu Co., Ltd.": "Education",
+    "Education local policies_Yunnan Province Department of Industry and Information Technology policy count": 1,
+    "Information Transmission, Software and IT Services local policies_Provincial General Office of the People's Government policy count": 1,
+    "Comparison result": "Equal"
+  }
+}

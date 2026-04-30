@@ -1,0 +1,35 @@
+{
+  "id": "hard013",
+  "question": "In 2022, a provincial industry and information department sought to evaluate the government subsidy utilization efficiency of enterprises of different sizes in the rubber and plastic products industry. After dividing enterprises into three groups by total assets—large (top 1/3 rounded up), medium (middle 1/3 rounded up), and small (bottom 1/3)—which enterprise size group has the highest subsidy utilization efficiency? What is its efficiency value?",
+  "guidelines": "The answer should be a numeric value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    "Large",
+    166.33
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all enterprise records with industry=\"Rubber and Plastic Products\" from company_profile.csv, extract company name, bmCode, and province fields; 107 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract total assets, operating revenue amount, and government reward funds and subsidies fields; 107 records after merge.",
+    "Filter records with industry=\"Rubber and Plastic Products\" from national_industry_status.csv to obtain national benchmark data: total enterprises 107, total operating revenue 313,571,405,678.69 yuan, total government subsidies 1,966,394,638.00 yuan, total assets 476,387,663,666.96 yuan.",
+    "Filter valid enterprises with all three fields (total assets, operating revenue amount, government reward funds and subsidies) non-null and government reward funds and subsidies > 0; 107 enterprises in total.",
+    "Sort by total assets in descending order; divide 107 enterprises into three groups: large enterprise group (top 36, highest 1/3 by total assets), medium enterprise group (middle 36), small enterprise group (bottom 35, lowest 1/3 by total assets).",
+    "Calculate subsidy utilization efficiency per group = sum of operating revenue amounts of enterprises in the group / sum of government reward funds and subsidies of enterprises in the group. Small group efficiency = 95.58, medium group efficiency = 161.13, large group efficiency = 166.33.",
+    "The group with the highest subsidy utilization efficiency is the large enterprise group, efficiency value = 166.33."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "National total rubber and plastic enterprises": 107,
+    "Number of valid enterprises": 107,
+    "Small group enterprise count": 35,
+    "Medium group enterprise count": 36,
+    "Large group enterprise count": 36,
+    "Small group efficiency": 95.58,
+    "Medium group efficiency": 161.13,
+    "Large group efficiency": 166.33,
+    "Highest efficiency group": "Large"
+  }
+}

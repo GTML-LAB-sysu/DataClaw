@@ -1,0 +1,22 @@
+{
+  "id": "easy004",
+  "question": "In 2022, is the year-over-year net profit growth rate of Zhong Tong Jie Tong Yun Shu Co., Ltd. lower than that of Yun Da Hang Chang Kuai Di Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: year-over-year net profit growth rate of Zhong Tong Jie Tong Yun Shu Co., Ltd. in 2022 = -4.46 %",
+    "Extracted from company_operation_status.csv: year-over-year net profit growth rate of Yun Da Hang Chang Kuai Di Co., Ltd. in 2022 = 377.60 %",
+    "Compared -4.46 and 377.60; since -4.46 < 377.60, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Year-over-year net profit growth rate of Zhong Tong Jie Tong Yun Shu Co., Ltd. in 2022": "-4.46 %",
+    "Year-over-year net profit growth rate of Yun Da Hang Chang Kuai Di Co., Ltd. in 2022": "377.60 %",
+    "Comparison result (whether Zhong Tong Jie Tong Yun Shu Co., Ltd. is lower than Yun Da Hang Chang Kuai Di Co., Ltd.)": "Yes"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "hard001",
+  "question": "Against the backdrop of China's strong push for semiconductor industry self-sufficiency and many regions issuing special support policies, what are the R&D expenses and operating revenue disclosed in United Microelectronics Corporation (UMC)'s 2022 annual report (in New Taiwan Dollars)? What is the R&D investment ratio calculated therefrom? In the domestic semiconductor industry, the top 10% by operating revenue are classified as leading enterprises. By how many percentage points does UMC's R&D investment ratio differ from the median R&D investment ratio of these leading enterprises?",
+  "guidelines": "Please answer in order: (1) UMC 2022 R&D expenses (hundred million NTD, 2 decimal places); (2) UMC 2022 operating revenue (hundred million NTD, 2 decimal places); (3) UMC R&D investment ratio (%, 2 decimal places); (4) Difference between UMC's R&D investment ratio and the median R&D investment ratio of domestic semiconductor industry leading enterprises (top 10% by revenue) (percentage points, 2 decimal places, negative if lower；return as an array). If relevant data cannot be found, please answer \"No relevant data found\".",
+  "steps": [
+    "Extract financial data from United Microelectronics Corporation (UMC) 2022 Annual Report (Form 20-F) PDF: Research and development expenses NT$12,953 million (i.e., 12.953 billion NTD), Operating revenues NT$278,705 million (i.e., 278.705 billion NTD). The annual report pages 46-47 explicitly state R&D as percentage of revenue is 4.6%.",
+    "Calculate UMC's R&D investment ratio precisely: 12953 / 278705 × 100 = 4.65%.",
+    "Filter from company_profile.csv enterprises with industry='semiconductor industry', 172 enterprises total. Merge with company_operation_status.csv, filter records with non-empty R&D investment ratio, 169 valid records.",
+    "Sort by operating revenue in descending order, take top 10% (operating revenue >= 12.169 billion yuan) as leading enterprises, 17 enterprises; the remaining 152 are non-leading enterprises.",
+    "Calculate the median R&D investment ratio of leading enterprises: 5.81%.",
+    "Calculate the difference between UMC and the leading enterprise median: 4.65 - 5.81 = -1.16 percentage points, indicating UMC's R&D investment intensity is below the median of domestic semiconductor industry leading enterprises."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "United Microelectronics Corporation (UMC) 2022 Annual Report (Form 20-F), extracted R&D expenses NT$12,953 million and operating revenue NT$278,705 million",
+    "company_profile.csv (filtered 172 semiconductor industry enterprises) merged with company_operation_status.csv (with R&D investment ratio), 169 valid enterprise records after merge"
+  ],
+  "milestone": {
+    "UMC 2022 R&D expenses (hundred million NTD)": 129.53,
+    "UMC 2022 operating revenue (hundred million NTD)": 2787.05,
+    "UMC R&D investment ratio (%)": 4.65,
+    "Valid semiconductor industry enterprises": 169,
+    "Leading enterprise count (top 10%)": 17,
+    "Non-leading enterprise count": 152,
+    "Top 10% revenue threshold (hundred million yuan)": 121.69,
+    "Leading enterprise median R&D investment ratio (%)": 5.81,
+    "Non-leading enterprise median R&D investment ratio (%)": 7.98,
+    "UMC vs. leading median difference (percentage points)": -1.16
+  },
+  "answer": [
+    129.53,
+    2787.05,
+    4.65,
+    -1.16
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

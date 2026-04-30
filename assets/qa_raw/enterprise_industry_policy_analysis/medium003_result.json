@@ -1,0 +1,46 @@
+{
+  "id": "medium003",
+  "question": "Which is greater: the number of policies issued by the General Administration of Customs in the ministerial policies for the industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd., or the number of policies issued by the General Office of the State Council in the State Council policies for the industry of Bei Kong Ze Jing Water Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.: Financial Services",
+    "Financial Services ministerial policies_General Administration of Customs policy count = 1",
+    "Industry of Bei Kong Ze Jing Water Co., Ltd.: Water Conservancy, Environment and Public Facilities Management",
+    "Water Conservancy, Environment and Public Facilities Management State Council policies_General Office of the State Council policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Hua Ying Tai Sheng Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services ministerial policies_General Administration of Customs policy count": 1,
+    "Industry of Bei Kong Ze Jing Water Co., Ltd.": "Water Conservancy, Environment and Public Facilities Management",
+    "Water Conservancy, Environment and Public Facilities Management State Council policies_General Office of the State Council policy count": 1,
+    "Comparison result": "Both are equal; per question requirement, output Bei Kong Ze Jing Water Co., Ltd."
+  },
+  "answer": "Bei Kong Ze Jing Water Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Ying Tai Sheng Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in Financial Services ministerial policies, the General Administration of Customs policy count is 1",
+    "Extract from company_profile.csv that Bei Kong Ze Jing Water Co., Ltd.'s industry is Water Conservancy, Environment and Public Facilities Management",
+    "Extract from policy_release_status.csv that in Water Conservancy, Environment and Public Facilities Management State Council policies, the General Office of the State Council policy count is 1",
+    "Compare 1 and 1; when equal, output \"Bei Kong Ze Jing Water Co., Ltd.\" as required by the question"
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "policy_release_status": "a2734b19-8347-4c63-b17b-61453aab869e"
+    },
+    {
+      "company_profile": "b3ffe2d5-c5b8-4499-b7e7-c6955e84e897"
+    },
+    {
+      "policy_release_status": "fbe8fd5e-a3b5-48a2-aef1-e94b5d88cb16"
+    },
+    {
+      "company_profile": "b32ab5eb-bfc5-4320-8527-8c31fd09ac36"
+    }
+  ]
+}

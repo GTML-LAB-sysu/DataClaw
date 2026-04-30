@@ -1,0 +1,46 @@
+{
+  "id": "medium031",
+  "question": "Which is greater: the number of SSE-listed state-owned institute enterprises in the industry of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd., or the number of SZSE-listed private enterprises in the industry of Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.: Financial Industry",
+    "Number of SSE-listed state-owned institute enterprises in Financial Industry: 1",
+    "Industry of Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.: Real Estate",
+    "Number of SZSE-listed private enterprises in Real Estate: 24"
+  ],
+  "answer": "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.": "Financial Industry",
+    "Number of SSE-listed state-owned institute enterprises in Financial Industry": 1,
+    "Industry of Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.": "Real Estate",
+    "Number of SZSE-listed private enterprises in Real Estate": 24,
+    "Comparison result (greater)": "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd. = Financial Industry",
+    "Extracted from national_industry_status.csv: number of SSE-listed state-owned institute enterprises in Financial Industry = 1",
+    "Extracted from company_profile.csv: industry of Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: number of SZSE-listed private enterprises in Real Estate = 24",
+    "Compared 1 and 24; since 24 is greater, output \"Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "5dc0d9db-af52-48e2-8eef-98a66f67632f"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "1497d311-a090-4fdb-9af8-30fee577d417"
+    }
+  ]
+}

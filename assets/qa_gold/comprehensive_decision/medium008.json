@@ -1,0 +1,24 @@
+{
+  "id": "medium008",
+  "question": "In 2022, to study the capital turnover of central state-owned enterprises in the electricity, heat, gas and water production and supply industry, calculate the asset turnover ratio for each enterprise by dividing its annual operating revenue by its total assets. Find the arithmetic mean of the asset turnover ratios for these enterprises.",
+  "guidelines": "The answer should be a numerical value (rounded to 4 decimal places). If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0.3266,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records from company_profile.csv where industry=\"Electricity, heat, gas and water production and supply\" and ownership=\"Central state-owned enterprise\", extract company name and bmCode fields, finding 44 enterprises in total.",
+    "Join with company_operation_status.csv by bmCode to retrieve 2022 data for these enterprises, extract operating revenue amount and total assets fields.",
+    "Filter records where both operating revenue amount and total assets are not empty and total assets is greater than 0, resulting in 44 valid enterprises.",
+    "Calculate asset turnover ratio for each enterprise = operating revenue amount / total assets.",
+    "Calculate the average asset turnover ratio for all qualifying central state-owned enterprises = sum of asset turnover ratios (14.369275) / number of enterprises (44) = 0.3266."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Sum of Asset Turnover Ratios": 14.369275,
+    "Number of Valid Enterprises": 44,
+    "Average Asset Turnover Ratio": 0.3266
+  }
+}

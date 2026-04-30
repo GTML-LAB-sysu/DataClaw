@@ -1,0 +1,22 @@
+{
+  "id": "easy096",
+  "question": "Are Lv Tai Jie Xun Huan Bao Technology Co., Ltd. and Feng Huo Chuang Ze Wang Luo She Bei Co., Ltd. competitors?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Lv Tai Jie Xun Huan Bao Technology Co., Ltd.'s industry is Comprehensive Utilization of Waste Resources",
+    "From company_profile.csv, extract that Feng Huo Chuang Ze Wang Luo She Bei Co., Ltd.'s industry is Communication Transmission Equipment",
+    "The two companies are in different industries; they are not competitors; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Lv Tai Jie Xun Huan Bao Technology Co., Ltd. industry": "Comprehensive Utilization of Waste Resources",
+    "Feng Huo Chuang Ze Wang Luo She Bei Co., Ltd. industry": "Communication Transmission Equipment",
+    "Whether competitors": "No"
+  }
+}

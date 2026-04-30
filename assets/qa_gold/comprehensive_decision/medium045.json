@@ -1,0 +1,25 @@
+{
+  "id": "medium045",
+  "question": "In 2022, in Sichuan Province, is Zhongbai Jinmao Chain Company's R&D investment higher than the R&D investment of the 15th-ranked enterprise nationwide in its industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Search for records with enterprise name=\"Zhongbai Jinmao Chain Company\" in company_profile.csv. The enterprise has bmCode=100120, industry=\"Wholesale and Retail Trade\", province=\"Sichuan Province\".",
+    "Filter from company_operation_status.csv the 2022 data by enterprise name=\"Zhongbai Jinmao Chain Company\" and bmCode=100120, extract the R&D investment amount field. Zhongbai Jinmao Chain Company's R&D investment amount is 11270987.0 CNY.",
+    "Filter from company_profile.csv all enterprise records with industry=\"Wholesale and Retail Trade\", extract enterprise name and bmCode fields, finding 273 enterprises in the Wholesale and Retail Trade industry.",
+    "Filter from company_operation_status.csv the 2022 data of these enterprises by enterprise name and bmCode fields, extract the R&D investment amount field. Filter enterprise records where R&D investment amount is not null, totaling 143 records.",
+    "Sort all enterprises by R&D investment amount in descending order to determine the R&D investment ranking. The 15th-ranked enterprise is \"Lianhua Tongze Trading Company\", with an R&D investment amount of 265616054.7 CNY. Compare Zhongbai Jinmao Chain Company's R&D investment amount (11270987.0 CNY) with the 15th-ranked nationwide enterprise in Wholesale and Retail Trade (265616054.7 CNY). Since 11270987.0 < 265616054.7, the conclusion is: No."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "R&D investment amount of Zhongbai Jinmao Chain Company (CNY)": 11270987.0,
+    "15th-ranked enterprise nationwide in Wholesale and Retail Trade": "Lianhua Tongze Trading Company",
+    "R&D investment amount of 15th-ranked enterprise nationwide in Wholesale and Retail Trade (CNY)": 265616054.7,
+    "Comparison result": "No"
+  }
+}

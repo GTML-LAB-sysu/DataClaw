@@ -1,0 +1,26 @@
+{
+  "id": "medium022",
+  "question": "Between Zhong Ke Ke Shu Ruan Jian Co., Ltd. and Bao Xin Hui Hui Wang Luo Co., Ltd., which obtains a greater number of local policy supports?",
+  "guidelines": "The answer must be a company name or \"Equal\"; output only the answer text, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhong Ke Ke Shu Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for this industry, the policy count issued by the Shenzhen Municipality Science and Technology Innovation Commission is 3",
+    "Extract from company_profile.csv that Bao Xin Hui Hui Wang Luo Co., Ltd. is located in Beijing Municipality and its industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for this industry in Beijing Municipality, the policy count issued by the Beijing Municipality Science and Technology Commission is 3",
+    "Compare 3 and 3; if equal, output \"Equal\""
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services local policies_Shenzhen Municipality Science and Technology Innovation Commission policy count": 3,
+    "Province of Bao Xin Hui Hui Wang Luo Co., Ltd.": "Beijing Municipality",
+    "Beijing Municipality Information Transmission, Software and IT Services local policies_Beijing Municipality Science and Technology Commission policy count": 3,
+    "Comparison result": "Equal"
+  }
+}

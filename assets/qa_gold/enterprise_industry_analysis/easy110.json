@@ -1,0 +1,22 @@
+{
+  "id": "easy110",
+  "question": "Does Guangdong Province have the enterprise Lv Shan Chan Jin Zhi Ye Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Lv Shan Chan Jin Zhi Ye Co., Ltd.'s registration province is Guangdong Province",
+    "This matches the province named in the question, \"Guangdong Province\"",
+    "Therefore Guangdong Province has this enterprise; output \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Lv Shan Chan Jin Zhi Ye Co., Ltd. registration province": "Guangdong Province",
+    "Comparison province": "Guangdong Province",
+    "Whether Guangdong Province has this enterprise": "Yes"
+  }
+}

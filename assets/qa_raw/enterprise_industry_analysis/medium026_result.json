@@ -1,0 +1,46 @@
+{
+  "id": "medium026",
+  "question": "Is the median cumulative citation count of all patents in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. lower than the same metric in the industry of Bao Xin Hui Hui Wang Luo Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.: Real Estate",
+    "Median cumulative citation count of all patents in Real Estate: 63",
+    "Industry of Bao Xin Hui Hui Wang Luo Co., Ltd.: Information Transmission, Software and IT Services",
+    "Median cumulative citation count of all patents in Information Transmission, Software and IT Services: 340.5"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "Median cumulative citation count of all patents in Real Estate": 63,
+    "Industry of Bao Xin Hui Hui Wang Luo Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Median cumulative citation count of all patents in Information Transmission, Software and IT Services": 340.5,
+    "Whether lower": "Yes"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: median cumulative citation count of all patents in Real Estate = 63",
+    "Extracted from company_profile.csv: industry of Bao Xin Hui Hui Wang Luo Co., Ltd. = Information Transmission, Software and IT Services",
+    "Extracted from national_industry_status.csv: median cumulative citation count of all patents in Information Transmission, Software and IT Services = 340.5",
+    "Compared 63 and 340.5; since 63 is lower, the judgment is \"Yes\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "a0b01b7e-ed2c-4c4a-b7d7-15062fab3ef4"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "fe635f7d-bee1-4e2e-9ed6-3923871590d0"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium086",
+  "question": "Which is larger: the number of SSE-listed central state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates, or the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either \"the number of SSE-listed central state-owned enterprises in the industry where Zhongke Zhiyun Data Services Company operates\" or \"the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhongke Zhiyun Data Services Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in Information Transmission, Software and IT Services is 12.",
+    "Extract from national_industry_status.csv that the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry is 75.",
+    "Compare the counts: 75 > 12, so the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhongke Zhiyun Data Services Company": "Information Transmission, Software and IT Services",
+    "Number of SSE-listed central state-owned enterprises in Information Transmission, Software and IT Services": 12,
+    "Number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry": 75,
+    "Comparison result (larger one)": "the number of SSE-listed enterprises in the Transportation, Storage and Postal Services industry"
+  }
+}

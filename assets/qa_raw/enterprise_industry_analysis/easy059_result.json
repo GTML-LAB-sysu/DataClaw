@@ -1,0 +1,40 @@
+{
+  "id": "easy059",
+  "question": "In 2022, is Haomei Company's core competitiveness in R&D and technology more focused on innovation and diversification than that of Zhongjin Yeye Resources Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "According to the publicly disclosed 2022 annual report of Haomei Company, its R&D and technology strengths include multiple R&D platforms, multidisciplinary R&D teams, and innovation in new materials and new processes, and involve diversified application directions (aluminum profiles, automotive lightweighting, system doors and windows, etc.).",
+    "According to the publicly disclosed 2022 annual report of Zhongjin Yeye Resources Co., Ltd., its core competitiveness description mainly focuses on region/transportation, product quality, skilled workforce, and management systems, without emphasizing \"innovation and diversification\" as the core R&D and technology theme."
+  ],
+  "milestone": {
+    "R&D and technology focus of Haomei Company": "Innovation and diversified application layout",
+    "R&D and technology focus of Zhongjin Yeye Resources Co., Ltd.": "Region/quality/workforce and management systems (not centered on innovation and diversification)",
+    "Comparison result (whether Haomei Company is more focused on innovation and diversification)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_core.csv the core competitiveness description of Haomei Company and identified statements on R&D platform construction, technological innovation, and multi-field application layout (diversification).",
+    "Extracted from company_core.csv the core competitiveness description of Zhongjin Yeye Resources Co., Ltd. and checked whether it takes R&D innovation and diversification as its core expression.",
+    "Compared the two companies' focus on \"innovation and diversification\" and judged that Haomei Company is more focused, so the output is \"Yes\"."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_Core": "5cd646e6-54db-4e70-ac59-8b525724cde6"
+    },
+    {
+      "company_Core": "f0abfcb4-f2c9-4204-8c77-cdd1548db7e3"
+    },
+    {
+      "company_profile": "cb910366-6699-44b7-889a-00005de99dd4"
+    },
+    {
+      "company_profile": "572fda82-fcac-4396-b536-f63ab245db9e"
+    }
+  ]
+}

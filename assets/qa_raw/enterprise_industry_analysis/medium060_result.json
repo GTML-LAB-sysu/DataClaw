@@ -1,0 +1,46 @@
+{
+  "id": "medium060",
+  "question": "Are the minimum values of the Provincial or Ministerial Science and Technology Progress Award metric the same between the corresponding industries in Guangdong for Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. and Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.: Guangdong Province",
+    "Minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate: 0",
+    "Province of Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.: Guangdong Province",
+    "Minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate (comparison side): 0"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.": "Guangdong Province",
+    "Minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate": 0,
+    "Province of Zhao Ye Ze Jin Di Chan Holdings Co., Ltd.": "Guangdong Province",
+    "Minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate (comparison side)": 0,
+    "Whether identical": "Yes"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate = 0",
+    "Extracted from company_profile.csv: province of Zhao Ye Ze Jin Di Chan Holdings Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: minimum Provincial or Ministerial Science and Technology Progress Award value in Guangdong Real Estate = 0",
+    "Both values are 0, so the answer is \"Yes\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "1e971ba1-a0ba-4221-908d-a308281f06d3"
+    },
+    {
+      "company_profile": "3f2c07ea-c142-43aa-ab56-ee76d8aaa4e5"
+    },
+    {
+      "regional_industry_status": "1e971ba1-a0ba-4221-908d-a308281f06d3"
+    },
+    {
+      "company_profile": "df986c37-1dd4-4c6e-a419-04cc2fd2a9ca"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "easy102",
+  "question": "Does Lu An Fu Chang Mei Tan Co., Ltd. belong to the Comprehensive Utilization of Waste Resources industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Lu An Fu Chang Mei Tan Co., Ltd. (data in this dataset) industry: Mining",
+    "Comprehensive Utilization of Waste Resources and Mining are different industry categories"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Lu An Fu Chang Mei Tan Co., Ltd.'s industry is Mining",
+    "Compare with the industry named in the question, \"Comprehensive Utilization of Waste Resources\"; the two are not the same",
+    "Therefore the company does not belong to comprehensive utilization of waste resources; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Lu An Fu Chang Mei Tan Co., Ltd. industry": "Mining",
+    "Comparison industry": "Comprehensive Utilization of Waste Resources",
+    "Whether belongs to this industry": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "cb0354e4-911b-4caf-b75e-f60d5a49c9cc"
+    }
+  ]
+}

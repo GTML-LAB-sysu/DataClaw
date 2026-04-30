@@ -1,0 +1,40 @@
+{
+  "id": "medium108",
+  "question": "Which value is larger: the total number of industry enterprises in the province where Zhongke Keshu Software Company is located, or the number of SZSE-listed private enterprises in China's Communication Transmission Equipment industry?",
+  "guidelines": "The answer must be either \"the total number of industry enterprises in the province where Zhongke Keshu Software Company is located\" or \"the number of SZSE-listed private enterprises in China's Communication Transmission Equipment industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Zhongke Keshu Software Company: Guangxi Zhuang Autonomous Region",
+    "Guangxi Zhuang Autonomous Region - Information Transmission, Software and IT Services: total number of enterprises = 4",
+    "Communication Transmission Equipment (China): number of SZSE-listed private enterprises = 50"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Zhongke Keshu Software Company is located in Guangxi Zhuang Autonomous Region and belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from regional_industry_status.csv that the total number of enterprises in Guangxi Zhuang Autonomous Region - Information Transmission, Software and IT Services is 4.",
+    "Extract from national_industry_status.csv that the number of SZSE-listed private enterprises in the Communication Transmission Equipment industry is 50.",
+    "Compare the values: 50 > 4, so the number of SZSE-listed private enterprises in China's Communication Transmission Equipment industry is larger."
+  ],
+  "steps_num": 4,
+  "answer": "the number of SZSE-listed private enterprises in China's Communication Transmission Equipment industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Zhongke Keshu Software Company": "Guangxi Zhuang Autonomous Region",
+    "Total number of enterprises in Guangxi Zhuang Autonomous Region - Information Transmission, Software and IT Services": 4,
+    "Number of SZSE-listed private enterprises in the Communication Transmission Equipment industry": 50,
+    "Comparison result (larger one)": "the number of SZSE-listed private enterprises in China's Communication Transmission Equipment industry"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "4b18b7b8-6343-4468-a8dc-88fd19b1cdb8"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "national_industry_status": "22fbfe9c-7c9b-4c5c-82a5-46baa3b08f2e"
+    }
+  ]
+}

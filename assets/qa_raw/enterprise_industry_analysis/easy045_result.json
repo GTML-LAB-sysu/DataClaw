@@ -1,0 +1,34 @@
+{
+  "id": "easy045",
+  "question": "In 2022, is the industry of Chuang Wei Jin Zhi Electrical Appliances Co., Ltd. the same as that of Long He Chan Zhi Di Chan Holdings Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Chuang Wei Jin Zhi Electrical Appliances Co., Ltd. (2022 dataset value): industry = Consumer Electronics and Electrical Industry",
+    "Long He Chan Zhi Di Chan Holdings Co., Ltd. (2022 dataset value): industry = Real Estate"
+  ],
+  "milestone": {
+    "Industry of Chuang Wei Jin Zhi Electrical Appliances Co., Ltd.": "Consumer Electronics and Electrical Industry",
+    "Industry of Long He Chan Zhi Di Chan Holdings Co., Ltd.": "Real Estate",
+    "Comparison result (whether the industries are the same)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Chuang Wei Jin Zhi Electrical Appliances Co., Ltd. = Consumer Electronics and Electrical Industry",
+    "Extracted from company_profile.csv: industry of Long He Chan Zhi Di Chan Holdings Co., Ltd. = Real Estate",
+    "Compared the two industry texts and judged \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_profile": "50554e97-eb8a-47a7-b8c3-bd642ed71cfd"
+    },
+    {
+      "company_profile": "75cba6a7-770b-4270-a8c5-e378847b0017"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "medium032",
+  "question": "Between the number of local policies related to Hui Jin Jin Rui Cai Fu Management Co., Ltd. and the corresponding number of local policies for the Commercial Electrical Machinery and Equipment Manufacturing industry, which is greater?",
+  "guidelines": "The answer must be a company name or the word \"industry\"; output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd.: Financial Services",
+    "Financial Services local policies - Henan Province General Office of the People's Government - policy count = 2",
+    "Commercial Electrical Machinery and Equipment Manufacturing local policies - Hainan Province Department of Industry and Information Technology - policy count = 1"
+  ],
+  "milestone": {
+    "Industry of Hui Jin Jin Rui Cai Fu Management Co., Ltd.": "Financial Services",
+    "Financial Services local policies_Henan Province General Office of the People's Government policy count": 2,
+    "Commercial Electrical Machinery and Equipment Manufacturing local policies_Hainan Province Department of Industry and Information Technology policy count": 1,
+    "Comparison result": "2 is greater; output Hui Jin Jin Rui Cai Fu Management Co., Ltd."
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hui Jin Jin Rui Cai Fu Management Co., Ltd.'s industry is Financial Services",
+    "Extract from policy_release_status.csv that in the local policies for Financial Services, the policy count issued by Henan Province General Office of the People's Government is 2",
+    "Extract from policy_release_status.csv that in the local policies for Commercial Electrical Machinery and Equipment Manufacturing, the policy count issued by the Hainan Province Department of Industry and Information Technology is 1",
+    "Compare 2 and 1; since 2 is greater, output \"Hui Jin Jin Rui Cai Fu Management Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "answer": "Hui Jin Jin Rui Cai Fu Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "a2734b19-8347-4c63-b17b-61453aab869e"
+    },
+    {
+      "company_profile": "f3c336ac-af8f-4c74-aed7-cc746cbb5826"
+    },
+    {
+      "policy_release_status": "3d7eef2c-40cc-4055-a862-336f60c2302e"
+    }
+  ]
+}

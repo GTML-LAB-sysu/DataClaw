@@ -1,0 +1,46 @@
+{
+  "id": "medium024",
+  "question": "What is the difference between the minimum value of provincial enterprise technology innovation awards in the industry of Aijian Yikang Fuzhongxin Co., Ltd. and that in the industry of Zhongke Zhiyun Data Services Co., Ltd.?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Aijian Yikang Fuzhongxin Co., Ltd.: Health and Social Work",
+    "Minimum value of provincial enterprise technology innovation awards in Health and Social Work: 0",
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.: Information Transmission, Software and Information Technology Services",
+    "Minimum value of provincial enterprise technology innovation awards in Information Transmission, Software and Information Technology Services: 0"
+  ],
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Aijian Yikang Fuzhongxin Co., Ltd.": "Health and Social Work",
+    "Minimum value of provincial enterprise technology innovation awards in Health and Social Work": 0,
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Minimum value of provincial enterprise technology innovation awards in Information Transmission, Software and Information Technology Services": 0,
+    "Difference": 0.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Aijian Yikang Fuzhongxin Co., Ltd. is Health and Social Work.",
+    "Extracted from national_industry_status.csv that the minimum value of provincial enterprise technology innovation awards in Health and Social Work is 0.",
+    "Extracted from company_profile.csv that the industry of Zhongke Zhiyun Data Services Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the minimum value of provincial enterprise technology innovation awards in Information Transmission, Software and Information Technology Services is 0.",
+    "Calculated the difference: 0 - 0 = 0.0."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "a08b718a-c663-4252-a4f4-56c3034bae0c"
+    },
+    {
+      "company_profile": "10890d3a-b03b-417b-b39e-f5070604b51e"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "d6ab2642-2691-4f63-a197-6a4c29026c0d"
+    }
+  ]
+}

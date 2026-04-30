@@ -1,0 +1,27 @@
+{
+  "id": "medium012",
+  "question": "In 2022, based on the 'structural efficiency paradox' hypothesis in industrial economics (i.e., during enterprise technology transformation, the anomalous phenomenon may occur where revenue growth coexists with workforce reduction, and reduced R&D investment coexists with increased innovation output), verify whether the dual paradox exists in the chemical fiber manufacturing industry. The hypothesis states: when enterprises are in the technology upgrading stage, revenue grows but automation replaces labor leading to fewer employees; meanwhile, R&D investment ratio is below the industry median but patent grants are above the industry median. Please count the number of valid enterprises that simultaneously exhibit both paradox characteristics.",
+  "guidelines": "Answer format: numerical value (integer, unit: enterprises). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 2,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  },
+  "steps": [
+    "Filter all enterprises with industry=\"chemical fiber manufacturing\" from company_profile.csv, extract company name and bmCode fields, finding 34 enterprises.",
+    "From company_operation_status.csv, associate 2022 data for these enterprises based on bmCode, extract four indicators: year-over-year revenue growth rate, year-over-year employee growth rate, R&D investment ratio, and annual China patent grants. Successfully associated 34 enterprises. Filter out 4 enterprises with any of the four indicators empty, obtaining 30 valid enterprises.",
+    "Calculate median R&D investment ratio of valid enterprises = 3.355, median annual China patent grants = 21.0.",
+    "Filter first paradox: enterprises with year-over-year revenue growth rate > 0 and year-over-year employee growth rate < 0, 3 enterprises in total.",
+    "Among first paradox enterprises, filter second paradox: enterprises with R&D investment ratio < industry median (3.355) and annual China patent grants > industry median (21.0), 2 enterprises in total.",
+    "Number of enterprises simultaneously satisfying both paradox conditions: 2."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Total number of valid enterprises": 30,
+    "Median R&D investment ratio": 3.355,
+    "Median annual patent grants": 21.0,
+    "Number of first paradox enterprises": 3,
+    "Number of dual paradox enterprises": 2
+  }
+}

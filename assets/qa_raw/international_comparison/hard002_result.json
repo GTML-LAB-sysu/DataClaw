@@ -1,0 +1,40 @@
+{
+  "id": "hard002",
+  "question": "In 2022, against the backdrop of the expiration of new energy vehicle purchase subsidy policies and the transition of industry support from direct subsidies to indirect incentives such as purchase tax exemption, what is the ratio of government subsidies and related income to operating revenue in Li Auto's annual report? Compared with the median government subsidy-to-revenue ratio of private enterprises and state-owned enterprises (including central and local state-owned enterprises) in the domestic automotive manufacturing industry, by how many percentage points is it higher for each?",
+  "guidelines": "Answer in order: Li Auto government subsidy-to-revenue ratio (%), percentage points above private enterprise median, percentage points above state-owned enterprise median. Retain 2 decimal places and return as an array. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Extract from Li Auto (LI) 2022 Annual Report PDF (20-F): Consolidated Statements of Comprehensive Loss - Total revenues = RMB 45,286,816 thousand; Others, net = RMB 625,633 thousand. According to the accounting policy notes in the annual report, non-designated-purpose government subsidies (Other subsidies) are recorded as income under Others, net; this line item also includes VAT refunds of RMB 234,531 thousand and other government-related income.",
+    "Calculate Li Auto's 2022 government subsidy and related income as percentage of revenue = 625,633 / 45,286,816 × 100% = 1.38%.",
+    "Filter from company_profile.csv enterprises with industry=\"automotive manufacturing industry\", 230 enterprises total. Group by ownership: 161 private enterprises, 31 local state-owned enterprises, 17 central state-owned enterprises, 17 foreign enterprises, 4 Sino-foreign joint ventures.",
+    "Merge with company_operation_status.csv, read \"government reward and subsidy\" and \"operating revenue amount\" fields for each enterprise. After excluding records with zero revenue or missing subsidy data, 224 valid samples. Calculate each enterprise's government subsidy-to-revenue ratio = government reward and subsidy / operating revenue amount × 100%.",
+    "Calculate median by ownership: 156 private enterprises, median = 0.72%; state-owned enterprises (16 central + 31 local) = 47 total, median = 0.58%.",
+    "Calculate comparison gap: Li Auto is 1.38% - 0.72% = 0.66 percentage points above private enterprise median; 1.38% - 0.58% = 0.80 percentage points above state-owned enterprise median."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "Li Auto (LI) 2022 Annual Report PDF (20-F), total revenues RMB 45,286,816 thousand, Others, net RMB 625,633 thousand, including non-designated-purpose government subsidies and VAT refunds.",
+    "Found 230 automotive manufacturing industry enterprises in company_profile.csv, including 161 private enterprises and 48 state-owned enterprises (central + local).",
+    "Obtained government subsidy and operating revenue data for 224 valid enterprises from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Li Auto total revenue (thousand RMB)": 45286816,
+    "Li Auto Others, net (thousand RMB)": 625633,
+    "Li Auto government subsidy-to-revenue ratio (%)": 1.38,
+    "Valid automotive manufacturing private enterprise samples": 156,
+    "Valid automotive manufacturing state-owned enterprise samples": 47,
+    "Private enterprise median subsidy-to-revenue ratio (%)": 0.72,
+    "State-owned enterprise median subsidy-to-revenue ratio (%)": 0.58,
+    "Li Auto above private median (percentage points)": 0.66,
+    "Li Auto above state-owned median (percentage points)": 0.8
+  },
+  "answer": [
+    1.38,
+    0.66,
+    0.8
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

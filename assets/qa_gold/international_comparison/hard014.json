@@ -1,0 +1,33 @@
+{
+  "id": "hard014",
+  "question": "A distressed-reversal fund applies a \"screen first, value second\" rule to platform retail stocks. For each candidate company, first compute: ① Survival score = technology service revenue ratio + R&D intensity - 0.1×|company net margin - median net margin of A-share wholesale and retail industry in 2022|; ② If company net margin is below -100%, trigger one-vote veto and remove directly; otherwise, only enter the watch pool when survival score ≥ 20. Based on Mogujie (MOGU) annual report for the fiscal year ended March 31, 2022 and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: technology service revenue ratio (%), R&D intensity (%), survival score, and most appropriate conclusion. Values rounded to 2 decimal places; conclusion must clearly state whether the stock is removed; return as an array. If relevant data cannot be found, reply \"No relevant data found\".",
+  "answer": [
+    13.65,
+    24.49,
+    18.95,
+    "Remove"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  },
+  "steps": [
+    "Web search Mogujie annual report for fiscal year ended March 31, 2022: Technology service revenues = 46,077, Total revenues = 337,469, Research and development expenses = 82,641, Net loss = 642,374, all in thousands of CNY.",
+    "Calculate technology service revenue ratio = 46,077 ÷ 337,469 × 100% = 13.6537%, rounded to 13.65%; R&D intensity = 82,641 ÷ 337,469 × 100% = 24.4885%, rounded to 24.49%; net margin = -642,374 ÷ 337,469 × 100% = -190.3505%, rounded to -190.35%.",
+    "Filter A-share companies with industry=\"wholesale and retail\" from company_profile.csv, 273 companies; extract 2022 operating revenue and net profit from company_operation_status.csv, retain all 273 companies with valid data.",
+    "Compute net margin for each company: net profit ÷ operating revenue × 100%; median net margin of A-share wholesale and retail industry in 2022 = 1.55%. Absolute deviation from industry median = | -190.35% - 1.55% | = 191.90 percentage points.",
+    "Calculate survival score per definition: 13.65 + 24.49 - 0.1×191.90 = 38.14 - 19.19 = 18.95.",
+    "Since company net margin -190.35% is below -100%, one-vote veto is triggered; regardless of survival score, the conclusion is to remove."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Technology service revenue ratio(%)": 13.65,
+    "R&D intensity(%)": 24.49,
+    "Net margin(%)": -190.35,
+    "Median net margin of A-share wholesale and retail industry(%)": 1.55,
+    "Absolute deviation of net margin from median(percentage points)": 191.9,
+    "Survival score": 18.95
+  }
+}

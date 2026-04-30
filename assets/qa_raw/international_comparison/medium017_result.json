@@ -1,0 +1,41 @@
+{
+  "id": "medium017",
+  "question": "In 2022, under national policies promoting innovative drug R&D, what was BeiGene's R&D expense as a percentage of revenue in its annual report? How many percentage points does that ratio differ from the median R&D-to-revenue ratio among domestic pharmaceutical manufacturing firms that are (1) private enterprises and (2) state-owned enterprises (including centrally administered SOEs, locally administered SOEs, and institute-type SOEs), after excluding zeros and invalid data? What is the gap between the median R&D ratios of private vs. state-owned domestic pharmaceutical firms?",
+  "guidelines": "Answer in order: BeiGene's R&D-to-revenue ratio (%); gap vs. private enterprises' median (percentage points); gap vs. state-owned enterprises' median (percentage points); gap between private and state-owned medians (percentage points). Use 2 decimal places; return as a list. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From BeiGene's 2022 annual report (PDF), Consolidated Statements of Operations: Total revenues = $1,415,921 thousand USD, Research and development expense = $1,640,508 thousand USD. R&D-to-revenue ratio = 1,640,508 / 1,415,921 × 100 = 115.86%.",
+    "From company_profile.csv, filter industry = \"Pharmaceutical Manufacturing\", 449 companies. By ownership: private enterprises 346; state-owned enterprises (centrally administered SOEs 16 + locally administered SOEs 49 + institute-type SOEs 2) = 67 in total.",
+    "Join company_operation_status.csv; filter valid R&D-to-revenue ratios > 0. Private enterprises: 326 valid samples, median R&D ratio = 7.46%. State-owned enterprises: 66 valid samples, median R&D ratio = 4.63%.",
+    "Compute gaps vs. benchmarks: BeiGene vs. private median = 115.86% − 7.46% = 108.40 percentage points; BeiGene vs. state-owned median = 115.86% − 4.63% = 111.23 percentage points.",
+    "Gap between private and state-owned medians = 7.46% − 4.63% = 2.83 percentage points; private enterprises show higher R&D intensity than state-owned enterprises."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "BeiGene 2022 annual report PDF (Consolidated Statements of Operations): Total revenues = $1,415,921 thousand USD, R&D expense = $1,640,508 thousand USD.",
+    "company_profile.csv: 449 Pharmaceutical Manufacturing companies; 346 private enterprises, 67 state-owned enterprises.",
+    "company_operation_status.csv: R&D-to-revenue ratios — 326 valid private samples, 66 valid state-owned samples."
+  ],
+  "milestone": {
+    "BeiGene Total revenues (thousand USD)": 1415921,
+    "BeiGene R&D expense (thousand USD)": 1640508,
+    "BeiGene R&D-to-revenue ratio (%)": 115.86,
+    "Private enterprises valid sample count": 326,
+    "Private enterprises median R&D-to-revenue ratio (%)": 7.46,
+    "State-owned enterprises valid sample count": 66,
+    "State-owned enterprises median R&D-to-revenue ratio (%)": 4.63,
+    "BeiGene vs. private median gap (percentage points)": 108.4,
+    "BeiGene vs. state-owned median gap (percentage points)": 111.23,
+    "Private vs. state-owned median gap (percentage points)": 2.83
+  },
+  "answer": [
+    115.86,
+    108.4,
+    111.23,
+    2.83
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

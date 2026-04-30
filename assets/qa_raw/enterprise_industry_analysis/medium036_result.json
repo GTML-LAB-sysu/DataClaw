@@ -1,0 +1,46 @@
+{
+  "id": "medium036",
+  "question": "Is the mean annual number of Chinese invention patent applications in the industry of Yi Hai Chang Jin Shang Wu Co., Ltd. greater than the corresponding industry metric in Shanghai, where Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd. is located?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.: Leasing and Business Services",
+    "Mean annual Chinese invention patent applications in Leasing and Business Services: 9.27586206896552",
+    "Province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.: Shanghai Municipality",
+    "Mean annual Chinese invention patent applications in Shanghai Financial Industry: 35.2380952380952"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Yi Hai Chang Jin Shang Wu Co., Ltd.": "Leasing and Business Services",
+    "Mean annual Chinese invention patent applications in Leasing and Business Services": 9.27586206896552,
+    "Province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd.": "Shanghai Municipality",
+    "Mean annual Chinese invention patent applications in Shanghai Financial Industry": 35.2380952380952,
+    "Whether greater": "No"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Yi Hai Chang Jin Shang Wu Co., Ltd. = Leasing and Business Services",
+    "Extracted from national_industry_status.csv: mean annual Chinese invention patent applications in Leasing and Business Services = 9.27586206896552",
+    "Extracted from company_profile.csv: province of Jin Zhi Hong Sheng Zi Chan Guan Li Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: mean annual Chinese invention patent applications in Shanghai Financial Industry = 35.2380952380952",
+    "Compared 9.27586206896552 and 35.2380952380952; since the former is smaller, the answer is \"No\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "e4578b09-ad56-4edf-adc8-9cd6b54149b7"
+    },
+    {
+      "company_profile": "6663bda5-77a9-4884-b0c3-c7ae19f910a8"
+    },
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    }
+  ]
+}

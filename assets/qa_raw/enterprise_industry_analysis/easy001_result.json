@@ -1,0 +1,39 @@
+{
+  "id": "easy001",
+  "question": "In 2022, which is higher: the total number of citations of all patents of Zhong Ji Da Chang Tong Ye Co., Ltd. or the industry median benchmark?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Zhong Ji Da Chang Tong Ye Co., Ltd. (2022 dataset value): total citations of all patents = 558",
+    "The company belongs to the Metal Products industry",
+    "Industry benchmark (median) for total citations of all patents in Metal Products = 484"
+  ],
+  "milestone": {
+    "Zhong Ji Da Chang Tong Ye Co., Ltd. total citations of all patents in 2022": 558,
+    "Industry of Zhong Ji Da Chang Tong Ye Co., Ltd.": "Metal Products",
+    "Industry benchmark (median) for total citations of all patents in Metal Products": 484,
+    "Comparison result (whether the company is higher than the industry median)": "Yes"
+  },
+  "answer": "Zhong Ji Da Chang Tong Ye Co., Ltd.",
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Ji Da Chang Tong Ye Co., Ltd. total citations of all patents in 2022 = 558",
+    "Extracted from company_profile.csv: the company belongs to Metal Products; extracted from national_industry_status.csv: the industry benchmark (median) is 484",
+    "Compared 558 and 484; since 558 > 484, the company is higher, so output \"Zhong Ji Da Chang Tong Ye Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "reference": [
+    {
+      "company_operation_status": "05e7a409-b175-4fb1-8382-54f744f20a46"
+    },
+    {
+      "national_industry_status": "02c91882-76b2-45b4-abcf-3db6194fb2de"
+    },
+    {
+      "company_profile": "b6494485-93ab-4705-ab72-0aa551d2f1d6"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy109",
+  "question": "Does Hua Cheng Jin Jin Zong He Kai Fa Co., Ltd. contribute to the development of Zhejiang Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hua Cheng Jin Jin Zong He Kai Fa Co., Ltd.'s registration region is Hong Kong SAR",
+    "Compare with the province named in the question, \"Zhejiang Province\"; the two are not the same",
+    "Therefore the condition stated in the question is not met; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Hua Cheng Jin Jin Zong He Kai Fa Co., Ltd. registration region": "Hong Kong SAR",
+    "Comparison province": "Zhejiang Province",
+    "Whether contributes to development of Zhejiang Province": "No"
+  }
+}

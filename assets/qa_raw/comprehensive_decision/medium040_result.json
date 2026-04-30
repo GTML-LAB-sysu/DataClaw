@@ -1,0 +1,24 @@
+{
+  "id": "medium040",
+  "question": "In 2022, in Guangdong Province's Raw Chemical Materials and Chemical Products Manufacturing industry, what share of the market's operating revenue does the company with the highest market capitalization account for?",
+  "guidelines": "The answer must be an exact number, rounded to 2 decimal places. Output only the number, do not add units, commas, or any textual explanation. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from company_profile.csv all enterprise records with province=\"Guangdong Province\" and industry=\"Raw Chemical Materials and Chemical Products Manufacturing\", extract enterprise name and bmCode fields, finding 41 enterprises in Guangdong Province's Raw Chemical Materials and Chemical Products Manufacturing industry.",
+    "Filter from company_operation_status.csv the 2022 data of these enterprises by enterprise name and bmCode fields, extract company market capitalization and operating revenue amount fields, finding 2022 data for 41 enterprises in Guangdong Province's Raw Chemical Materials and Chemical Products Manufacturing industry.",
+    "Filter enterprise records where both company market capitalization and operating revenue amount are not null (notna), totaling 41 records. Sort all enterprises in descending order by company market capitalization to determine market capitalization ranking. The enterprise with the highest market capitalization is \"Hengyi Shengsheng Technology Co., Ltd.\". The operating revenue amount of \"Hengyi Shengsheng Technology Co., Ltd.\" is 22316919995.89 CNY.",
+    "Calculate the total operating revenue of Guangdong Province's Raw Chemical Materials and Chemical Products Manufacturing industry as 101800752670.91 CNY.",
+    "Calculate share = (operating revenue of highest market cap enterprise / total industry operating revenue) × 100%, rounded to 2 decimal places: 21.92%"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Operating revenue of highest market cap enterprise (CNY)": 22316919995.89,
+    "Total operating revenue of Guangdong Province Raw Chemical Materials and Chemical Products Manufacturing industry (CNY)": 101800752670.91,
+    "Share": 21.92
+  },
+  "answer": 21.92,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

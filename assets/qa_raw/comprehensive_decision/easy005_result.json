@@ -1,0 +1,37 @@
+{
+  "id": "easy005",
+  "question": "In 2022, nationwide, what is the ranking of provinces by profitability in the Real Estate industry? Please list the top five provinces.",
+  "guidelines": "Answer format: [Province A, Province B, ...]. Output only the province ranking, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from regional_industry_status.csv all records with industry=\"Real Estate\", extract province and total net profit amount fields, finding data for 34 provinces/regions in the Real Estate industry.",
+    "Filter province records where total net profit amount is not null, totaling 34 valid records. Sort all provincial data in descending order by total net profit amount to determine the profitability ranking of each province.",
+    "Extract the top five provinces and their total net profit amounts: Hong Kong SAR (86497465420.52 CNY), Guangdong Province (70559018502.22 CNY), Zhejiang Province (12297928184.06 CNY), Beijing (8975618268.55 CNY), Jilin Province (675521026.00 CNY)."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total net profit amount of Hong Kong SAR (CNY)": 86497465420.52,
+    "Total net profit amount of Guangdong Province (CNY)": 70559018502.22,
+    "Total net profit amount of Zhejiang Province (CNY)": 12297928184.06,
+    "Total net profit amount of Beijing (CNY)": 8975618268.55,
+    "Total net profit amount of Jilin Province (CNY)": 675521026.0,
+    "Top five provinces by ranking": [
+      "Hong Kong SAR",
+      "Guangdong Province",
+      "Zhejiang Province",
+      "Beijing",
+      "Jilin Province"
+    ]
+  },
+  "answer": [
+    "Hong Kong SAR",
+    "Guangdong Province",
+    "Zhejiang Province",
+    "Beijing",
+    "Jilin Province"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "comprehensive_decision"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy069",
+  "question": "In 2022, what percentage does the total number of employees in Jilin Province's comprehensive industry represent relative to the total number of employees in the same industry nationwide?",
+  "guidelines": "The answer must be \"National\" or \"Jilin\". If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv that the total number of employees in Jilin Province's comprehensive industry is 0 persons.",
+    "Extracted from national_industry_status.csv that the total number of employees in the comprehensive industry is 439485 persons.",
+    "Calculated Jilin's percentage of the national total: 0 / 439485 * 100 = 0."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total number of employees in Jilin Province's comprehensive industry (persons)": 0,
+    "Total number of employees in the nationwide comprehensive industry (persons)": 439485,
+    "Percentage (Jilin/National, %)": 0
+  }
+}

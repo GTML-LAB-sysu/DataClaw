@@ -1,0 +1,46 @@
+{
+  "id": "medium014",
+  "question": "Comparing the number of SSE-listed state-owned enterprise institutes in the industry of Huijin Jinrui Wealth Management Co., Ltd. with the number of HKEX-listed sino-foreign joint ventures in the industry of Zhongke Zhiyun Data Services Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name, \"industry\", or \"Same\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.: Financial Industry",
+    "Financial Industry, number of state-owned enterprise institutes listed on SSE: 1",
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.: Information Transmission, Software and Information Technology Services",
+    "Information Transmission, Software and Information Technology Services, number of HKEX-listed sino-foreign joint ventures: 1"
+  ],
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.": "Financial Industry",
+    "Number of SSE-listed state-owned enterprise institutes in Financial Industry": 1,
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Number of HKEX-listed sino-foreign joint ventures in Information Transmission, Software and Information Technology Services": 1,
+    "Comparison result (answer output)": "Same"
+  },
+  "answer": "Same",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Huijin Jinrui Wealth Management Co., Ltd. is Financial Industry.",
+    "Extracted from national_industry_status.csv that the number of SSE-listed state-owned enterprise institutes in Financial Industry is 1.",
+    "Extracted from company_profile.csv that the industry of Zhongke Zhiyun Data Services Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the number of HKEX-listed sino-foreign joint ventures in Information Transmission, Software and Information Technology Services is 1.",
+    "Compared the two counts and output the result corresponding to the predefined answer field: Same."
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "5dc0d9db-af52-48e2-8eef-98a66f67632f"
+    },
+    {
+      "company_profile": "f3c336ac-af8f-4c74-aed7-cc746cbb5826"
+    },
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "d6ab2642-2691-4f63-a197-6a4c29026c0d"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium076",
+  "question": "Between the median number of industry standards participated in drafting in the industry where Hengli Kezhi Software Company operates and that of the conglomerates industry, which value is larger?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Hengli Kezhi Software Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hengli Kezhi Software Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the median number of industry standards participated in drafting for Information Transmission, Software and IT Services is 2.",
+    "Extract from national_industry_status.csv that the median number of industry standards participated in drafting for the conglomerates industry is 0.",
+    "Compare the two medians: 2 > 0, so the industry where Hengli Kezhi Software Company operates is larger."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Hengli Kezhi Software Company": "Information Transmission, Software and IT Services",
+    "Median number of industry standards participated in drafting for Information Transmission, Software and IT Services": 2,
+    "Median number of industry standards participated in drafting for the conglomerates industry": 0,
+    "Comparison result (larger one)": "Hengli Kezhi Software Company"
+  }
+}

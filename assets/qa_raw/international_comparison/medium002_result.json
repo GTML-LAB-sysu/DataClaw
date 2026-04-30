@@ -1,0 +1,34 @@
+{
+  "id": "medium002",
+  "question": "What is the net profit margin (net profit / operating revenue × 100%) of Trip.com Group according to its 2022 annual report? What is the difference in percentage points compared with the median net profit margin of listed companies in China's transport, storage and postal services industry?",
+  "guidelines": "Answer in order: Trip.com net profit margin (%), and the difference from domestic industry median (percentage points; negative value means Trip.com is below industry median). Values rounded to 2 decimal places, returned as an array, e.g. [-3.50, -1.20]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Trip.com Group (TCOM) 2022 20-F annual report, Selected Consolidated Statements of Income/(Loss) Data section: Net revenues = RMB 20,039 million, Net income = RMB 1,367 million. Net profit margin = 1,367 / 20,039 × 100% = 6.82%.",
+    "Filter company_profile.csv for companies with industry=\"transport, storage and postal services\" (transport, storage and postal services), 176 companies.",
+    "Join the 176 companies with company_operation_status.csv by bmCode, obtain net profit and operating revenue for each, compute net profit margin (net profit / operating revenue × 100%); all 176 have valid data. Median net profit margin = 8.28%.",
+    "Calculate difference between Trip.com and domestic transport industry median: 6.82% - 8.28% = -1.46 percentage points; Trip.com net profit margin is below domestic industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "Trip.com Group (TCOM) 2022 20-F annual report (SEC Filing), including 2022 consolidated net revenues RMB 20,039 million, consolidated net profit RMB 1,367 million.",
+    "company_profile.csv: 176 companies in transport, storage and postal services industry.",
+    "company_operation_status.csv: net profit and operating revenue for the 176 transport industry companies."
+  ],
+  "milestone": {
+    "Trip.com 2022 net revenue(RMB million)": 20039,
+    "Trip.com 2022 net profit(RMB million)": 1367,
+    "Trip.com net profit margin(%)": 6.82,
+    "Domestic transport industry company count": 176,
+    "Domestic transport industry median net profit margin(%)": 8.28,
+    "Net profit margin difference(percentage points)": -1.46
+  },
+  "answer": [
+    6.82,
+    -1.46
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

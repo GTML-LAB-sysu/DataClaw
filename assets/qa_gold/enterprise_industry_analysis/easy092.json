@@ -1,0 +1,22 @@
+{
+  "id": "easy092",
+  "question": "Are Huadianeng Jin Hydropower Company and Huaneng Zeze New Energy Company in a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Huadianeng Jin Hydropower Company is in the Electricity, Heat, Gas and Water Production and Supply industry.",
+    "Extract from company_profile.csv that Huaneng Zeze New Energy Company is in the Electricity, Heat, Gas and Water Production and Supply industry.",
+    "Since the two companies are in the same industry, a competitive relationship exists; output \"Yes\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Industry of Huadianeng Jin Hydropower Company": "Electricity, Heat, Gas and Water Production and Supply",
+    "Industry of Huaneng Zeze New Energy Company": "Electricity, Heat, Gas and Water Production and Supply",
+    "Competitive relationship": "Yes"
+  }
+}

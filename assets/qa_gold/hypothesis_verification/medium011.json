@@ -1,0 +1,28 @@
+{
+  "id": "medium011",
+  "question": "In the 2022 provincial-level data for the automotive manufacturing industry, some provinces exhibit a dual structural contradiction: first, the number of automotive manufacturing enterprises in the province exceeds the average number of enterprises across all provinces with automotive manufacturing, but the province's total automotive manufacturing revenue is below the average revenue of all provinces; second, the province's average R&D investment ratio is higher than the mean of this indicator across provinces, but the average profit margin (measured as total operating profit / total revenue × 100%) is lower than the mean of this profit margin indicator across all provinces. Please count the number of provinces in 2022 that simultaneously meet both of the above contradiction conditions.",
+  "guidelines": "Answer format: numerical value (integer). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  },
+  "steps": [
+    "Filter from regional_industry_status.csv all provincial records with industry=\"automotive manufacturing\" and total number of enterprises > 0. Extract province, total number of enterprises, total revenue amount, total operating profit amount, and average R&D investment ratio fields. Found 14 valid provinces.",
+    "Calculate the mean total number of enterprises across all valid provinces = 14.0000, and mean total revenue amount = 297307507961.18 yuan.",
+    "Calculate each province's average profit margin = total operating profit amount / total revenue amount × 100%, and calculate the mean of average profit margin across all valid provinces = 3.2804%.",
+    "Calculate the mean of average R&D investment ratio across all valid provinces = 6.1612.",
+    "Filter provinces satisfying all four conditions: total number of enterprises > 14.0000, total revenue amount < 297307507961.18, average R&D investment ratio > 6.1612, and average profit margin < 3.2804%. Provinces satisfying conditions: none.",
+    "Count of provinces satisfying conditions: 0."
+  ],
+  "steps_num": 6,
+  "milestone": {
+    "Total number of valid provinces": 14,
+    "Mean total number of enterprises": 14.0,
+    "Mean revenue (yuan)": 297307507961.18,
+    "Mean profit margin (%)": 3.2804,
+    "Mean R&D ratio": 6.1612,
+    "List of provinces satisfying conditions": "none"
+  }
+}

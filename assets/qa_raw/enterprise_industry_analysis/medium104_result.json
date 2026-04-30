@@ -1,0 +1,40 @@
+{
+  "id": "medium104",
+  "question": "Which value is larger: the number of HKEX-listed foreign-funded enterprises in the province where Jinzhi Hongsheng Asset Management Company is located, or the number of SSE-listed central state-owned enterprises in China's Culture, Sports and Entertainment industry?",
+  "guidelines": "The answer must be either \"the number of HKEX-listed foreign-funded enterprises in the province where Jinzhi Hongsheng Asset Management Company is located\", \"the number of SSE-listed central state-owned enterprises in China's Culture, Sports and Entertainment industry\", or \"Equal\". Output only the answer itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Jinzhi Hongsheng Asset Management Company: Shanghai Municipality",
+    "Shanghai Municipality - Financial industry: number of HKEX-listed foreign-funded enterprises = 2",
+    "Culture, Sports and Entertainment (China): number of SSE-listed central state-owned enterprises = 2"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Jinzhi Hongsheng Asset Management Company is located in Shanghai Municipality and belongs to the Financial industry.",
+    "Extract from regional_industry_status.csv that the number of HKEX-listed foreign-funded enterprises in Shanghai Municipality - Financial industry is 2.",
+    "Extract from national_industry_status.csv that the number of SSE-listed central state-owned enterprises in China's Culture, Sports and Entertainment industry is 2.",
+    "Compare the values: 2 = 2, so the result is Equal."
+  ],
+  "steps_num": 4,
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Jinzhi Hongsheng Asset Management Company": "Shanghai Municipality",
+    "Number of HKEX-listed foreign-funded enterprises in Shanghai Municipality - Financial industry": 2,
+    "Number of SSE-listed central state-owned enterprises in Culture, Sports and Entertainment": 2,
+    "Comparison result (larger one)": "Equal"
+  },
+  "reference": [
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "national_industry_status": "9e59028a-f6d1-4a30-ae4b-ce2b5174093e"
+    }
+  ]
+}

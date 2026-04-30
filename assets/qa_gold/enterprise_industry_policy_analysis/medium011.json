@@ -1,0 +1,26 @@
+{
+  "id": "medium011",
+  "question": "What is the difference between the number of central ministry/agency policies issued by the State Administration of Foreign Exchange in the ministerial policies for the industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd. and the number of local policies issued by the Guangdong Provincial Committee of the CPC for the Financial Services industry in Guangdong Province where Hui Jin Jin Rui Cai Fu Management Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Zhong Ke Ke Shu Ruan Jian Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "From policy_release_status.csv, extract that in the ministerial policies for Information Transmission, Software and IT Services, the policy count issued by the State Administration of Foreign Exchange is 1",
+    "From company_profile.csv, extract that Hui Jin Jin Rui Cai Fu Management Co., Ltd. is located in Guangdong Province and its industry is Financial Services",
+    "From policy_release_status.csv, filter by province = Guangdong Province and industry = Financial Services, and extract that in local policies, the policy count issued by the Guangdong Provincial Committee of the CPC is 1",
+    "Compute the difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhong Ke Ke Shu Ruan Jian Co., Ltd.": "Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services ministerial policies_State Administration of Foreign Exchange policy count": 1,
+    "Province of Hui Jin Jin Rui Cai Fu Management Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Financial Services local policies_Guangdong Provincial Committee of the CPC policy count": 1,
+    "Difference (State Administration of Foreign Exchange policy count - Guangdong Provincial Committee of the CPC policy count)": 0.0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "easy060",
+  "question": "In 2022, compared with Sansong Shijin Condiment Co., Ltd.'s strengths in technology development and independent innovation, whose strengths are more focused on market influence: Haishan Weixiang Catering Management Co., Ltd. or Sansong Shijin Condiment Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "According to the publicly disclosed 2022 annual report of Haishan Weixiang Catering Management Co., Ltd., its brand strengths emphasize market influence factors such as brand awareness, honors, and increased brand influence after listing.",
+    "According to the publicly disclosed 2022 annual report of Sansong Shijin Condiment Co., Ltd., its core competitiveness description emphasizes technology development and independent innovation (R&D investment, technology platforms, patents, and product R&D), focusing on technical capability rather than market influence."
+  ],
+  "milestone": {
+    "Strength focus of Haishan Weixiang Catering Management Co., Ltd.": "Brand influence/awareness/honors (market influence)",
+    "Strength focus of Sansong Shijin Condiment Co., Ltd.": "Technology development and independent innovation (technical capability)",
+    "Comparison result (which one is more focused on market influence)": "Haishan Weixiang Catering Management Co., Ltd."
+  },
+  "answer": "Haishan Weixiang Catering Management Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_core.csv the core competitiveness description of Haishan Weixiang Catering Management Co., Ltd. and identified market influence expressions such as \"brand influence/honors/awareness\".",
+    "Extracted from company_core.csv the core competitiveness description of Sansong Shijin Condiment Co., Ltd. and identified that it mainly emphasizes \"technology development and independent innovation/R&D investment/technology platform\".",
+    "Compared the focus of both companies and judged that the one more focused on market influence is \"Haishan Weixiang Catering Management Co., Ltd.\"."
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_Core": "3e31c4b1-d9da-45a5-bd5b-888b4a722dcc"
+    },
+    {
+      "company_Core": "0289794b-89e2-4b25-83c3-bb07574cefb9"
+    },
+    {
+      "company_profile": "46ca80ac-fd45-4dfe-bbc3-60ed1441a1d3"
+    },
+    {
+      "company_profile": "9f8442b2-cb57-40b4-bcf2-2596934346b2"
+    }
+  ]
+}

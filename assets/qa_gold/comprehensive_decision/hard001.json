@@ -1,0 +1,31 @@
+{
+  "id": "hard001",
+  "question": "In 2022, a strategic consulting firm was commissioned by a provincial government to quantitatively rank the comprehensive attractiveness of pharmaceutical manufacturing across provinces, in order to identify priority target regions for attracting leading enterprises. The company designed a four-dimensional weighted scoring system: four original indicators—enterprise agglomeration level (weight 30%), R&D expenditure as a share of revenue (weight 30%), regional policy coverage intensity (weight 20%), and R&D human resource penetration rate (weight 20%)—were normalized (min-max) and then weighted to produce a composite score. Among these, agglomeration level is measured by the proportion of enterprises in each province to the national total in pharmaceutical manufacturing; policy intensity is measured by the ratio of relevant policy items in each province to the total number of relevant policies nationwide; and human resource penetration rate is the total number of R&D personnel in each province divided by total employees. What is the specific composite score value of the province with the highest weighted composite score after normalization across provinces?",
+  "guidelines": "The answer should be a numerical value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0.92,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records with industry=\"Pharmaceutical Manufacturing\" from regional_industry_status.csv, extract province, total enterprises, total R&D expenditure, total operating revenue, total R&D personnel, and total employees; 34 provincial records were found.",
+    "Filter records with industry=\"Pharmaceutical Manufacturing\" from national_industry_status.csv to obtain the national total of 449 pharmaceutical manufacturing enterprises.",
+    "Filter policy records from policy_release_status.csv where the industry field contains \"Pharmaceutical Manufacturing\"; 80 relevant policies were found across 22 provinces. Group by province to count policy numbers per province.",
+    "Calculate four original indicators for each province: industry agglomeration = total enterprises/449, R&D intensity = total R&D expenditure/total operating revenue, policy support = province policy count/80, talent density = total R&D personnel/total employees. Filter to 16 valid provinces with all four indicators non-null.",
+    "Apply min-max normalization to each of the four indicators across the 16 valid provinces: normalized value = (original value - min)/(max - min).",
+    "Calculate composite score = normalized industry agglomeration × 0.3 + normalized R&D intensity × 0.3 + normalized policy support × 0.2 + normalized talent density × 0.2.",
+    "Sort by composite score in descending order. Shanghai has the highest composite score, with industry agglomeration 0.1203, R&D intensity 0.2548, policy support 0.1375, talent density 0.1620, and composite score = 0.9160."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "National total pharmaceutical manufacturing enterprises": 449.0,
+    "National total pharmaceutical manufacturing-related policies": 80,
+    "Number of valid provinces": 16,
+    "Shanghai industry agglomeration": 0.1203,
+    "Shanghai R&D intensity": 0.2548,
+    "Shanghai policy support": 0.1375,
+    "Shanghai talent density": 0.162,
+    "Shanghai composite score": 0.916
+  }
+}

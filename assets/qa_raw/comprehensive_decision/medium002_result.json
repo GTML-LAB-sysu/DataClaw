@@ -1,0 +1,35 @@
+{
+  "id": "medium002",
+  "question": "In 2022, a semiconductor company plans to expand production and wishes to locate in the province with the highest enterprise concentration to gain industrial synergy effects. What is the proportion of that province's semiconductor industry enterprise count to the national total? What proportion does that province's total operating profit in the semiconductor industry account for of the national semiconductor industry's total operating profit?",
+  "guidelines": "Two answers required, both numeric values (2 decimal places), unit is %. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"Semiconductor Industry\", extract province, total enterprise count, total operating profit; 34 province records obtained.",
+    "From national_industry_status.csv, filter records with industry=\"Semiconductor Industry\", extract total enterprise count and total operating profit: national total 172 enterprises, national total operating profit 411,298,557,285.26 yuan.",
+    "Sort by total enterprise count in regional_industry_status.csv descending; Guangdong Province has the highest with 54 enterprises; corresponding total operating profit 25,562,691,329.46 yuan.",
+    "Compute enterprise concentration = Guangdong enterprise count / national enterprise count × 100% = 54 / 172 × 100% = 31.40%.",
+    "Compute that province's semiconductor industry operating profit share = Guangdong total operating profit / national total operating profit × 100% = 25,562,691,329.46 / 411,298,557,285.26 × 100% = 6.22%."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "regional_industry_status.csv has 34 semiconductor industry province records; Guangdong Province has the highest enterprise count (54), with total operating profit 25,562,691,329.46 yuan.",
+    "national_industry_status.csv shows national semiconductor industry total of 172 enterprises, national total operating profit 411,298,557,285.26 yuan."
+  ],
+  "milestone": {
+    "Province with highest enterprise concentration": "Guangdong Province",
+    "Guangdong semiconductor industry enterprise count": 54,
+    "National semiconductor industry enterprise count": 172,
+    "Enterprise concentration (%)": 31.4,
+    "Guangdong semiconductor industry total operating profit (yuan)": 25562691329.46,
+    "National semiconductor industry total operating profit (yuan)": 411298557285.26,
+    "Guangdong operating profit share (%)": 6.22
+  },
+  "answer": [
+    31.4,
+    6.22
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "medium051",
+  "question": "Wu Li Hui Da Chain Co., Ltd.industry's ministerial policies_Number of policies (indicator) and China Shenzhen CitypersonsNumber of policies (indicator)compared with difference how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Wu Li Hui Da Chain Co., Ltd.industry = Retail",
+    "Extracted from policy_release_status.csv: Retailministerial policies in Number of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaConglomerateslocal policies in Shenzhen CitypersonsNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Wu Li Hui Da Chain Co., Ltd.industry": "Retail",
+    "Retailministerial policies_Number of policies (indicator)": 1,
+    "ChinaConglomerateslocal policies_Shenzhen CitypersonsNumber of policies (indicator)": 1,
+    "Difference(Number of policies (indicator)-Shenzhen CitypersonsNumber of policies (indicator))": 0.0
+  }
+}

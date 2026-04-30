@@ -1,0 +1,34 @@
+{
+  "id": "easy044",
+  "question": "In 2022, are the stock exchanges of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd. and Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd. the same?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd. (2022 dataset value): stock exchange = Shenzhen Stock Exchange",
+    "Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd. (2022 dataset value): stock exchange = Shenzhen Stock Exchange"
+  ],
+  "milestone": {
+    "Stock exchange of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd.": "Shenzhen Stock Exchange",
+    "Stock exchange of Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd.": "Shenzhen Stock Exchange",
+    "Comparison result (whether the stock exchanges are the same)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: stock exchange of Jian Ming Sheng Kang Yi Liao Qi Xie Co., Ltd. = Shenzhen Stock Exchange",
+    "Extracted from company_profile.csv: stock exchange of Kang Sheng Kang Rui Yao Ye Joint Stock Co., Ltd. = Shenzhen Stock Exchange",
+    "Compared the two stock exchange texts and judged \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_profile": "b3d11f26-f7b7-4a0f-bfb7-049ceb95f179"
+    },
+    {
+      "company_profile": "d57c27e6-c71c-478d-8a29-b860c4006dad"
+    }
+  ]
+}

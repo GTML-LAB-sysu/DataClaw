@@ -1,0 +1,22 @@
+{
+  "id": "easy059",
+  "question": "In 2022, is Haomei Company's core competitiveness in R&D and technology more focused on innovation and diversification than that of Zhongjin Yeye Resources Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_core.csv the core competitiveness description of Haomei Company and identified statements on R&D platform construction, technological innovation, and multi-field application layout (diversification).",
+    "Extracted from company_core.csv the core competitiveness description of Zhongjin Yeye Resources Co., Ltd. and checked whether it takes R&D innovation and diversification as its core expression.",
+    "Compared the two companies' focus on \"innovation and diversification\" and judged that Haomei Company is more focused, so the output is \"Yes\"."
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "R&D and technology focus of Haomei Company": "Innovation and diversified application layout",
+    "R&D and technology focus of Zhongjin Yeye Resources Co., Ltd.": "Region/quality/workforce and management systems (not centered on innovation and diversification)",
+    "Comparison result (whether Haomei Company is more focused on innovation and diversification)": "Yes"
+  }
+}

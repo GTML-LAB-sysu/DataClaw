@@ -1,0 +1,24 @@
+{
+  "id": "medium082",
+  "question": "Between the maximum operating revenue amount of the industry where Zhaoye Huachang Real Estate Development Company operates and that of the General Equipment Manufacturing industry, which is higher?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Zhaoye Huachang Real Estate Development Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhaoye Huachang Real Estate Development Company belongs to the Real Estate industry.",
+    "Extract from national_industry_status.csv that the maximum operating revenue amount of the Real Estate industry is 503838390573.74 Yuan.",
+    "Extract from national_industry_status.csv that the maximum operating revenue amount of the General Equipment Manufacturing industry is 117623139663 Yuan.",
+    "Compare the two maximum values: 503838390573.74 Yuan > 117623139663 Yuan, so Zhaoye Huachang Real Estate Development Company is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Zhaoye Huachang Real Estate Development Company": "Real Estate",
+    "Maximum operating revenue amount of the Real Estate industry (Yuan)": 503838390573.74,
+    "Maximum operating revenue amount of the General Equipment Manufacturing industry (Yuan)": 117623139663,
+    "Comparison result (higher one)": "Zhaoye Huachang Real Estate Development Company"
+  }
+}

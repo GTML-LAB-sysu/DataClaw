@@ -1,0 +1,30 @@
+{
+  "id": "hard010",
+  "question": "In 2022, to quantify the comprehensive competitive strength of the construction industry across regions, an industry association constructed a provincial competitiveness index system. The index is composed of four weighted sub-dimensions: market size share of national total (weight 30%), asset operation efficiency i.e. operating profit to total assets ratio (weight 30%), technology accumulation level i.e. cumulative invention patent grants to number of enterprises in jurisdiction ratio (weight 20%), and talent structure i.e. R&D personnel as share of total employees (weight 20%). The four raw indicators are each min-max normalized across all valid provinces, then weighted and summed to obtain the final index. Only provinces with data records for all four indicators are included in the calculation. Finally, please calculate the index difference between the first-ranked province and the last-ranked province in the competitiveness index ranking (rounded to two decimal places).",
+  "guidelines": "The answer should be a numeric value with 2 decimal places. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 0.71,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all provincial records with industry=\"Construction\" from regional_industry_status.csv, extract province, total operating revenue amount, total operating profit amount, total assets, total cumulative Chinese invention patent grants, number of enterprises, total R&D personnel count, and total employee count fields; 34 records in total.",
+    "Filter records with industry=\"Construction\" from national_industry_status.csv to obtain national construction industry total operating revenue amount of 12,683,425,500,139.00 yuan and total number of enterprises 148.",
+    "Filter enterprises with industry=\"Construction\" from company_profile.csv, 148 enterprises in total, for cross-validation of provincial-level data.",
+    "Calculate four raw indicators per province: scale index = total operating revenue amount / 12,683,425,500,139.00, efficiency index = total operating profit amount / total assets, innovation index = total cumulative Chinese invention patent grants / number of enterprises, talent index = total R&D personnel count / total employee count. Filter 16 valid provinces with all four indicators non-null.",
+    "Apply min-max normalization to each of the four indicators: normalized value = (raw value - min) / (max - min).",
+    "Calculate competitiveness index = normalized scale index × 0.3 + normalized efficiency index × 0.3 + normalized innovation index × 0.2 + normalized talent index × 0.2.",
+    "Sort by competitiveness index in descending order; the difference between first-ranked Beijing (0.7287) and last-ranked Liaoning (0.0142) = 0.7145."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of valid provinces": 16,
+    "National total construction enterprises": 148,
+    "First-ranked province": "Beijing",
+    "First-ranked score": 0.7287,
+    "Last-ranked province": "Liaoning",
+    "Last-ranked score": 0.0142,
+    "Difference": 0.7145
+  }
+}

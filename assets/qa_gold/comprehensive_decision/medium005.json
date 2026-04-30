@@ -1,0 +1,23 @@
+{
+  "id": "medium005",
+  "question": "In 2022, from all private enterprises in the food and beverage industry, aggregate government rewards and subsidy amounts by province of registration to find the province with the highest provincial subsidy total. How many hundred million yuan in government subsidies did private enterprises in that province receive in total?",
+  "guidelines": "The answer should be a numerical value (2 decimal places), unit is hundred million yuan. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 12.6,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all enterprise records with industry=\"Food and Beverage\" and ownership=\"Private Enterprise\" from company_profile.csv, extract enterprise name, bmCode and province fields, finding 161 food and beverage private enterprises.",
+    "Join with company_operation_status.csv via bmCode to obtain 2022 data for these enterprises, extract government reward funds and subsidy fields.",
+    "Filter records where government reward funds and subsidy are non-null, resulting in 157 enterprises with subsidy data.",
+    "Group by province and calculate total government subsidies received by private enterprises in each province.",
+    "Sort provinces by total government subsidies in descending order. The province with the highest total subsidies is Inner Mongolia, with total subsidies of 1,259,874,619.23 yuan; convert from yuan to hundred million yuan (divide by 100,000,000), yielding 12.60 hundred million yuan."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Inner Mongolia food and beverage private enterprise total subsidies (yuan)": 1259874619.23,
+    "Inner Mongolia food and beverage private enterprise total subsidies (hundred million yuan)": 12.6
+  }
+}

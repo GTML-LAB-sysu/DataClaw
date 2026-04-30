@@ -1,0 +1,31 @@
+{
+  "id": "hard012",
+  "question": "In 2022, in the chemical raw materials and chemical products manufacturing industry, comprehensively assess each province's ability to withstand external shocks. What is the comprehensive score of the lowest-scoring province? (Assessment indicators: Profit Diversification 30%, Financial Safety Cushion 35%, Policy Buffer 35%. Profit Diversification = 1 − (largest enterprise operating profit / total operating profit) normalized score; Financial Safety Cushion = (total operating profit / total liabilities) normalized score; Policy Buffer = (total operating profit / (total government subsidies + 1)) normalized score; each dimension min-max normalized to 0–100; only provinces with total enterprises>=15 are included)",
+  "guidelines": "Answer format: numeric value (2 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"Chemical Raw Materials and Chemical Products Manufacturing\" and total enterprises>=15, extract province, maximum operating profit amount, total operating profit amount, total liabilities, and total government reward and subsidy funds fields; 6 provinces found.",
+    "Filter provinces where all required fields are non-null, total operating profit amount>0, and total liabilities>0; 6 provinces in total.",
+    "For each province, compute raw profit diversification = 1 − (maximum operating profit amount / total operating profit amount).",
+    "For each province, compute raw financial safety cushion = total operating profit amount / total liabilities.",
+    "For each province, compute raw policy buffer = total operating profit amount / (total government reward and subsidy funds + 1).",
+    "Perform min-max normalization to 0–100 for profit diversification, financial safety cushion, and policy buffer.",
+    "For each province, compute regional shock resilience index = profit diversification score × 0.3 + financial safety cushion score × 0.35 + policy buffer score × 0.35; sort by index in ascending order; the lowest-scoring province is Shanghai, with a score of 15.78."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 6 chemical raw materials and chemical products manufacturing provinces with total enterprises>=15 from regional_industry_status.csv.",
+    "After filtering, obtained 6 provinces with complete required fields."
+  ],
+  "milestone": {
+    "Number of provinces with total enterprises>=15": 6,
+    "Number of provinces with complete required fields": 6,
+    "Lowest-scoring province": "Shanghai",
+    "Lowest score": 15.78
+  },
+  "answer": 15.78,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  }
+}

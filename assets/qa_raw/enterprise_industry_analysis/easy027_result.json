@@ -1,0 +1,40 @@
+{
+  "id": "easy027",
+  "question": "In 2022, is the cumulative number of invalid Chinese invention patents of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. lower than the same indicator of Shen Zhou Wu Jin Zi Xun Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. (2022 dataset value): cumulative number of invalid Chinese invention patents = 1",
+    "Shen Zhou Wu Jin Zi Xun Co., Ltd. (2022 dataset value): cumulative number of invalid Chinese invention patents = 8"
+  ],
+  "milestone": {
+    "Cumulative number of invalid Chinese invention patents of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. in 2022": 1,
+    "Cumulative number of invalid Chinese invention patents of Shen Zhou Wu Jin Zi Xun Co., Ltd. in 2022": 8,
+    "Comparison result (whether Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. is lower than Shen Zhou Wu Jin Zi Xun Co., Ltd.)": "Yes"
+  },
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: cumulative number of invalid Chinese invention patents of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. in 2022 = 1",
+    "Extracted from company_operation_status.csv: cumulative number of invalid Chinese invention patents of Shen Zhou Wu Jin Zi Xun Co., Ltd. in 2022 = 8",
+    "Compared 1 and 8; since 1 < 8, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "67aa7a78-b1ee-4a1b-9528-b28368c8deeb"
+    },
+    {
+      "company_operation_status": "81d91eb1-1f50-4c56-a4e4-a2c803a02c24"
+    },
+    {
+      "company_profile": "9d65552c-1b38-4861-bbbd-fa673cc1b93c"
+    },
+    {
+      "company_profile": "06a4b49b-2d95-424a-bc5a-a2a44d235ca2"
+    }
+  ]
+}

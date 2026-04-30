@@ -1,0 +1,24 @@
+{
+  "id": "medium078",
+  "question": "Between the mean change in R&D expenditure ratio for the industry where Langji Huiruan Technology Company operates and the same indicator for the Chemical Raw Materials and Chemical Products Manufacturing industry, which is higher?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Langji Huiruan Technology Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Langji Huiruan Technology Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the mean change in R&D expenditure ratio for Information Transmission, Software and IT Services is 1.98752122241087 %.",
+    "Extract from national_industry_status.csv that the mean change in R&D expenditure ratio for Chemical Raw Materials and Chemical Products Manufacturing is -0.0206470588235294 %.",
+    "Compare the means: 1.98752122241087 % > -0.0206470588235294 %, so the industry where Langji Huiruan Technology Company operates is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Langji Huiruan Technology Company": "Information Transmission, Software and IT Services",
+    "Mean change in R&D expenditure ratio for Information Transmission, Software and IT Services": 1.98752122241087,
+    "Mean change in R&D expenditure ratio for Chemical Raw Materials and Chemical Products Manufacturing": -0.0206470588235294,
+    "Comparison result (higher one)": "Langji Huiruan Technology Company"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "hard004",
+  "question": "In 2022, suppose an industrial policy researcher is screening vulnerable provinces for the chemical raw materials and chemical products manufacturing industry: she defines \"government subsidy amount exceeding 5% of that province's industry total operating revenue\" as excessive subsidy dependence, and \"the single largest enterprise's operating revenue as a share of that province's industry total operating revenue above 40%\" as market structure imbalance. Only among provinces with total enterprises not less than 12 (operating profit margin = total operating profit / total operating revenue × 100%), among provinces that simultaneously trigger both alerts, what is the operating profit margin of the province with the weakest profitability?",
+  "guidelines": "Answer format: percentage value (2 decimal places). E.g. \"8.56\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "No relevant data found",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter records with industry=\"Chemical Raw Materials and Chemical Products Manufacturing\" and total enterprises>=12, extract province, total government reward and subsidy funds, total operating revenue amount, maximum operating revenue amount, and total operating profit amount fields; 7 provinces found.",
+    "Filter provinces where all required fields are non-null and total operating revenue amount>0; 7 provinces in total.",
+    "For each province, compute government subsidy to operating revenue ratio = (total government reward and subsidy funds / total operating revenue amount) × 100%, and determine high government subsidy dependence (>5%); 0 provinces.",
+    "For each province, compute largest enterprise revenue share = (maximum operating revenue amount / total operating revenue amount) × 100%, and determine high revenue concentration (>40%); 1 province.",
+    "Filter provinces that simultaneously satisfy both high government subsidy dependence and high revenue concentration (dual-risk provinces); 0 provinces.",
+    "For each dual-risk province, compute operating profit margin = (total operating profit amount / total operating revenue amount) × 100%.",
+    "Sort by operating profit margin in ascending order; the province with the lowest operating profit margin was not found; operating profit margin is 0.00%."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of provinces with complete required fields": 7,
+    "Number of high government subsidy dependence provinces": 0,
+    "Number of high revenue concentration provinces": 1,
+    "Number of dual-risk provinces": 0,
+    "Lowest operating profit margin (%)": 0
+  }
+}

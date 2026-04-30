@@ -1,0 +1,26 @@
+{
+  "id": "medium052",
+  "question": "Comparing the minimum value of State Natural Science Awards in the corresponding industry of the province where Gaoyin Zetong Wholesale Co., Ltd. is located with the minimum value of State Natural Science Awards in the industry of Langji Huiruan Technology Co., Ltd., which value is larger?",
+  "guidelines": "The answer must be a company name, \"industry\", or \"Equal\". Output only the name or \"Equal\" without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that Gaoyin Zetong Wholesale Co., Ltd. is located in Guangdong Province.",
+    "Extracted from regional_industry_status.csv that the minimum value of State Natural Science Awards in Guangdong wholesale and retail industry is 0.",
+    "Extracted from company_profile.csv that the industry of Langji Huiruan Technology Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the minimum value of State Natural Science Awards in this industry is 0.",
+    "Both values are 0, so neither side is larger; output \"Equal\"."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Province where Gaoyin Zetong Wholesale Co., Ltd. is located": "Guangdong Province",
+    "Minimum value of State Natural Science Awards in Guangdong wholesale and retail industry": 0,
+    "Industry of Langji Huiruan Technology Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Minimum value of State Natural Science Awards in Information Transmission, Software and Information Technology Services": 0,
+    "Comparison conclusion": "Equal"
+  }
+}

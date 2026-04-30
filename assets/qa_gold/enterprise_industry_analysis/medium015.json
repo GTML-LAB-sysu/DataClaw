@@ -1,0 +1,26 @@
+{
+  "id": "medium015",
+  "question": "Is the minimum R&D personnel ratio in the industry of Huijin Jinrui Wealth Management Co., Ltd. lower than the minimum R&D personnel ratio in the industry of Zhongke Zhiyun Data Services Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv that the industry of Huijin Jinrui Wealth Management Co., Ltd. is Financial Industry.",
+    "Extracted from national_industry_status.csv that the minimum R&D personnel ratio in Financial Industry is 0.64 %.",
+    "Extracted from company_profile.csv that the industry of Zhongke Zhiyun Data Services Co., Ltd. is Information Transmission, Software and Information Technology Services.",
+    "Extracted from national_industry_status.csv that the minimum R&D personnel ratio in Information Transmission, Software and Information Technology Services is 0.92 %.",
+    "Judged whether 0.64 % is lower than 0.92 %; the conclusion is \"Yes\"."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Huijin Jinrui Wealth Management Co., Ltd.": "Financial Industry",
+    "Minimum R&D personnel ratio in Financial Industry": "0.64 %",
+    "Industry of Zhongke Zhiyun Data Services Co., Ltd.": "Information Transmission, Software and Information Technology Services",
+    "Minimum R&D personnel ratio in Information Transmission, Software and Information Technology Services": "0.92 %",
+    "Comparison result (whether the Financial Industry minimum is lower than that of Information Services)": "Yes"
+  }
+}

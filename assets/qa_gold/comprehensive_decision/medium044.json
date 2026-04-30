@@ -1,0 +1,25 @@
+{
+  "id": "medium044",
+  "question": "In 2022, in Shandong Province's Pharmaceutical Manufacturing industry, is Haishan Changgong Equipment Company's R&D investment ratio higher than the R&D investment ratio of the 10th-ranked Pharmaceutical Manufacturing enterprise in Hunan Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only the answer, do not add any explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Search for records with enterprise name=\"Haishan Changgong Equipment Company\" in company_profile.csv. The enterprise has bmCode=100071, industry=\"General Equipment Manufacturing\", province=\"Shandong Province\".",
+    "Filter from company_operation_status.csv the 2022 data by enterprise name=\"Haishan Changgong Equipment Company\" and bmCode=100071, extract the R&D investment ratio field. Haishan Changgong Equipment Company's R&D investment ratio is 4.33%.",
+    "Filter from company_profile.csv all enterprise records with province=\"Hunan Province\" and industry=\"Pharmaceutical Manufacturing\", extract enterprise name and bmCode fields, finding 11 enterprises in Hunan Province's Pharmaceutical Manufacturing industry.",
+    "Filter from company_operation_status.csv the 2022 data of these enterprises by enterprise name and bmCode fields, extract the R&D investment ratio field. Filter enterprise records where R&D investment ratio is not null, totaling 11 records.",
+    "Sort all enterprises by R&D investment ratio in descending order to determine the R&D investment ranking. The 10th-ranked enterprise is \"Ruiying Taiyuan Medical Equipment Co., Ltd.\" (bmCode=823535), with an R&D investment ratio of 2.87%. Compare Haishan Changgong Equipment Company's R&D investment ratio (4.33%) with the 10th-ranked Pharmaceutical Manufacturing enterprise in Hunan Province's R&D investment ratio (2.87%). Since 4.33% > 2.87%, the conclusion is: Yes."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "R&D investment ratio of Haishan Changgong Equipment Company (%)": 4.33,
+    "10th-ranked enterprise in Hunan Province Pharmaceutical Manufacturing": "Ruiying Taiyuan Medical Equipment Co., Ltd.",
+    "R&D investment ratio of 10th-ranked enterprise in Hunan Province Pharmaceutical Manufacturing (%)": 2.87,
+    "Comparison result": "Yes"
+  }
+}

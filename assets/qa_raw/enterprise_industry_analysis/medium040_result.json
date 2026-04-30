@@ -1,0 +1,46 @@
+{
+  "id": "medium040",
+  "question": "Which is larger: the number of HKEX-listed foreign-funded enterprises in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd., or the number of SSE-listed enterprises in the corresponding industry of Shanghai where Lang Ji Hui Ruan Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.: Real Estate",
+    "HKEX-listed foreign-funded enterprise count in Real Estate: 34",
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.: Shanghai Municipality",
+    "SSE-listed enterprise count in Shanghai Information Transmission, Software and IT Services: 27"
+  ],
+  "answer": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "HKEX-listed foreign-funded enterprise count in Real Estate": 34,
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "SSE-listed enterprise count in Shanghai Information Transmission, Software and IT Services": 27,
+    "Comparison result (larger)": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd."
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: HKEX-listed foreign-funded enterprise count in Real Estate = 34",
+    "Extracted from company_profile.csv: province of Lang Ji Hui Ruan Technology Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: SSE-listed enterprise count in Shanghai Information Transmission, Software and IT Services = 27",
+    "Compared 34 and 27; since 34 is larger, output \"Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "a0b01b7e-ed2c-4c4a-b7d7-15062fab3ef4"
+    },
+    {
+      "regional_industry_status": "be71aa1d-8666-44e9-8f26-ffd92dc87001"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    }
+  ]
+}

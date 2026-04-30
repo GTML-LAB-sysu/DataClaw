@@ -1,0 +1,22 @@
+{
+  "id": "easy031",
+  "question": "In 2022, which is higher: the operating revenue amount of Heng Yi Run Heng Technology Co., Ltd. or the total assets of Lian Ji Ji Jin Ji Chuang Co., Ltd.?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Lian Ji Ji Jin Ji Chuang Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Heng Yi Run Heng Technology Co., Ltd. operating revenue amount in 2022 = 4259181531.38 CNY",
+    "Extracted from company_operation_status.csv: Lian Ji Ji Jin Ji Chuang Co., Ltd. total assets in 2022 = 6102473889.29 CNY",
+    "Compared 4259181531.38 and 6102473889.29; since 6102473889.29 > 4259181531.38, the higher one is \"Lian Ji Ji Jin Ji Chuang Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Heng Yi Run Heng Technology Co., Ltd. operating revenue amount in 2022 (CNY)": 4259181531.38,
+    "Lian Ji Ji Jin Ji Chuang Co., Ltd. total assets in 2022 (CNY)": 6102473889.29,
+    "Comparison result (which is higher)": "Lian Ji Ji Jin Ji Chuang Co., Ltd."
+  }
+}

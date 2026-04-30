@@ -1,0 +1,31 @@
+{
+  "id": "easy106",
+  "question": "Will a downturn in the Water Conservancy, Environment and Public Facilities Management industry directly affect the operating conditions of Hua Lu Rong Rong Hua Xue Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Lu Rong Rong Hua Xue Co., Ltd. (data in this dataset) industry: Chemical Raw Materials and Chemical Products Manufacturing",
+    "Water Conservancy, Environment and Public Facilities Management and Chemical Raw Materials and Chemical Products Manufacturing are different industry categories"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hua Lu Rong Rong Hua Xue Co., Ltd.'s industry is Chemical Raw Materials and Chemical Products Manufacturing",
+    "Conclude that Water Conservancy, Environment and Public Facilities Management and Chemical Raw Materials and Chemical Products Manufacturing do not belong to the same industry category",
+    "Therefore a downturn in the former is not directly equivalent to a direct impact on the company's operating conditions; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Hua Lu Rong Rong Hua Xue Co., Ltd. industry": "Chemical Raw Materials and Chemical Products Manufacturing",
+    "Comparison industry": "Water Conservancy, Environment and Public Facilities Management",
+    "Whether direct impact": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "8998d572-1f7e-47a8-9692-45a30d2b9173"
+    }
+  ]
+}

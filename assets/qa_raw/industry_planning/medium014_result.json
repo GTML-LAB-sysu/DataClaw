@@ -1,0 +1,36 @@
+{
+  "id": "medium014",
+  "question": "In the 2022 general equipment manufacturing industry provincial data, find the province with the highest total government reward and subsidy amount; after identifying that province, conduct a comprehensive rating of its industrial competitiveness across two strategic dimensions: the \"industrial upgrade capability\" dimension combines the inter-provincial mean ranking of three sub-indicators—mean year-on-year change in R&D investment (R&D investment growth rate), year-on-year growth rate of annual Chinese patent applications (patent application growth rate), and mean R&D personnel ratio (high-end talent ratio); the \"industrial foundation\" dimension combines the inter-provincial mean ranking of three sub-indicators—total number of enterprises (enterprise scale), total operating revenue (revenue scale), and the ratio of total operating revenue to total government reward and subsidy (subsidy efficiency). The overall comprehensive performance ranking is determined by the average of the two dimension rankings. Can that province's comprehensive industrial performance rank among the national top 5?",
+  "guidelines": "Answer format: \"Yes\" or \"No\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From regional_industry_status.csv, filter industry=\"general equipment manufacturing industry\", extract each province's government reward funds and subsidy total fields; after dropping nulls and keeping values >0, 14 provinces remain.",
+    "Sort by subsidy total descending; the province with the highest total government subsidy is Shanghai (2466523519.29 yuan).",
+    "From the same table, extract each province's mean year-on-year change in R&D investment, mean R&D personnel share, total number of enterprises, and total operating revenue;",
+    "Compute each province's subsidy efficiency = total operating revenue / combined government reward and subsidy (exclude zero or missing denominators); 14 provinces have computable subsidy efficiency.",
+    "For the six sub-indicators (R&D investment growth rate, patent application YoY growth rate, R&D personnel share, enterprise count, revenue scale, subsidy efficiency), rank provinces separately within each indicator's valid sample from high to low; rank 1 is best; nulls are excluded from that indicator's ranking; ties share the same rank and subsequent ranks are skipped.",
+    "Industrial upgrade capability mean of three sub-indicator ranks = (R&D growth rank + patent application growth rank + R&D personnel share rank) / 3; for Shanghai (15+1+11)/3 = 9.",
+    "Industrial foundation mean of three sub-indicator ranks = (enterprise scale rank + revenue scale rank + subsidy efficiency rank) / 3; for Shanghai (5+1+7)/3 = 4.33 (two decimal places).",
+    "Rank each province's \"industrial upgrade capability three-rank mean\" and \"industrial foundation three-rank mean\" separately in ascending order (smaller mean is better) to obtain the two dimension ranks; overall comprehensive score = (industrial upgrade dimension rank + industrial foundation dimension rank) / 2; for Shanghai (13+4)/2 = 8.5.",
+    "Among provinces that have both dimension ranks (all six sub-indicators yield both dimensional composites), sort by overall score ascending; 13 provinces qualify; Shanghai ranks 10th (tied with Henan on score), which is >5, output \"No\"."
+  ],
+  "steps_num": 9,
+  "evidence": [
+    "From regional_industry_status.csv, 14 provinces have valid general equipment manufacturing government subsidy data (non-null and total >0).",
+    "From regional_industry_status.csv, 14 provinces have computable subsidy efficiency (denominator >0).",
+    "Year-on-year growth of patent applications is aggregated from company_profile.csv and company_operation_status.csv for 2021 and 2022;"
+  ],
+  "milestone": {
+    "Province with highest government subsidy": "Shanghai",
+    "Shanghai total government subsidy (yuan)": 2466523519.29,
+    "Shanghai industrial upgrade capability ranking": 9,
+    "Shanghai industrial foundation ranking": 4.33,
+    "Shanghai comprehensive performance ranking value": 8.5,
+    "Shanghai comprehensive ranking": 10
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

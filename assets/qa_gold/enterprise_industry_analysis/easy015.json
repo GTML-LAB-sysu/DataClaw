@@ -1,0 +1,22 @@
+{
+  "id": "easy015",
+  "question": "In 2022, is the annual number of Chinese patent applications of Mei Neng Xuan Jin Dian Qi Co., Ltd. higher than that of Li Xin Yao Yue Dian Qi Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: annual number of Chinese patent applications of Mei Neng Xuan Jin Dian Qi Co., Ltd. in 2022 = 4552",
+    "Extracted from company_operation_status.csv: annual number of Chinese patent applications of Li Xin Yao Yue Dian Qi Co., Ltd. in 2022 = 1203",
+    "Compared 4552 and 1203; since 4552 > 1203, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Annual number of Chinese patent applications of Mei Neng Xuan Jin Dian Qi Co., Ltd. in 2022": 4552,
+    "Annual number of Chinese patent applications of Li Xin Yao Yue Dian Qi Co., Ltd. in 2022": 1203,
+    "Comparison result (whether Mei Neng Xuan Jin Dian Qi Co., Ltd. is higher than Li Xin Yao Yue Dian Qi Co., Ltd.)": "Yes"
+  }
+}

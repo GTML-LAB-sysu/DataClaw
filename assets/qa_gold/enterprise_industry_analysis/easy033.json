@@ -1,0 +1,22 @@
+{
+  "id": "easy033",
+  "question": "In 2022, compared with the total liabilities of Wei Xing Run Jin Ke Ji Co., Ltd., what is the difference in total assets of Ping Ru Gang Tong Yun Wu Liu Co., Ltd.?",
+  "guidelines": "The answer must be a number with two decimal places. Output only the number without units, commas, or any text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 37950292402.87,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: total assets of Ping Ru Gang Tong Yun Wu Liu Co., Ltd. in 2022 = 78458358656.04 CNY",
+    "Extracted from company_operation_status.csv: total liabilities of Wei Xing Run Jin Ke Ji Co., Ltd. in 2022 = 40508066253.17 CNY",
+    "Calculated the difference: 78458358656.04 - 40508066253.17 = 37950292402.87"
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total assets of Ping Ru Gang Tong Yun Wu Liu Co., Ltd. in 2022 (CNY)": 78458358656.04,
+    "Total liabilities of Wei Xing Run Jin Ke Ji Co., Ltd. in 2022 (CNY)": 40508066253.17,
+    "Difference (Ping Ru Gang Tong Yun Wu Liu Co., Ltd. - Wei Xing Run Jin Ke Ji Co., Ltd.)": 37950292402.87
+  }
+}

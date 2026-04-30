@@ -1,0 +1,34 @@
+{
+  "id": "easy082",
+  "question": "In 2022, which is higher: the number of SZSE-listed private enterprises in Jilin's chemical raw materials and chemical products manufacturing industry, or the number of SSE-listed local state-owned enterprises in the same industry in Qinghai?",
+  "guidelines": "The answer must be \"Equal\", a company name, or \"industry\". Output only one word or company name without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Jilin Province (2022 dataset value): number of SZSE-listed private enterprises in chemical raw materials and chemical products manufacturing = 1",
+    "Qinghai Province (2022 dataset value): number of SSE-listed local state-owned enterprises in chemical raw materials and chemical products manufacturing = 1"
+  ],
+  "milestone": {
+    "Number of SZSE-listed private enterprises in Jilin chemical raw materials and chemical products manufacturing": 1,
+    "Number of SSE-listed local state-owned enterprises in Qinghai chemical raw materials and chemical products manufacturing": 1,
+    "Comparison result": "Equal"
+  },
+  "answer": "Equal",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from regional_industry_status.csv: SZSE-listed private enterprise count in Jilin chemical raw materials and chemical products manufacturing = 1",
+    "Extracted from regional_industry_status.csv: SSE-listed local state-owned enterprise count in Qinghai chemical raw materials and chemical products manufacturing = 1",
+    "Compared 1 and 1, and judged \"Equal\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "regional_industry_status": "f24fc7c6-6169-41bb-9ad0-f5a00950662d"
+    },
+    {
+      "regional_industry_status": "6f976482-4bdd-4b06-a4ef-24f45ec2b096"
+    }
+  ]
+}

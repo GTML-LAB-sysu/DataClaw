@@ -1,0 +1,35 @@
+{
+  "id": "hard015",
+  "question": "In 2022, a provincial government evaluated the comprehensive financial health of real estate enterprises to decide which provinces (where the province has an effective enterprise count >= 3) should face strengthened risk supervision for real estate firms. What is the health score of the province with the lowest financial health? (Financial health = Profitability score × 0.4 + Solvency score × 0.3 + Growth capability score × 0.3; Profitability is measured by the average net profit margin of enterprises in that province, where net profit margin = net profit amount / operating revenue amount; Solvency is measured as 1 − the arithmetic mean of enterprises' asset-liability ratio in that province / 100; Growth capability is measured as the median of enterprises' year-over-year change in operating revenue in that province / 100; each indicator is min-max normalized across all valid provinces before being substituted into the formula.)",
+  "guidelines": "The answer should be a numerical value with 2 decimal places. Output only the number without units or text explanation. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter records with industry=\"房地产业\" from company_profile.csv; extract enterprise name, bmCode, and province — 295 enterprises.",
+    "Join with company_operation_status.csv on enterprise name and bmCode for year=2022; extract net profit amount, operating revenue amount, asset-liability ratio, and year-over-year change in operating revenue — 295 rows after merge.",
+    "Keep records with operating revenue amount > 0 and non-null net profit amount and asset-liability ratio — 295 rows; do not additionally exclude rows by asset-liability ratio; all participate in within-province arithmetic means and subsequent normalization.",
+    "Count enterprises by province; define valid provinces as those with effective enterprise count >= 3; in this data there are 17 valid provinces, and growth capability (median YoY operating revenue change) can be computed for all of them.",
+    "On those 17 valid provinces only, compute three raw indicators per province: Profitability = arithmetic mean over enterprises of (net profit amount / operating revenue amount); Solvency = 1 − arithmetic mean of asset-liability ratio / 100; Growth capability = median of year-over-year change in operating revenue / 100.",
+    "Apply min-max normalization to profitability, solvency, and growth capability separately across all 17 valid provinces (i.e. \"all valid provinces\" means this set only, excluding provinces with only 1–2 enterprises).",
+    "Compute financial health = normalized profitability × 0.4 + normalized solvency × 0.3 + normalized growth capability × 0.3.",
+    "Sort the 17 valid provinces by financial health ascending; the lowest is Beijing: raw profitability ≈ −1.0774, raw solvency ≈ −21.9888, raw growth capability ≈ −0.1341, health score ≈ 0.0713, rounded to two decimals as 0.07."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "From company_profile.csv, there are 295 real estate industry enterprises.",
+    "From company_operation_status.csv, obtain 2022 operating data for those enterprises merged with profile — 295 rows; rows with revenue > 0 and non-null net profit and asset-liability ratio number 295, all used for per-province indicator calculation."
+  ],
+  "milestone": {
+    "real_estate_enterprises_profile_merged_2022": 295,
+    "enterprise_records_province_aggregation_no_al_ratio_exclusion": 295,
+    "valid_provinces_count_enterprises_ge_3": 17,
+    "Beijing_raw_profitability": -1.0774,
+    "Beijing_raw_solvency": -21.9888,
+    "Beijing_raw_growth_capability": -0.1341,
+    "Beijing_financial_health": 0.0713
+  },
+  "answer": 0.07,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  }
+}

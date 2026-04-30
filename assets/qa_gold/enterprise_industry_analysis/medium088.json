@@ -1,0 +1,24 @@
+{
+  "id": "medium088",
+  "question": "Which is higher: the total capitalized R&D expenditure of the industry where Wuli Huida Chain Company operates, or that of the Communication Transmission Equipment industry?",
+  "guidelines": "The answer must be either \"the total capitalized R&D expenditure of the industry where Wuli Huida Chain Company operates\" or \"the Communication Transmission Equipment industry\". Output only the phrase itself, without any explanation, analysis, or descriptive text. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "the Communication Transmission Equipment industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Wuli Huida Chain Company belongs to the Wholesale and Retail industry.",
+    "Extract from national_industry_status.csv that the total capitalized R&D expenditure of the Wholesale and Retail industry is 2537411708.13 Yuan.",
+    "Extract from national_industry_status.csv that the total capitalized R&D expenditure of the Communication Transmission Equipment industry is 5279289114.7 Yuan.",
+    "Compare the totals: 5279289114.7 Yuan > 2537411708.13 Yuan, so the Communication Transmission Equipment industry is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Wuli Huida Chain Company": "Wholesale and Retail",
+    "Total capitalized R&D expenditure of the Wholesale and Retail industry (Yuan)": 2537411708.13,
+    "Total capitalized R&D expenditure of the Communication Transmission Equipment industry (Yuan)": 5279289114.7,
+    "Comparison result (higher one)": "the Communication Transmission Equipment industry"
+  }
+}

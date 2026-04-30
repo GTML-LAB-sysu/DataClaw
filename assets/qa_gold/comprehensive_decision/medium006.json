@@ -1,0 +1,22 @@
+{
+  "id": "medium006",
+  "question": "In 2022, a local government planned to introduce support policies for the specialized equipment manufacturing industry and needed to understand the province's R&D personnel investment level in this industry. Is the average proportion of R&D personnel to total employees in specialized equipment manufacturing enterprises in Zhejiang Province higher than the national average for this industry?",
+  "guidelines": "The answer should be \"Yes\" or \"No\". If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records with industry=\"Specialized Equipment Manufacturing\" and province=\"Zhejiang\" from regional_industry_status.csv, extract average R&D personnel proportion field; Zhejiang's average R&D personnel proportion is 18.25%.",
+    "Filter records with industry=\"Specialized Equipment Manufacturing\" from national_industry_status.csv, extract average R&D personnel proportion field; national average R&D personnel proportion is 20.10%.",
+    "Compare Zhejiang's average R&D personnel proportion (18.25%) with the national average (20.10%).",
+    "Zhejiang's value is not greater than the national value, therefore the answer is \"No\"."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Zhejiang average R&D personnel proportion (%)": 18.25,
+    "National average R&D personnel proportion (%)": 20.1
+  }
+}

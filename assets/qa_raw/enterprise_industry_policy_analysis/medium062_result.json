@@ -1,0 +1,40 @@
+{
+  "id": "medium062",
+  "question": "What is the difference between the number of local policies issued by the Guangdong Provincial Committee of the CPC in the local policies for the industry of Hua Cheng Sheng Yuan Integrated Development Co., Ltd. and the number of local policies issued by the Fujian Province Department of Industry and Information Technology in the local policies for the Semiconductor Industry in China?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Hua Cheng Sheng Yuan Integrated Development Co., Ltd.: Guangdong Province",
+    "Guangdong Province Information Transmission, Software and IT Services local policies - Guangdong Provincial Committee of the CPC - policy count = 1",
+    "China Semiconductor Industry local policies - Fujian Province Department of Industry and Information Technology - policy count = 1"
+  ],
+  "milestone": {
+    "Province of Hua Cheng Sheng Yuan Integrated Development Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Information Transmission, Software and IT Services local policies_Guangdong Provincial Committee of the CPC policy count": 1,
+    "China Semiconductor Industry local policies_Fujian Province Department of Industry and Information Technology policy count": 1,
+    "Difference (Guangdong Provincial Committee of the CPC policy count - Fujian Province Department of Industry and Information Technology policy count)": 0.0
+  },
+  "steps": [
+    "Extract from company_profile.csv that Hua Cheng Sheng Yuan Integrated Development Co., Ltd. is located in Guangdong Province and its industry is Information Transmission, Software and IT Services",
+    "Extract from policy_release_status.csv that in the local policies for Information Transmission, Software and IT Services in Guangdong Province, the policy count issued by the Guangdong Provincial Committee of the CPC is 1",
+    "Extract from policy_release_status.csv that in the China Semiconductor Industry local policies, the policy count issued by the Fujian Province Department of Industry and Information Technology is 1",
+    "Calculate the difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "69b9bc85-fed0-41f4-a1bd-e3542ed816af"
+    },
+    {
+      "company_profile": "41fc40f8-35ba-4a45-9c72-56aa081d8caa"
+    },
+    {
+      "policy_release_status": "9c744b91-d271-4bff-83e1-2ff0c2add57b"
+    }
+  ]
+}

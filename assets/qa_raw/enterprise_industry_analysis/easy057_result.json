@@ -1,0 +1,40 @@
+{
+  "id": "easy057",
+  "question": "In 2022, did the products of He Lian Chuang Hang She Bei Co., Ltd. and Shan La Da Chuang Zhi Neng Zhuang Bei Co., Ltd. have a competitive relationship?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "He Lian Chuang Hang She Bei Co., Ltd. (based on publicly disclosed 2022 annual report) shows in its core competitiveness description that its products focus on medical rehabilitation devices and care ecosystems such as pelvic-floor and obstetric rehabilitation",
+    "Shan La Da Chuang Zhi Neng Zhuang Bei Co., Ltd. (based on publicly disclosed 2022 annual report) shows in its core competitiveness description that its products/business include precision mold manufacturing such as lithium-battery equipment cutting dies (and also mentions transportation business)"
+  ],
+  "milestone": {
+    "Product focus of He Lian Chuang Hang She Bei Co., Ltd.": "Medical rehabilitation devices and care ecosystem",
+    "Product focus of Shan La Da Chuang Zhi Neng Zhuang Bei Co., Ltd.": "Precision mold manufacturing such as lithium-battery equipment cutting dies",
+    "Comparison result (whether there is a competitive relationship between products)": "No"
+  },
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted the core competitiveness description of He Lian Chuang Hang She Bei Co., Ltd. from company_core.csv and identified its main product focus as medical rehabilitation devices such as pelvic-floor and obstetric rehabilitation",
+    "Extracted the core competitiveness description of Shan La Da Chuang Zhi Neng Zhuang Bei Co., Ltd. from company_core.csv and identified its main product/business focus as precision mold manufacturing such as lithium-battery equipment cutting dies (with other business segments)",
+    "Determined that the two companies have different product directions and the descriptions provide no direct evidence of direct competition in similar products, and judged \"No\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_Core": "612c090a-8fb3-4b97-a39b-00b18ee5f31e"
+    },
+    {
+      "company_Core": "10a60422-1372-44f3-a720-fb2032f16d0d"
+    },
+    {
+      "company_profile": "d9dc0097-153c-4181-a39d-a177e4de5f78"
+    },
+    {
+      "company_profile": "3c052c5e-2633-477c-bbe9-2dfa3ca75ab1"
+    }
+  ]
+}

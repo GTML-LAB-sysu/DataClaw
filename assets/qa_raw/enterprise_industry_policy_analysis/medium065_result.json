@@ -1,0 +1,40 @@
+{
+  "id": "medium065",
+  "question": "Zhong Ke Ke Shu Software Co., Ltd.province  Number of policies (indicator) and China Sichuan Provincepersons Number of policies (indicator)what is the gap?",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Zhong Ke Ke Shu Software Co., Ltd.province = Guangdong Province",
+    "Guangdong ProvinceCommunication Transmission Equipmentlocal policies_Guangdong ProvinceNumber of policies (indicator)=1",
+    "ChinaMetal Productslocal policies_Sichuan ProvincepersonsNumber of policies (indicator)=1"
+  ],
+  "milestone": {
+    "Zhong Ke Ke Shu Software Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceCommunication Transmission Equipmentlocal policies_Guangdong ProvinceNumber of policies (indicator)": 1,
+    "ChinaMetal Productslocal policies_Sichuan ProvincepersonsNumber of policies (indicator)": 1,
+    "Difference(Guangdong ProvinceNumber of policies (indicator)-Sichuan ProvincepersonsNumber of policies (indicator))": 0.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Zhong Ke Ke Shu Software Co., Ltd.province = Guangdong Province and industry = Communication Transmission Equipment",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Communication Transmission Equipmentextractlocal policies in Guangdong ProvinceNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaMetal Productslocal policies in Sichuan ProvincepersonsNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "f1c9e833-ad21-4fe3-a5ca-32da9783df10"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "policy_release_status": "2d5ad892-2195-4230-854d-7c1dc5913951"
+    }
+  ]
+}

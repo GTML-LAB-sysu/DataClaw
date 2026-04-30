@@ -1,0 +1,46 @@
+{
+  "id": "medium056",
+  "question": "Is the total liabilities (total) for the industry corresponding to the province where Jin Zhi Hong Sheng Zi Chan Management Co., Ltd. is located higher than the total liabilities (total) for the industry corresponding to the province where Zhong Hai Gong Chang Jin Jian Zhu She Ji Co., Ltd. is located?",
+  "guidelines": "The answer must be \"Yes\" or \"No\", output only one word, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Jin Zhi Hong Sheng Zi Chan Management Co., Ltd.: Shanghai Municipality",
+    "Shanghai Municipality Financial Services Total liabilities (total): 44405835055827.7 Yuan",
+    "Province of Zhong Hai Gong Chang Jin Jian Zhu She Ji Co., Ltd.: Guangdong Province",
+    "Guangdong Province Construction Total liabilities (total): 247639719094.03 Yuan"
+  ],
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Jin Zhi Hong Sheng Zi Chan Management Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Financial Services Total liabilities (total) (Yuan)": 44405835055827.7,
+    "Province of Zhong Hai Gong Chang Jin Jian Zhu She Ji Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Construction Total liabilities (total) (Yuan)": 247639719094.03,
+    "Whether higher than": "Yes"
+  },
+  "steps": [
+    "Extract from company_profile.csv that the province of Jin Zhi Hong Sheng Zi Chan Management Co., Ltd. is Shanghai Municipality",
+    "Extract from regional_industry_status.csv that Shanghai Municipality Financial Services total liabilities (total) is 44405835055827.7 Yuan",
+    "Extract from company_profile.csv that the province of Zhong Hai Gong Chang Jin Jian Zhu She Ji Co., Ltd. is Guangdong Province",
+    "Extract from regional_industry_status.csv that Guangdong Province Construction total liabilities (total) is 247639719094.03 Yuan",
+    "Determine whether the former is higher than the latter; conclusion is \"Yes\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "6d7fb68b-9d0a-4cfb-bab2-abac83115eed"
+    },
+    {
+      "company_profile": "62612789-d0a3-4b19-bbee-abe8a89ab1bd"
+    },
+    {
+      "regional_industry_status": "3b977bc5-a654-409d-a92b-b463231c766a"
+    },
+    {
+      "company_profile": "f3608099-34f7-49a3-b2f5-0781705eeafc"
+    }
+  ]
+}

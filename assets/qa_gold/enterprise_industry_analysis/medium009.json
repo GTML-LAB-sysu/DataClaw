@@ -1,0 +1,25 @@
+{
+  "id": "medium009",
+  "question": "In 2022, which is higher: the operating profit amount of Run Hui Shu Zhi Xi Tong Co., Ltd. or the total operating profit amount of the same industry in its province?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Run Hui Shu Zhi Xi Tong Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Run Hui Shu Zhi Xi Tong Co., Ltd. operating profit amount in 2022 = 9041715.19 CNY",
+    "Extracted from company_profile.csv: the company is in Jilin Province and belongs to Scientific Research and Technical Services",
+    "Extracted from regional_industry_status.csv: total operating profit amount in Jilin Province for this industry = 0 CNY",
+    "Compared 9041715.19 and 0; since 9041715.19 > 0, the company is higher, so output \"Run Hui Shu Zhi Xi Tong Co., Ltd.\""
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Run Hui Shu Zhi Xi Tong Co., Ltd. operating profit amount in 2022 (CNY)": 9041715.19,
+    "Province of Run Hui Shu Zhi Xi Tong Co., Ltd.": "Jilin Province",
+    "Industry of Run Hui Shu Zhi Xi Tong Co., Ltd.": "Scientific Research and Technical Services",
+    "Total operating profit amount in Jilin Province for Scientific Research and Technical Services (CNY)": 0,
+    "Comparison result (whether the company is higher)": "Yes"
+  }
+}

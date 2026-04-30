@@ -1,0 +1,22 @@
+{
+  "id": "easy026",
+  "question": "In 2022, is the total number of employees of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. higher than that of Shen Zhou Wu Jin Zi Xun Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: total number of employees of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. in 2022 = 1066.0",
+    "Extracted from company_operation_status.csv: total number of employees of Shen Zhou Wu Jin Zi Xun Co., Ltd. in 2022 = 133.0",
+    "Compared 1066.0 and 133.0; since 1066.0 > 133.0, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Total number of employees of Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. in 2022": 1066.0,
+    "Total number of employees of Shen Zhou Wu Jin Zi Xun Co., Ltd. in 2022": 133.0,
+    "Comparison result (whether Yuan Tong Sheng Sheng Gong Ying Lian Co., Ltd. is higher than Shen Zhou Wu Jin Zi Xun Co., Ltd.)": "Yes"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "hard008",
+  "question": "A global consumer defensive portfolio, when screening platform retailers, views fulfillment expenses as having quasi-fixed cost characteristics. For candidate companies, apply the following stress test: ① Fulfillment expense ratio = Fulfillment ÷ Net revenues; ② Stressed net profit margin = company net profit margin - 0.2 × fulfillment expense ratio; ③ Defense gap = stressed net profit margin - median net profit margin of A-share wholesale and retail industry top 10% by revenue in 2022. If stressed net profit margin < 0, do not include in defensive core position; if stressed net profit margin is between 0 and industry median, benchmark hold only; if above industry median, overweight is allowed. Using JD.com (JD) 2022 annual report and local database, calculate and determine the most appropriate conclusion.",
+  "guidelines": "Answer in order: fulfillment expense ratio (%), stressed net profit margin (%), defense gap (percentage points), most appropriate conclusion. Retain 2 decimal places and return as an array; conclusion must specify position action. If relevant data cannot be found, please answer \"No relevant data found\".",
+  "steps": [
+    "Web search JD.com 2022 annual report; extract Net revenues = 1,046,236, Fulfillment = 63,011, Net income = 9,691, all in RMB million.",
+    "Fulfillment expense ratio = 63,011 ÷ 1,046,236 × 100%; net profit margin = 9,691 ÷ 1,046,236 × 100%. Carry full precision through intermediate steps—do not round these ratios to two decimals before the next calculation.",
+    "Stressed net profit margin = net profit margin − 0.2 × fulfillment expense ratio, computed directly from the unrounded ratio values above; only then round the final stressed margin to two decimal places (rounding pre-rounded 0.93% and 6.02% would incorrectly yield −0.27%).",
+    "From company_profile.csv, filter industry consistent with A-share wholesale and retail (批发和零售业) where exchange is Shanghai, Shenzhen, or Beijing (exclude Hong Kong Stock Exchange listings). Merge with company_operation_status.csv for year = 2022; keep records with valid operating revenue and net profit and operating revenue > 0 (n = 185).",
+    "For each company, net profit margin = net profit amount ÷ operating revenue amount × 100%. Sort by operating revenue descending; take the top ⌈n × 10%⌉ = 19 companies; median net profit margin ≈ 0.880508%, rounded to two decimals = 0.88%.",
+    "Defense gap = stressed net profit margin − industry median (in percentage points), using full-precision values before rounding the gap to two decimals. Because stressed net profit margin < 0, JD.com must not be included in the defensive core position."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "JD.com 2022 annual report figures for revenue, fulfillment, and net income (1,046,236; 63,011; 9,691 RMB million) as given or verified by web search.",
+    "company_profile.csv supplies industry and exchange fields to define the A-share universe excluding Hong Kong–listed firms.",
+    "company_operation_status.csv supplies year-2022 operating revenue and net profit for percentile sorting and median calculation."
+  ],
+  "milestone": {
+    "Fulfillment expense ratio (%)": 6.02,
+    "Net profit margin (%)": 0.93,
+    "Stressed net profit margin (%)": -0.28,
+    "A-share wholesale and retail top 10% by revenue median net profit margin (%)": 0.88,
+    "Defense gap (percentage points)": -1.16,
+    "A-share sample note": "exchange ∈ {Shanghai, Shenzhen, Beijing}; Hong Kong excluded; n = 185; top decile count = 19"
+  },
+  "answer": [
+    6.02,
+    -0.28,
+    -1.16,
+    "Do not include in defensive core position"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "international_comparison"
+  }
+}

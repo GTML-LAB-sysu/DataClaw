@@ -1,0 +1,40 @@
+{
+  "id": "medium076",
+  "question": "Between the median number of industry standards participated in drafting in the industry where Hengli Kezhi Software Company operates and that of the conglomerates industry, which value is larger?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Hengli Kezhi Software Company: Information Transmission, Software and IT Services",
+    "Information Transmission, Software and IT Services: median number of industry standards participated in drafting = 2",
+    "Conglomerates: median number of industry standards participated in drafting = 0"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Hengli Kezhi Software Company belongs to the Information Transmission, Software and IT Services industry.",
+    "Extract from national_industry_status.csv that the median number of industry standards participated in drafting for Information Transmission, Software and IT Services is 2.",
+    "Extract from national_industry_status.csv that the median number of industry standards participated in drafting for the conglomerates industry is 0.",
+    "Compare the two medians: 2 > 0, so the industry where Hengli Kezhi Software Company operates is larger."
+  ],
+  "steps_num": 4,
+  "answer": "Hengli Kezhi Software Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Hengli Kezhi Software Company": "Information Transmission, Software and IT Services",
+    "Median number of industry standards participated in drafting for Information Transmission, Software and IT Services": 2,
+    "Median number of industry standards participated in drafting for the conglomerates industry": 0,
+    "Comparison result (larger one)": "Hengli Kezhi Software Company"
+  },
+  "reference": [
+    {
+      "national_industry_status": "52cd1497-bff9-43db-b3a1-001e4cac545c"
+    },
+    {
+      "company_profile": "6c1bc3d3-0763-4686-bb01-a61e146eee63"
+    },
+    {
+      "national_industry_status": "fee7bf00-36e3-4f1a-a296-f5612ad8cedd"
+    }
+  ]
+}

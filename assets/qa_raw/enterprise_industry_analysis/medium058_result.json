@@ -1,0 +1,46 @@
+{
+  "id": "medium058",
+  "question": "By how much is the mean capitalized R&D expenditure in the corresponding industry of Shanghai, where Lang Ji Hui Ruan Technology Co., Ltd. is located, higher than the corresponding value in Beijing, where Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. is located?",
+  "guidelines": "The answer must be an exact number, preserving all significant decimal places. Output only the number without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.: Shanghai Municipality",
+    "Shanghai Municipality Information Transmission, Software and IT Services Capitalized R&D expenditure (mean): 85678136.92375 Yuan",
+    "Province of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd.: Beijing Municipality",
+    "Beijing Municipality Health and Social Work Capitalized R&D expenditure (mean)：0 Yuan"
+  ],
+  "answer": 85678136.92375,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Province of Lang Ji Hui Ruan Technology Co., Ltd.": "Shanghai Municipality",
+    "Shanghai Municipality Information Transmission, Software and IT Services Capitalized R&D expenditure (mean) (Yuan)": 85678136.92375,
+    "Province of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd.": "Beijing Municipality",
+    "Beijing Municipality Health and Social Work Capitalized R&D expenditure (mean)（Yuan）": 0,
+    "Amount higher": 85678136.92375
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Lang Ji Hui Ruan Technology Co., Ltd. = Shanghai Municipality",
+    "Extracted from regional_industry_status.csv: mean capitalized R&D expenditure in Shanghai Information Transmission, Software and IT Services = 85678136.92375 Yuan",
+    "Extracted from company_profile.csv: province of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. = Beijing Municipality",
+    "Extracted from regional_industry_status.csv: mean capitalized R&D expenditure in Beijing Health and Social Work = 0 Yuan",
+    "Calculated the amount higher: 85678136.92375 - 0 = 85678136.92375"
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "be71aa1d-8666-44e9-8f26-ffd92dc87001"
+    },
+    {
+      "company_profile": "e9d63626-4106-4f18-8022-b5396454e690"
+    },
+    {
+      "regional_industry_status": "20e7aa24-290d-47e5-bc90-5e8b8e8ab3ef"
+    },
+    {
+      "company_profile": "10890d3a-b03b-417b-b39e-f5070604b51e"
+    }
+  ]
+}

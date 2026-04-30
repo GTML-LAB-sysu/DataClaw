@@ -1,0 +1,40 @@
+{
+  "id": "easy023",
+  "question": "In 2022, which is larger: the R&D investment ratio of Hua Cheng Sheng Yuan Integrated Development Co., Ltd. or the year-over-year net profit change rate of Long He Zhi Jin Real Estate Co., Ltd.?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Hua Cheng Sheng Yuan Integrated Development Co., Ltd. (2022 dataset value): R&D investment ratio = 4.79 %",
+    "Long He Zhi Jin Real Estate Co., Ltd. (2022 dataset value): year-over-year net profit change rate = -32.50 %"
+  ],
+  "milestone": {
+    "Hua Cheng Sheng Yuan Integrated Development Co., Ltd. R&D investment ratio in 2022": "4.79 %",
+    "Long He Zhi Jin Real Estate Co., Ltd. year-over-year net profit change rate in 2022": "-32.50 %",
+    "Comparison result (which is larger)": "Hua Cheng Sheng Yuan Integrated Development Co., Ltd."
+  },
+  "answer": "Hua Cheng Sheng Yuan Integrated Development Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Hua Cheng Sheng Yuan Integrated Development Co., Ltd. R&D investment ratio in 2022 = 4.79 %",
+    "Extracted from company_operation_status.csv: Long He Zhi Jin Real Estate Co., Ltd. year-over-year net profit change rate in 2022 = -32.50 %",
+    "Compared 4.79 and -32.50; since 4.79 > -32.50, the larger one is \"Hua Cheng Sheng Yuan Integrated Development Co., Ltd.\""
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "42462fed-6dbc-400e-b9da-c46efc7fcf28"
+    },
+    {
+      "company_operation_status": "e42fabec-4192-4d35-8382-c3f2c2575de0"
+    },
+    {
+      "company_profile": "41fc40f8-35ba-4a45-9c72-56aa081d8caa"
+    },
+    {
+      "company_profile": "26b455a0-8084-4ea6-a2d9-b08d9305f26b"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy112",
+  "question": "Does Wan Hui Jin Sheng Real Estate Development Co., Ltd. contribute to the development of Guangdong Province?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Wan Hui Jin Sheng Real Estate Development Co., Ltd.'s registration province is Guangdong Province",
+    "This matches the province named in the question, \"Guangdong Province\"",
+    "Therefore it satisfies the condition stated in the question; output \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Wan Hui Jin Sheng Real Estate Development Co., Ltd. registration province": "Guangdong Province",
+    "Comparison province": "Guangdong Province",
+    "Whether contributes to development of Guangdong Province": "Yes"
+  }
+}

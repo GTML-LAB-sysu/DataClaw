@@ -1,0 +1,22 @@
+{
+  "id": "easy029",
+  "question": "In 2022, is the year-over-year change rate of R&D investment of Yong Feng Ke Lian Software Co., Ltd. higher than that of Hai Li Xuan Yue Electric Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Yong Feng Ke Lian Software Co., Ltd. year-over-year change rate of R&D investment in 2022 = -27.60 %",
+    "Extracted from company_operation_status.csv: Hai Li Xuan Yue Electric Co., Ltd. year-over-year change rate of R&D investment in 2022 = -32.38 %",
+    "Compared -27.60 and -32.38; since -27.60 > -32.38, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Yong Feng Ke Lian Software Co., Ltd. year-over-year change rate of R&D investment in 2022": "-27.60 %",
+    "Hai Li Xuan Yue Electric Co., Ltd. year-over-year change rate of R&D investment in 2022": "-32.38 %",
+    "Comparison result (whether Yong Feng Ke Lian Software Co., Ltd. is higher than Hai Li Xuan Yue Electric Co., Ltd.)": "Yes"
+  }
+}

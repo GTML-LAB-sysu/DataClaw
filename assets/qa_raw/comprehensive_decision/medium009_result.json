@@ -1,0 +1,28 @@
+{
+  "id": "medium009",
+  "question": "In 2022, a mining industry enterprise plans to go public for financing and hopes to list on the exchange with the highest average market capitalization among enterprises in this industry. Among the four exchanges—Shenzhen Stock Exchange, Hong Kong Stock Exchange, Shanghai Stock Exchange, and Beijing Stock Exchange—which exchange has the highest average market capitalization of listed mining enterprises?",
+  "guidelines": "The answer should be the exchange name (e.g., \"Shenzhen Stock Exchange\", \"Hong Kong Stock Exchange\", \"Shanghai Stock Exchange\", \"Beijing Stock Exchange\"). If the relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter records from company_profile.csv where industry=\"Mining\", extract company name, bmCode and exchange fields, finding 143 mining enterprises in total.",
+    "Join with company_operation_status.csv by bmCode to retrieve 2022 data for these enterprises, extract company market capitalization field.",
+    "Filter records where company market capitalization is not empty, resulting in 142 enterprises with market capitalization data.",
+    "Group by exchange field and calculate the average market capitalization of mining enterprises for each exchange.",
+    "Sort by average market capitalization in descending order. Shanghai Stock Exchange has the highest average market capitalization, with 49 mining enterprises, total market capitalization of 4,771.8 billion CNY, and average market capitalization of 973.84 billion CNY."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Found 143 mining enterprises from company_profile.csv.",
+    "Found 2022 market capitalization data for 142 mining enterprises from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Shanghai Stock Exchange Total Market Capitalization of Mining Enterprises (billion CNY)": 47718.0,
+    "Number of Mining Enterprises on Shanghai Stock Exchange": 49,
+    "Shanghai Stock Exchange Average Market Capitalization of Mining Enterprises (billion CNY)": 973.84
+  },
+  "answer": "Shanghai Stock Exchange",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  }
+}

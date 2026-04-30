@@ -1,0 +1,37 @@
+{
+  "id": "medium006",
+  "question": "In 2022, regarding the industrial development direction of Hebei Province's metal smelting and rolling processing industry, researchers intend to compare two alternative transformation paths through a multi-dimensional scoring method. Path one \"green and low-carbon route\" covers three evaluation indicators: average enterprise R&D investment amount (reflecting technology upgrade willingness), invention patent density (= total cumulative Chinese invention patent grants ÷ total number of enterprises, weight 0.3), and count of provincial green-related policies (i.e., policy records whose name contains \"green\", \"low-carbon\", or \"energy-saving\", weight 0.4), with average R&D investment amount weight 0.3; Path two \"traditional capacity expansion route\" also includes three indicators: total assets (weight 0.4), total operating revenue (weight 0.3), and total number of enterprises (weight 0.3). Each province's score for each indicator is calculated by inter-provincial peer ranking (score = (N - ranking) / (N - 1) × 100). Please calculate the score difference between Hebei Province on the above two routes (green and low-carbon route score minus traditional capacity expansion route score).",
+  "guidelines": "Answer format: Value (2 decimal places). A positive number indicates the green and low-carbon route has a higher score, a negative number indicates the traditional capacity expansion route has a higher score. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From regional_industry_status.csv, filter industry = \"金属冶炼和压延加工业\" (metal smelting and rolling processing industry), and extract for each province: total number of enterprises, mean R&D investment amount (研发投入金额均值), total cumulative Chinese invention patent grants, total assets, and total operating revenue. After dropping nulls for mean R&D, patent density, total assets, and operating revenue, there are 16 valid provinces for each of these four indicators.",
+    "Average enterprise R&D investment uses the table field mean R&D investment amount (non-null values participate in ranking). Hebei Province: 3062942709.59 yuan, rank 2 among 16 provinces (ties take the best rank), score = (16 - 2) / (16 - 1) × 100 = 93.33.",
+    "Invention patent density = total cumulative Chinese invention patent grants ÷ total number of enterprises (enterprises > 0 and both fields non-null). Hebei Province: 793 ÷ 1 = 793.0000, rank 2 among 16, score = 93.33.",
+    "From policy_release_status.csv, filter records with publishDate in calendar year 2022 (parsed as day/month/year), policyClassification = \"地方政策\", province non-empty and not \"全国\", industry field containing \"金属冶炼和压延加工业\", and policy name containing at least one of \"绿色\", \"低碳\", or \"节能\"; count by province. Eight records matched, across six provinces; Hebei Province: 0 records.",
+    "Provincial green-related policy count: count on the 34 provinces that appear in the industry table (provinces with no match are 0), rank within this indicator; Hebei has 0, tied with 27 other provinces with competitive rank 7, score = (34 - 7) / (34 - 1) × 100 = 81.82.",
+    "Traditional capacity expansion: total assets and operating revenue are ranked among the 16 provinces with non-null values; Hebei ranks 6th and 11th, scores 66.67 and 33.33 respectively. Total number of enterprises is ranked among all 34 provinces; Hebei has 1 enterprise, rank 24 (tied with six provinces), score = 30.30.",
+    "Green and low-carbon route score = 93.33 × 0.3 + 93.33 × 0.3 + 81.82 × 0.4 = 88.73; traditional capacity expansion route score = 66.67 × 0.4 + 33.33 × 0.3 + 30.30 × 0.3 = 45.76.",
+    "Score difference (green and low-carbon − traditional capacity expansion) = 88.73 − 45.76 = 42.97."
+  ],
+  "steps_num": 8,
+  "evidence": [
+    "Filtered regional_industry_status.csv for industry \"metal smelting and rolling processing industry\" and obtained valid provincial-level data for 16 regions.",
+    "Filtered policy_release_status.csv and found 8 green-related policy records involving six provinces."
+  ],
+  "milestone": {
+    "Average enterprise R&D investment score": 93.33,
+    "Invention patent density score": 93.33,
+    "Green policy count score": 81.82,
+    "Total assets score": 66.67,
+    "Operating revenue score": 33.33,
+    "Enterprise count score": 30.3,
+    "Green and low-carbon route score": 88.73,
+    "Traditional capacity expansion route score": 45.76,
+    "Score difference": 42.97
+  },
+  "answer": 42.97,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  }
+}

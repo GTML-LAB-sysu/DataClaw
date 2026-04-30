@@ -1,0 +1,24 @@
+{
+  "id": "medium095",
+  "question": "Which is larger: the number of SSE-listed private enterprises in the industry where Yihai Changjin Business Company operates, or the number of BSE-listed private enterprises in China's Transportation, Storage and Postal Services industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "answer": "Yihai Changjin Business Company",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Yihai Changjin Business Company belongs to the Leasing and Business Services industry.",
+    "Extract from national_industry_status.csv that the number of SSE-listed private enterprises in the Leasing and Business Services industry is 11.",
+    "Extract from national_industry_status.csv that the number of BSE-listed private enterprises in the Transportation, Storage and Postal Services industry is 2.",
+    "Compare the counts: 11 > 2, so Yihai Changjin Business Company is higher."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Industry of Yihai Changjin Business Company": "Leasing and Business Services",
+    "Number of SSE-listed private enterprises in the Leasing and Business Services industry": 11,
+    "Number of BSE-listed private enterprises in the Transportation, Storage and Postal Services industry": 2,
+    "Comparison result (larger one)": "Yihai Changjin Business Company"
+  }
+}

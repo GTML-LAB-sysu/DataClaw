@@ -1,0 +1,35 @@
+{
+  "id": "medium016",
+  "question": "In 2022, amid strong policy support for domestic semiconductor self-reliance in China, what was TSMC's R&D intensity (R&D expenses as percentage of revenue) in its annual report? What is the difference in percentage points compared with the median R&D intensity of listed semiconductor companies in China?",
+  "guidelines": "Answer in order: TSMC R&D intensity (%), and the difference from domestic median (percentage points; positive value means TSMC is higher). Values rounded to 2 decimal places. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from TSMC 2022 20-F annual report PDF: 2022 Net Revenue = NT$2,263,891 million, Research and Development Expenses = NT$163,262 million. R&D intensity = 163,262 / 2,263,891 × 100% = 7.21%.",
+    "Filter company_profile.csv for industry=='semiconductor industry' (semiconductors), 172 companies.",
+    "Obtain 'R&D intensity' for the 172 semiconductor companies from company_operation_status.csv; 169 have valid data. Median = 7.17%.",
+    "Calculate difference between TSMC and domestic semiconductor industry median: 7.21% - 7.17% = 0.04 percentage points; TSMC is slightly above domestic median.",
+    "TSMC R&D intensity (7.21%) differs very little from domestic semiconductor industry median (7.17%)—only 0.04 percentage points."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "TSMC 2022 20-F annual report (SEC Filing), including 2022 net revenue NT$2,263,891 million, R&D expenses NT$163,262 million.",
+    "company_profile.csv: 172 semiconductor industry companies.",
+    "company_operation_status.csv: R&D intensity for 169 semiconductor companies."
+  ],
+  "milestone": {
+    "TSMC 2022 net revenue(NT$ million)": 2263891,
+    "TSMC 2022 R&D expenses(NT$ million)": 163262,
+    "TSMC R&D intensity(%)": 7.21,
+    "Domestic semiconductor industry company count": 172,
+    "Domestic semiconductor industry median R&D intensity(%)": 7.17,
+    "R&D intensity difference(percentage points)": 0.04
+  },
+  "answer": [
+    7.21,
+    0.04
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

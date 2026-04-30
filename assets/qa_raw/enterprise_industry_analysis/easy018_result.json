@@ -1,0 +1,40 @@
+{
+  "id": "easy018",
+  "question": "In 2022, compared with Jing Neng Dian Re Ran Qi Co., Ltd., what is the difference in total liabilities of San Xia Ze Neng Dian Li Co., Ltd.?",
+  "guidelines": "The answer must be a number with two decimal places. Output only the number without units, commas, or any text. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "San Xia Ze Neng Dian Li Co., Ltd. (2022 dataset value): total liabilities = 10344552545.65 CNY",
+    "Jing Neng Dian Re Ran Qi Co., Ltd. (2022 dataset value): total liabilities = 8274232707.73 CNY"
+  ],
+  "milestone": {
+    "Total liabilities of San Xia Ze Neng Dian Li Co., Ltd. in 2022 (CNY)": 10344552545.65,
+    "Total liabilities of Jing Neng Dian Re Ran Qi Co., Ltd. in 2022 (CNY)": 8274232707.73,
+    "Difference (San Xia Ze Neng Dian Li Co., Ltd. - Jing Neng Dian Re Ran Qi Co., Ltd.)": 2070319837.92
+  },
+  "answer": 2070319837.92,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: total liabilities of San Xia Ze Neng Dian Li Co., Ltd. in 2022 = 10344552545.65 CNY",
+    "Extracted from company_operation_status.csv: total liabilities of Jing Neng Dian Re Ran Qi Co., Ltd. in 2022 = 8274232707.73 CNY",
+    "Calculated the difference (San Xia Ze Neng Dian Li Co., Ltd. - Jing Neng Dian Re Ran Qi Co., Ltd.): 10344552545.65 - 8274232707.73 = 2070319837.92, and output with two decimal places as required"
+  ],
+  "steps_num": 3,
+  "reference": [
+    {
+      "company_operation_status": "77f252db-7ff7-4422-aac6-4db091b00f91"
+    },
+    {
+      "company_operation_status": "78ce6b29-7295-43bb-ab69-473b188f464d"
+    },
+    {
+      "company_profile": "6e04f2f0-42d4-46a2-885c-87d82009b319"
+    },
+    {
+      "company_profile": "af90245d-1d33-4fa9-800a-cabc15e69927"
+    }
+  ]
+}

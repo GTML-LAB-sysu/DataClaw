@@ -1,0 +1,40 @@
+{
+  "id": "medium063",
+  "question": "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province Number of policies (indicator) and China TransportationNumber of policies (indicator)compared with  how much？",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "evidence": [
+    "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province = Guangdong Province",
+    "Guangdong ProvinceElectronicslocal policies_Guangdong ProvincepersonsNumber of policies (indicator)=1",
+    "ChinaPlastic Productsministerial policies_TransportationNumber of policies (indicator)=1"
+  ],
+  "milestone": {
+    "Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceElectronicslocal policies_Guangdong ProvincepersonsNumber of policies (indicator)": 1,
+    "ChinaPlastic Productsministerial policies_TransportationNumber of policies (indicator)": 1,
+    "Difference(Guangdong ProvincepersonsNumber of policies (indicator)-TransportationNumber of policies (indicator))": 0.0
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Bi Yuan Zhi Ze Cheng Shi Development Co., Ltd.province = Guangdong Province and industry = Electronics",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Electronicsextractlocal policies in Guangdong ProvincepersonsNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaPlastic Productsministerial policies in TransportationNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "reference": [
+    {
+      "policy_release_status": "558608bf-1ac0-4a8b-8285-011f4eb6f845"
+    },
+    {
+      "company_profile": "1497d311-a090-4fdb-9af8-30fee577d417"
+    },
+    {
+      "policy_release_status": "5a66b14f-0c67-4f3c-a56f-1db3efa4e764"
+    }
+  ]
+}

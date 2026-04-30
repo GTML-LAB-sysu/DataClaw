@@ -1,0 +1,36 @@
+{
+  "id": "medium021",
+  "question": "In 2022, amid policy support for digital economy development and healthy platform economy regulation in China, what was Alibaba's revenue per employee (operating revenue ÷ total employees) in ten thousand CNY? How many times the median revenue per employee of domestic IT industry leaders (top 10% (round down) by operating revenue in information transmission, software and IT services) is it?",
+  "guidelines": "Answer in order: Alibaba revenue per employee (ten thousand CNY), and the multiple of industry leaders median revenue per employee. Values rounded to 2 decimal places, returned as an array. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Alibaba (BABA) 2022 annual report PDF (20-F, fiscal year ended March 31, 2023, corresponding to calendar year 2022): Consolidated Total Revenue = RMB 868,687 million (i.e. 8,686.87 hundred million), full-time employees as of March 31, 2023 = 235,216.",
+    "Calculate Alibaba revenue per employee = 868,687,000,000 / 235,216 = 3,693,064.34 CNY = 369.31 ten thousand CNY.",
+    "Filter company_profile.csv for industry=\"information transmission, software and information technology services\" (information transmission, software and IT services), 644 companies. Join with company_operation_status.csv; exclude records with empty/zero revenue or employees; 642 valid companies.",
+    "Compute revenue per employee = operating revenue / total employees for each. Rank by operating revenue descending; top 10% (64 companies) as industry leaders. Leaders median revenue per employee = 2,456,389.49 CNY = 245.64 ten thousand CNY.",
+    "Calculate multiple: Alibaba revenue per employee / leaders median = 369.31 / 245.64 = 1.50x."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "Alibaba (BABA) 2022 annual report PDF (20-F, fiscal year ended March 31, 2023): operating revenue RMB 868,687 million, total employees 235,216.",
+    "company_profile.csv: 644 IT industry companies, 642 valid.",
+    "company_operation_status.csv: operating revenue and total employees for 642 companies."
+  ],
+  "milestone": {
+    "Alibaba operating revenue(million RMB)": 868687,
+    "Alibaba total employees": 235216,
+    "Alibaba revenue per employee(ten thousand CNY)": 369.31,
+    "IT industry valid company count": 642,
+    "Industry leaders count(top 10%)": 64,
+    "Industry leaders median revenue per employee(ten thousand CNY)": 245.64,
+    "Alibaba vs leaders median multiple": 1.5
+  },
+  "answer": [
+    369.31,
+    1.5
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

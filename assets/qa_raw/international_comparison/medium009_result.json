@@ -1,0 +1,36 @@
+{
+  "id": "medium009",
+  "question": "What is ASE Technology Holding's net profit margin in 2022? Among listed companies in China's semiconductor industry, the top 10% by operating revenue (count rounded up) are defined as industry leaders. What is ASE Technology Holding's net profit margin? How many percentage points does it differ from the median net profit margin of industry leaders?",
+  "guidelines": "Answer in order: 1) ASE Technology Holding's 2022 net profit margin (2 decimal places, %); 2) Difference between ASE's net profit margin and the median net profit margin of domestic semiconductor industry leaders (top 10% by revenue) in percentage points (2 decimal places). Return as a list. If relevant data cannot be found, answer \"No relevant data found\".",
+  "steps": [
+    "From ASE Technology Holding's 2022 annual report (Form 20-F), extract consolidated income statement data: 2022 Net revenues = 670,872,643 thousand TWD, Net profit attributable to owners of the parent = 61,501,545 thousand TWD. Net profit margin = 61,501,545 / 670,872,643 × 100 = 9.17%.",
+    "From company_profile.csv, filter industry = \"semiconductor industry\", 172 companies.",
+    "From company_operation_status.csv, obtain 2022 net profit and operating revenue for these companies; 172 valid records after excluding invalid data. Sort by operating revenue descending; take the top 10% (18 companies, rounded up) as industry leaders, remaining 154 as non-leaders.",
+    "Compute median net profit margins for industry leaders and non-leaders separately; industry leaders median = 9.60%.",
+    "Compute the difference between ASE and the industry leaders' median: 9.17% − 9.60% = −0.43 percentage points; ASE's net profit margin is 0.43 percentage points below the median of domestic semiconductor industry leaders."
+  ],
+  "steps_num": 5,
+  "evidence": [
+    "ASE Technology Holding 2022 annual report (SEC Form 20-F filing): Net revenues 670,872,643 thousand TWD, net profit attributable to owners of the parent 61,501,545 thousand TWD",
+    "company_profile.csv: 172 semiconductor industry companies",
+    "company_operation_status.csv: 172 net profit margin records for 2022; industry leaders (top 10%, 18 companies) median 9.60%"
+  ],
+  "milestone": {
+    "ASE Technology Holding 2022 operating revenue (thousand TWD)": 670872643,
+    "ASE Technology Holding 2022 net profit attributable to owners of the parent (thousand TWD)": 61501545,
+    "ASE Technology Holding net profit margin (%)": 9.17,
+    "Semiconductor industry total enterprise count": 172,
+    "Industry leader enterprise count (top 10%, rounded up)": 18,
+    "Industry leaders median net profit margin (%)": 9.6,
+    "Gap between ASE Technology Holding and industry leaders median (percentage points)": -0.43
+  },
+  "answer": [
+    9.17,
+    -0.43
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "easy005",
+  "question": "In 2022, is the market capitalization of Zhong Tong Jie Tong Yun Shu Co., Ltd. lower than that of Yun Da Hang Chang Kuai Di Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: market capitalization of Zhong Tong Jie Tong Yun Shu Co., Ltd. in 2022 = 33.0 hundred million CNY",
+    "Extracted from company_operation_status.csv: market capitalization of Yun Da Hang Chang Kuai Di Co., Ltd. in 2022 = 136.0 hundred million CNY",
+    "Compared 33.0 and 136.0; since 33.0 < 136.0, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Market capitalization of Zhong Tong Jie Tong Yun Shu Co., Ltd. in 2022 (hundred million CNY)": 33.0,
+    "Market capitalization of Yun Da Hang Chang Kuai Di Co., Ltd. in 2022 (hundred million CNY)": 136.0,
+    "Comparison result (whether Zhong Tong Jie Tong Yun Shu Co., Ltd. is lower than Yun Da Hang Chang Kuai Di Co., Ltd.)": "Yes"
+  }
+}

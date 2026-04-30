@@ -1,0 +1,26 @@
+{
+  "id": "medium023",
+  "question": "What is the difference between the number of local policies issued by the Hunan Province General Office of the People's Government for the industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd. and the total number of policies for the Consumer Electronics and Electrical Equipment industry in Guangdong Province where Zhang Qiao Jin Chuang Technology Co., Ltd. is located?",
+  "guidelines": "The answer must be a number rounded to one decimal place. Output only the number, without units, commas, or explanations. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extract from company_profile.csv that Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.'s industry is Real Estate",
+    "Extract from policy_release_status.csv that in the local policies for Real Estate, the policy count issued by the Hunan Province General Office of the People's Government is 1",
+    "Extract from company_profile.csv that Zhang Qiao Jin Chuang Technology Co., Ltd. is located in Guangdong Province and its industry is Consumer Electronics and Electrical Equipment",
+    "Extract from policy_release_status.csv that the total policy count for Consumer Electronics and Electrical Equipment in Guangdong Province is 1",
+    "Calculate the difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Industry of Zhao Ye Hua Chang Fang Di Chan Kai Fa Co., Ltd.": "Real Estate",
+    "Real Estate local policies_Hunan Province General Office of the People's Government policy count": 1,
+    "Province of Zhang Qiao Jin Chuang Technology Co., Ltd.": "Guangdong Province",
+    "Guangdong Province Consumer Electronics and Electrical Equipment total policy count": 1,
+    "Difference (Hunan Province General Office of the People's Government policy count - total policy count)": 0.0
+  }
+}

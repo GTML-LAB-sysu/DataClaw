@@ -1,0 +1,34 @@
+{
+  "id": "medium003",
+  "question": "What is the revenue per employee (operating revenue / total employees, unit: ten thousand CNY) of Bilibili according to its 2022 annual report? Compared with the median revenue per employee of listed companies in China's \"information transmission, software and IT services\" industry, how many times the industry median is Bilibili's revenue per employee?",
+  "guidelines": "Answer in order: Bilibili revenue per employee (ten thousand CNY), and the multiple of industry median. Values rounded to 2 decimal places, e.g. [197.43, 2.16]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Bilibili (BILI) 2022 20-F annual report, Consolidated Results of Operations: 2022 Net revenues = RMB 21,899,167 thousand (i.e. 21.899 billion); from Item 6D. Employees, total employees as of Dec 31, 2022 = 11,092. Revenue per employee = 21,899,167,000 / 11,092 / 10,000 = 197.43 ten thousand CNY.",
+    "Filter company_profile.csv for companies with industry==\"information transmission, software and information technology services\" (information transmission, software and IT services), 644 companies.",
+    "Join the 644 companies with company_operation_status.csv by company name; obtain operating revenue and total employees for each. After excluding missing values and records with zero employees, 642 valid companies remain. Revenue per employee = operating revenue / total employees / 10000 (ten thousand CNY); median = 91.24 ten thousand CNY.",
+    "Calculate multiple of Bilibili revenue per employee vs industry median: 197.43 / 91.24 = 2.16x."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "Bilibili (BILI) 2022 20-F annual report (SEC Filing), including 2022 consolidated net revenues RMB 21,899,167 thousand, total employees 11,092.",
+    "company_profile.csv: 644 companies in information transmission, software and IT services industry.",
+    "company_operation_status.csv: operating revenue and total employees for 642 valid companies; revenue per employee computed."
+  ],
+  "milestone": {
+    "Bilibili 2022 net revenue(RMB thousand)": 21899167,
+    "Bilibili 2022 total employees": 11092,
+    "Bilibili revenue per employee(ten thousand CNY)": 197.43,
+    "Domestic IT industry valid company count": 642,
+    "Domestic IT industry median revenue per employee(ten thousand CNY)": 91.24,
+    "Multiple": 2.16
+  },
+  "answer": [
+    197.43,
+    2.16
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

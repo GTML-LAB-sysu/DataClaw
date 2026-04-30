@@ -1,0 +1,34 @@
+{
+  "id": "medium008",
+  "question": "Yum China (YUMC) is one of China's largest restaurant chains, with brands including KFC and Pizza Hut. Based on Yum China 2022 annual report, answer in order: (1) Net profit margin (net profit ÷ operating revenue, %); (2) Median net profit margin of listed companies in China's accommodation and catering industry (%); (3) How many percentage points higher is Yum China's net profit margin than that median?",
+  "guidelines": "Answer the three sub-questions in order; values rounded to 2 decimal places, e.g. [4.62, -16.17, 20.79]. If relevant data cannot be found, reply \"No relevant data found\".",
+  "steps": [
+    "Extract from Yum China 2022 annual report (10-K) consolidated income statement: 2022 Total revenues = 9,569 million USD, Net Income – Yum China Holdings, Inc. = 442 million USD.",
+    "Calculate Yum China net profit margin: 442 / 9,569 × 100% = 4.62%.",
+    "Filter company_profile.csv for accommodation and catering industry, 35 companies. Join with company_operation_status.csv for net profit and operating revenue; after excluding records with zero or missing revenue, compute net profit margin (net profit / operating revenue × 100%) for each; median = -16.17%.",
+    "Calculate difference: 4.62% - (-16.17%) = 20.79 percentage points. Yum China net profit margin is significantly above the domestic accommodation and catering industry median."
+  ],
+  "steps_num": 4,
+  "evidence": [
+    "Yum China (YUMC) 2022 10-K annual report, including consolidated income statement: Total revenues 9,569 million USD, Net Income 442 million USD.",
+    "company_profile.csv: 35 accommodation and catering companies; company_operation_status.csv provides net profit and operating revenue; median net profit margin computed."
+  ],
+  "milestone": {
+    "Yum China 2022 operating revenue(million USD)": 9569,
+    "Yum China 2022 net profit(million USD)": 442,
+    "Yum China net profit margin(%)": 4.62,
+    "Accommodation and catering industry valid company count": 35,
+    "Industry median net profit margin(%)": -16.17,
+    "Yum China above industry median(percentage points)": 20.79
+  },
+  "answer": [
+    4.62,
+    -16.17,
+    20.79
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "international_comparison"
+  }
+}

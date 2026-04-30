@@ -1,0 +1,56 @@
+{
+  "id": "medium039",
+  "question": "In 2022, list all indicators for which Guangdong Province's Information Transmission, Software and Information Technology Services industry has mean values superior to the national average, and sort them by advantage magnitude from high to low.",
+  "guidelines": "Answer format: [Indicator 1, Indicator 2, Indicator 3, ...]. Output only indicator names, separated by commas and spaces, do not add any other explanatory text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": [
+    "Mean of year-over-year change in R&D investment ratio",
+    "Mean of year-over-year change in net profit",
+    "Mean of annual PCT patent applications",
+    "Mean of annual PCT invention patent applications",
+    "Mean of government incentive funds and subsidies",
+    "Mean of net profit amount",
+    "Mean of year-over-year change in capitalized R&D investment",
+    "Mean of cumulative PCT patent applications",
+    "Mean of cumulative PCT invention patent applications",
+    "Mean of cumulative citations of all patents",
+    "Mean of cumulative China invention patent grants",
+    "Mean of participation in drafting national standards",
+    "Mean of R&D personnel ratio",
+    "Mean of R&D investment ratio",
+    "Mean of asset-liability ratio"
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter records with industry=\"Information Transmission, Software and Information Technology Services\" and district=\"National\" from national_industry_status.csv, extract all fields containing \"mean\" and their values, and obtain national average data. Total number of indicator fields containing mean is 48.",
+    "Filter records with industry=\"Information Transmission, Software and Information Technology Services\" and province=\"Guangdong Province\" from regional_industry_status.csv, extract all fields containing \"mean\" and their values, and obtain Guangdong Province average data. Total number of indicator fields containing mean is 48.",
+    "Iterate through all fields containing \"mean\", compare Guangdong Province and national values. For each field, if Guangdong Province value is greater than national value, mark it as an advantage indicator. Statistics show 15 indicators where Guangdong Province mean is higher than the national average.",
+    "Sort by advantage magnitude from high to low to obtain 15 advantage indicators: mean of year-over-year change in R&D investment ratio, mean of year-over-year change in net profit, mean of annual PCT patent applications, mean of annual PCT invention patent applications, mean of government incentive funds and subsidies, mean of net profit amount, mean of year-over-year change in capitalized R&D investment, mean of cumulative PCT patent applications, mean of cumulative PCT invention patent applications, mean of cumulative citations of all patents, mean of cumulative China invention patent grants, mean of participation in drafting national standards, mean of R&D personnel ratio, mean of R&D investment ratio, mean of asset-liability ratio."
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Total number of national indicator fields containing mean": 48,
+    "Total number of Guangdong Province indicator fields containing mean": 48,
+    "Number of advantage indicators in Guangdong Province": 15,
+    "List of advantage indicators": [
+      "Mean of year-over-year change in R&D investment ratio",
+      "Mean of year-over-year change in net profit",
+      "Mean of annual PCT patent applications",
+      "Mean of annual PCT invention patent applications",
+      "Mean of government incentive funds and subsidies",
+      "Mean of net profit amount",
+      "Mean of year-over-year change in capitalized R&D investment",
+      "Mean of cumulative PCT patent applications",
+      "Mean of cumulative PCT invention patent applications",
+      "Mean of cumulative citations of all patents",
+      "Mean of cumulative China invention patent grants",
+      "Mean of participation in drafting national standards",
+      "Mean of R&D personnel ratio",
+      "Mean of R&D investment ratio",
+      "Mean of asset-liability ratio"
+    ]
+  }
+}

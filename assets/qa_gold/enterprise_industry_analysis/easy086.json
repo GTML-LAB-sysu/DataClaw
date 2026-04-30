@@ -1,0 +1,22 @@
+{
+  "id": "easy086",
+  "question": "In 2022, which is lower: the minimum cumulative number of Chinese invention patent applications in China's automobile manufacturing industry, or in the metal smelting and rolling processing industry?",
+  "guidelines": "The answer must be an industry name. Output only one term without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Metal Smelting and Rolling Processing",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from national_industry_status.csv: minimum cumulative Chinese invention patent applications in automobile manufacturing = 2",
+    "Extracted from national_industry_status.csv: minimum cumulative Chinese invention patent applications in metal smelting and rolling processing = 1",
+    "Compared 2 and 1; since 1 is lower, output \"Metal Smelting and Rolling Processing\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Minimum cumulative Chinese invention patent applications in nationwide automobile manufacturing": 2,
+    "Minimum cumulative Chinese invention patent applications in nationwide metal smelting and rolling processing": 1,
+    "Comparison result (which is lower)": "Metal Smelting and Rolling Processing"
+  }
+}

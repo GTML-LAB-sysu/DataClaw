@@ -1,0 +1,31 @@
+{
+  "id": "medium003",
+  "question": "Using 2022 as the base period, a differentiated policy incentive is proposed for the automobile manufacturing industry: For provinces that have implemented automobile industry policies containing the keywords \"new energy\" or \"electric\", the annual operating profit growth rate of automobile manufacturing enterprises within their jurisdiction will add 10 percentage points on top of the current median growth rate, creating a policy acceleration effect; other provinces are unaffected, and operating profit growth rate continues along the current trajectory. Under this differentiated scenario, using the median year-on-year change in operating profit as the baseline growth rate for each province, and projecting to 2025 via 3-year compound growth, which province has the most prominent increase in total operating profit compared to actual 2022 levels? What is the specific increase (increase = (2025 estimated value - 2022 actual value) / 2022 actual value × 100%)?",
+  "guidelines": "Answer format: value (2 decimal places, unit: %). If relevant data cannot be found, please answer \"No relevant data found\".",
+  "answer": 859.71,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "Filter from policy_release_status.csv policy records where industry field contains \"automobile\" and policy name contains \"new energy\" or \"electric\", obtaining 10 records. Extract the list of involved provinces (deduplicated, excluding national policies), obtaining 7 provinces: Hainan, Chongqing, Guangdong, Jiangxi, Sichuan, Shandong, Jiangsu.",
+    "Filter from company_profile.csv all enterprise records with industry=\"automobile manufacturing industry\", extract enterprise name, bmCode, and province fields, finding 230 enterprises.",
+    "From company_operation_status.csv, link the above enterprises by bmCode, extract operating profit amount and year-on-year operating profit change rate fields, filter out enterprises with either field empty, obtaining 230 valid enterprises.",
+    "Group by province, calculate total operating profit amount and median year-on-year operating profit change rate for each province, filter provinces with total operating profit amount greater than 0, totaling 22 provinces.",
+    "For each valid province, determine whether it belongs to provinces with policy: adjusted growth rate for provinces with policy = median growth rate + 10; adjusted growth rate for provinces without policy = median growth rate.",
+    "Calculate estimated total operating profit for 2025 for each province = total operating profit amount × (1 + adjusted growth rate/100)^3. Guangxi Zhuang Autonomous Region's estimated 2025 operating profit = 117492412.97 × (1+112.51/100)^3 = 1127581487.29 (yuan).",
+    "Calculate growth rate for each province = (2025 estimated value - 2022 actual value) / 2022 actual value × 100. Guangxi Zhuang Autonomous Region's growth rate = (1127581487.29 - 117492412.97) / 117492412.97 × 100 = 859.71%.",
+    "Sort by growth rate in descending order. The province with the largest growth rate is Guangxi Zhuang Autonomous Region, at 859.71%."
+  ],
+  "steps_num": 8,
+  "milestone": {
+    "Provinces with policy": 7,
+    "Valid automobile manufacturing enterprises": 230,
+    "Provinces with total operating profit > 0": 22,
+    "Guangxi total operating profit 2022 (yuan)": 117492412.97,
+    "Guangxi adjusted growth rate (%)": 112.51,
+    "Guangxi estimated operating profit 2025 (yuan)": 1127581487.29,
+    "Guangxi growth rate (%)": 859.71
+  }
+}

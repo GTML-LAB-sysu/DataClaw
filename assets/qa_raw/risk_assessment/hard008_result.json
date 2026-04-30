@@ -1,0 +1,29 @@
+{
+  "id": "hard008",
+  "question": "In 2022, suppose the chemical raw materials and chemical products manufacturing industry faces dual pressure in 2023: environmental protection investment must increase by an amount equivalent to 8% of operating revenue, and raw material price increases lead to a 10% increase in existing costs. If existing costs account for 75% of operating revenue, among enterprises in this industry in Jiangsu Province, how many enterprises will have negative new operating profit?",
+  "guidelines": "Answer format: integer. E.g. 15. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "From company_profile.csv, filter enterprise records with province=\"Jiangsu Province\" and industry=\"Chemical Raw Materials and Chemical Products Manufacturing\", extract enterprise name and bmCode fields; 55 enterprises found.",
+    "From company_operation_status.csv, filter 2022 data for these enterprises by enterprise name and bmCode, extract operating revenue amount and operating profit amount; 55 enterprises successfully matched.",
+    "Filter enterprise records with non-null operating revenue and operating profit; 55 enterprises in total.",
+    "For each enterprise, compute original cost = operating revenue amount × 75%.",
+    "For each enterprise, compute new cost = original cost × 1.1.",
+    "For each enterprise, compute environmental protection investment increase = operating revenue amount × 8%.",
+    "For each enterprise, compute new operating profit = operating revenue amount − new cost − environmental protection investment increase; count enterprises with new operating profit < 0: 0 enterprises."
+  ],
+  "steps_num": 7,
+  "evidence": [
+    "Found 55 chemical raw materials and chemical products manufacturing enterprises in Jiangsu Province from company_profile.csv.",
+    "Found 55 enterprises with complete data from company_operation_status.csv."
+  ],
+  "milestone": {
+    "Number of enterprises with complete data": 55,
+    "Number of enterprises with negative new operating profit": 0
+  },
+  "answer": 0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "risk_assessment"
+  }
+}

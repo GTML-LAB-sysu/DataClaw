@@ -1,0 +1,32 @@
+{
+  "id": "medium004",
+  "question": "In 2022, rank provinces by profitability in chemical raw materials and chemical products manufacturing. Provincial operating profit margin is computed as total operating profit divided by total operating revenue. Using this as the ranking criterion, what is Guangdong Province's rank? Apply the same ranking to all relevant enterprises within Guangdong Province—which enterprise ranks first?",
+  "guidelines": "Two answers required: first is Guangdong Province's rank in the provincial ranking (integer, e.g. \"6\" means 6th place); second is the full name of the top-ranked enterprise in Guangdong, which must match the \"Company Name\" field in company_profile.csv. If relevant data cannot be found, respond with \"No relevant data found\".",
+  "answer": [
+    6,
+    "Hengyi Changhua Technology Co., Ltd."
+  ],
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "From regional_industry_status.csv, filter province records with industry=\"Chemical Raw Materials and Chemical Products Manufacturing\", extract province, total operating profit, total operating revenue; 34 records obtained.",
+    "Filter records with non-null total operating profit and total operating revenue, and total operating revenue ≠ 0; 16 valid provinces. Compute provincial operating profit margin = total operating profit / total operating revenue × 100%, sort by this indicator descending.",
+    "In the provincial ranking, Guangdong Province has total operating profit 11,690,448,651.68 yuan, total operating revenue 101,800,752,670.91 yuan, operating profit margin = 11.4837%, rank 6th.",
+    "From company_profile.csv, filter enterprises with province=\"Guangdong Province\" and industry=\"Chemical Raw Materials and Chemical Products Manufacturing\", obtain company names and bmCode; from company_operation_status.csv, filter year=2022 and bmCode in the above set, extract operating profit and operating revenue.",
+    "For Guangdong enterprises, compute operating profit margin = operating profit / operating revenue × 100% (requiring operating revenue ≠ 0), sort by operating profit margin descending. First place: \"Hengyi Changhua Technology Co., Ltd.\" (bmCode=533611), operating profit margin = 2,190,338,633.59 / 3,466,111,075.75 × 100% = 63.19%."
+  ],
+  "steps_num": 5,
+  "milestone": {
+    "Guangdong total operating profit (yuan)": 11690448651.68,
+    "Guangdong total operating revenue (yuan)": 101800752670.91,
+    "Guangdong operating profit margin (%)": 11.4837,
+    "Guangdong provincial rank": 6,
+    "Top-ranked enterprise in Guangdong": "Hengyi Changhua Technology Co., Ltd.",
+    "Top enterprise operating profit (yuan)": 2190338633.59,
+    "Top enterprise operating revenue (yuan)": 3466111075.75,
+    "Top enterprise operating profit margin (%)": 63.19
+  }
+}

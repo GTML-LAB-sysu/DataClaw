@@ -1,0 +1,40 @@
+{
+  "id": "medium096",
+  "question": "Which is larger: the number of HKEX-listed central state-owned enterprises in the industry where Zhongche Yuanze Shipbuilding Company operates, or the number of HKEX-listed private enterprises in China's Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing industry?",
+  "guidelines": "The answer must be either the company name or \"industry\". Output only the name, without any explanation or description. If no relevant data can be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Zhongche Yuanze Shipbuilding Company: Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing: number of HKEX-listed central state-owned enterprises = 7",
+    "Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing (China): number of HKEX-listed private enterprises = 13"
+  ],
+  "steps": [
+    "Extract from company_profile.csv that Zhongche Yuanze Shipbuilding Company belongs to the Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing industry.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed central state-owned enterprises in this industry is 7.",
+    "Extract from national_industry_status.csv that the number of HKEX-listed private enterprises in China's Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing industry is 13.",
+    "Compare the counts: 13 > 7, so the industry side is larger."
+  ],
+  "steps_num": 4,
+  "answer": "industry",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Zhongche Yuanze Shipbuilding Company": "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Number of HKEX-listed central state-owned enterprises in Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing": 7,
+    "Number of HKEX-listed private enterprises in Cultural, Educational, Industrial Aesthetics, Sports and Entertainment Goods Manufacturing": 13,
+    "Comparison result (larger one)": "industry"
+  },
+  "reference": [
+    {
+      "national_industry_status": "4e4122cb-0cfc-47c7-8dde-7296312f31a7"
+    },
+    {
+      "company_profile": "b5c4bcce-8ecd-4a6e-b6ca-e5b6eb41fb8e"
+    },
+    {
+      "national_industry_status": "cf5aa639-7c24-475d-be3b-7b10669c525f"
+    }
+  ]
+}

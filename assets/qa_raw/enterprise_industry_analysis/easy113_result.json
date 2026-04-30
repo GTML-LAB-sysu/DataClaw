@@ -1,0 +1,31 @@
+{
+  "id": "easy113",
+  "question": "Will changes in Anhui Province's economic environment affect Bao Jin Jin Chang Tong Ye Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Bao Jin Jin Chang Tong Ye Co., Ltd. (data in this dataset) registration province: Jiangsu Province",
+    "The province named in the question is Anhui Province"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Bao Jin Jin Chang Tong Ye Co., Ltd.'s registration province is Jiangsu Province",
+    "Compare Jiangsu Province with the province named in the question, \"Anhui Province\"; the two are not the same",
+    "Therefore changes in Anhui Province's economic environment are not directly relevant to this enterprise; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Bao Jin Jin Chang Tong Ye Co., Ltd. registration province": "Jiangsu Province",
+    "Comparison province": "Anhui Province",
+    "Whether affected by Anhui Province economic environment changes": "No"
+  },
+  "reference": [
+    {
+      "company_profile": "d23c45ba-53ee-4ccf-b1e2-755feb2113c3"
+    }
+  ]
+}

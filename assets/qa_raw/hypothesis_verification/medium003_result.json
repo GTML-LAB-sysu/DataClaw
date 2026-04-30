@@ -1,0 +1,53 @@
+{
+  "id": "medium003",
+  "question": "To verify the hypothesis that policy density has a positive effect on average corporate profitability, using 2022 automotive manufacturing as an example, calculate the Spearman rank correlation coefficient between each province's policy density indicator (number of policies whose industry field contains \"automotive\") and average profitability (total operating profit amount / total operating revenue amount × 100%). Provinces without automotive manufacturing operating data or with zero operating revenue are excluded from the calculation; valid provinces with no policy records are assigned a policy count of 0.",
+  "guidelines": "Answer format: numeric value (rounded to 4 decimal places). If relevant data cannot be found, please answer \"No relevant data found\"",
+  "steps": [
+    "Filter from policy_release_status.csv all policy records where the industry field contains \"automotive\", finding 69 related policies. After excluding national policies where province is null or \"National\", 53 remain. Group by province and count policy quantity per province, with 20 provinces having related policies.",
+    "Filter from regional_industry_status.csv all provincial records with industry=\"Automotive Manufacturing\", extract province, total operating profit amount, and total operating revenue amount fields, finding data for 34 provinces.",
+    "Filter out provinces where total operating revenue amount is null or zero, leaving 14 valid provinces. Calculate each province's average operating profit margin = total operating profit amount / total operating revenue amount × 100%, with profitability range from -4.4704% to 8.1755%.",
+    "Join policy count data with provincial profitability data by province; provinces without corresponding policies are assigned a policy count of 0. After joining, total valid provinces is 14, of which 11 have policies.",
+    "Calculate the Spearman rank correlation coefficient between policy count and average operating profit margin: rho = -0.0023, p-value = 0.993880.",
+    "Output the Spearman rank correlation coefficient value as -0.0023."
+  ],
+  "steps_num": 6,
+  "evidence": [
+    "Found 69 industrial policies related to \"automotive\" in policy_release_status.csv, covering 20 provinces.",
+    "Found operating profit and operating revenue data for 14 provinces in automotive manufacturing from regional_industry_status.csv."
+  ],
+  "milestone": {
+    "Total automotive-related policies": 69,
+    "Provinces with policies": 20,
+    "Total valid provinces": 14,
+    "Sample province data": {
+      "Guangdong Province": {
+        "Policy count": 10,
+        "Average operating profit margin (%)": 2.9496
+      },
+      "Shanghai": {
+        "Policy count": 7,
+        "Average operating profit margin (%)": 0.582
+      },
+      "Hunan Province": {
+        "Policy count": 5,
+        "Average operating profit margin (%)": 7.6412
+      },
+      "Sichuan Province": {
+        "Policy count": 4,
+        "Average operating profit margin (%)": 8.1755
+      },
+      "Shandong Province": {
+        "Policy count": 3,
+        "Average operating profit margin (%)": 3.402
+      }
+    },
+    "Spearman correlation coefficient": -0.0023,
+    "p-value": 0.99388
+  },
+  "answer": -0.0023,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "hypothesis_verification"
+  }
+}

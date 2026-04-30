@@ -1,0 +1,22 @@
+{
+  "id": "easy093",
+  "question": "Are Run Hui Shu Ke Technology Co., Ltd. and Hang Fa Tie Chuan Hang Kong Technology Co., Ltd. in the same industry?",
+  "guidelines": "The answer must be \"Yes\" or \"No\"; output only one word, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "From company_profile.csv, extract that Hang Fa Tie Chuan Hang Kong Technology Co., Ltd.'s industry is Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "From company_profile.csv, extract that Run Hui Shu Ke Technology Co., Ltd.'s industry is Information Transmission, Software and IT Services",
+    "The two companies are in different industries; they are not peers; output \"No\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Hang Fa Tie Chuan Hang Kong Technology Co., Ltd. industry": "Railway, Ship, Aerospace and Other Transportation Equipment Manufacturing",
+    "Run Hui Shu Ke Technology Co., Ltd. industry": "Information Transmission, Software and IT Services",
+    "Whether same industry": "No"
+  }
+}

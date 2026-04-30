@@ -1,0 +1,22 @@
+{
+  "id": "easy019",
+  "question": "In 2022, is the R&D investment ratio of Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. lower than that of Yi Shan Tai Tai Medical Devices Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word without any explanation or notes. If relevant data cannot be found, answer \"No relevant data found\".",
+  "answer": "Yes",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "easy",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_operation_status.csv: Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. R&D investment ratio in 2022 = 3.96 %",
+    "Extracted from company_operation_status.csv: Yi Shan Tai Tai Medical Devices Co., Ltd. R&D investment ratio in 2022 = 11.1 %",
+    "Compared 3.96 and 11.1; since 3.96 < 11.1, the judgment is \"Yes\""
+  ],
+  "steps_num": 3,
+  "milestone": {
+    "Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. R&D investment ratio in 2022": "3.96 %",
+    "Yi Shan Tai Tai Medical Devices Co., Ltd. R&D investment ratio in 2022": "11.1 %",
+    "Comparison result (whether Zhong Hai Gong Zhu Jin Jian Zhu She Ji Co., Ltd. is lower than Yi Shan Tai Tai Medical Devices Co., Ltd.)": "Yes"
+  }
+}

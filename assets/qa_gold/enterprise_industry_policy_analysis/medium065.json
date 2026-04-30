@@ -1,0 +1,24 @@
+{
+  "id": "medium065",
+  "question": "Zhong Ke Ke Shu Software Co., Ltd.province  Number of policies (indicator) and China Sichuan Provincepersons Number of policies (indicator)what is the gap?",
+  "guidelines": "The answer must units, rounded to one decimal place.Output only, without units, commas, or explanations.Wu, answer\"No relevant data found\".",
+  "answer": 0.0,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_policy_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: Zhong Ke Ke Shu Software Co., Ltd.province = Guangdong Province and industry = Communication Transmission Equipment",
+    "policy_release_status.csv in by province=Guangdong Province、industry=Communication Transmission Equipmentextractlocal policies in Guangdong ProvinceNumber of policies (indicator)=1",
+    "Extracted from policy_release_status.csv: ChinaMetal Productslocal policies in Sichuan ProvincepersonsNumber of policies (indicator)=1",
+    "Calculate difference: 1 - 1 = 0.0"
+  ],
+  "steps_num": 4,
+  "milestone": {
+    "Zhong Ke Ke Shu Software Co., Ltd.province": "Guangdong Province",
+    "Guangdong ProvinceCommunication Transmission Equipmentlocal policies_Guangdong ProvinceNumber of policies (indicator)": 1,
+    "ChinaMetal Productslocal policies_Sichuan ProvincepersonsNumber of policies (indicator)": 1,
+    "Difference(Guangdong ProvinceNumber of policies (indicator)-Sichuan ProvincepersonsNumber of policies (indicator))": 0.0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium019",
+  "question": "Which is greater: the number of HKEX-listed foreign-funded enterprises in the corresponding industry of the province where Zhong Ke Shu Ruan Software Co., Ltd. is located, or the number of HKEX-listed enterprises in the industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.?",
+  "guidelines": "The answer must be a company name or \"industry\". Output only the name, without any explanation or description. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Province of Zhong Ke Shu Ruan Software Co., Ltd.: Guangdong Province",
+    "Number of HKEX-listed foreign-funded enterprises in Guangdong Information Transmission, Software and IT Services: 5",
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.: Real Estate",
+    "Number of HKEX-listed enterprises in Real Estate: 185"
+  ],
+  "milestone": {
+    "Province of Zhong Ke Shu Ruan Software Co., Ltd.": "Guangdong Province",
+    "HKEX-listed foreign-funded enterprise count in Guangdong Information Transmission, Software and IT Services": 5,
+    "Industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.": "Real Estate",
+    "HKEX-listed enterprise count in Real Estate": 185,
+    "Comparison result (which value is greater)": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd."
+  },
+  "answer": "Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: province of Zhong Ke Shu Ruan Software Co., Ltd. = Guangdong Province",
+    "Extracted from regional_industry_status.csv: HKEX-listed foreign-funded enterprise count in Guangdong Information Transmission, Software and IT Services = 5",
+    "Extracted from company_profile.csv: industry of Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd. = Real Estate",
+    "Extracted from national_industry_status.csv: HKEX-listed enterprise count in Real Estate = 185",
+    "Compared 5 and 185; since 185 is greater, output \"Bi Yuan Sheng Hua Jian She Kai Fa Co., Ltd.\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "regional_industry_status": "5eb24927-5b7a-4561-96df-b86398387e2b"
+    },
+    {
+      "company_profile": "7cf1e796-303e-45d7-a538-a41ce5972b04"
+    },
+    {
+      "national_industry_status": "27f2a242-57e9-4b4a-b933-e02981cf17d2"
+    },
+    {
+      "company_profile": "a0b01b7e-ed2c-4c4a-b7d7-15062fab3ef4"
+    }
+  ]
+}

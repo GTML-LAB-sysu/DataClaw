@@ -1,0 +1,32 @@
+{
+  "id": "medium005",
+  "question": "In 2022, regarding the strategic choice for Guangdong Province's consumer electronics and electrical industry, a policy consulting agency proposed two competing development paths: the first is the \"high-end transformation route\", evaluated by the average R&D investment ratio of private enterprises, invention patent density (= total annual Chinese invention patent grants ÷ total number of enterprises), and the number of relevant industrial policies in that province; the second is the \"export-oriented route\", evaluated by per capita revenue (= total operating revenue ÷ total number of employees), average asset turnover rate (= mean operating revenue ÷ mean total assets), and total number of enterprises. Both routes use inter-provincial peer comparison ranking scores (score = (N - ranking) / (N - 1) × 100), with equal weight across dimensions to calculate the route total score. What is the difference between Guangdong Province's total score on the \"high-end transformation route\" and the \"export-oriented route\" (former minus latter)?",
+  "guidelines": "Answer format: Value (2 decimal places). A positive number indicates the high-end transformation route has a higher score, a negative number indicates the export-oriented route has a higher score. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 4.55,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "industry_planning"
+  },
+  "steps": [
+    "From company_profile.csv, filter industry=\"consumer electronics and electrical industry\", join with company_operation_status.csv for year=2022 on bmCode; keep only provinces with enterprise count > 0 to obtain N=23 provinces for peer comparison within the same industry.",
+    "Within each province, filter ownership=\"private enterprise\" and take the arithmetic mean of non-missing R&D investment ratios; Guangdong Province is approximately 9.2610.",
+    "From regional_industry_status.csv, filter industry=\"consumer electronics and electrical industry\", and use for each province: total annual Chinese invention patent grants ÷ enterprise count, total operating revenue ÷ total employees, mean operating revenue ÷ mean total assets, and enterprise count; Guangdong: invention patent density 96.4800, per capita revenue about 1501516.49, asset turnover about 0.8845, enterprise count 150.",
+    "From policy_release_status.csv, filter policyClassification=\"local policy\", publishDate in calendar year 2022, and industry field containing the full industry name \"consumer electronics and electrical industry\"; records with empty province are excluded from province-level counts.",
+    "For all six indicators, rank provinces in descending order among N=23 (higher is better), use minimum rank for ties, and compute score = (N - ranking) / (N - 1) × 100 for each province. Guangdong: private R&D ratio about rank 5 → about 81.82; patent density about rank 3 → about 90.91; policy count about rank 2 → about 95.45; per capita revenue about rank 6 → about 77.27; asset turnover about rank 6 → about 77.27; enterprise count rank 1 → 100.00.",
+    "High-end transformation score = (81.82 + 90.91 + 95.45) / 3 ≈ 89.39; export-oriented score = (77.27 + 77.27 + 100.00) / 3 ≈ 84.85.",
+    "Score difference = high-end transformation score - export-oriented score ≈ 4.55 (rounded to two decimal places)."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Private enterprise average R&D investment ratio score": 81.82,
+    "Invention patent density score": 90.91,
+    "Policy count score": 95.45,
+    "Per capita revenue score": 77.27,
+    "Asset turnover rate score": 77.27,
+    "Enterprise count score": 100.0,
+    "High-end transformation score": 89.39,
+    "Export-oriented score": 84.85,
+    "Score difference": 4.55
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "medium027",
+  "question": "Is the number of SSE-listed enterprises in the industry of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. equal to the number of SSE-listed state-owned institute enterprises in the industry of Zhong Che Yuan Ze Shipbuilding Co., Ltd.?",
+  "guidelines": "The answer must be \"Yes\" or \"No\". Output only one word, without any explanation. If relevant data cannot be found, answer \"No relevant data found\".",
+  "evidence": [
+    "Industry of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd.: Health and Social Work",
+    "Number of SSE-listed enterprises in Health and Social Work: 2",
+    "Industry of Zhong Che Yuan Ze Shipbuilding Co., Ltd.: Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Number of SSE-listed state-owned institute enterprises in that industry: 1"
+  ],
+  "answer": "No",
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "medium",
+    "category": "enterprise_industry_analysis"
+  },
+  "milestone": {
+    "Industry of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd.": "Health and Social Work",
+    "Number of SSE-listed enterprises in Health and Social Work": 2,
+    "Industry of Zhong Che Yuan Ze Shipbuilding Co., Ltd.": "Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Number of SSE-listed state-owned institute enterprises in that industry": 1,
+    "Whether equal": "No"
+  },
+  "steps": [
+    "Extracted from company_profile.csv: industry of Ai Jian Yi Kang Fu Zhong Xin Co., Ltd. = Health and Social Work",
+    "Extracted from national_industry_status.csv: number of SSE-listed enterprises in Health and Social Work = 2",
+    "Extracted from company_profile.csv: industry of Zhong Che Yuan Ze Shipbuilding Co., Ltd. = Railway, Shipbuilding, Aerospace and Other Transportation Equipment Manufacturing",
+    "Extracted from national_industry_status.csv: number of SSE-listed state-owned institute enterprises in that industry = 1",
+    "Compared 2 and 1; since they are not equal, the judgment is \"No\""
+  ],
+  "steps_num": 5,
+  "reference": [
+    {
+      "national_industry_status": "a08b718a-c663-4252-a4f4-56c3034bae0c"
+    },
+    {
+      "company_profile": "10890d3a-b03b-417b-b39e-f5070604b51e"
+    },
+    {
+      "national_industry_status": "4e4122cb-0cfc-47c7-8dde-7296312f31a7"
+    },
+    {
+      "company_profile": "b5c4bcce-8ecd-4a6e-b6ca-e5b6eb41fb8e"
+    }
+  ]
+}

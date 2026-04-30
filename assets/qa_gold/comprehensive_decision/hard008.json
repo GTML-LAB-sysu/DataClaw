@@ -1,0 +1,29 @@
+{
+  "id": "hard008",
+  "question": "In 2022, a private equity institution sought to identify high-quality provinces in the electricity, heat, gas and water production and supply industry that combine growth potential, market undervaluation, and innovation resilience. The screening logic has three layers: The first layer requires that the median year-over-year change in operating revenue of enterprises within the province be positive (>0%), to exclude regions where revenue is already shrinking; The second layer, based on the first layer results, further requires that the province's market valuation level be relatively low, i.e., the P/S ratio of all enterprises in the province must be lower than the median P/S ratio across all provinces nationwide (national median is calculated from the provincial P/S ratio series); The third layer adds an innovation requirement, i.e., the mean R&D investment ratio of enterprises in the province must be higher than the mean of all enterprises in the industry with R&D investment ratio records. How many provinces satisfy all three conditions simultaneously?",
+  "guidelines": "The answer should be an integer. Output only the number, without units or text. If relevant data cannot be found, please answer \"No relevant data found\"",
+  "answer": 4,
+  "metadata": {
+    "db": "bm_rag_qa",
+    "level": "hard",
+    "category": "comprehensive_decision"
+  },
+  "steps": [
+    "Filter all provincial records with industry=\"Electricity, Heat, Gas and Water Production and Supply\" from regional_industry_status.csv, extract province, median year-over-year change in operating revenue, total company market cap, total operating revenue amount, and number of enterprises; 34 records in total.",
+    "Filter enterprises with industry=\"Electricity, Heat, Gas and Water Production and Supply\" from company_profile.csv, extract company name, bmCode, and province fields; 189 enterprises found.",
+    "Join with company_operation_status.csv via bmCode to extract R&D investment ratio field. 122 enterprises have non-null R&D investment ratio; national average R&D investment ratio is 1.1470%. Group by province to calculate average R&D investment ratio per province.",
+    "Filter 16 valid provinces with non-null and >0 total operating revenue amount; calculate P/S ratio per province = total company market cap / total operating revenue amount (converted to 100 million yuan); national median P/S ratio is 1.024358.",
+    "Filter high-growth provinces with median year-over-year change in operating revenue > 0%; 15 provinces in total.",
+    "Among high-growth provinces, filter low-valuation provinces with P/S ratio < national median 1.024358; 7 provinces in total.",
+    "Among high-growth, low-valuation provinces, further filter provinces where average enterprise R&D investment ratio > 1.1470%; 4 provinces ultimately satisfy all three conditions: ['Guangdong', 'Shanghai', 'Henan', 'Hebei']."
+  ],
+  "steps_num": 7,
+  "milestone": {
+    "Number of valid provinces": 16,
+    "National median P/S ratio": 1.024358,
+    "National average enterprise R&D investment ratio (%)": 1.147,
+    "Number of high-growth provinces": 15,
+    "Number of high-growth, low-valuation provinces": 7,
+    "Number of provinces meeting all conditions": 4
+  }
+}
