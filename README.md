@@ -1,14 +1,14 @@
 
 <div align="center">
 
-<h1>DataClaw</h1>
+<h1>DataClawBench</h1>
 
-<img src="logo.png" alt="DataClaw Logo" width="220"/>
+<img src="logo.png" alt="DataClawBench Logo" width="220"/>
 
 <br/>
 <br/>
 
-[![🏆 Leaderboard](https://img.shields.io/badge/🏆_Leaderboard-DataClaw-red)](https://gtmllab.github.io/DataClaw/)
+[![🏆 Leaderboard](https://img.shields.io/badge/🏆_Leaderboard-DataClawBench-red)](https://gtmllab.github.io/DataClaw/)
 [![🤗 HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/GTML-Lab/DataClaw)
 ![Tasks](https://img.shields.io/badge/Tasks-492-blue)
 ![Categories](https://img.shields.io/badge/Categories-7-green)
@@ -27,20 +27,20 @@ With the emergence of end-to-end agents like OpenClaw, data analysis is no longe
 
 This means the core difficulty of a benchmark has shifted from answer generation alone to full agent-driven execution. A truly valuable data-analysis benchmark must test not only whether the final answer is correct, but also whether the agent can reliably complete a series of steps — retrieval, filtering, computation, verification, and constraint compliance — in complex data environments.
 
-DataClaw is designed for exactly this shift. It evaluates not abstract capability divorced from execution, but how OpenClaw-style end-to-end agents actually perform on data analysis tasks under real data conditions, explicit task constraints, and a reproducible execution protocol.
+DataClawBench is designed for exactly this shift. It evaluates not abstract capability divorced from execution, but how OpenClaw-style end-to-end agents actually perform on data analysis tasks under real data conditions, explicit task constraints, and a reproducible execution protocol.
 
-## 🔍 What Is DataClaw?
+## 🔍 What Is DataClawBench?
 
-DataClaw is a process-oriented data-analysis benchmark for realistic, complex data environments. Its core goal is not merely to measure agents' end-task performance, but to serve as a high-fidelity testbed that also evaluates, at fine granularity, how agents evolve when facing real-world complexity and multi-step reasoning.
+DataClawBench is a process-oriented data-analysis benchmark for realistic, complex data environments. Its core goal is not merely to measure agents' end-task performance, but to serve as a high-fidelity testbed that also evaluates, at fine granularity, how agents evolve when facing real-world complexity and multi-step reasoning.
 
-DataClaw simulates at scale the noisy, weakly-semantic, cross-domain data environments found in the real world. Complex data-analysis questions are authored by domain experts in finance and computer science, and each task's process annotations and unique objective answers are cross-verified by human experts with AI assistance. Process annotations include task milestones, human-corrected reference trajectories, and evidence data sources. DataClaw adopts OpenClaw as its unified agent framework.
+DataClawBench simulates at scale the noisy, weakly-semantic, cross-domain data environments found in the real world. Complex data-analysis questions are authored by domain experts in finance and computer science, and each task's process annotations and unique objective answers are cross-verified by human experts with AI assistance. Process annotations include task milestones, human-corrected reference trajectories, and evidence data sources. DataClawBench adopts OpenClaw as its unified agent framework.
 
 
-## 🎯 Why DataClaw?
+## 🎯 Why DataClawBench?
 
-- **From idealized data environments to imperfect real-world data environments.** DataClaw contains a mix of structured and unstructured data, covering enterprise profiles, business operating status, regional industry statistics, national industry statistics, and policy texts. All data is collected from the real world and comes with friction such as missing indicators, inconsistent definitions, and inconsistent naming. Tasks face realistic data environments, not over-cleaned single-table lookups.
-- **From single-shot static queries to multi-step dynamic reasoning.** DataClaw tasks typically require agents to complete a multi-stage chain of operations rather than producing a one-shot answer. The challenge for agents comes not only from retrieval but also from cross-source integration, metric construction, aggregation computation, and format constraint compliance.
-- **From outcome-oriented evaluation to process-oriented evaluation.** DataClaw goes beyond simple outcome-accuracy evaluation and dissects how the agent's execution unfolds at fine granularity. Outcome-oriented evaluation paradigms focus only on final accuracy. This black-box approach ignores intermediate reasoning and provides little actionable signal for guiding optimization.
+- **From idealized data environments to imperfect real-world data environments.** DataClawBench contains a mix of structured and unstructured data, covering enterprise profiles, business operating status, regional industry statistics, national industry statistics, and policy texts. All data is collected from the real world and comes with friction such as missing indicators, inconsistent definitions, and inconsistent naming. Tasks face realistic data environments, not over-cleaned single-table lookups.
+- **From single-shot static queries to multi-step dynamic reasoning.** DataClawBench tasks typically require agents to complete a multi-stage chain of operations rather than producing a one-shot answer. The challenge for agents comes not only from retrieval but also from cross-source integration, metric construction, aggregation computation, and format constraint compliance.
+- **From outcome-oriented evaluation to process-oriented evaluation.** DataClawBench goes beyond simple outcome-accuracy evaluation and dissects how the agent's execution unfolds at fine granularity. Outcome-oriented evaluation paradigms focus only on final accuracy. This black-box approach ignores intermediate reasoning and provides little actionable signal for guiding optimization.
 
 ## 🏗️ Repository Layout
 
@@ -217,7 +217,7 @@ output/summary_<model>.json
 
 ### 7. Grading Rules
 
-DataClaw scores each run along **four metrics**.
+DataClawBench scores each run along **four metrics**.
 
 | Metric | Definition | Scope | Direction |
 | --- | --- | --- | --- |
@@ -270,7 +270,7 @@ docker ps -a --filter "ancestor=${IMAGE}" --format "{{.Names}}\t{{.Status}}"
 
 ## 📊 Dataset Statistics
 
-DataClaw's data does not come from synthetic samples or teaching examples; it is built on the publishing team's long-term, front-line data accumulation and industry insights from research on Chinese enterprises, industries, and policies. The current version is mainly based on data from 2022. After necessary de-identification, tasks are constructed to avoid model knowledge leakage as much as possible while preserving the information noise and data friction found in real business settings. Task authoring and annotation are conducted by a professional team from Lingnan College, Sun Yat-sen University, balancing academic rigor and practical usability.
+DataClawBench's data does not come from synthetic samples or teaching examples; it is built on the publishing team's long-term, front-line data accumulation and industry insights from research on Chinese enterprises, industries, and policies. The current version is mainly based on data from 2022. After necessary de-identification, tasks are constructed to avoid model knowledge leakage as much as possible while preserving the information noise and data friction found in real business settings. Task authoring and annotation are conducted by a professional team from Lingnan College, Sun Yat-sen University, balancing academic rigor and practical usability.
 
 ### 🗂️ Data Environment Statistics
 
@@ -336,7 +336,7 @@ Under a theme-domain view and business-oriented taxonomy, the current data envir
 </tbody>
 </table>
 
-> At execution time, agents typically need to align entities across files, join across tables, normalize definitions, and perform aggregation calculations, rather than simply looking up values in a single file; when needed, they must also consult business conventions in `internal_metrics.csv`. This is the core value of DataClaw for evaluating real-scenario data understanding and reasoning capabilities.
+> At execution time, agents typically need to align entities across files, join across tables, normalize definitions, and perform aggregation calculations, rather than simply looking up values in a single file; when needed, they must also consult business conventions in `internal_metrics.csv`. This is the core value of DataClawBench for evaluating real-scenario data understanding and reasoning capabilities.
 
 ### 📋 Task Statistics
 
@@ -356,7 +356,7 @@ The current version contains **492** tasks across **7** categories, with an over
 
 ## 🙏 Acknowledgements
 
-DataClaw is jointly released by Prof. Chuan Chen's team at the School of Computer Science, Sun Yat-sen University, and the Southern Weekly Sci-Tech Power Research Center. We sincerely thank the Southern Weekly Sci-Tech Power Research Center for providing invaluable data and tremendous support.
+DataClawBench is jointly released by Prof. Chuan Chen's team at the School of Computer Science, Sun Yat-sen University, and the Southern Weekly Sci-Tech Power Research Center. We sincerely thank the Southern Weekly Sci-Tech Power Research Center for providing invaluable data and tremendous support.
 
 This project also builds on excellent open-source agent ecosystems. We gratefully acknowledge:
 
