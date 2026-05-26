@@ -9,6 +9,7 @@
 
 [![🏆 Leaderboard](https://img.shields.io/badge/🏆_Leaderboard-DataClawBench-red)](https://gtmllab.github.io/DataClaw/)
 [![🤗 HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/GTMLLab/DataClaw)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.02503-b31b1b)](https://arxiv.org/abs/2605.02503)
 ![Tasks](https://img.shields.io/badge/Tasks-492-blue)
 ![Categories](https://img.shields.io/badge/Categories-7-green)
 
@@ -352,6 +353,12 @@ DataClawBench 数据并非来源于合成样本或教学示例，而是基于发
 | `risk_assessment` | 风险评估 | 24 | medium 11 / hard 13 |
 
 > 除 `international_comparison` 的 39 个任务外，其余任务在当前 task 规范中都显式限制为仅使用 `./database/`，不依赖 web search。
+
+## 📄 引用
+
+若在研究中使用 DataClawBench，请引用我们的论文  
+[**DataClawBench: An Agent Benchmark for Exploratory Real-World Financial Data Analysis**](https://arxiv.org/abs/2605.02503)（arXiv:2605.02503）。
+
 
 ## 🙏 致谢
 
