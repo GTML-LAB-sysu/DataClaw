@@ -356,16 +356,10 @@ The current version contains **492** tasks across **7** categories, with an over
 > Except for the 39 `international_comparison` tasks, all others are explicitly restricted in the current task spec to use only `./database/`, with no web search.
 
 ## 📄 Citation
-If you use DataClawBench in your research, please cite:
-```bibtex
-@article{zhang2026dataclawbench,
-  title={DataClawBench: An Agent Benchmark for Exploratory Real-World Financial Data Analysis},
-  author={Zhang, Qiaohong and Ye, Weihao and Chen, Jialong and Luo, Yi and Li, BoYuan and Deng, Bowen and Zheng, Zibin and Lin, Jianhao and Zheng, Wei-Shi and Chen, Chuan},
-  journal={arXiv preprint arXiv:2605.02503},
-  year={2026},
-  url={https://arxiv.org/abs/2605.02503}
-}
-```
+
+If you use DataClawBench in your research, please cite our paper  
+[**DataClawBench: An Agent Benchmark for Exploratory Real-World Financial Data Analysis**](https://arxiv.org/abs/2605.02503) (arXiv:2605.02503).
+
 
 ## 🙏 Acknowledgements
 
