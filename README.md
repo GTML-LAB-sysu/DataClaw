@@ -10,6 +10,7 @@
 
 [![🏆 Leaderboard](https://img.shields.io/badge/🏆_Leaderboard-DataClawBench-red)](https://gtmllab.github.io/DataClaw/)
 [![🤗 HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/GTML-Lab/DataClaw)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.02503-b31b1b)](https://arxiv.org/abs/2605.02503)
 ![Tasks](https://img.shields.io/badge/Tasks-492-blue)
 ![Categories](https://img.shields.io/badge/Categories-7-green)
 
@@ -353,6 +354,18 @@ The current version contains **492** tasks across **7** categories, with an over
 | `risk_assessment` | Risk assessment | 24 | medium 11 / hard 13 |
 
 > Except for the 39 `international_comparison` tasks, all others are explicitly restricted in the current task spec to use only `./database/`, with no web search.
+
+## 📄 Citation
+If you use DataClawBench in your research, please cite:
+```bibtex
+@article{zhang2026dataclawbench,
+  title={DataClawBench: An Agent Benchmark for Exploratory Real-World Financial Data Analysis},
+  author={Zhang, Qiaohong and Ye, Weihao and Chen, Jialong and Luo, Yi and Li, BoYuan and Deng, Bowen and Zheng, Zibin and Lin, Jianhao and Zheng, Wei-Shi and Chen, Chuan},
+  journal={arXiv preprint arXiv:2605.02503},
+  year={2026},
+  url={https://arxiv.org/abs/2605.02503}
+}
+
 
 ## 🙏 Acknowledgements
 
