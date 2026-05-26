@@ -365,7 +365,7 @@ If you use DataClawBench in your research, please cite:
   year={2026},
   url={https://arxiv.org/abs/2605.02503}
 }
-
+```
 
 ## 🙏 Acknowledgements
 
