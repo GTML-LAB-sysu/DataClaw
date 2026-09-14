@@ -48,6 +48,7 @@ DataClawBench 大规模地模拟了高噪声、弱语义、跨领域的真实世
 关键目录与脚本职责如下：
 
 - `assets/database/`：评测数据文件，运行时会整体注入到容器工作区。根目录含 `internal_metrics.csv`（业务逻辑内部知识库）；`enterprise/`、`industry/`、`policy/` 为三大主题域数据。
+- `assets/database_clear/`：在 `assets/database/` 基础上完成数据对齐、去除数据噪声后的干净数据，用作对照环境，便于测定数据环境对模型能力的影响。
 - `assets/qa_raw/`：原始任务源文件。
 - `assets/qa_gold/`：由 `qa_raw` 归约得到的精简 gold 文件。
 - `tasks/`：生成后的 OpenClaw task 规范文件。
@@ -337,6 +338,8 @@ DataClawBench 数据并非来源于合成样本或教学示例，而是基于发
 </table>
 
 > 在任务执行层面，智能体通常需要在多文件间完成实体对齐、跨表关联、口径归一与聚合计算，而非单文件查值；必要时还需结合 `internal_metrics.csv` 中的业务约定。这也是 DataClawBench 用于评估真实场景数据理解与推理能力的核心价值。
+
+**干净对照环境（`assets/database_clear/`）。** 除上述默认的高噪声数据环境外，本仓库还提供 `assets/database_clear/`：在原数据基础上完成数据对齐并去除噪声后的干净数据。对比 `database` 与 `database_clear` 两套环境上的评测结果，便于测定数据环境对模型能力的影响，将环境摩擦与模型能力本身区分开来。
 
 ### 📋 任务统计信息
 

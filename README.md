@@ -49,6 +49,7 @@ DataClawBench simulates at scale the noisy, weakly-semantic, cross-domain data e
 Key directories and scripts:
 
 - `assets/database/`: Benchmark data files, injected wholesale into the container workspace at run time. The root contains `internal_metrics.csv` (internal business-logic knowledge base); `enterprise/`, `industry/`, and `policy/` hold the three theme-domain datasets.
+- `assets/database_clear/`: Cleaned counterpart of `assets/database/`. Built from the original data after completing data alignment and removing noise; provided as a control environment for measuring how the data environment affects model capability.
 - `assets/qa_raw/`: Raw task source files.
 - `assets/qa_gold/`: Minimized gold files derived from `qa_raw`.
 - `tasks/`: Generated OpenClaw task spec files.
@@ -338,6 +339,8 @@ Under a theme-domain view and business-oriented taxonomy, the current data envir
 </table>
 
 > At execution time, agents typically need to align entities across files, join across tables, normalize definitions, and perform aggregation calculations, rather than simply looking up values in a single file; when needed, they must also consult business conventions in `internal_metrics.csv`. This is the core value of DataClawBench for evaluating real-scenario data understanding and reasoning capabilities.
+
+**Cleaned control environment (`assets/database_clear/`).** In addition to the default noisy environment above, this repository provides `assets/database_clear/`: a cleaned counterpart of the same sources after data alignment and noise removal. Comparing evaluation results on `database` vs. `database_clear` helps isolate how much of the observed performance is attributable to environmental friction rather than to the model itself.
 
 ### 📋 Task Statistics
 

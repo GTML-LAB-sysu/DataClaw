@@ -1,0 +1,26 @@
+id,interal_knowladge
+1,"Concentration CRn: the proportion of the top n indicators, i.e., the ratio of the sum of the top n enterprises' indicator values to the total indicator value of that category."
+2,Enterprise concentration is measured as the province's enterprise count as a percentage of the national total for that industry.
+3,HHI计算方式：将各指标报告占总报告值的比例记为份额，HHI=各份额的平方和×10000
+4,Market cap to revenue ratio = total company market cap / total operating revenue amount
+5,Net profit margin = net profit / operating revenue
+6,Operating profit margin = total operating profit ÷ total operating revenue × 100
+7,P/S ratio = total market cap / total operating revenue
+8,per capita market cap = total company market cap / total number of employees
+9,profit margin = total operating profit / total operating revenue
+10,PS比率=市值合计/营业收入金额合计
+11,R&D personnel proportion = number of R&D personnel / total employees × 100%
+12,Subsidy utilization efficiency = sum of operating revenue amounts of enterprises in the group / sum of government reward funds and subsidies of enterprises in the group
+13,upstream-downstream enterprise diversity is measured by the number of enterprise ownership types
+14,补贴利用效率=该组企业营业收入金额之和/该组企业政府奖励资金、补贴之和
+15,单人均平均创收=营业收入总量÷雇员总人数
+16,集中度CRn：前n强指标值占比，即排名前n家的指标值之和与该分类总指标值之比。
+17,利润率=营业利润金额合计/营业收入金额合计
+18,企业集聚度以该省份企业数量占全国该行业企业总数的比例衡量
+19,人均市值=公司市值合计/雇员总数合计
+20,上下游企业多样性用企业所有制类型数量衡量
+21,市值营收比=公司市值合计/营业收入金额合计
+22,研发人员占比=研发人员数量/雇员总数×100%
+23,营业利润率=营业利润合计÷营业收入合计×100
+24,对于不存在于数据集中的企业数据需要通过网络工具获取其数据。数据以年报公布内容为准
+25,"Missing corporate data shall be sourced online, with all figures subject to published annual reports."
