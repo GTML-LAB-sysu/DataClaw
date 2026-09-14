@@ -8,7 +8,7 @@
 <br/>
 
 [![🏆 Leaderboard](https://img.shields.io/badge/🏆_Leaderboard-DataClawBench-red)](https://gtmllab.github.io/DataClaw/)
-[![🤗 HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/GTMLLab/DataClaw)
+[![🤗 HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/GTML-LAB/DataClaw)
 [![arXiv](https://img.shields.io/badge/arXiv-2605.02503-b31b1b)](https://arxiv.org/abs/2605.02503)
 ![Tasks](https://img.shields.io/badge/Tasks-492-blue)
 ![Categories](https://img.shields.io/badge/Categories-7-green)
